@@ -26,4 +26,8 @@
     return [UIColor colorWithRed:0.424 green:0.773 blue:0.98 alpha:1] /*#6cc5fa*/;
 }
 
++ (UIColor *)JLDarkBlue {
+    return [UIColor colorWithRed:0.349 green:0.631 blue:0.831 alpha:1] /*#59a1d4*/;
+}
+
 @end

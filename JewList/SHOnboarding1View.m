@@ -130,7 +130,7 @@
     [self addSubview:_nextStepButton];
     
     UIView *genderBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, homeIndicator.bottom, self.width, _nextStepButton.top - homeIndicator.bottom)];
-    genderBackgroundView.backgroundColor = [UIColor purpleColor];
+    genderBackgroundView.backgroundColor = [UIColor whiteColor];
     [self addSubview:genderBackgroundView];
     
     buttonHeight = 140;
