@@ -18,9 +18,9 @@
 
 #endif
 
-#define kSCHMOOZ_HOST @"api.streamnation.com" // => RELEASE API
+#define kSCHMOOZ_HOST @"jewlist.herokuapp.com" // => RELEASE API
 #define kSCHMOOZ_URL [NSString stringWithFormat:@"http://%@/", kSCHMOOZ_HOST]
-#define kSCHMOOZ_API_ACTION_BASE_URL [NSString stringWithFormat:@"%@%@", kSCHMOOZ_URL, @"api/v1/%@"]
+#define kSCHMOOZ_API_ACTION_BASE_URL [NSString stringWithFormat:@"%@%@", kSCHMOOZ_URL, @"api/%@"]
 
 #define kFacebook_App_Id @"556021887795026"
 

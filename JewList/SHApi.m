@@ -15,6 +15,7 @@
 #import "JSONKit.h"
 #import "NSURL+NXOAuth2.h"
 #import "SHAccessToken.h"
+#import "College.h"
 
 @interface SHApi (Private)
 
@@ -238,6 +239,41 @@ static NSString *kCurrentUserPath = @"current_user";
         
     });
         
+}
+
+- (id)getColleges:(void (^)(NSArray *colleges))success
+          failure:(void (^)(NSError * error))failure
+{
+    return [self standardDictionaryRequestWithPath:@"questions/college"
+                                            params:nil
+                                            method:@"GET"
+                                      noAuthNeeded:YES
+                                           success:^(id result) {
+                                               if([result isKindOfClass:[NSDictionary class]] && [result objectForKey:@"answers"])
+                                               {
+                                                   NSArray *results = [result objectForKey:@"answers"];
+                                                   
+                                                   NSMutableArray *colleges = [NSMutableArray array];
+                                                   for(NSDictionary *dict in results)
+                                                   {
+                                                       College *college = [[College alloc] initWithDictionary:dict];
+                                                       [colleges addObject:college];
+                                                       
+                                                   }
+                                                   
+                                                   success(colleges);
+                                                   
+                                               }else{
+                                                   if([result objectForKey:@"error"])
+                                                   {
+                                                       //[UIHelpers handleApiError:[result objectForKey:@"error"]];
+                                                   }
+                                                   
+                                                   failure(nil);
+                                               }
+                                               
+                                           }
+                                           failure:failure];
 }
 
 /* Login with credintials */

@@ -40,4 +40,12 @@
 - (NSString *)userLogin;
 - (NSString *)userPassword;
 
+- (id)getColleges:(void (^)(NSArray *colleges))success
+          failure:(void (^)(NSError * error))failure;
+
+- (id)loginInWithEmail:(NSString *)email
+           andPassword:(NSString*)password
+               success:(void (^)(void))success
+               failure:(void (^)(NSError * error))failure;
+
 @end

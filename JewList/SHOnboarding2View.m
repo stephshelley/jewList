@@ -65,7 +65,54 @@
     [self addSubview:_nextStepButton];
     
     [self loadTable];
+    [self loadColleges];
 }
+
+- (void)loadColleges
+{
+    __block SHOnboarding2View *weakSelf = self;
+    [self showLoading];
+    
+    [[SHApi sharedInstance] getColleges:^(NSArray *colleges)
+     {
+         self.fullCollegesArray = [NSMutableArray arrayWithArray:colleges];
+         
+         dispatch_async(dispatch_get_main_queue(), ^{
+
+             [weakSelf reloadTable];
+             [weakSelf hideLoading];
+
+         });
+
+         
+     }failure:^(NSError *error)
+     {
+         [weakSelf hideLoading];
+
+     }];
+}
+
+- (void)showLoading
+{
+    if(nil == _activityView)
+    {
+        _activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        _activityView.center = _tableView.center;
+        [self addSubview:_activityView];
+        [_activityView startAnimating];
+        _activityView.hidesWhenStopped = YES;
+    }
+
+}
+
+- (void)hideLoading
+{
+    [_activityView stopAnimating];
+    [_activityView removeFromSuperview];
+    _activityView = nil;
+    
+}
+
 
 - (void)loadTable
 {
@@ -87,7 +134,7 @@
     
     if(_user.fbCollegeName.length > 0)
     {
-        _searchBar.text = _user.fbCollegeName;
+        //_searchBar.text = _user.fbCollegeName;
     }
     
     [self addSubview:self.searchBar];
@@ -256,6 +303,8 @@
         User *currentUser = [[SHApi sharedInstance] currentUser];
         currentUser.fbCollegeName = item.name;
         [[SHApi sharedInstance] cacheCurrentUserDetails];
+        
+        _searchBar.text = item.name;
         
     }
     

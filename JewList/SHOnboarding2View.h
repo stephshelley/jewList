@@ -17,6 +17,8 @@
 
 }
 
+@property (nonatomic, strong) UIActivityIndicatorView *activityView;
+
 @property (nonatomic, strong) NSMutableArray *fullCollegesArray;
 @property (nonatomic, strong) NSMutableArray *filteredCollegesArray;
 
