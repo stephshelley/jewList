@@ -20,9 +20,9 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.loginView = [[SHLoginOnboardingView alloc] initWithFrame:CGRectMake(0, 20, self.view.width, self.view.height-20)];
+    self.loginView = [[SHLoginOnboardingView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
     [_loginView.fbConnectButton addTarget:self action:@selector(fbConnectButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    _loginView.backgroundColor = [UIColor redColor];
+    _loginView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_loginView];
 }
 
