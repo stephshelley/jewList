@@ -126,7 +126,6 @@
     _nextStepButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:24];
     _nextStepButton.titleLabel.textColor = [UIColor whiteColor];
     _nextStepButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-    _nextStepButton.centerX = userTopView.centerX;
     [self addSubview:_nextStepButton];
     
     UIView *genderBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, homeIndicator.bottom, self.width, _nextStepButton.top - homeIndicator.bottom)];
