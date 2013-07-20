@@ -9,6 +9,10 @@
 #import "SHOnboarding1View.h"
 #import "User.h"
 #import "SHApi.h"
+#import "SHToggleButton.h"
+
+#define TAG_MALE_BUTTON 0
+#define TAG_FEMALE_BUTTON 1
 
 @implementation SHOnboarding1View
 
@@ -107,23 +111,29 @@
     genderBackgroundView.bottom = _nextStepButton.top - 20;
     [self addSubview:genderBackgroundView];
     
-    self.femaleButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 130, 100)];
-    _femaleButton.backgroundColor = DEFAULT_BLUE_COLOR;
+    self.femaleButton = [[SHToggleButton alloc] initWithFrame:CGRectMake(0, 0, 130, 100)];
+    [_femaleButton setColorOff:[UIColor grayColor]];
+    [_femaleButton setColorOn:DEFAULT_BLUE_COLOR];
     [_femaleButton setTitle:@"Female" forState:UIControlStateNormal];
     [_femaleButton setTitle:@"Female" forState:UIControlStateHighlighted];
-    _femaleButton.tag = 1;
+    _femaleButton.tag = TAG_FEMALE_BUTTON;
     _femaleButton.top = 10;
     _femaleButton.right = floor(genderBackgroundView.width/2);
+    [_femaleButton toggle:NO]; // OFF
     [_femaleButton addTarget:self action:@selector(genderTogglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [genderBackgroundView addSubview:_femaleButton];
+    
  
-    self.maleButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, _femaleButton.width, _femaleButton.height)];
+    self.maleButton = [[SHToggleButton alloc] initWithFrame:CGRectMake(0, 0, _femaleButton.width, _femaleButton.height)];
+    [_maleButton setColorOff:[UIColor grayColor]];
+    [_maleButton setColorOn:DEFAULT_BLUE_COLOR];
     _maleButton.backgroundColor = DEFAULT_BLUE_COLOR;
     [_maleButton setTitle:@"Male" forState:UIControlStateNormal];
     [_maleButton setTitle:@"Male" forState:UIControlStateHighlighted];
-    _maleButton.tag = 0;
+    _maleButton.tag = TAG_MALE_BUTTON;
     _maleButton.top = _femaleButton.top;
     _maleButton.left = _femaleButton.right+1;
+    [_maleButton toggle:NO]; // OFF
     [_maleButton addTarget:self action:@selector(genderTogglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [genderBackgroundView addSubview:_maleButton];
 
@@ -131,15 +141,18 @@
 
 - (void)genderTogglePressed:(id)sender
 {
-    UIButton *senderButton = (UIButton*)sender;
+    SHToggleButton *senderButton = (SHToggleButton*)sender;
+    [senderButton toggle];
     
-    if(senderButton.tag == 1)
+    if(senderButton.tag == TAG_FEMALE_BUTTON && [senderButton isOn])
     {
+        [_maleButton toggle:NO];
         _user.gendre = @"female";
-    }else if(senderButton.tag == 0)
+    }
+    else if(senderButton.tag == TAG_MALE_BUTTON && [senderButton isOn])
     {
+        [_femaleButton toggle:NO];
         _user.gendre = @"male";
-        
     }
     
     [[SHApi sharedInstance] cacheCurrentUserDetails];
