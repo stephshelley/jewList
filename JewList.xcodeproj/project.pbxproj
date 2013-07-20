@@ -163,12 +163,13 @@
 		3ADFA903179A91EE00B66F78 /* SHCollegeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA902179A91EE00B66F78 /* SHCollegeCell.m */; };
 		3ADFA906179A92EA00B66F78 /* College.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA905179A92EA00B66F78 /* College.m */; };
 		3ADFA908179A96EE00B66F78 /* empty_pixel.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADFA907179A96EE00B66F78 /* empty_pixel.png */; };
-		D02FD2FE179B278000D876D8 /* JLColors.m in Sources */ = {isa = PBXBuildFile; fileRef = D02FD2FD179B278000D876D8 /* JLColors.m */; };
 		3ADFA90B179B32EB00B66F78 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA90A179B32EB00B66F78 /* ResultsViewController.m */; };
 		3ADFA90E179B33DC00B66F78 /* SHOnboarding3View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA90D179B33DC00B66F78 /* SHOnboarding3View.m */; };
 		3ADFA911179B36E500B66F78 /* UserResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA910179B36E500B66F78 /* UserResultCell.m */; };
 		3ADFA914179B3DD500B66F78 /* SHProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA913179B3DD500B66F78 /* SHProfileViewController.m */; };
 		F8F2F064179B37A10088BF2B /* SHToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2F063179B37A10088BF2B /* SHToggleButton.m */; };
+		3ADFA91A179B4DCB00B66F78 /* UIView+FindUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA919179B4DCB00B66F78 /* UIView+FindUIViewController.m */; };
+		D02FD2FE179B278000D876D8 /* JLColors.m in Sources */ = {isa = PBXBuildFile; fileRef = D02FD2FD179B278000D876D8 /* JLColors.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -492,8 +493,6 @@
 		3ADFA904179A92EA00B66F78 /* College.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = College.h; sourceTree = "<group>"; };
 		3ADFA905179A92EA00B66F78 /* College.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = College.m; sourceTree = "<group>"; };
 		3ADFA907179A96EE00B66F78 /* empty_pixel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty_pixel.png; sourceTree = "<group>"; };
-		D02FD2FC179B278000D876D8 /* JLColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLColors.h; sourceTree = "<group>"; };
-		D02FD2FD179B278000D876D8 /* JLColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLColors.m; sourceTree = "<group>"; };
 		3ADFA909179B32EB00B66F78 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
 		3ADFA90A179B32EB00B66F78 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
 		3ADFA90C179B33DC00B66F78 /* SHOnboarding3View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHOnboarding3View.h; sourceTree = "<group>"; };
@@ -504,6 +503,10 @@
 		3ADFA913179B3DD500B66F78 /* SHProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHProfileViewController.m; sourceTree = "<group>"; };
 		F8F2F062179B37A10088BF2B /* SHToggleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHToggleButton.h; sourceTree = "<group>"; };
 		F8F2F063179B37A10088BF2B /* SHToggleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHToggleButton.m; sourceTree = "<group>"; };
+		3ADFA918179B4DCB00B66F78 /* UIView+FindUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FindUIViewController.h"; sourceTree = "<group>"; };
+		3ADFA919179B4DCB00B66F78 /* UIView+FindUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FindUIViewController.m"; sourceTree = "<group>"; };
+		D02FD2FC179B278000D876D8 /* JLColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLColors.h; sourceTree = "<group>"; };
+		D02FD2FD179B278000D876D8 /* JLColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLColors.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -616,6 +619,8 @@
 		3A0ACC5D179A3FF90083B80B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3ADFA918179B4DCB00B66F78 /* UIView+FindUIViewController.h */,
+				3ADFA919179B4DCB00B66F78 /* UIView+FindUIViewController.m */,
 				3ADFA8EB179A69E000B66F78 /* STFacebookManager.h */,
 				3ADFA8EC179A69E000B66F78 /* STFacebookManager.m */,
 				3A0CCC39179A531E0000AA8C /* API */,
@@ -1334,6 +1339,7 @@
 				3ADFA911179B36E500B66F78 /* UserResultCell.m in Sources */,
 				3ADFA914179B3DD500B66F78 /* SHProfileViewController.m in Sources */,
 				F8F2F064179B37A10088BF2B /* SHToggleButton.m in Sources */,
+				3ADFA91A179B4DCB00B66F78 /* UIView+FindUIViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

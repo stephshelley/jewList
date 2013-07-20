@@ -20,8 +20,9 @@
     //self.viewController = [[MainViewController alloc] init];
     
     self.loginViewController = [[LoginViewController alloc] init];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:_loginViewController];
+    self.window.rootViewController = navController;
     
-    self.window.rootViewController = self.loginViewController;
     [self.window makeKeyAndVisible];
     return YES;
 }
