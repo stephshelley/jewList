@@ -167,6 +167,8 @@
 		3ADFA90E179B33DC00B66F78 /* SHOnboarding3View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA90D179B33DC00B66F78 /* SHOnboarding3View.m */; };
 		3ADFA911179B36E500B66F78 /* UserResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA910179B36E500B66F78 /* UserResultCell.m */; };
 		3ADFA914179B3DD500B66F78 /* SHProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA913179B3DD500B66F78 /* SHProfileViewController.m */; };
+		D02FD2FE179B278000D876D8 /* JLColors.m in Sources */ = {isa = PBXBuildFile; fileRef = D02FD2FD179B278000D876D8 /* JLColors.m */; };
+		F8A02848179B4FA600253FFA /* UIView+FindAndResignFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A02847179B4FA600253FFA /* UIView+FindAndResignFirstResponder.m */; };
 		F8F2F064179B37A10088BF2B /* SHToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2F063179B37A10088BF2B /* SHToggleButton.m */; };
 		3ADFA91A179B4DCB00B66F78 /* UIView+FindUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA919179B4DCB00B66F78 /* UIView+FindUIViewController.m */; };
 		D02FD2FE179B278000D876D8 /* JLColors.m in Sources */ = {isa = PBXBuildFile; fileRef = D02FD2FD179B278000D876D8 /* JLColors.m */; };
@@ -501,6 +503,10 @@
 		3ADFA910179B36E500B66F78 /* UserResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserResultCell.m; sourceTree = "<group>"; };
 		3ADFA912179B3DD500B66F78 /* SHProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHProfileViewController.h; sourceTree = "<group>"; };
 		3ADFA913179B3DD500B66F78 /* SHProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHProfileViewController.m; sourceTree = "<group>"; };
+		D02FD2FC179B278000D876D8 /* JLColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLColors.h; sourceTree = "<group>"; };
+		D02FD2FD179B278000D876D8 /* JLColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLColors.m; sourceTree = "<group>"; };
+		F8A02846179B4FA600253FFA /* UIView+FindAndResignFirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FindAndResignFirstResponder.h"; sourceTree = "<group>"; };
+		F8A02847179B4FA600253FFA /* UIView+FindAndResignFirstResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FindAndResignFirstResponder.m"; sourceTree = "<group>"; };
 		F8F2F062179B37A10088BF2B /* SHToggleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHToggleButton.h; sourceTree = "<group>"; };
 		F8F2F063179B37A10088BF2B /* SHToggleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHToggleButton.m; sourceTree = "<group>"; };
 		3ADFA918179B4DCB00B66F78 /* UIView+FindUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FindUIViewController.h"; sourceTree = "<group>"; };
@@ -1111,6 +1117,8 @@
 				3ADFA8F6179A74F700B66F78 /* SHLoginOnboardingView.m */,
 				F8F2F062179B37A10088BF2B /* SHToggleButton.h */,
 				F8F2F063179B37A10088BF2B /* SHToggleButton.m */,
+				F8A02846179B4FA600253FFA /* UIView+FindAndResignFirstResponder.h */,
+				F8A02847179B4FA600253FFA /* UIView+FindAndResignFirstResponder.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1340,6 +1348,7 @@
 				3ADFA914179B3DD500B66F78 /* SHProfileViewController.m in Sources */,
 				F8F2F064179B37A10088BF2B /* SHToggleButton.m in Sources */,
 				3ADFA91A179B4DCB00B66F78 /* UIView+FindUIViewController.m in Sources */,
+				F8A02848179B4FA600253FFA /* UIView+FindAndResignFirstResponder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1433,6 +1442,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8FCB5F0A-B787-4DDE-8FDF-5D952DCA2E47";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8FCB5F0A-B787-4DDE-8FDF-5D952DCA2E47";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1456,6 +1466,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8FCB5F0A-B787-4DDE-8FDF-5D952DCA2E47";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8FCB5F0A-B787-4DDE-8FDF-5D952DCA2E47";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};

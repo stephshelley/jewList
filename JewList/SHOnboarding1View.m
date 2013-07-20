@@ -11,6 +11,7 @@
 #import "SHApi.h"
 #import "JLColors.h"
 #import "SHToggleButton.h"
+#import "UIView+FindAndResignFirstResponder.h"
 
 #define TAG_MALE_BUTTON 0
 #define TAG_FEMALE_BUTTON 1
@@ -163,6 +164,13 @@
     _nameTextField.text = [NSString stringWithFormat:@"%@ %@",_user.firstName,_user.lastName];
     _homeTownTextField.text = SAFE_VAL(_user.fbHometownName);
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                          action:@selector(dismissKeyboard)];
+    [self addGestureRecognizer:tap];
+}
+
+- (void)dismissKeyboard {
+    [self findAndResignFirstResponder];
 }
 
 - (void)genderTogglePressed:(id)sender
