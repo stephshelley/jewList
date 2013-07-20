@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSString *lastName;
 @property (nonatomic, strong) NSString *displayName;
 @property (nonatomic, strong) NSString *email;
+@property (nonatomic, strong) NSString *age;
 @property (nonatomic, strong) NSString *avatarUrl;
 
 @property (nonatomic, strong) NSString *fbId;

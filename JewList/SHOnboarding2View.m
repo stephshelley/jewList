@@ -52,7 +52,6 @@
     _collegeLabel.text = @"What college are you going to?";
     [self addSubview:_collegeLabel];
 
-    
     self.nextStepButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
     _nextStepButton.backgroundColor = [UIColor blueColor];
     _nextStepButton.bottom = self.height - 5;
@@ -117,7 +116,6 @@
 - (void)loadTable
 {
     CGFloat width = self.width;
-    CGFloat height = 400;
     
     self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(-5, 0, width + 10, 44)];
     [[UISearchBar appearance] setSearchFieldBackgroundImage:[UIImage imageNamed:@"add_friends_input2"] forState:UIControlStateNormal];
@@ -140,7 +138,7 @@
     [self addSubview:self.searchBar];
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.searchBar.bottom, width,height - self.searchBar.bottom - (IsIpad ? 44.0 : 10.0)) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.searchBar.bottom, width,_nextStepButton.top - _searchBar.bottom) style:UITableViewStylePlain];
     
     if(!IsIpad)
     {

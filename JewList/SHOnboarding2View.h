@@ -34,12 +34,7 @@
 @property (nonatomic, strong) UIButton *nextStepButton;
 
 - (id)initWithFrame:(CGRect)frame andUser:(User*)user;
-
 - (void)loadTable;
-
 - (void)reloadTable;
-
-- (void)hideLoading:(BOOL)anim;
-- (void)showLoading:(BOOL)anim;
 
 @end

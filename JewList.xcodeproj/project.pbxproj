@@ -164,6 +164,10 @@
 		3ADFA906179A92EA00B66F78 /* College.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA905179A92EA00B66F78 /* College.m */; };
 		3ADFA908179A96EE00B66F78 /* empty_pixel.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADFA907179A96EE00B66F78 /* empty_pixel.png */; };
 		D02FD2FE179B278000D876D8 /* JLColors.m in Sources */ = {isa = PBXBuildFile; fileRef = D02FD2FD179B278000D876D8 /* JLColors.m */; };
+		3ADFA90B179B32EB00B66F78 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA90A179B32EB00B66F78 /* ResultsViewController.m */; };
+		3ADFA90E179B33DC00B66F78 /* SHOnboarding3View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA90D179B33DC00B66F78 /* SHOnboarding3View.m */; };
+		3ADFA911179B36E500B66F78 /* UserResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA910179B36E500B66F78 /* UserResultCell.m */; };
+		3ADFA914179B3DD500B66F78 /* SHProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA913179B3DD500B66F78 /* SHProfileViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -489,6 +493,14 @@
 		3ADFA907179A96EE00B66F78 /* empty_pixel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty_pixel.png; sourceTree = "<group>"; };
 		D02FD2FC179B278000D876D8 /* JLColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLColors.h; sourceTree = "<group>"; };
 		D02FD2FD179B278000D876D8 /* JLColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLColors.m; sourceTree = "<group>"; };
+		3ADFA909179B32EB00B66F78 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
+		3ADFA90A179B32EB00B66F78 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
+		3ADFA90C179B33DC00B66F78 /* SHOnboarding3View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHOnboarding3View.h; sourceTree = "<group>"; };
+		3ADFA90D179B33DC00B66F78 /* SHOnboarding3View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHOnboarding3View.m; sourceTree = "<group>"; };
+		3ADFA90F179B36E500B66F78 /* UserResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserResultCell.h; sourceTree = "<group>"; };
+		3ADFA910179B36E500B66F78 /* UserResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserResultCell.m; sourceTree = "<group>"; };
+		3ADFA912179B3DD500B66F78 /* SHProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHProfileViewController.h; sourceTree = "<group>"; };
+		3ADFA913179B3DD500B66F78 /* SHProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -628,6 +640,10 @@
 				3A0CC858179A4DAF0000AA8C /* LoginViewController.m */,
 				3A0CC85A179A4DBC0000AA8C /* SettingsViewController.h */,
 				3A0CC85B179A4DBC0000AA8C /* SettingsViewController.m */,
+				3ADFA909179B32EB00B66F78 /* ResultsViewController.h */,
+				3ADFA90A179B32EB00B66F78 /* ResultsViewController.m */,
+				3ADFA912179B3DD500B66F78 /* SHProfileViewController.h */,
+				3ADFA913179B3DD500B66F78 /* SHProfileViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -1081,6 +1097,8 @@
 				3ADFA8F0179A71DC00B66F78 /* SHOnboarding1View.m */,
 				3ADFA8F8179A8A4C00B66F78 /* SHOnboarding2View.h */,
 				3ADFA8F9179A8A4C00B66F78 /* SHOnboarding2View.m */,
+				3ADFA90C179B33DC00B66F78 /* SHOnboarding3View.h */,
+				3ADFA90D179B33DC00B66F78 /* SHOnboarding3View.m */,
 				3ADFA8F5179A74F700B66F78 /* SHLoginOnboardingView.h */,
 				3ADFA8F6179A74F700B66F78 /* SHLoginOnboardingView.m */,
 			);
@@ -1102,6 +1120,8 @@
 			children = (
 				3ADFA901179A91EE00B66F78 /* SHCollegeCell.h */,
 				3ADFA902179A91EE00B66F78 /* SHCollegeCell.m */,
+				3ADFA90F179B36E500B66F78 /* UserResultCell.h */,
+				3ADFA910179B36E500B66F78 /* UserResultCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -1304,6 +1324,10 @@
 				3ADFA903179A91EE00B66F78 /* SHCollegeCell.m in Sources */,
 				3ADFA906179A92EA00B66F78 /* College.m in Sources */,
 				D02FD2FE179B278000D876D8 /* JLColors.m in Sources */,
+				3ADFA90B179B32EB00B66F78 /* ResultsViewController.m in Sources */,
+				3ADFA90E179B33DC00B66F78 /* SHOnboarding3View.m in Sources */,
+				3ADFA911179B36E500B66F78 /* UserResultCell.m in Sources */,
+				3ADFA914179B3DD500B66F78 /* SHProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1382,6 +1406,8 @@
 		3A0ACC5B179A3F3C0083B80B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -1393,6 +1419,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8FCB5F0A-B787-4DDE-8FDF-5D952DCA2E47";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8FCB5F0A-B787-4DDE-8FDF-5D952DCA2E47";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1401,6 +1429,8 @@
 		3A0ACC5C179A3F3C0083B80B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -1412,6 +1442,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8FCB5F0A-B787-4DDE-8FDF-5D952DCA2E47";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8FCB5F0A-B787-4DDE-8FDF-5D952DCA2E47";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};

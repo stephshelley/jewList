@@ -265,7 +265,6 @@
                                  @"user_location",
                                  @"user_hometown",
                                  @"email",
-                                 @"user_education_history",
                                  nil];
     
     /*
