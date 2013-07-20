@@ -10,6 +10,7 @@
 #import "SHTextFieldOnBoarding.h"
 
 @class User;
+@class SHToggleButton;
 
 @interface SHOnboarding1View : UIView <UITextFieldDelegate>
 
@@ -22,8 +23,8 @@
 
 @property (nonatomic, strong) UIButton *nextStepButton;
 
-@property (nonatomic, strong) UIButton *maleButton;
-@property (nonatomic, strong) UIButton *femaleButton;
+@property (nonatomic, strong) SHToggleButton *maleButton;
+@property (nonatomic, strong) SHToggleButton *femaleButton;
 
 @property (nonatomic, strong) User *user;
 

@@ -167,6 +167,7 @@
 		3ADFA90E179B33DC00B66F78 /* SHOnboarding3View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA90D179B33DC00B66F78 /* SHOnboarding3View.m */; };
 		3ADFA911179B36E500B66F78 /* UserResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA910179B36E500B66F78 /* UserResultCell.m */; };
 		3ADFA914179B3DD500B66F78 /* SHProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA913179B3DD500B66F78 /* SHProfileViewController.m */; };
+		F8F2F064179B37A10088BF2B /* SHToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2F063179B37A10088BF2B /* SHToggleButton.m */; };
 		3ADFA91A179B4DCB00B66F78 /* UIView+FindUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA919179B4DCB00B66F78 /* UIView+FindUIViewController.m */; };
 		D02FD2FE179B278000D876D8 /* JLColors.m in Sources */ = {isa = PBXBuildFile; fileRef = D02FD2FD179B278000D876D8 /* JLColors.m */; };
 /* End PBXBuildFile section */
@@ -500,6 +501,8 @@
 		3ADFA910179B36E500B66F78 /* UserResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserResultCell.m; sourceTree = "<group>"; };
 		3ADFA912179B3DD500B66F78 /* SHProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHProfileViewController.h; sourceTree = "<group>"; };
 		3ADFA913179B3DD500B66F78 /* SHProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHProfileViewController.m; sourceTree = "<group>"; };
+		F8F2F062179B37A10088BF2B /* SHToggleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHToggleButton.h; sourceTree = "<group>"; };
+		F8F2F063179B37A10088BF2B /* SHToggleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHToggleButton.m; sourceTree = "<group>"; };
 		3ADFA918179B4DCB00B66F78 /* UIView+FindUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FindUIViewController.h"; sourceTree = "<group>"; };
 		3ADFA919179B4DCB00B66F78 /* UIView+FindUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FindUIViewController.m"; sourceTree = "<group>"; };
 		D02FD2FC179B278000D876D8 /* JLColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLColors.h; sourceTree = "<group>"; };
@@ -1106,6 +1109,8 @@
 				3ADFA90D179B33DC00B66F78 /* SHOnboarding3View.m */,
 				3ADFA8F5179A74F700B66F78 /* SHLoginOnboardingView.h */,
 				3ADFA8F6179A74F700B66F78 /* SHLoginOnboardingView.m */,
+				F8F2F062179B37A10088BF2B /* SHToggleButton.h */,
+				F8F2F063179B37A10088BF2B /* SHToggleButton.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1333,6 +1338,7 @@
 				3ADFA90E179B33DC00B66F78 /* SHOnboarding3View.m in Sources */,
 				3ADFA911179B36E500B66F78 /* UserResultCell.m in Sources */,
 				3ADFA914179B3DD500B66F78 /* SHProfileViewController.m in Sources */,
+				F8F2F064179B37A10088BF2B /* SHToggleButton.m in Sources */,
 				3ADFA91A179B4DCB00B66F78 /* UIView+FindUIViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
