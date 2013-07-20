@@ -20,9 +20,9 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.loginView = [[SHLoginOnboardingView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
+    self.loginView = [[SHLoginOnboardingView alloc] initWithFrame:CGRectMake(0, 20, self.view.width, self.view.height-20)];
     [_loginView.fbConnectButton addTarget:self action:@selector(fbConnectButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    _loginView.backgroundColor = [UIColor whiteColor];
+    _loginView.backgroundColor = [UIColor redColor];
     [self.view addSubview:_loginView];
 }
 
@@ -47,20 +47,20 @@
     CANCEL_RELEASE_REQUEST(self.connectToSocialProviderRequest);
     [self continueToStep1];
     /*
-    self.connectToSocialProviderRequest = [[SHApi sharedInstance] connectToSocialProvider:@"facebook" uid:uid token:token expiresIn:@"" success:^(void)
-                                           {
-                                               dispatch_async(dispatch_get_main_queue(), ^{
-                                                   weakSelf.loginView.hidden = YES;
-                                                   [weakSelf loadTable];
-                                                   [weakSelf loadFBFriends];
-                                               });
-                                               
-                                               STORM_LOG(@"connectToSocialProvider success");
-                                           }failure:^(NSError *error)
-                                           {
-                                               STORM_LOG(@"connectToSocialProvider login Failed | error = %@",[error userInfo]);
-                                               
-                                           }];
+     self.connectToSocialProviderRequest = [[SHApi sharedInstance] connectToSocialProvider:@"facebook" uid:uid token:token expiresIn:@"" success:^(void)
+     {
+     dispatch_async(dispatch_get_main_queue(), ^{
+     weakSelf.loginView.hidden = YES;
+     [weakSelf loadTable];
+     [weakSelf loadFBFriends];
+     });
+     
+     STORM_LOG(@"connectToSocialProvider success");
+     }failure:^(NSError *error)
+     {
+     STORM_LOG(@"connectToSocialProvider login Failed | error = %@",[error userInfo]);
+     
+     }];
      */
     
 }
@@ -70,10 +70,10 @@
     if(nil == _onboardingStep1)
     {
         User *currentUser = [[SHApi sharedInstance] currentUser];
-        _onboardingStep1 = [[SHOnboarding1View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height) andUser:currentUser];
+        _onboardingStep1 = [[SHOnboarding1View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height - 40) andUser:currentUser];
         [_onboardingStep1.nextStepButton addTarget:self action:@selector(continueToStep2) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_onboardingStep1];
-
+        
     }
     
     return _onboardingStep1;
@@ -85,12 +85,27 @@
     if(nil == _onboardingStep2)
     {
         User *currentUser = [[SHApi sharedInstance] currentUser];
-        _onboardingStep2 = [[SHOnboarding2View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height) andUser:currentUser];
+        _onboardingStep2 = [[SHOnboarding2View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height - 40) andUser:currentUser];
         [_onboardingStep2.nextStepButton addTarget:self action:@selector(continueToStep3) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_onboardingStep2];
     }
     
     return _onboardingStep2;
+}
+
+- (SHOnboarding3View*)onboardingStep3
+{
+    if(nil == _onboardingStep3)
+    {
+        User *currentUser = [[SHApi sharedInstance] currentUser];
+        _onboardingStep3 = [[SHOnboarding3View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height - 40) andUser:currentUser];
+        [_onboardingStep3.nextStepButton addTarget:self action:@selector(continueToStep4) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_onboardingStep3];
+        
+    }
+    
+    return _onboardingStep3;
+    
 }
 
 - (void)continueToStep1
@@ -105,6 +120,12 @@
 }
 
 - (void)continueToStep3
+{
+    [self animateToNextStep:self.onboardingStep2 destination:self.onboardingStep3];
+    
+}
+
+- (void)continueToStep4
 {
     
 }

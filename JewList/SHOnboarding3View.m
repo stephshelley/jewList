@@ -9,6 +9,8 @@
 #import "SHOnboarding3View.h"
 #import "User.h"
 #import "UserResultCell.h"
+#import "SHProfileViewController.h"
+#import "UIView+FindUIViewController.h"
 
 @implementation SHOnboarding3View
 
@@ -18,7 +20,7 @@
     if(self)
     {
         self.user = user;
-
+        
         [self loadUI];
         
     }
@@ -34,7 +36,7 @@
     self.topResultsBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, 80)];
     _topResultsBgView.backgroundColor = [UIColor darkGrayColor];
     [self addSubview:_topResultsBgView];
-
+    
     self.somePotentialResultsLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _topResultsBgView.width - 20, 40)];
     _somePotentialResultsLabel.textAlignment = NSTextAlignmentCenter;
     _somePotentialResultsLabel.font = [UIFont fontWithName:DEFAULT_FONT size:(_somePotentialResultsLabel.height/2)-4];
@@ -45,7 +47,7 @@
     _somePotentialResultsLabel.adjustsFontSizeToFitWidth = YES;
     _somePotentialResultsLabel.text = @"Mazal Tov! here are some potential roomies for you";
     [self addSubview:_somePotentialResultsLabel];
- 
+    
     self.nextStepButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
     _nextStepButton.backgroundColor = [UIColor blueColor];
     _nextStepButton.bottom = self.height - 5;
@@ -55,8 +57,8 @@
     _nextStepButton.titleLabel.textColor = [UIColor whiteColor];
     _nextStepButton.titleLabel.textAlignment = NSTextAlignmentCenter;
     _nextStepButton.centerX = _topResultsBgView.centerX;
-    [self addSubview:_nextStepButton];  
-
+    [self addSubview:_nextStepButton];
+    
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, _somePotentialResultsLabel.bottom, self.width,_nextStepButton.top - _somePotentialResultsLabel.bottom) style:UITableViewStylePlain];
     
@@ -76,6 +78,22 @@
     
     [self addSubview:self.tableView];
     
+    [self loadTestData];
+    
+}
+
+- (void)loadTestData
+{
+    _items = nil;
+    _items = [NSMutableArray array];
+    
+    for(int i = 0; i < 10; i++)
+    {
+        [_items addObject:_user];
+        
+    }
+    
+    [_tableView reloadData];
 }
 
 #pragma mark == UITableView Delegate ==
@@ -105,6 +123,7 @@
         {
             cell = [[UserResultCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([UserResultCell class])];
         }
+        
     }
     
     User *item = [_items objectAtIndex:indexPath.row];
@@ -116,7 +135,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     User *item = [_items objectAtIndex:indexPath.row];
-    
+    SHProfileViewController *userVC = [[SHProfileViewController alloc] initWithUser:item];
+    [[[self firstAvailableUIViewController] navigationController] pushViewController:userVC animated:YES];
     
 }
 

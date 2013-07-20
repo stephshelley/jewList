@@ -170,6 +170,8 @@
 		D02FD2FE179B278000D876D8 /* JLColors.m in Sources */ = {isa = PBXBuildFile; fileRef = D02FD2FD179B278000D876D8 /* JLColors.m */; };
 		F8A02848179B4FA600253FFA /* UIView+FindAndResignFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A02847179B4FA600253FFA /* UIView+FindAndResignFirstResponder.m */; };
 		F8F2F064179B37A10088BF2B /* SHToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2F063179B37A10088BF2B /* SHToggleButton.m */; };
+		3ADFA91A179B4DCB00B66F78 /* UIView+FindUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA919179B4DCB00B66F78 /* UIView+FindUIViewController.m */; };
+		D02FD2FE179B278000D876D8 /* JLColors.m in Sources */ = {isa = PBXBuildFile; fileRef = D02FD2FD179B278000D876D8 /* JLColors.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -507,6 +509,10 @@
 		F8A02847179B4FA600253FFA /* UIView+FindAndResignFirstResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FindAndResignFirstResponder.m"; sourceTree = "<group>"; };
 		F8F2F062179B37A10088BF2B /* SHToggleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHToggleButton.h; sourceTree = "<group>"; };
 		F8F2F063179B37A10088BF2B /* SHToggleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHToggleButton.m; sourceTree = "<group>"; };
+		3ADFA918179B4DCB00B66F78 /* UIView+FindUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FindUIViewController.h"; sourceTree = "<group>"; };
+		3ADFA919179B4DCB00B66F78 /* UIView+FindUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FindUIViewController.m"; sourceTree = "<group>"; };
+		D02FD2FC179B278000D876D8 /* JLColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLColors.h; sourceTree = "<group>"; };
+		D02FD2FD179B278000D876D8 /* JLColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLColors.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -619,6 +625,8 @@
 		3A0ACC5D179A3FF90083B80B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3ADFA918179B4DCB00B66F78 /* UIView+FindUIViewController.h */,
+				3ADFA919179B4DCB00B66F78 /* UIView+FindUIViewController.m */,
 				3ADFA8EB179A69E000B66F78 /* STFacebookManager.h */,
 				3ADFA8EC179A69E000B66F78 /* STFacebookManager.m */,
 				3A0CCC39179A531E0000AA8C /* API */,
@@ -1339,6 +1347,7 @@
 				3ADFA911179B36E500B66F78 /* UserResultCell.m in Sources */,
 				3ADFA914179B3DD500B66F78 /* SHProfileViewController.m in Sources */,
 				F8F2F064179B37A10088BF2B /* SHToggleButton.m in Sources */,
+				3ADFA91A179B4DCB00B66F78 /* UIView+FindUIViewController.m in Sources */,
 				F8A02848179B4FA600253FFA /* UIView+FindAndResignFirstResponder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
