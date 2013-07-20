@@ -12,4 +12,10 @@
 
 + (UIColor *)JLGrey;
 
++ (UIColor *)JLGreen;
+
++ (UIColor *)JLDarkGreen;
+
++ (UIColor *)JLBlue;
+
 @end
