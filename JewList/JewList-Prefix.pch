@@ -1,0 +1,71 @@
+//
+// Prefix header for all source files of the 'JewList' target in the 'JewList' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <SystemConfiguration/SystemConfiguration.h>
+    #import <MobileCoreServices/MobileCoreServices.h>
+    #import "NimbusCore.h"
+    #import "UIViewAdditions.h"
+
+#endif
+
+#define kSCHMOOZ_HOST @"api.streamnation.com" // => RELEASE API
+#define kSCHMOOZ_URL [NSString stringWithFormat:@"http://%@/", kSCHMOOZ_HOST]
+#define kSCHMOOZ_API_ACTION_BASE_URL [NSString stringWithFormat:@"%@%@", kSCHMOOZ_URL, @"api/v1/%@"]
+
+#define kFacebook_App_Id @"556021887795026"
+
+#define GetAppDelegate ((BidAppDelegate *)[[UIApplication sharedApplication] delegate])
+#define SAFE_VAL(s) s == nil ? @"" : s
+
+#define IS_RETINA ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] && ([UIScreen mainScreen].scale == 2.0))
+
+//RGB color macro
+#define UIColorFromRGB(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+#define IS_IOS6  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)
+#define IS_IPHONE5 (!IsIpad() && ([UIScreen mainScreen].applicationFrame.size.height > 480.0))
+#define IsIpad ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+
+#define DEFAULT_FONT_REGULAR @"HelveticaNeue"
+#define DEFAULT_FONT @"HelveticaNeue-Light"
+
+#define DEFAULT_LIGHT_GRAY_COLOR [UIColor colorWithRed:0.705 green:0.705 blue:0.705 alpha:1]
+#define DEFAULT_DARK_GRAY_COLOR [UIColor colorWithRed:0.2353 green:0.2392 blue:0.2392 alpha:1]
+
+#define DEFAULT_BLUE_COLOR UIColorFromRGB(0x55acda)
+#define DEFAULT_BLUE_COLOR_ALPHA(a) [UIColor colorWithRed:0.3333 green:0.6745 blue:0.8549 alpha:a]
+#define DEFAULT_LIGHT_GRAY_COLOR_ALPHA(a) [UIColor colorWithRed:0.705 green:0.705 blue:0.705 alpha:a]
+
+#define kUserLogedOutNotification                  @"UserLogedOutNotification"
+#define kUserSessionChangeNotification             @"UserSessionChangeNotification"
+#define kUserNewSessionLogin        @"UserNewSessionLogin"
+#define kLogUserOutNotification     @"LogUserOutNotification"
+#define kFBSessionStateChangedNotification         @"FBSessionStateChangedNotification"
+
+
+
+
+#ifdef APP_STORE
+#define BD_LOG_ON 0
+#else
+#define BD_LOG_ON 1
+#endif
+
+#if BD_LOG_ON
+#define BD_LOG(fmt, ...) NSLog(fmt, ##__VA_ARGS__)
+#else
+#define BD_LOG(fmt, ...)
+#endif
