@@ -7,6 +7,7 @@
 //
 
 #import "SHProfileViewController.h"
+#import "User.h"
 
 @implementation SHProfileViewController
 
@@ -34,6 +35,7 @@
     _nameLabel.adjustsFontSizeToFitWidth = YES;
     _nameLabel.backgroundColor = [UIColor clearColor];
     _nameLabel.textAlignment = NSTextAlignmentCenter;
+    _nameLabel.text = [NSString stringWithFormat:@"%@ %@",_user.firstName,_user.lastName];
     [self.view addSubview:_nameLabel];
     
     self.userImageView = [[NINetworkImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
@@ -41,6 +43,8 @@
     _userImageView.top = _nameLabel.bottom + 10;
     _userImageView.backgroundColor = [UIColor redColor];
     [self.view addSubview:_userImageView];
+    
+    [_userImageView setPathToNetworkImage:_user.fbImageUrl forDisplaySize:_userImageView.size contentMode:UIViewContentModeScaleAspectFill];
     
 }
 

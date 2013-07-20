@@ -9,6 +9,7 @@
 #import "SHLoginOnboardingView.h"
 #import "SHOnboarding1View.h"
 #import "SHOnboarding2View.h"
+#import "SHOnboarding3View.h"
 
 @interface LoginViewController : UIViewController
 
@@ -20,5 +21,6 @@
 @property (nonatomic, strong) SHLoginOnboardingView *loginView;
 @property (nonatomic, strong) SHOnboarding1View *onboardingStep1;
 @property (nonatomic, strong) SHOnboarding2View *onboardingStep2;
+@property (nonatomic, strong) SHOnboarding3View *onboardingStep3;
 
 @end
