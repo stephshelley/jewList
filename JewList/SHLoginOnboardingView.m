@@ -45,7 +45,6 @@
     CGFloat buttonHeight = 118.0f;
     self.fbConnectButton = [[UIButton alloc] initWithFrame:CGRectMake(0, self.frame.size.height - buttonHeight, self.frame.size.width, buttonHeight)];
     _fbConnectButton.backgroundColor = [UIColor colorWithRed:0.424 green:0.773 blue:0.98 alpha:1] /*#6cc5fa*/;
-    _fbConnectButton.bottom = self.height - 40;
     _fbConnectButton.centerX = _logoImageView.centerX;
     [_fbConnectButton setTitle:@"Next Step" forState:UIControlStateNormal];
     [_fbConnectButton setTitle:@"Next Step" forState:UIControlStateHighlighted];

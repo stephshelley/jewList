@@ -18,4 +18,6 @@
 
 + (UIColor *)JLBlue;
 
++ (UIColor *)JLDarkBlue;
+
 @end

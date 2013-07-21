@@ -7,12 +7,13 @@
 //
 
 #import "SHCollegeCell.h"
+#import "JLColors.h"
 
 @implementation SHCollegeCell
 
 + (float)rowHeight
 {
-    return IsIpad ? 80 : 50;
+    return IsIpad ? 80 : 28;
 }
 
 /* Init */
@@ -28,11 +29,12 @@
         self.backgroundColor = [UIColor clearColor];
         
         self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 280,18)];
+        _nameLabel.alpha = 0.8;
         _nameLabel.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:(_nameLabel.height-2)];
-        _nameLabel.textColor = UIColorFromRGB(0x363636);
+        _nameLabel.textColor = [UIColor whiteColor];
         _nameLabel.centerY = floorf([SHCollegeCell rowHeight]/2);
         _nameLabel.adjustsFontSizeToFitWidth = NO;
-        _nameLabel.backgroundColor = [UIColor clearColor];
+        _nameLabel.backgroundColor = [UIColor JLDarkBlue];
         _nameLabel.textAlignment = NSTextAlignmentLeft;
         [self.contentView addSubview:_nameLabel];
         

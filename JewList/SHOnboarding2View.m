@@ -11,6 +11,8 @@
 #import "College.h"
 #import "SHApi.h"
 #import "User.h"
+#import "JLColors.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation SHOnboarding2View
 
@@ -35,28 +37,40 @@
 - (void)loadUI
 {
     self.backgroundColor = [UIColor whiteColor];
+    
+    UIView *progressBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 36)];
+    progressBar.backgroundColor = [UIColor JLGreen];
+    UIView *progressMade = [[UIView alloc] initWithFrame:CGRectMake(0, 0, (progressBar.width/3)*2 , progressBar.height)];
+    progressMade.backgroundColor = [UIColor JLDarkGreen];
+    [progressBar addSubview:progressMade];
+    UILabel *progressLabel = [[UILabel alloc] initWithFrame:progressBar.frame];
+    progressLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
+    progressLabel.backgroundColor = [UIColor clearColor];
+    progressLabel.textAlignment = NSTextAlignmentCenter;
+    progressLabel.textColor = [UIColor whiteColor];
+    progressLabel.text = @"Step 2/3";
+    [progressBar addSubview:progressLabel];
+    [self addSubview:progressBar];
 
-    self.collegeTopView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, 80)];
-    _collegeTopView.backgroundColor = [UIColor darkGrayColor];
+
+    self.collegeTopView = [[UIView alloc] initWithFrame:CGRectMake(0, progressBar.bottom, self.width, 60)];
+    _collegeTopView.backgroundColor = [UIColor JLGrey];
     [self addSubview:_collegeTopView];
 
     
-    self.collegeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _collegeTopView.width - 20, 26)];
+    self.collegeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _collegeTopView.width, _collegeTopView.height)];
     _collegeLabel.textAlignment = NSTextAlignmentCenter;
-    _collegeLabel.font = [UIFont fontWithName:DEFAULT_FONT size:_collegeLabel.height-2];
-    _collegeLabel.centerX = floorf(_collegeTopView.width/2);
-    _collegeLabel.centerY = floorf(_collegeTopView.height/2);
+    _collegeLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
     _collegeLabel.textColor = [UIColor whiteColor];
-    _collegeLabel.backgroundColor = [UIColor grayColor];
-    _collegeLabel.adjustsFontSizeToFitWidth = YES;
+    _collegeLabel.backgroundColor = [UIColor clearColor];
     _collegeLabel.text = @"What college are you going to?";
-    [self addSubview:_collegeLabel];
-
-    self.nextStepButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
-    _nextStepButton.backgroundColor = [UIColor blueColor];
-    _nextStepButton.bottom = self.height - 5;
-    [_nextStepButton setTitle:@"Next Step" forState:UIControlStateNormal];
-    [_nextStepButton setTitle:@"Next Step" forState:UIControlStateHighlighted];
+    [_collegeTopView addSubview:_collegeLabel];
+    
+    CGFloat buttonHeight = 63;
+    self.nextStepButton = [[UIButton alloc] initWithFrame:CGRectMake(0, self.height-buttonHeight, self.width, buttonHeight)];
+    _nextStepButton.backgroundColor = [UIColor JLBlue];
+    [_nextStepButton setTitle:@"Yep, that's my school!" forState:UIControlStateNormal];
+    [_nextStepButton setTitle:@"Yep, that's my school!" forState:UIControlStateHighlighted];
     _nextStepButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:24];
     _nextStepButton.titleLabel.textColor = [UIColor whiteColor];
     _nextStepButton.titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -129,6 +143,8 @@
     [self.searchBar setShowsCancelButton:NO animated:NO];
     [self.searchBar setTintColor:[UIColor whiteColor]];
     [self.searchBar setBackgroundImage:[UIImage imageNamed:@"empty_pixel"]];
+    _searchBar.layer.borderWidth = 1.0;
+    _searchBar.layer.borderColor = [UIColor JLGrey].CGColor;
     
     if(_user.fbCollegeName.length > 0)
     {
@@ -139,15 +155,16 @@
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.searchBar.bottom, width,_nextStepButton.top - _searchBar.bottom) style:UITableViewStylePlain];
+    self.tableView.tableFooterView = [[UIView alloc] init];
     
     if(!IsIpad)
     {
         self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     }
     
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.separatorColor = [UIColor clearColor];
-    self.tableView.backgroundColor = [UIColor greenColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.tableView.separatorColor = [UIColor whiteColor];
+    self.tableView.backgroundColor = [UIColor JLDarkBlue];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     

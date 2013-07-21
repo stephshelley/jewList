@@ -263,7 +263,7 @@ static NSString *kCurrentUserPath = @"current_user";
                                                    
                                                    success(colleges);
                                                    
-                                               }else{
+                                               } else {
                                                    if([result objectForKey:@"error"])
                                                    {
                                                        //[UIHelpers handleApiError:[result objectForKey:@"error"]];

@@ -8,6 +8,7 @@
 
 #import "NINetworkImageView.h"
 #import "SHTextFieldOnBoarding.h"
+#import "UIView+FindAndResignFirstResponder.h"
 
 @class User;
 @class SHToggleButton;

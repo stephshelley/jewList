@@ -20,10 +20,11 @@
     [super loadView];
     
     self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBarHidden = YES;
     
     self.loginView = [[SHLoginOnboardingView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height-20)];
     [_loginView.fbConnectButton addTarget:self action:@selector(fbConnectButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    _loginView.backgroundColor = [UIColor redColor];
+    _loginView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_loginView];
     
     self.title = @"Shalom!";
@@ -36,10 +37,9 @@
      {
          if([response isKindOfClass:[NSDictionary class]] && [response objectForKey:@"id"] && [response objectForKey:@"token"])
          {
-             
              [self processLoginResponse:[response objectForKey:@"id"] withToken:[response objectForKey:@"token"]];
          }
-     }failure:^(NSError *error)
+     } failure:^(NSError *error)
      {
          BD_LOG(@"Facebook login Failed | error = %@",[error userInfo]);
      }];
@@ -95,11 +95,9 @@
         _onboardingStep2 = [[SHOnboarding2View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height - 20) andUser:currentUser];
         [_onboardingStep2.nextStepButton addTarget:self action:@selector(continueToStep3) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_onboardingStep2];
-        
     }
     
     return _onboardingStep2;
-    
 }
 
 - (SHOnboarding3View*)onboardingStep3
@@ -131,7 +129,6 @@
 
     
     [self animateToNextStep:_loginView destination:self.onboardingStep1];
-    
 }
 
 - (void)continueToStep2
