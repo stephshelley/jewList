@@ -128,7 +128,6 @@
 
 - (void)continueToStep4
 {
-    
 }
 
 - (void)animateToNextStep:(UIView*)originView destination:(UIView*)destinationView
