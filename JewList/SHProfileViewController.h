@@ -27,6 +27,9 @@
 @property (nonatomic, strong) UILabel *facebookStaticLabel;
 @property (nonatomic, strong) UIButton *facebookButton;
 
+@property (nonatomic, strong) UILabel *wordsDefinesLabel;
+@property (nonatomic, strong) UITextView *wordCloudTextView;
+
 @property (nonatomic, strong) User *user;
 
 - (id)initWithUser:(User*)user;

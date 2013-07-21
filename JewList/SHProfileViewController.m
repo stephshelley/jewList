@@ -10,6 +10,7 @@
 #import "User.h"
 #import <QuartzCore/QuartzCore.h>
 #import "SHUIHelpers.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation SHProfileViewController
 
@@ -40,13 +41,15 @@
                                                           sender:self
                                                       titleColor:[UIColor clearColor]];
 
-    [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:leftButtonView]];
+    leftButtonView.top = 0;
+    leftButtonView.left = 0;
+    [self.view addSubview:leftButtonView];
     
     self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.width - 40,24)];
     _nameLabel.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:(_nameLabel.height-2)];
     _nameLabel.textColor = [UIColor whiteColor];
     _nameLabel.centerX = floorf(self.view.width/2);
-    _nameLabel.top = 20;
+    _nameLabel.top = 50;
     _nameLabel.adjustsFontSizeToFitWidth = YES;
     _nameLabel.backgroundColor = [UIColor clearColor];
     _nameLabel.textAlignment = NSTextAlignmentCenter;
@@ -80,15 +83,17 @@
 
 - (void)loadUserDetails
 {
-    UIView *detailsBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, _detailLabel.bottom + 10, self.view.width, self.view.height - (_detailLabel.bottom + 54))];
+    UIView *detailsBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, _detailLabel.bottom + 10, self.view.width, self.view.height - (_detailLabel.bottom))];
     detailsBackgroundView.backgroundColor = [UIColor whiteColor];
+    detailsBackgroundView.layer.borderColor = UIColorFromRGB(0x7a7a7a).CGColor;
+    detailsBackgroundView.layer.borderWidth = 2;
     [self.view addSubview:detailsBackgroundView];
     
     self.kosherStaticLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,80,17)];
     _kosherStaticLabel.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:(_kosherStaticLabel.height-2)];
-    _kosherStaticLabel.textColor = [UIColor blackColor];
+    _kosherStaticLabel.textColor = UIColorFromRGB(0x7a7a7a);
     _kosherStaticLabel.centerX = 53;
-    _kosherStaticLabel.top = 20;
+    _kosherStaticLabel.top = 10;
     _kosherStaticLabel.adjustsFontSizeToFitWidth = YES;
     _kosherStaticLabel.backgroundColor = [UIColor clearColor];
     _kosherStaticLabel.textAlignment = NSTextAlignmentCenter;
@@ -103,7 +108,7 @@
     
     self.kosherLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,100,17)];
     _kosherLabel.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:(_kosherLabel.height-2)];
-    _kosherLabel.textColor = [UIColor blackColor];
+    _kosherLabel.textColor = UIColorFromRGB(0x7a7a7a);
     _kosherLabel.centerX = _kosherImageView.centerX;
     _kosherLabel.top = _kosherImageView.bottom + 10;
     _kosherLabel.adjustsFontSizeToFitWidth = YES;
@@ -112,12 +117,9 @@
     _kosherLabel.text = _user.kosher;
     [detailsBackgroundView addSubview:_kosherLabel];
     
-    
-    
-    
     self.shabatStaticLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,80,17)];
     _shabatStaticLabel.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:(_shabatStaticLabel.height-2)];
-    _shabatStaticLabel.textColor = [UIColor blackColor];
+    _shabatStaticLabel.textColor = UIColorFromRGB(0x7a7a7a);
     _shabatStaticLabel.centerX = floor(self.view.width/2);
     _shabatStaticLabel.top = _kosherStaticLabel.top;
     _shabatStaticLabel.adjustsFontSizeToFitWidth = YES;
@@ -134,8 +136,8 @@
     
     self.shabatLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,100,17)];
     _shabatLabel.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:(_shabatLabel.height-2)];
-    _shabatLabel.textColor = [UIColor blackColor];
-    _kosherLabel.centerX = _shabatImageView.centerX;
+    _shabatLabel.textColor = UIColorFromRGB(0x7a7a7a);
+    _shabatLabel.centerX = _shabatImageView.centerX;
     _shabatLabel.top = _shabatImageView.bottom + 10;
     _shabatLabel.adjustsFontSizeToFitWidth = YES;
     _shabatLabel.backgroundColor = [UIColor clearColor];
@@ -143,11 +145,9 @@
     _shabatLabel.text = _user.shabat;
     [detailsBackgroundView addSubview:_shabatLabel];
         
-    
-
     self.facebookStaticLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,100,17)];
     _facebookStaticLabel.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:(_facebookStaticLabel.height-2)];
-    _facebookStaticLabel.textColor = [UIColor blackColor];
+    _facebookStaticLabel.textColor = UIColorFromRGB(0x7a7a7a);
     _facebookStaticLabel.centerX = 266;
     _facebookStaticLabel.top = _shabatStaticLabel.top;
     _facebookStaticLabel.adjustsFontSizeToFitWidth = YES;
@@ -162,7 +162,42 @@
     _facebookButton.centerX = _facebookStaticLabel.centerX;
     [_facebookButton addTarget:self action:@selector(facebookButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [detailsBackgroundView addSubview:_facebookButton];
+    
+    UIView *bottomSepView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 2)];
+    bottomSepView.backgroundColor = UIColorFromRGB(0x7a7a7a);
+    bottomSepView.top = _shabatLabel.bottom + 10;
+    [detailsBackgroundView addSubview:bottomSepView];
 
+    UIView *sep1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 2, bottomSepView.top)];
+    sep1.backgroundColor = UIColorFromRGB(0x7a7a7a);
+    sep1.left = 106;
+    [detailsBackgroundView addSubview:sep1];
+
+    UIView *sep2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 2, sep1.height)];
+    sep2.backgroundColor = UIColorFromRGB(0x7a7a7a);
+    sep2.left = 106*2;
+    [detailsBackgroundView addSubview:sep2];
+
+    self.wordsDefinesLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.width - 20, 20)];
+    _wordsDefinesLabel.centerX = floor(self.view.width/2);
+    _wordsDefinesLabel.text = [NSString stringWithFormat:@"Words that define %@:",_user.firstName];
+    _wordsDefinesLabel.top = bottomSepView.bottom + 5;
+    _wordCloudTextView.textColor = UIColorFromRGB(0x7a7a7a);
+    _wordsDefinesLabel.textAlignment = NSTextAlignmentCenter;
+    [detailsBackgroundView addSubview:_wordsDefinesLabel];
+    
+    self.wordCloudTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, _wordsDefinesLabel.width, detailsBackgroundView.height - _wordsDefinesLabel.bottom - 20)];
+    _wordCloudTextView.font = [UIFont fontWithName:DEFAULT_FONT size:16];
+    _wordCloudTextView.textColor = DEFAULT_BLUE_COLOR;
+    _wordCloudTextView.textAlignment = NSTextAlignmentLeft;
+    _wordCloudTextView.top = _wordsDefinesLabel.bottom + 5;
+    _wordCloudTextView.centerX = _wordsDefinesLabel.centerX;
+    _wordCloudTextView.backgroundColor = [UIColor clearColor];
+    _wordCloudTextView.editable = NO;
+    _wordCloudTextView.userInteractionEnabled = YES;
+    [detailsBackgroundView addSubview:_wordCloudTextView];
+    _wordCloudTextView.text = @"dsjlkfsdlk jsdlkf, sdjfs, sdf,s,f sf,s g,dh, s,f,g,gd,g ,dgd,g d,fg ,dfg,fdg,fd g,dfg,df gd,";
+    
 }
 
 - (void)facebookButtonPressed
