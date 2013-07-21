@@ -11,7 +11,7 @@
 @implementation UIColor (Extensions)
 
 + (UIColor *)JLGrey {
-    return [UIColor colorWithRed:0.569 green:0.569 blue:0.569 alpha:1] /*#919191*/;
+    return [UIColor colorWithRed:0.18 green:0.192 blue:0.196 alpha:1] /*#2e3132*/;
 }
 
 + (UIColor *)JLGreen {

@@ -80,7 +80,7 @@
     [userTopView addSubview:_letsGoLabel];
     
     UIView *nameBackground = [[UIView alloc] initWithFrame:CGRectMake(0.0, userTopView.bottom, self.width, 40)];
-    nameBackground.backgroundColor = [UIColor whiteColor];
+    nameBackground.backgroundColor = [UIColor JLGrey];
     [self addSubview:nameBackground];
     
     self.nameTextField = [[SHTextFieldOnBoarding alloc] initWithFrame:CGRectMake(0, 0, nameBackground.width, nameBackground.height)];
@@ -89,6 +89,8 @@
     _nameTextField.returnKeyType = UIReturnKeyNext;
     _nameTextField.delegate = self;
     _nameTextField.textAlignment = NSTextAlignmentLeft;
+    _nameTextField.textColor = [UIColor JLBlue];
+    _nameTextField.backgroundColor = [UIColor JLGrey];
     [nameBackground addSubview:_nameTextField];
     
     UILabel *nameIndicator = [[UILabel alloc] initWithFrame:CGRectMake(0, nameBackground.bottom, self.width, 20)];
@@ -100,7 +102,7 @@
     [self addSubview:nameIndicator];
 
     UIView *homeBackground = [[UIView alloc] initWithFrame:CGRectMake(0.0, nameIndicator.bottom, self.width, nameBackground.height)];
-    homeBackground.backgroundColor = [UIColor whiteColor];
+    homeBackground.backgroundColor = [UIColor JLGrey];
     [self addSubview:homeBackground];
     
     self.homeTownTextField = [[SHTextFieldOnBoarding alloc] initWithFrame:CGRectMake(0, 0, homeBackground.size.width, homeBackground.size.height)];
@@ -109,6 +111,8 @@
     _homeTownTextField.returnKeyType = UIReturnKeyNext;
     _homeTownTextField.delegate = self;
     _homeTownTextField.textAlignment = NSTextAlignmentLeft;
+    _homeTownTextField.textColor = [UIColor JLBlue];
+    _homeTownTextField.backgroundColor = [UIColor JLGrey];
     [homeBackground addSubview:_homeTownTextField];
     
     UILabel *homeIndicator = [[UILabel alloc] initWithFrame:CGRectMake(0, homeBackground.bottom, self.width, 20)];
@@ -122,15 +126,14 @@
     CGFloat buttonHeight = 63;
     self.nextStepButton = [[UIButton alloc] initWithFrame:CGRectMake(0, self.height-buttonHeight, self.width, buttonHeight)];
     _nextStepButton.backgroundColor = [UIColor JLBlue];
-    [_nextStepButton setTitle:@"Yep, move on." forState:UIControlStateNormal];
-    [_nextStepButton setTitle:@"Yep, move on." forState:UIControlStateHighlighted];
+    [_nextStepButton setTitle:@"That's me!" forState:UIControlStateNormal];
     _nextStepButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:24];
     _nextStepButton.titleLabel.textColor = [UIColor whiteColor];
     _nextStepButton.titleLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_nextStepButton];
     
     UIView *genderBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, homeIndicator.bottom, self.width, _nextStepButton.top - homeIndicator.bottom)];
-    genderBackgroundView.backgroundColor = [UIColor whiteColor];
+    genderBackgroundView.backgroundColor = [UIColor JLGrey];
     [self addSubview:genderBackgroundView];
     
     buttonHeight = 100;
