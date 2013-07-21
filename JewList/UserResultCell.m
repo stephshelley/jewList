@@ -36,7 +36,7 @@
         
         self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 280,20)];
         _nameLabel.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:(_nameLabel.height-2)];
-        _nameLabel.textColor = [UIColor whiteColor];
+        _nameLabel.textColor = DEFAULT_BLUE_COLOR;
         _nameLabel.left = _userImageView.right + 5;
         _nameLabel.width = cellWidth - 10 - (_userImageView.right + 10);
         _nameLabel.top = _userImageView.top + 2;
@@ -65,7 +65,7 @@
     _user = user;
     [_userImageView setPathToNetworkImage:_user.fbImageUrl forDisplaySize:_userImageView.size contentMode:UIViewContentModeScaleAspectFill];
     _nameLabel.text = [NSString stringWithFormat:@"%@ %@", _user.firstName, _user.lastName];
-    _accesoryLabel.text = [NSString stringWithFormat:@"%@, %@, %@", [self getGenderSign], _user.age, _user.fbHometownName];
+    _accesoryLabel.text = [NSString stringWithFormat:@"%@, %@, %@", [self getGenderSign], @"30", _user.fbHometownName];
     
 }
 

@@ -32,8 +32,7 @@
 
 - (void)loadUI
 {
-    self.backgroundColor = [UIColor whiteColor];
-    
+    self.backgroundColor = DEFAULT_BACKGROUND_COLOR;
     
     UIView *progressBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 36)];
     progressBar.backgroundColor = [UIColor JLGreen];
@@ -49,7 +48,7 @@
     [progressBar addSubview:progressLabel];
     [self addSubview:progressBar];
     
-    self.topResultsBgView = [[UIView alloc] initWithFrame:CGRectMake(0, progressBar.bottom, self.width, 80)];
+    self.topResultsBgView = [[UIView alloc] initWithFrame:CGRectMake(0, progressBar.bottom, self.width, 50)];
     _topResultsBgView.backgroundColor = [UIColor JLGrey];
     [self addSubview:_topResultsBgView];
     
@@ -64,14 +63,13 @@
     
     CGFloat buttonHeight = 63;
     self.nextStepButton = [[UIButton alloc] initWithFrame:CGRectMake(0, self.height-buttonHeight, self.width, buttonHeight)];
-    _nextStepButton.backgroundColor = [UIColor JLBlue];
+    _nextStepButton.backgroundColor = DEFAULT_BLUE_COLOR;
     [_nextStepButton setTitle:@"Let's finish your profile" forState:UIControlStateNormal];
     _nextStepButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:24];
+    _nextStepButton.bottom = self.height + 40;
     _nextStepButton.titleLabel.textColor = [UIColor whiteColor];
     _nextStepButton.titleLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_nextStepButton];
-
-
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, _somePotentialResultsLabel.bottom, self.width,_nextStepButton.top - _somePotentialResultsLabel.bottom) style:UITableViewStylePlain];
@@ -83,7 +81,7 @@
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.separatorColor = [UIColor clearColor];
-    self.tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     

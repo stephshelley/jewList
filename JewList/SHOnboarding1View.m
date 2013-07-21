@@ -35,7 +35,7 @@
 
 - (void)loadUI
 {
-    self.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = DEFAULT_BACKGROUND_COLOR;
     
     UIView *progressBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 36)];
     progressBar.backgroundColor = [UIColor JLGreen];
@@ -62,7 +62,7 @@
     [userTopView addSubview:_userImageView];
     
     UIFont *hiLabelFont = [UIFont fontWithName:DEFAULT_FONT size:17.0f];
-    self.hiLabel = [[UILabel alloc] initWithFrame:CGRectMake(_userImageView.right + 10, _userImageView.top, self.width - 10 - (_userImageView.right + 10), hiLabelFont.lineHeight)];
+    self.hiLabel = [[UILabel alloc] initWithFrame:CGRectMake(_userImageView.right + 10, _userImageView.top - 2, self.width - 10 - (_userImageView.right + 10), hiLabelFont.lineHeight)];
     _hiLabel.textAlignment = NSTextAlignmentLeft;
     _hiLabel.font = hiLabelFont;
     _hiLabel.textColor = [UIColor whiteColor];
@@ -70,9 +70,9 @@
     _hiLabel.text = [NSString stringWithFormat:@"Hi %@!",_user.firstName];
     [userTopView addSubview:_hiLabel];
     
-    self.letsGoLabel = [[UILabel alloc] initWithFrame:CGRectMake(_hiLabel.left, _hiLabel.bottom, _hiLabel.width, _userImageView.bottom - _hiLabel.bottom)];
+    self.letsGoLabel = [[UILabel alloc] initWithFrame:CGRectMake(_hiLabel.left, _hiLabel.bottom, _hiLabel.width, 8 + _userImageView.bottom - _hiLabel.bottom)];
     _letsGoLabel.textAlignment = NSTextAlignmentLeft;
-    _letsGoLabel.font = [UIFont fontWithName:DEFAULT_FONT size:10.0f];
+    _letsGoLabel.font = [UIFont fontWithName:DEFAULT_FONT size:14.0f];
     _letsGoLabel.textColor = [UIColor whiteColor];
     _letsGoLabel.backgroundColor = [UIColor clearColor];
     _letsGoLabel.numberOfLines = 2;
@@ -83,49 +83,58 @@
     nameBackground.backgroundColor = [UIColor JLGrey];
     [self addSubview:nameBackground];
     
-    self.nameTextField = [[SHTextFieldOnBoarding alloc] initWithFrame:CGRectMake(0, 0, nameBackground.width, nameBackground.height)];
+    self.nameTextField = [[SHTextFieldOnBoarding alloc] initWithFrame:CGRectMake(10, 0, nameBackground.width - 20, nameBackground.height)];
     _nameTextField.placeholder = @"Your Name";
     _nameTextField.keyboardType = UIKeyboardTypeEmailAddress;
     _nameTextField.returnKeyType = UIReturnKeyNext;
     _nameTextField.delegate = self;
     _nameTextField.textAlignment = NSTextAlignmentLeft;
-    _nameTextField.textColor = [UIColor JLBlue];
-    _nameTextField.backgroundColor = [UIColor JLGrey];
+    _nameTextField.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:IsIpad ? 21.0 : 18];
+    _nameTextField.textColor = DEFAULT_BLUE_COLOR;
+    _nameTextField.backgroundColor = [UIColor clearColor];
     [nameBackground addSubview:_nameTextField];
+    
     
     UILabel *nameIndicator = [[UILabel alloc] initWithFrame:CGRectMake(0, nameBackground.bottom, self.width, 20)];
     nameIndicator.backgroundColor = [UIColor JLGrey];
     nameIndicator.textColor = [UIColor whiteColor];
     nameIndicator.textAlignment = NSTextAlignmentLeft;
     nameIndicator.font = [UIFont fontWithName:DEFAULT_FONT size:12.0f];
-    nameIndicator.text = @"  Your name";
+    //nameIndicator.text = @"  Your name";
+    //nameIndicator.hidden = YES;
     [self addSubview:nameIndicator];
+     
+    
 
     UIView *homeBackground = [[UIView alloc] initWithFrame:CGRectMake(0.0, nameIndicator.bottom, self.width, nameBackground.height)];
     homeBackground.backgroundColor = [UIColor JLGrey];
     [self addSubview:homeBackground];
     
-    self.homeTownTextField = [[SHTextFieldOnBoarding alloc] initWithFrame:CGRectMake(0, 0, homeBackground.size.width, homeBackground.size.height)];
+    self.homeTownTextField = [[SHTextFieldOnBoarding alloc] initWithFrame:CGRectMake(10, 0, homeBackground.size.width - 20, homeBackground.size.height)];
     _homeTownTextField.placeholder = @"Home Town";
     _homeTownTextField.keyboardType = UIKeyboardTypeEmailAddress;
     _homeTownTextField.returnKeyType = UIReturnKeyNext;
     _homeTownTextField.delegate = self;
+    _homeTownTextField.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:IsIpad ? 21.0 : 18];
     _homeTownTextField.textAlignment = NSTextAlignmentLeft;
-    _homeTownTextField.textColor = [UIColor JLBlue];
-    _homeTownTextField.backgroundColor = [UIColor JLGrey];
+    _homeTownTextField.textColor = DEFAULT_BLUE_COLOR;
+    _homeTownTextField.backgroundColor = [UIColor clearColor];
     [homeBackground addSubview:_homeTownTextField];
+    
     
     UILabel *homeIndicator = [[UILabel alloc] initWithFrame:CGRectMake(0, homeBackground.bottom, self.width, 20)];
     homeIndicator.backgroundColor = [UIColor JLGrey];
     homeIndicator.textColor = [UIColor whiteColor];
     homeIndicator.textAlignment = NSTextAlignmentLeft;
     homeIndicator.font = [UIFont fontWithName:DEFAULT_FONT size:12.0f];
-    homeIndicator.text = @"  Your hometown";
+    //homeIndicator.text = @"  Your hometown";
+    //homeIndicator.hidden = YES;
     [self addSubview:homeIndicator];
-
+     
     CGFloat buttonHeight = 63;
-    self.nextStepButton = [[UIButton alloc] initWithFrame:CGRectMake(0, self.height-buttonHeight, self.width, buttonHeight)];
-    _nextStepButton.backgroundColor = [UIColor JLBlue];
+    self.nextStepButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.width, buttonHeight)];
+    _nextStepButton.backgroundColor = DEFAULT_BLUE_COLOR;
+    _nextStepButton.bottom = self.height + 44;
     [_nextStepButton setTitle:@"That's me!" forState:UIControlStateNormal];
     _nextStepButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:24];
     _nextStepButton.titleLabel.textColor = [UIColor whiteColor];
@@ -136,33 +145,52 @@
     genderBackgroundView.backgroundColor = [UIColor JLGrey];
     [self addSubview:genderBackgroundView];
     
-    buttonHeight = 100;
+    buttonHeight = 120;
     self.femaleButton = [[SHToggleButton alloc] initWithFrame:CGRectMake(self.width/2 - (buttonHeight*2 +2)/2, genderBackgroundView.height/2 - buttonHeight/2, buttonHeight, buttonHeight)];
     [_femaleButton setColorOff:[UIColor grayColor]];
     [_femaleButton setColorOn:DEFAULT_BLUE_COLOR];
     [_femaleButton setTitle:@"Female" forState:UIControlStateNormal];
     [_femaleButton setTitle:@"Female" forState:UIControlStateHighlighted];
+    [_femaleButton setTitleEdgeInsets:UIEdgeInsetsMake(100, 0, 0, 0)];
     _femaleButton.tag = TAG_FEMALE_BUTTON;
-    _femaleButton.top = 10;
+    _femaleButton.top = 30;
     _femaleButton.right = floor(genderBackgroundView.width/2);
     [_femaleButton toggle:NO]; // OFF
+    //[_femaleButton setBackgroundImage:[UIImage imageNamed:@"girlfinal"] forState:UIControlStateNormal];
+    //[_femaleButton setBackgroundImage:[UIImage imageNamed:@"girlfinal"] forState:UIControlStateHighlighted];
     [_femaleButton addTarget:self action:@selector(genderTogglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [genderBackgroundView addSubview:_femaleButton];
     
- 
+    UIImageView *femaleImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 90, 90)];
+    femaleImage.image = [UIImage imageNamed:@"girlfinal"];
+    femaleImage.centerX = floorf(_femaleButton.width/2);
+    femaleImage.centerY = floorf(_femaleButton.height/2) - 10;
+    femaleImage.userInteractionEnabled = NO;
+    [_femaleButton addSubview:femaleImage];
+     
     self.maleButton = [[SHToggleButton alloc] initWithFrame:CGRectMake(_femaleButton.right +2, _femaleButton.top, _femaleButton.width, _femaleButton.height)];
     [_maleButton setColorOff:[UIColor grayColor]];
     [_maleButton setColorOn:DEFAULT_BLUE_COLOR];
     _maleButton.backgroundColor = DEFAULT_BLUE_COLOR;
     [_maleButton setTitle:@"Male" forState:UIControlStateNormal];
     [_maleButton setTitle:@"Male" forState:UIControlStateHighlighted];
+    [_maleButton setTitleEdgeInsets:UIEdgeInsetsMake(100, 0, 0, 0)];
     _maleButton.tag = TAG_MALE_BUTTON;
     _maleButton.top = _femaleButton.top;
     _maleButton.left = _femaleButton.right+1;
     [_maleButton toggle:NO]; // OFF
+    //[_maleButton setBackgroundImage:[UIImage imageNamed:@"boyfinal"] forState:UIControlStateNormal];
+    //[_maleButton setBackgroundImage:[UIImage imageNamed:@"boyfinal"] forState:UIControlStateHighlighted];
     [_maleButton addTarget:self action:@selector(genderTogglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [genderBackgroundView addSubview:_maleButton];
 
+    
+    UIImageView *boyImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 90, 90)];
+    boyImage.image = [UIImage imageNamed:@"boyfinal"];
+    boyImage.centerX = floorf(_maleButton.width/2);
+    boyImage.centerY = floorf(_maleButton.height/2) - 10;
+    boyImage.userInteractionEnabled = NO;
+    [_maleButton addSubview:boyImage];
     
     _nameTextField.text = [NSString stringWithFormat:@"%@ %@",_user.firstName,_user.lastName];
     _homeTownTextField.text = SAFE_VAL(_user.fbHometownName);
@@ -170,6 +198,29 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                           action:@selector(dismissKeyboard)];
     [self addGestureRecognizer:tap];
+    
+    [self setGender];
+}
+
+- (void)setGender
+{
+    if([_user.gendre isEqualToString:@"female"])
+    {
+        [_maleButton toggle:NO];
+        [_femaleButton toggle:YES];
+        _maleButton.titleLabel.textColor = [UIColor darkGrayColor];
+        _femaleButton.titleLabel.textColor = [UIColor whiteColor];
+        _user.gendre = @"female";
+
+    }else if([_user.gendre isEqualToString:@"male"])
+    {
+        [_femaleButton toggle:NO];
+        [_maleButton toggle:YES];
+        _femaleButton.titleLabel.textColor = [UIColor darkGrayColor];
+        _maleButton.titleLabel.textColor = [UIColor whiteColor];
+        _user.gendre = @"male";
+
+    }
 }
 
 - (void)dismissKeyboard {
@@ -184,11 +235,15 @@
     if(senderButton.tag == TAG_FEMALE_BUTTON && [senderButton isOn])
     {
         [_maleButton toggle:NO];
+        _maleButton.titleLabel.textColor = [UIColor darkGrayColor];
+        _femaleButton.titleLabel.textColor = [UIColor whiteColor];
         _user.gendre = @"female";
     }
     else if(senderButton.tag == TAG_MALE_BUTTON && [senderButton isOn])
     {
         [_femaleButton toggle:NO];
+        _femaleButton.titleLabel.textColor = [UIColor darkGrayColor];
+        _maleButton.titleLabel.textColor = [UIColor whiteColor];
         _user.gendre = @"male";
     }
     

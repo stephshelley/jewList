@@ -10,7 +10,7 @@
 #import "User.h"
 #import <QuartzCore/QuartzCore.h>
 #import "SHUIHelpers.h"
-#import <QuartzCore/QuartzCore.h>
+#import "SHApi.h"
 
 @implementation SHProfileViewController
 
@@ -49,7 +49,7 @@
     _nameLabel.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:(_nameLabel.height-2)];
     _nameLabel.textColor = [UIColor whiteColor];
     _nameLabel.centerX = floorf(self.view.width/2);
-    _nameLabel.top = 50;
+    _nameLabel.top = 10;
     _nameLabel.adjustsFontSizeToFitWidth = YES;
     _nameLabel.backgroundColor = [UIColor clearColor];
     _nameLabel.textAlignment = NSTextAlignmentCenter;
@@ -59,7 +59,7 @@
     self.userImageView = [[NINetworkImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     _userImageView.centerX = _nameLabel.centerX;
     _userImageView.top = _nameLabel.bottom + 10;
-    _userImageView.backgroundColor = [UIColor redColor];
+    _userImageView.backgroundColor = [UIColor clearColor];
     _userImageView.layer.borderColor = [UIColor whiteColor].CGColor;
     _userImageView.layer.borderWidth = 2.0;
     [self.view addSubview:_userImageView];
@@ -102,7 +102,7 @@
     
     self.kosherImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
     _kosherImageView.backgroundColor = [UIColor redColor];
-    _kosherImageView.top = _kosherStaticLabel.bottom + 10;
+    _kosherImageView.top = _kosherStaticLabel.bottom + 5;
     _kosherImageView.centerX = _kosherStaticLabel.centerX;
     [detailsBackgroundView addSubview:_kosherImageView];
     
@@ -110,7 +110,7 @@
     _kosherLabel.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:(_kosherLabel.height-2)];
     _kosherLabel.textColor = UIColorFromRGB(0x7a7a7a);
     _kosherLabel.centerX = _kosherImageView.centerX;
-    _kosherLabel.top = _kosherImageView.bottom + 10;
+    _kosherLabel.top = _kosherImageView.bottom + 5;
     _kosherLabel.adjustsFontSizeToFitWidth = YES;
     _kosherLabel.backgroundColor = [UIColor clearColor];
     _kosherLabel.textAlignment = NSTextAlignmentCenter;
@@ -130,7 +130,7 @@
     
     self.shabatImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
     _shabatImageView.backgroundColor = [UIColor redColor];
-    _shabatImageView.top = _shabatStaticLabel.bottom + 10;
+    _shabatImageView.top = _shabatStaticLabel.bottom + 5;
     _shabatImageView.centerX = _shabatStaticLabel.centerX;
     [detailsBackgroundView addSubview:_shabatImageView];
     
@@ -138,7 +138,7 @@
     _shabatLabel.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:(_shabatLabel.height-2)];
     _shabatLabel.textColor = UIColorFromRGB(0x7a7a7a);
     _shabatLabel.centerX = _shabatImageView.centerX;
-    _shabatLabel.top = _shabatImageView.bottom + 10;
+    _shabatLabel.top = _shabatImageView.bottom + 5;
     _shabatLabel.adjustsFontSizeToFitWidth = YES;
     _shabatLabel.backgroundColor = [UIColor clearColor];
     _shabatLabel.textAlignment = NSTextAlignmentCenter;
@@ -165,7 +165,7 @@
     
     UIView *bottomSepView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 2)];
     bottomSepView.backgroundColor = UIColorFromRGB(0x7a7a7a);
-    bottomSepView.top = _shabatLabel.bottom + 10;
+    bottomSepView.top = _shabatLabel.bottom;
     [detailsBackgroundView addSubview:bottomSepView];
 
     UIView *sep1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 2, bottomSepView.top)];
@@ -182,11 +182,11 @@
     _wordsDefinesLabel.centerX = floor(self.view.width/2);
     _wordsDefinesLabel.text = [NSString stringWithFormat:@"Words that define %@:",_user.firstName];
     _wordsDefinesLabel.top = bottomSepView.bottom + 5;
-    _wordCloudTextView.textColor = UIColorFromRGB(0x7a7a7a);
+    _wordCloudTextView.textColor = DEFAULT_BLUE_COLOR;
     _wordsDefinesLabel.textAlignment = NSTextAlignmentCenter;
     [detailsBackgroundView addSubview:_wordsDefinesLabel];
     
-    self.wordCloudTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, _wordsDefinesLabel.width, detailsBackgroundView.height - _wordsDefinesLabel.bottom - 20)];
+    self.wordCloudTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, _wordsDefinesLabel.width, detailsBackgroundView.height - _wordsDefinesLabel.bottom - 60)];
     _wordCloudTextView.font = [UIFont fontWithName:DEFAULT_FONT size:16];
     _wordCloudTextView.textColor = DEFAULT_BLUE_COLOR;
     _wordCloudTextView.textAlignment = NSTextAlignmentLeft;
@@ -196,8 +196,72 @@
     _wordCloudTextView.editable = NO;
     _wordCloudTextView.userInteractionEnabled = YES;
     [detailsBackgroundView addSubview:_wordCloudTextView];
-    _wordCloudTextView.text = @"dsjlkfsdlk jsdlkf, sdjfs, sdf,s,f sf,s g,dh, s,f,g,gd,g ,dgd,g d,fg ,dfg,fdg,fd g,dfg,df gd,";
-    
+    _wordCloudTextView.text = @"Surfing, Basketball, Concerts, Programming, Hummus!";
+ 
+    CGFloat buttonHeight = 63;
+    self.nextStepButton = [[UIButton alloc] initWithFrame:CGRectMake(0, detailsBackgroundView.height-buttonHeight, detailsBackgroundView.width, buttonHeight)];
+    _nextStepButton.backgroundColor = DEFAULT_BLUE_COLOR;
+    [_nextStepButton setTitle:[NSString stringWithFormat:@"Contact %@",_user.firstName] forState:UIControlStateNormal];
+    _nextStepButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:24];
+    _nextStepButton.bottom = detailsBackgroundView.height - 10;
+    [_nextStepButton addTarget:self action:@selector(contactButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    _nextStepButton.titleLabel.textColor = [UIColor whiteColor];
+    _nextStepButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [detailsBackgroundView addSubview:_nextStepButton];
+}
+
+- (void)contactButtonPressed
+{
+    if ([MFMailComposeViewController canSendMail])
+    {
+        User *currentUser = [[SHApi sharedInstance] currentUser];
+        MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
+        mailer.mailComposeDelegate = self;
+        [mailer setSubject:[NSString stringWithFormat:@"Shalom from %@",currentUser.firstName]];
+        NSArray *toRecipients = [NSArray arrayWithObjects:@"oren.zitoun@gmail.com", nil];
+//        NSArray *toRecipients = [NSArray arrayWithObjects:_user.email, nil];
+        [mailer setToRecipients:toRecipients];
+        UIImage *myImage = [UIImage imageNamed:@"muchsmaller.png"];
+        NSData *imageData = UIImagePNGRepresentation(myImage);
+        [mailer addAttachmentData:imageData mimeType:@"image/png" fileName:@"mobiletutsImage"];
+        NSString *emailBody = [NSString stringWithFormat:@"Hi %@,\n%@ noticed that you're about to go to %@.\n\n He's looking for a roomate and wanted to contact you",_user.firstName,currentUser.firstName,_user.fbCollegeName];
+        [mailer setMessageBody:emailBody isHTML:NO];
+        [self.navigationController presentModalViewController:mailer animated:YES];
+        
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failure"
+                                                        message:@"Your device doesn't support the composer sheet"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled: you cancelled the operation and no email message was queued.");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved: you saved the email message in the drafts folder.");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail send: the email message is queued in the outbox. It is ready to send.");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail failed: the email message was not saved or queued, possibly due to an error.");
+            break;
+        default:
+            NSLog(@"Mail not sent.");
+            break;
+    }
+    // Remove the mail view
+    [self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
 - (void)facebookButtonPressed

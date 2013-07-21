@@ -52,11 +52,9 @@
     [progressBar addSubview:progressLabel];
     [self addSubview:progressBar];
 
-
-    self.collegeTopView = [[UIView alloc] initWithFrame:CGRectMake(0, progressBar.bottom, self.width, 60)];
+    self.collegeTopView = [[UIView alloc] initWithFrame:CGRectMake(0, progressBar.bottom, self.width, 50)];
     _collegeTopView.backgroundColor = [UIColor JLGrey];
     [self addSubview:_collegeTopView];
-
     
     self.collegeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _collegeTopView.width, _collegeTopView.height)];
     _collegeLabel.textAlignment = NSTextAlignmentCenter;
@@ -68,9 +66,10 @@
     
     CGFloat buttonHeight = 63;
     self.nextStepButton = [[UIButton alloc] initWithFrame:CGRectMake(0, self.height-buttonHeight, self.width, buttonHeight)];
-    _nextStepButton.backgroundColor = [UIColor JLBlue];
+    _nextStepButton.backgroundColor = DEFAULT_BLUE_COLOR;
     [_nextStepButton setTitle:@"Yep, that's my school!" forState:UIControlStateNormal];
     [_nextStepButton setTitle:@"Yep, that's my school!" forState:UIControlStateHighlighted];
+    _nextStepButton.bottom = self.height + 40;
     _nextStepButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:24];
     _nextStepButton.titleLabel.textColor = [UIColor whiteColor];
     _nextStepButton.titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -135,7 +134,7 @@
     [[UISearchBar appearance] setSearchFieldBackgroundImage:[UIImage imageNamed:@"add_friends_input2"] forState:UIControlStateNormal];
     
     _searchBar.top = _collegeTopView.bottom;
-    self.searchBar.backgroundColor = [UIColor clearColor];
+    self.searchBar.backgroundColor = UIColorFromRGB(0xd4d5d5);
     self.searchBar.barStyle = UIBarStyleDefault;
     self.searchBar.placeholder = NSLocalizedString(@"search", @"Search");
     self.searchBar.delegate = self;
@@ -163,8 +162,8 @@
     }
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-    self.tableView.separatorColor = [UIColor whiteColor];
-    self.tableView.backgroundColor = [UIColor JLDarkBlue];
+    self.tableView.separatorColor = [UIColor clearColor];
+    self.tableView.backgroundColor = UIColorFromRGB(0x101213);
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     

@@ -7,10 +7,11 @@
 //
 
 #import "NINetworkImageView.h"
+#import <MessageUI/MessageUI.h>
 
 @class User;
 
-@interface SHProfileViewController : UIViewController
+@interface SHProfileViewController : UIViewController <MFMailComposeViewControllerDelegate>
 
 @property (nonatomic, strong) NINetworkImageView *userImageView;
 @property (nonatomic, strong) UILabel *nameLabel;
@@ -29,6 +30,8 @@
 
 @property (nonatomic, strong) UILabel *wordsDefinesLabel;
 @property (nonatomic, strong) UITextView *wordCloudTextView;
+
+@property (nonatomic, strong) UIButton *nextStepButton;
 
 @property (nonatomic, strong) User *user;
 

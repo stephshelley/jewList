@@ -25,10 +25,15 @@
 
 - (void)loadUI
 {
-    self.logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 125)];
-    _logoImageView.backgroundColor = [UIColor JLGrey];
+    self.backgroundColor = DEFAULT_BACKGROUND_COLOR;
+    
+    self.logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"muchsmaller"]];
+    _logoImageView.backgroundColor = [UIColor clearColor];
+    _logoImageView.centerX = floor(self.width/2);
+    _logoImageView.top = 50;
     [self addSubview:_logoImageView];
     
+    /*
     self.findLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 88)];
     _findLabel.text = @"Find your jewish\nroomate";
     _findLabel.numberOfLines = 2;
@@ -41,16 +46,19 @@
     _findLabel.layer.borderWidth = 1.0f;
     _findLabel.layer.borderColor = [UIColor whiteColor].CGColor;
     [self addSubview:_findLabel];
+     */
     
-    CGFloat buttonHeight = 118.0f;
-    self.fbConnectButton = [[UIButton alloc] initWithFrame:CGRectMake(0, self.frame.size.height - buttonHeight, self.frame.size.width, buttonHeight)];
-    _fbConnectButton.backgroundColor = [UIColor colorWithRed:0.424 green:0.773 blue:0.98 alpha:1] /*#6cc5fa*/;
-    _fbConnectButton.centerX = _logoImageView.centerX;
-    [_fbConnectButton setTitle:@"Next Step" forState:UIControlStateNormal];
-    [_fbConnectButton setTitle:@"Next Step" forState:UIControlStateHighlighted];
-    _fbConnectButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:24];
+    CGFloat buttonHeight = 100;
+    self.fbConnectButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, buttonHeight)];
+    _fbConnectButton.backgroundColor = DEFAULT_BLUE_COLOR;
+    _fbConnectButton.bottom = self.height + 20;
+    [_fbConnectButton setTitle:@"Facebook connect to get started" forState:UIControlStateNormal];
+    [_fbConnectButton setTitle:@"Facebook connect to get started" forState:UIControlStateHighlighted];
+    _fbConnectButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
+    _fbConnectButton.titleLabel.adjustsFontSizeToFitWidth = YES;
     [self addSubview:_fbConnectButton];
     
+    /*
     self.fbConnectLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _findLabel.width, 40)];
     _fbConnectLabel.text = @"Facebook connect to get started!";
     _fbConnectLabel.textAlignment = NSTextAlignmentCenter;
@@ -61,6 +69,7 @@
     _fbConnectLabel.bottom = _fbConnectButton.top;
     _fbConnectLabel.centerX = _fbConnectButton.centerX;
     [self addSubview:_fbConnectLabel];
+    */
     
 }
 

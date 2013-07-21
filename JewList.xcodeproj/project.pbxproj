@@ -167,9 +167,6 @@
 		3ADFA90E179B33DC00B66F78 /* SHOnboarding3View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA90D179B33DC00B66F78 /* SHOnboarding3View.m */; };
 		3ADFA911179B36E500B66F78 /* UserResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA910179B36E500B66F78 /* UserResultCell.m */; };
 		3ADFA914179B3DD500B66F78 /* SHProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA913179B3DD500B66F78 /* SHProfileViewController.m */; };
-		D02FD2FE179B278000D876D8 /* JLColors.m in Sources */ = {isa = PBXBuildFile; fileRef = D02FD2FD179B278000D876D8 /* JLColors.m */; };
-		F8A02848179B4FA600253FFA /* UIView+FindAndResignFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A02847179B4FA600253FFA /* UIView+FindAndResignFirstResponder.m */; };
-		F8F2F064179B37A10088BF2B /* SHToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2F063179B37A10088BF2B /* SHToggleButton.m */; };
 		3ADFA91A179B4DCB00B66F78 /* UIView+FindUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA919179B4DCB00B66F78 /* UIView+FindUIViewController.m */; };
 		3ADFA91F179B551E00B66F78 /* navbar_bkg_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADFA91B179B551E00B66F78 /* navbar_bkg_black.png */; };
 		3ADFA920179B551E00B66F78 /* navbar_bkg_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADFA91C179B551E00B66F78 /* navbar_bkg_black@2x.png */; };
@@ -178,7 +175,14 @@
 		3ADFA925179B5B2400B66F78 /* iphone_navbar_button_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADFA923179B5B2400B66F78 /* iphone_navbar_button_back.png */; };
 		3ADFA926179B5B2400B66F78 /* iphone_navbar_button_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADFA924179B5B2400B66F78 /* iphone_navbar_button_back@2x.png */; };
 		3ADFA929179B5B5A00B66F78 /* SHUIHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA928179B5B5A00B66F78 /* SHUIHelpers.m */; };
+		3ADFA930179B745100B66F78 /* muchsmaller.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADFA92E179B745100B66F78 /* muchsmaller.png */; };
+		3ADFA931179B745100B66F78 /* muchsmaller@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADFA92F179B745100B66F78 /* muchsmaller@2x.png */; };
+		3ADFA936179B76B000B66F78 /* boyfinal.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADFA932179B76B000B66F78 /* boyfinal.png */; };
+		3ADFA937179B76B000B66F78 /* girlfinal.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADFA933179B76B000B66F78 /* girlfinal.png */; };
+		3ADFA938179B76B000B66F78 /* boyfinal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADFA934179B76B000B66F78 /* boyfinal@2x.png */; };
+		3ADFA939179B76B000B66F78 /* girlfinal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADFA935179B76B000B66F78 /* girlfinal@2x.png */; };
 		D02FD2FE179B278000D876D8 /* JLColors.m in Sources */ = {isa = PBXBuildFile; fileRef = D02FD2FD179B278000D876D8 /* JLColors.m */; };
+		F8A02848179B4FA600253FFA /* UIView+FindAndResignFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A02847179B4FA600253FFA /* UIView+FindAndResignFirstResponder.m */; };
 		F8F2F064179B37A10088BF2B /* SHToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2F063179B37A10088BF2B /* SHToggleButton.m */; };
 /* End PBXBuildFile section */
 
@@ -511,12 +515,6 @@
 		3ADFA910179B36E500B66F78 /* UserResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserResultCell.m; sourceTree = "<group>"; };
 		3ADFA912179B3DD500B66F78 /* SHProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHProfileViewController.h; sourceTree = "<group>"; };
 		3ADFA913179B3DD500B66F78 /* SHProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHProfileViewController.m; sourceTree = "<group>"; };
-		D02FD2FC179B278000D876D8 /* JLColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLColors.h; sourceTree = "<group>"; };
-		D02FD2FD179B278000D876D8 /* JLColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLColors.m; sourceTree = "<group>"; };
-		F8A02846179B4FA600253FFA /* UIView+FindAndResignFirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FindAndResignFirstResponder.h"; sourceTree = "<group>"; };
-		F8A02847179B4FA600253FFA /* UIView+FindAndResignFirstResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FindAndResignFirstResponder.m"; sourceTree = "<group>"; };
-		F8F2F062179B37A10088BF2B /* SHToggleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHToggleButton.h; sourceTree = "<group>"; };
-		F8F2F063179B37A10088BF2B /* SHToggleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHToggleButton.m; sourceTree = "<group>"; };
 		3ADFA918179B4DCB00B66F78 /* UIView+FindUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FindUIViewController.h"; sourceTree = "<group>"; };
 		3ADFA919179B4DCB00B66F78 /* UIView+FindUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FindUIViewController.m"; sourceTree = "<group>"; };
 		3ADFA91B179B551E00B66F78 /* navbar_bkg_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar_bkg_black.png; sourceTree = "<group>"; };
@@ -527,8 +525,16 @@
 		3ADFA924179B5B2400B66F78 /* iphone_navbar_button_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone_navbar_button_back@2x.png"; sourceTree = "<group>"; };
 		3ADFA927179B5B5A00B66F78 /* SHUIHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHUIHelpers.h; sourceTree = "<group>"; };
 		3ADFA928179B5B5A00B66F78 /* SHUIHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHUIHelpers.m; sourceTree = "<group>"; };
+		3ADFA92E179B745100B66F78 /* muchsmaller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = muchsmaller.png; sourceTree = "<group>"; };
+		3ADFA92F179B745100B66F78 /* muchsmaller@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "muchsmaller@2x.png"; sourceTree = "<group>"; };
+		3ADFA932179B76B000B66F78 /* boyfinal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boyfinal.png; sourceTree = "<group>"; };
+		3ADFA933179B76B000B66F78 /* girlfinal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = girlfinal.png; sourceTree = "<group>"; };
+		3ADFA934179B76B000B66F78 /* boyfinal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "boyfinal@2x.png"; sourceTree = "<group>"; };
+		3ADFA935179B76B000B66F78 /* girlfinal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "girlfinal@2x.png"; sourceTree = "<group>"; };
 		D02FD2FC179B278000D876D8 /* JLColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLColors.h; sourceTree = "<group>"; };
 		D02FD2FD179B278000D876D8 /* JLColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLColors.m; sourceTree = "<group>"; };
+		F8A02846179B4FA600253FFA /* UIView+FindAndResignFirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FindAndResignFirstResponder.h"; sourceTree = "<group>"; };
+		F8A02847179B4FA600253FFA /* UIView+FindAndResignFirstResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FindAndResignFirstResponder.m"; sourceTree = "<group>"; };
 		F8F2F062179B37A10088BF2B /* SHToggleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHToggleButton.h; sourceTree = "<group>"; };
 		F8F2F063179B37A10088BF2B /* SHToggleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHToggleButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1146,6 +1152,12 @@
 		3ADFA8FB179A91AC00B66F78 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3ADFA932179B76B000B66F78 /* boyfinal.png */,
+				3ADFA933179B76B000B66F78 /* girlfinal.png */,
+				3ADFA934179B76B000B66F78 /* boyfinal@2x.png */,
+				3ADFA935179B76B000B66F78 /* girlfinal@2x.png */,
+				3ADFA92E179B745100B66F78 /* muchsmaller.png */,
+				3ADFA92F179B745100B66F78 /* muchsmaller@2x.png */,
 				3ADFA923179B5B2400B66F78 /* iphone_navbar_button_back.png */,
 				3ADFA924179B5B2400B66F78 /* iphone_navbar_button_back@2x.png */,
 				3ADFA91B179B551E00B66F78 /* navbar_bkg_black.png */,
@@ -1239,6 +1251,12 @@
 				3ADFA922179B551E00B66F78 /* navbar_bkg@2x.png in Resources */,
 				3ADFA925179B5B2400B66F78 /* iphone_navbar_button_back.png in Resources */,
 				3ADFA926179B5B2400B66F78 /* iphone_navbar_button_back@2x.png in Resources */,
+				3ADFA930179B745100B66F78 /* muchsmaller.png in Resources */,
+				3ADFA931179B745100B66F78 /* muchsmaller@2x.png in Resources */,
+				3ADFA936179B76B000B66F78 /* boyfinal.png in Resources */,
+				3ADFA937179B76B000B66F78 /* girlfinal.png in Resources */,
+				3ADFA938179B76B000B66F78 /* boyfinal@2x.png in Resources */,
+				3ADFA939179B76B000B66F78 /* girlfinal@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
