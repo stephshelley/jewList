@@ -17,6 +17,8 @@
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *age;
 @property (nonatomic, strong) NSString *avatarUrl;
+@property (nonatomic, strong) NSString *kosher;
+@property (nonatomic, strong) NSString *shabat;
 
 @property (nonatomic, strong) NSString *fbId;
 @property (nonatomic, strong) NSString *fbToken;

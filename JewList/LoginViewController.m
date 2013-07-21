@@ -10,6 +10,7 @@
 #import "SHApi.h"
 #import "User.h"
 #import "STFacebookManager.h"
+#import "SHProfileViewController.h"
 
 @implementation LoginViewController
 
@@ -20,10 +21,13 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.loginView = [[SHLoginOnboardingView alloc] initWithFrame:CGRectMake(0, 20, self.view.width, self.view.height-20)];
+    self.loginView = [[SHLoginOnboardingView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height-20)];
     [_loginView.fbConnectButton addTarget:self action:@selector(fbConnectButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     _loginView.backgroundColor = [UIColor redColor];
     [self.view addSubview:_loginView];
+    
+    self.title = @"Shalom!";
+    
 }
 
 - (void)fbConnectButtonPressed
@@ -68,10 +72,12 @@
 
 - (SHOnboarding1View*)onboardingStep1
 {
+    self.title = @"Welcome";
+    
     if(nil == _onboardingStep1)
     {
         User *currentUser = [[SHApi sharedInstance] currentUser];
-        _onboardingStep1 = [[SHOnboarding1View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height - 40) andUser:currentUser];
+        _onboardingStep1 = [[SHOnboarding1View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height - 20) andUser:currentUser];
         [_onboardingStep1.nextStepButton addTarget:self action:@selector(continueToStep2) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_onboardingStep1];
         
@@ -86,7 +92,7 @@
     if(nil == _onboardingStep2)
     {
         User *currentUser = [[SHApi sharedInstance] currentUser];
-        _onboardingStep2 = [[SHOnboarding2View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height - 40) andUser:currentUser];
+        _onboardingStep2 = [[SHOnboarding2View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height - 20) andUser:currentUser];
         [_onboardingStep2.nextStepButton addTarget:self action:@selector(continueToStep3) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_onboardingStep2];
         
@@ -98,10 +104,12 @@
 
 - (SHOnboarding3View*)onboardingStep3
 {
+    self.title = @"Results";
+
     if(nil == _onboardingStep3)
     {
         User *currentUser = [[SHApi sharedInstance] currentUser];
-        _onboardingStep3 = [[SHOnboarding3View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height - 40) andUser:currentUser];
+        _onboardingStep3 = [[SHOnboarding3View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height - 20) andUser:currentUser];
         [_onboardingStep3.nextStepButton addTarget:self action:@selector(continueToStep4) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_onboardingStep3];
         
@@ -113,6 +121,15 @@
 
 - (void)continueToStep1
 {
+    User *currentUser = [[SHApi sharedInstance] currentUser];
+    currentUser.shabat = @"Meh";
+    currentUser.kosher = @"Yep";
+    SHProfileViewController *userVC = [[SHProfileViewController alloc] initWithUser:currentUser];
+    [self.navigationController pushViewController:userVC animated:YES];
+    
+    return ;
+
+    
     [self animateToNextStep:_loginView destination:self.onboardingStep1];
     
 }

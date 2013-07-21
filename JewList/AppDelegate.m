@@ -23,6 +23,25 @@
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:_loginViewController];
     self.window.rootViewController = navController;
     
+    if (!IsIpad && [[UINavigationBar class] respondsToSelector:@selector(appearance)])
+    {
+        [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar_bkg"] forBarMetrics:UIBarMetricsDefault];
+        [[UINavigationBar appearance] setTitleTextAttributes:
+         [NSDictionary dictionaryWithObjectsAndKeys:
+          [UIColor whiteColor],
+          UITextAttributeTextColor,
+          UIColorFromRGB(0x44809c),
+          UITextAttributeTextShadowColor,
+          [NSValue valueWithUIOffset:UIOffsetMake(0, 0)],
+          UITextAttributeTextShadowOffset,
+          [UIFont fontWithName:DEFAULT_FONT size:20.0],
+          UITextAttributeFont,
+          nil]];
+        
+        [[UINavigationBar appearance] setTintColor:UIColorFromRGB(0x83d4fa)];
+
+	}
+    
     [self.window makeKeyAndVisible];
     return YES;
 }

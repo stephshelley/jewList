@@ -133,7 +133,7 @@
     genderBackgroundView.backgroundColor = [UIColor purpleColor];
     [self addSubview:genderBackgroundView];
     
-    buttonHeight = 140;
+    buttonHeight = 100;
     self.femaleButton = [[SHToggleButton alloc] initWithFrame:CGRectMake(self.width/2 - (buttonHeight*2 +2)/2, genderBackgroundView.height/2 - buttonHeight/2, buttonHeight, buttonHeight)];
     [_femaleButton setColorOff:[UIColor grayColor]];
     [_femaleButton setColorOn:DEFAULT_BLUE_COLOR];
