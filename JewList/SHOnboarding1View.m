@@ -37,9 +37,9 @@
 {
     self.backgroundColor = DEFAULT_BACKGROUND_COLOR;
     
-    UIView *progressBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 36)];
+    UIView *progressBar = [[UIView alloc] initWithFrame:CGRectMake(0, IS_IOS7 ? 20 : 0, self.frame.size.width, 5)];
     progressBar.backgroundColor = [UIColor JLGreen];
-    UIView *progressMade = [[UIView alloc] initWithFrame:CGRectMake(0, 0, progressBar.frame.size.width/3, progressBar.frame.size.height)];
+    UIView *progressMade = [[UIView alloc] initWithFrame:CGRectMake(0, 0, progressBar.frame.size.width/4, progressBar.frame.size.height)];
     progressMade.backgroundColor = [UIColor JLDarkGreen];
     [progressBar addSubview:progressMade];
     UILabel *progressLabel = [[UILabel alloc] initWithFrame:progressBar.frame];
@@ -48,7 +48,8 @@
     progressLabel.textAlignment = NSTextAlignmentCenter;
     progressLabel.textColor = [UIColor whiteColor];
     progressLabel.text = @"Step 1/3";
-    [progressBar addSubview:progressLabel];
+    progressLabel.centerY = floorf(progressBar.height/2);
+    //[progressBar addSubview:progressLabel];
     [self addSubview:progressBar];
     
     UIView *userTopView = [[UIView alloc] initWithFrame:CGRectMake(0, progressBar.frame.origin.y + progressBar.frame.size.height, self.width, 73)];
@@ -104,15 +105,14 @@
     //nameIndicator.hidden = YES;
     [self addSubview:nameIndicator];
      
-    
 
     UIView *homeBackground = [[UIView alloc] initWithFrame:CGRectMake(0.0, nameIndicator.bottom, self.width, nameBackground.height)];
-    homeBackground.backgroundColor = [UIColor JLGrey];
+    homeBackground.backgroundColor = [UIColor clearColor];
     [self addSubview:homeBackground];
     
     self.homeTownTextField = [[SHTextFieldOnBoarding alloc] initWithFrame:CGRectMake(10, 0, homeBackground.size.width - 20, homeBackground.size.height)];
     _homeTownTextField.placeholder = @"Home Town";
-    _homeTownTextField.keyboardType = UIKeyboardTypeEmailAddress;
+    _homeTownTextField.keyboardType = UIKeyboardTypeDefault;
     _homeTownTextField.returnKeyType = UIReturnKeyNext;
     _homeTownTextField.delegate = self;
     _homeTownTextField.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:IsIpad ? 21.0 : 18];
@@ -123,14 +123,41 @@
     
     
     UILabel *homeIndicator = [[UILabel alloc] initWithFrame:CGRectMake(0, homeBackground.bottom, self.width, 20)];
-    homeIndicator.backgroundColor = [UIColor JLGrey];
+    homeIndicator.backgroundColor = [UIColor clearColor];
     homeIndicator.textColor = [UIColor whiteColor];
     homeIndicator.textAlignment = NSTextAlignmentLeft;
     homeIndicator.font = [UIFont fontWithName:DEFAULT_FONT size:12.0f];
     //homeIndicator.text = @"  Your hometown";
     //homeIndicator.hidden = YES;
     [self addSubview:homeIndicator];
-     
+
+    UIView *emailBackground = [[UIView alloc] initWithFrame:CGRectMake(0.0, homeIndicator.bottom, self.width, homeBackground.height)];
+    emailBackground.backgroundColor = [UIColor clearColor];
+    [self addSubview:emailBackground];
+    
+    self.emailTextField = [[SHTextFieldOnBoarding alloc] initWithFrame:CGRectMake(10, 0, emailBackground.size.width - 20, emailBackground.size.height)];
+    _emailTextField.placeholder = @"Your email";
+    _emailTextField.keyboardType = UIKeyboardTypeEmailAddress;
+    _emailTextField.returnKeyType = UIReturnKeyNext;
+    _emailTextField.delegate = self;
+    _emailTextField.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:IsIpad ? 21.0 : 18];
+    _emailTextField.textAlignment = NSTextAlignmentLeft;
+    _emailTextField.textColor = DEFAULT_BLUE_COLOR;
+    _emailTextField.backgroundColor = [UIColor clearColor];
+    _emailTextField.text = _user.email;
+    [emailBackground addSubview:_emailTextField];
+    
+    
+    UILabel *emailIndicator = [[UILabel alloc] initWithFrame:CGRectMake(0, emailBackground.bottom, self.width, 20)];
+    emailIndicator.backgroundColor = [UIColor clearColor];
+    emailIndicator.textColor = [UIColor whiteColor];
+    emailIndicator.textAlignment = NSTextAlignmentLeft;
+    emailIndicator.font = [UIFont fontWithName:DEFAULT_FONT size:12.0f];
+    //homeIndicator.text = @"  Your hometown";
+    //homeIndicator.hidden = YES;
+    [self addSubview:emailIndicator];
+    
+    
     CGFloat buttonHeight = 63;
     self.nextStepButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.width, buttonHeight)];
     _nextStepButton.backgroundColor = DEFAULT_BLUE_COLOR;
@@ -141,7 +168,7 @@
     _nextStepButton.titleLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_nextStepButton];
     
-    UIView *genderBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, homeIndicator.bottom, self.width, _nextStepButton.top - homeIndicator.bottom)];
+    UIView *genderBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, emailIndicator.bottom, self.width, _nextStepButton.top - emailIndicator.bottom)];
     genderBackgroundView.backgroundColor = [UIColor JLGrey];
     [self addSubview:genderBackgroundView];
     
@@ -204,21 +231,21 @@
 
 - (void)setGender
 {
-    if([_user.gendre isEqualToString:@"female"])
+    if([_user.gender intValue] == 1)
     {
         [_maleButton toggle:NO];
         [_femaleButton toggle:YES];
         _maleButton.titleLabel.textColor = [UIColor darkGrayColor];
         _femaleButton.titleLabel.textColor = [UIColor whiteColor];
-        _user.gendre = @"female";
+        _user.gender = @1;//female
 
-    }else if([_user.gendre isEqualToString:@"male"])
+    }else if([_user.gender intValue] == 0)
     {
         [_femaleButton toggle:NO];
         [_maleButton toggle:YES];
         _femaleButton.titleLabel.textColor = [UIColor darkGrayColor];
         _maleButton.titleLabel.textColor = [UIColor whiteColor];
-        _user.gendre = @"male";
+        _user.gender = @0; // male
 
     }
 }
@@ -237,14 +264,14 @@
         [_maleButton toggle:NO];
         _maleButton.titleLabel.textColor = [UIColor darkGrayColor];
         _femaleButton.titleLabel.textColor = [UIColor whiteColor];
-        _user.gendre = @"female";
+        _user.gender = @1;
     }
     else if(senderButton.tag == TAG_MALE_BUTTON && [senderButton isOn])
     {
         [_femaleButton toggle:NO];
         _femaleButton.titleLabel.textColor = [UIColor darkGrayColor];
         _maleButton.titleLabel.textColor = [UIColor whiteColor];
-        _user.gendre = @"male";
+        _user.gender = @0;
     }
     
     [[SHApi sharedInstance] cacheCurrentUserDetails];
@@ -265,8 +292,12 @@
         }
         else if([textField isEqual:_homeTownTextField])
         {
-            [_homeTownTextField resignFirstResponder];
+            [_emailTextField becomeFirstResponder];
 
+        }else if([textField isEqual:_emailTextField])
+        {
+            [_emailTextField resignFirstResponder];
+            
         }
     }
     

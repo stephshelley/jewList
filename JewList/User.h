@@ -11,8 +11,6 @@
 @interface User : Jastor
 
 @property (nonatomic, strong) NSString *username;
-@property (nonatomic, strong) NSString *firstName;
-@property (nonatomic, strong) NSString *lastName;
 @property (nonatomic, strong) NSString *displayName;
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *age;
@@ -29,9 +27,24 @@
 @property (nonatomic, strong) NSString *fbLocationName;
 @property (nonatomic, strong) NSString *fbCollegeName;
 
-@property (nonatomic, strong) NSString *gendre;
+@property (nonatomic, strong) NSNumber *campus;
+@property (nonatomic, strong) NSNumber *cleaning;
+@property (nonatomic, strong) NSNumber *diet;
+@property (nonatomic, strong) NSString *fb;
+@property (nonatomic, strong) NSString *firstName;
+@property (nonatomic, strong) NSString *lastName;
+@property (nonatomic, strong) NSNumber *gender;
+@property (nonatomic, strong) NSNumber *gradYear;
+@property (nonatomic, strong) NSString *hsEngagement;
+@property (nonatomic, strong) NSNumber *personality;
+@property (nonatomic, strong) NSNumber *primaryId;
+@property (nonatomic, strong) NSNumber *religious;
+@property (nonatomic, strong) NSString *roommatePrefs;
+@property (nonatomic, strong) NSString *school;
+@property (nonatomic, strong) NSNumber *social;
 
 @property (nonatomic, strong) NSDictionary *fbMeResult;
+@property (nonatomic, strong) NSDictionary *fbUsername;
 
 
 @end

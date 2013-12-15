@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "SHOnboardingDelegate.h"
 @class User;
 
 @interface SHOnboarding2View : UIView <UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate>
@@ -32,6 +32,8 @@
 @property (nonatomic, strong) UIView *collegeTopView;
 
 @property (nonatomic, strong) UIButton *nextStepButton;
+@property (nonatomic, strong) id fetchCollegesRequest;
+@property (nonatomic, assign) id<SHOnboardingDelegate> delegate;
 
 - (id)initWithFrame:(CGRect)frame andUser:(User*)user;
 - (void)loadTable;

@@ -8,8 +8,6 @@
 
 #import "AppDelegate.h"
 
-#import "MainViewController.h"
-
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -22,7 +20,8 @@
     self.loginViewController = [[LoginViewController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:_loginViewController];
     self.window.rootViewController = navController;
-    
+    if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
     if (!IsIpad && [[UINavigationBar class] respondsToSelector:@selector(appearance)])
     {
         [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar_bkg"] forBarMetrics:UIBarMetricsDefault];

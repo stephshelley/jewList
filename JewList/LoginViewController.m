@@ -18,8 +18,8 @@
 - (void)loadView
 {
     [super loadView];
-    
-    self.view.backgroundColor = [UIColor whiteColor];
+
+    self.view.backgroundColor = DEFAULT_BACKGROUND_COLOR;
     self.navigationController.navigationBarHidden = YES;
     
     self.loginView = [[SHLoginOnboardingView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height-20)];
@@ -46,27 +46,9 @@
 
 - (void)processLoginResponse:(NSString *)uid withToken:(NSString *)token
 {
-    __unsafe_unretained __block LoginViewController *weakSelf = (LoginViewController *)self;
-    
     CANCEL_RELEASE_REQUEST(self.connectToSocialProviderRequest);
     [self continueToStep1];
-    /*
-     self.connectToSocialProviderRequest = [[SHApi sharedInstance] connectToSocialProvider:@"facebook" uid:uid token:token expiresIn:@"" success:^(void)
-     {
-     dispatch_async(dispatch_get_main_queue(), ^{
-     weakSelf.loginView.hidden = YES;
-     [weakSelf loadTable];
-     [weakSelf loadFBFriends];
-     });
-     
-     STORM_LOG(@"connectToSocialProvider success");
-     }failure:^(NSError *error)
-     {
-     STORM_LOG(@"connectToSocialProvider login Failed | error = %@",[error userInfo]);
-     
-     }];
-     */
-    
+
 }
 
 - (SHOnboarding1View*)onboardingStep1
@@ -92,6 +74,7 @@
     {
         User *currentUser = [[SHApi sharedInstance] currentUser];
         _onboardingStep2 = [[SHOnboarding2View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height - 20) andUser:currentUser];
+        _onboardingStep2.delegate = self;
         [_onboardingStep2.nextStepButton addTarget:self action:@selector(continueToStep3) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_onboardingStep2];
     }
@@ -116,6 +99,23 @@
     
 }
 
+
+- (STOnboarding4View*)onboardingStep4
+{
+    self.title = @"Graduation year";
+    
+    if(nil == _onboardingStep4)
+    {
+        User *currentUser = [[SHApi sharedInstance] currentUser];
+        _onboardingStep4 = [[STOnboarding4View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height - 20) andUser:currentUser];
+        [_onboardingStep4.nextStepButton addTarget:self action:@selector(continueToStep4) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_onboardingStep4];
+        
+    }
+    
+    return _onboardingStep4;
+    
+}
 - (void)continueToStep1
 {
     /*
@@ -134,17 +134,21 @@
 - (void)continueToStep2
 {
     [self animateToNextStep:self.onboardingStep1 destination:self.onboardingStep2];
+    [_onboardingStep2.searchBar becomeFirstResponder];
+
     
 }
 
 - (void)continueToStep3
 {
-    [self animateToNextStep:self.onboardingStep2 destination:self.onboardingStep3];
+    [self animateToNextStep:self.onboardingStep2 destination:self.onboardingStep4];
     
 }
 
 - (void)continueToStep4
 {
+    [self animateToNextStep:self.onboardingStep4 destination:self.onboardingStep3];
+
 }
 
 - (void)animateToNextStep:(UIView*)originView destination:(UIView*)destinationView
@@ -161,8 +165,6 @@
                          
                      }
                      completion:^(BOOL finished){
-                         [_originView removeFromSuperview];
-                         _originView = nil;
                          
                      }
      ];
@@ -182,11 +184,28 @@
                          
                      }
                      completion:^(BOOL finished){
-                         [_originView removeFromSuperview];
-                         _originView = nil;
                          
                      }
      ];
+}
+
+#pragma mark - SHOnboardingDelegate -
+- (void)continueToNextStep:(id)sender
+{
+    if(sender == _onboardingStep2)
+    {
+        [self continueToStep3];
+        
+    }
+}
+
+- (void)goToPreviousStep:(id)sender
+{
+    if(sender == _onboardingStep2)
+    {
+        [self animateBacktStep:self.onboardingStep2 destination:self.onboardingStep1];
+        
+    }
 }
 
 @end

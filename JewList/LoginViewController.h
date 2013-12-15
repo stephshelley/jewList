@@ -10,8 +10,10 @@
 #import "SHOnboarding1View.h"
 #import "SHOnboarding2View.h"
 #import "SHOnboarding3View.h"
+#import "STOnboarding4View.h"
+#import "SHOnboardingDelegate.h"
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController <SHOnboardingDelegate>
 
 @property (copy) void (^success)(NSDictionary *dict);
 @property (copy) void (^failure)(NSError *error);
@@ -22,6 +24,7 @@
 @property (nonatomic, strong) SHOnboarding1View *onboardingStep1;
 @property (nonatomic, strong) SHOnboarding2View *onboardingStep2;
 @property (nonatomic, strong) SHOnboarding3View *onboardingStep3;
+@property (nonatomic, strong) STOnboarding4View *onboardingStep4;
 
 
 

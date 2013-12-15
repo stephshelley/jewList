@@ -16,12 +16,10 @@
 		3A0ACC4A179A3F3C0083B80B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A0ACC49179A3F3C0083B80B /* Default.png */; };
 		3A0ACC4C179A3F3C0083B80B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A0ACC4B179A3F3C0083B80B /* Default@2x.png */; };
 		3A0ACC4E179A3F3C0083B80B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A0ACC4D179A3F3C0083B80B /* Default-568h@2x.png */; };
-		3A0ACD04179A41610083B80B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0ACD03179A41610083B80B /* MainViewController.m */; };
 		3A0ACD15179A424D0083B80B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0ACD14179A424D0083B80B /* CFNetwork.framework */; };
 		3A0ACD17179A42530083B80B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0ACD16179A42530083B80B /* StoreKit.framework */; };
 		3A0ACD19179A425A0083B80B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0ACD18179A425A0083B80B /* QuartzCore.framework */; };
 		3A0ACD1B179A42600083B80B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0ACD1A179A42600083B80B /* AVFoundation.framework */; };
-		3A0ACD1D179A42670083B80B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0ACD1C179A42660083B80B /* SenTestingKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		3A0ACD1F179A426D0083B80B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0ACD1E179A426D0083B80B /* MobileCoreServices.framework */; };
 		3A0ACD21179A42730083B80B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0ACD20179A42730083B80B /* SystemConfiguration.framework */; };
 		3A0ACD9F179A42D00083B80B /* Jastor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0ACD39179A42D00083B80B /* Jastor.m */; };
@@ -153,6 +151,7 @@
 		3A0CCC4F179A53C40000AA8C /* NSURL+NXOAuth2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CCC4A179A53C40000AA8C /* NSURL+NXOAuth2.m */; };
 		3A0CCC55179A54E20000AA8C /* SHLoginPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CCC54179A54E20000AA8C /* SHLoginPassword.m */; };
 		3A0CCC58179A632B0000AA8C /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CCC57179A632B0000AA8C /* UIViewAdditions.m */; };
+		3AAB1229185E448A00F592DD /* STOnboarding4View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB1228185E448A00F592DD /* STOnboarding4View.m */; };
 		3ADFA8ED179A69E000B66F78 /* STFacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA8EC179A69E000B66F78 /* STFacebookManager.m */; };
 		3ADFA8F1179A71DC00B66F78 /* SHOnboarding1View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA8F0179A71DC00B66F78 /* SHOnboarding1View.m */; };
 		3ADFA8F4179A727B00B66F78 /* SHTextFieldOnBoarding.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA8F3179A727B00B66F78 /* SHTextFieldOnBoarding.m */; };
@@ -200,13 +199,10 @@
 		3A0ACC49179A3F3C0083B80B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3A0ACC4B179A3F3C0083B80B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		3A0ACC4D179A3F3C0083B80B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		3A0ACD02179A41610083B80B /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		3A0ACD03179A41610083B80B /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		3A0ACD14179A424D0083B80B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		3A0ACD16179A42530083B80B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		3A0ACD18179A425A0083B80B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3A0ACD1A179A42600083B80B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		3A0ACD1C179A42660083B80B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		3A0ACD1E179A426D0083B80B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		3A0ACD20179A42730083B80B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3A0ACD38179A42D00083B80B /* Jastor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jastor.h; sourceTree = "<group>"; };
@@ -490,6 +486,9 @@
 		3A0CCC54179A54E20000AA8C /* SHLoginPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHLoginPassword.m; sourceTree = "<group>"; };
 		3A0CCC56179A632B0000AA8C /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
 		3A0CCC57179A632B0000AA8C /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
+		3AAB1227185E448A00F592DD /* STOnboarding4View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboarding4View.h; sourceTree = "<group>"; };
+		3AAB1228185E448A00F592DD /* STOnboarding4View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOnboarding4View.m; sourceTree = "<group>"; };
+		3AAB122A185E545B00F592DD /* SHOnboardingDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHOnboardingDelegate.h; sourceTree = "<group>"; };
 		3ADFA8EB179A69E000B66F78 /* STFacebookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STFacebookManager.h; sourceTree = "<group>"; };
 		3ADFA8EC179A69E000B66F78 /* STFacebookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STFacebookManager.m; sourceTree = "<group>"; };
 		3ADFA8EF179A71DC00B66F78 /* SHOnboarding1View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHOnboarding1View.h; sourceTree = "<group>"; };
@@ -556,7 +555,6 @@
 				3A0CCC1D179A4FBA0000AA8C /* libsqlite3.dylib in Frameworks */,
 				3A0ACD21179A42730083B80B /* SystemConfiguration.framework in Frameworks */,
 				3A0ACD1F179A426D0083B80B /* MobileCoreServices.framework in Frameworks */,
-				3A0ACD1D179A42670083B80B /* SenTestingKit.framework in Frameworks */,
 				3A0ACD1B179A42600083B80B /* AVFoundation.framework in Frameworks */,
 				3A0ACD19179A425A0083B80B /* QuartzCore.framework in Frameworks */,
 				3A0ACD17179A42530083B80B /* StoreKit.framework in Frameworks */,
@@ -605,7 +603,6 @@
 				3A0CCC1C179A4FBA0000AA8C /* libsqlite3.dylib */,
 				3A0ACD20179A42730083B80B /* SystemConfiguration.framework */,
 				3A0ACD1E179A426D0083B80B /* MobileCoreServices.framework */,
-				3A0ACD1C179A42660083B80B /* SenTestingKit.framework */,
 				3A0ACD1A179A42600083B80B /* AVFoundation.framework */,
 				3A0ACD18179A425A0083B80B /* QuartzCore.framework */,
 				3A0ACD16179A42530083B80B /* StoreKit.framework */,
@@ -674,8 +671,6 @@
 		3A0ACD01179A413A0083B80B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3A0ACD02179A41610083B80B /* MainViewController.h */,
-				3A0ACD03179A41610083B80B /* MainViewController.m */,
 				3A0CC857179A4DAF0000AA8C /* LoginViewController.h */,
 				3A0CC858179A4DAF0000AA8C /* LoginViewController.m */,
 				3A0CC85A179A4DBC0000AA8C /* SettingsViewController.h */,
@@ -1139,12 +1134,15 @@
 				3ADFA8F9179A8A4C00B66F78 /* SHOnboarding2View.m */,
 				3ADFA90C179B33DC00B66F78 /* SHOnboarding3View.h */,
 				3ADFA90D179B33DC00B66F78 /* SHOnboarding3View.m */,
+				3AAB1227185E448A00F592DD /* STOnboarding4View.h */,
+				3AAB1228185E448A00F592DD /* STOnboarding4View.m */,
 				3ADFA8F5179A74F700B66F78 /* SHLoginOnboardingView.h */,
 				3ADFA8F6179A74F700B66F78 /* SHLoginOnboardingView.m */,
 				F8F2F062179B37A10088BF2B /* SHToggleButton.h */,
 				F8F2F063179B37A10088BF2B /* SHToggleButton.m */,
 				F8A02846179B4FA600253FFA /* UIView+FindAndResignFirstResponder.h */,
 				F8A02847179B4FA600253FFA /* UIView+FindAndResignFirstResponder.m */,
+				3AAB122A185E545B00F592DD /* SHOnboardingDelegate.h */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1269,9 +1267,9 @@
 			files = (
 				3A0ACC44179A3F3C0083B80B /* main.m in Sources */,
 				3A0ACC48179A3F3C0083B80B /* AppDelegate.m in Sources */,
-				3A0ACD04179A41610083B80B /* MainViewController.m in Sources */,
 				3A0ACD9F179A42D00083B80B /* Jastor.m in Sources */,
 				3A0ACDA0179A42D00083B80B /* JastorRuntimeHelper.m in Sources */,
+				3AAB1229185E448A00F592DD /* STOnboarding4View.m in Sources */,
 				3A0ACDA1179A42D00083B80B /* NSObject+SBJSON.m in Sources */,
 				3A0ACDA2179A42D00083B80B /* NSString+SBJSON.m in Sources */,
 				3A0ACDAC179A42D00083B80B /* NIActions.m in Sources */,

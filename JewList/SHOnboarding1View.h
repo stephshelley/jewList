@@ -21,6 +21,7 @@
 
 @property (nonatomic, strong) SHTextFieldOnBoarding *nameTextField;
 @property (nonatomic, strong) SHTextFieldOnBoarding *homeTownTextField;
+@property (nonatomic, strong) SHTextFieldOnBoarding *emailTextField;
 
 @property (nonatomic, strong) UIButton *nextStepButton;
 

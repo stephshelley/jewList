@@ -34,7 +34,7 @@
 {
     self.backgroundColor = DEFAULT_BACKGROUND_COLOR;
     
-    UIView *progressBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 36)];
+    UIView *progressBar = [[UIView alloc] initWithFrame:CGRectMake(0, IS_IOS7 ? 20 : 0, self.frame.size.width, 5)];
     progressBar.backgroundColor = [UIColor JLGreen];
     UIView *progressMade = [[UIView alloc] initWithFrame:CGRectMake(0, 0, progressBar.width , progressBar.height)];
     progressMade.backgroundColor = [UIColor JLDarkGreen];
@@ -45,7 +45,8 @@
     progressLabel.textAlignment = NSTextAlignmentCenter;
     progressLabel.textColor = [UIColor whiteColor];
     progressLabel.text = @"Sucess!";
-    [progressBar addSubview:progressLabel];
+    progressLabel.centerY = floorf(progressBar.height/2);
+    //[progressBar addSubview:progressLabel];
     [self addSubview:progressBar];
     
     self.topResultsBgView = [[UIView alloc] initWithFrame:CGRectMake(0, progressBar.bottom, self.width, 50)];

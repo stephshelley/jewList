@@ -25,12 +25,12 @@
 
 - (void)loadUI
 {
-    self.backgroundColor = DEFAULT_BACKGROUND_COLOR;
+    self.backgroundColor = [UIColor clearColor];
     
     self.logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"muchsmaller"]];
     _logoImageView.backgroundColor = [UIColor clearColor];
     _logoImageView.centerX = floor(self.width/2);
-    _logoImageView.top = 50;
+    _logoImageView.top = 50 + (IS_IOS7 ? 20 : 0);
     [self addSubview:_logoImageView];
     
     /*

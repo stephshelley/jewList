@@ -195,8 +195,10 @@
                  currentUser.fbToken = _fbToken;
                  currentUser.firstName = [user objectForKey:@"first_name"];
                  currentUser.lastName = [user objectForKey:@"last_name"];
-                 currentUser.gendre = [user objectForKey:@"gender"];
+                 currentUser.gender = [user objectForKey:@"gender"];
+                 currentUser.email = [user objectForKey:@"email"];
                  currentUser.fbMeResult = user;
+                 currentUser.fbUsername = [user objectForKey:@"username"];
                  currentUser.fbImageUrl = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture",currentUser.fbId];
                  
                  if([user objectForKey:@"hometown"] && [[user objectForKey:@"hometown"] objectForKey:@"id"])
@@ -260,11 +262,9 @@
 - (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI {
     
     NSArray *writepermissions = [[NSArray alloc] initWithObjects:
-                                 @"publish_stream",
-                                 @"publish_actions",
+                                 @"email",
                                  @"user_location",
                                  @"user_hometown",
-                                 @"email",
                                  nil];
     
     /*

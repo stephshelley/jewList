@@ -73,10 +73,10 @@
 {
     NSString *gender = nil;
     
-    if([_user.gendre isEqualToString:@"male"])
+    if([_user.gender intValue] == 0)
     {
         gender = @"M";
-    }else if([_user.gendre isEqualToString:@"female"])
+    }else if([_user.gender intValue] == 1)
     {
         gender = @"F";
     }else{

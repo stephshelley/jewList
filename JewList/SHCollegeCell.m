@@ -13,7 +13,7 @@
 
 + (float)rowHeight
 {
-    return IsIpad ? 80 : 28;
+    return IsIpad ? 80 : 50;
 }
 
 /* Init */

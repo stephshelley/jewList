@@ -241,6 +241,118 @@ static NSString *kCurrentUserPath = @"current_user";
         
 }
 
+- (id)getUser:(NSString *)userId
+      success:(void (^)(User *user))success
+         failure:(void (^)(NSError * error))failure
+{
+
+    NSString *path = [NSString stringWithFormat:@"GetMember/%@",userId];
+    return [self standardDictionaryRequestWithPath:path
+                                            params:nil
+                                            method:@"GET"
+                                      noAuthNeeded:YES
+                                           success:^(id result) {
+                                               if([result isKindOfClass:[NSDictionary class]] && [result objectForKey:@"member1"])
+                                               {
+                                                   NSArray *results = [result objectForKey:@"member1"];
+                                                   
+                                                   for(NSDictionary *dict in results)
+                                                   {
+                                                       User *user = [[User alloc] initWithDictionary:dict];
+                                                       success(user);
+                                                       
+                                                   }
+                                                   
+                                                   success(nil);
+
+                                                   
+                                                   
+                                               } else {
+                                                   if([result objectForKey:@"error"])
+                                                   {
+                                                       //[UIHelpers handleApiError:[result objectForKey:@"error"]];
+                                                   }
+                                                   
+                                                   failure(nil);
+                                               }
+                                               
+                                           }
+                                           failure:failure];
+}
+
+- (id)getSchoolsForSearchTerm:(NSString *)term
+                      success:(void (^)(NSArray *colleges))success
+                      failure:(void (^)(NSError * error))failure
+{
+    NSString *path = [NSString stringWithFormat:@"GetSchoolsByName/%@",term];
+    return [self standardDictionaryRequestWithPath:path
+                                            params:nil
+                                            method:@"GET"
+                                      noAuthNeeded:YES
+                                           success:^(id result) {
+                                               if([result isKindOfClass:[NSDictionary class]] && [result objectForKey:@"GetSchoolsByNameResult"])
+                                               {
+                                                   NSArray *results = [result objectForKey:@"GetSchoolsByNameResult"];
+                                                   
+                                                   NSMutableArray *colleges = [NSMutableArray array];
+                                                   for(NSDictionary *dict in results)
+                                                   {
+                                                       College *college = [[College alloc] initWithDictionary:dict];
+                                                       [colleges addObject:college];
+                                                       
+                                                   }
+                                                   
+                                                   success(colleges);
+                                                   
+                                               } else {
+                                                   if([result objectForKey:@"error"])
+                                                   {
+                                                       //[UIHelpers handleApiError:[result objectForKey:@"error"]];
+                                                   }
+                                                   
+                                                   failure(nil);
+                                               }
+                                               
+                                           }
+                                           failure:failure];
+    
+}
+
+- (id)getSchools:(void (^)(NSArray *colleges))success
+          failure:(void (^)(NSError * error))failure
+{
+    return [self standardDictionaryRequestWithPath:@"GetSchools"
+                                            params:nil
+                                            method:@"GET"
+                                      noAuthNeeded:YES
+                                           success:^(id result) {
+                                               if([result isKindOfClass:[NSDictionary class]] && [result objectForKey:@"GetSchoolsResult"])
+                                               {
+                                                   NSArray *results = [result objectForKey:@"GetSchoolsResult"];
+                                                   
+                                                   NSMutableArray *colleges = [NSMutableArray array];
+                                                   for(NSDictionary *dict in results)
+                                                   {
+                                                       College *college = [[College alloc] initWithDictionary:dict];
+                                                       [colleges addObject:college];
+                                                       
+                                                   }
+                                                   
+                                                   success(colleges);
+                                                   
+                                               } else {
+                                                   if([result objectForKey:@"error"])
+                                                   {
+                                                       //[UIHelpers handleApiError:[result objectForKey:@"error"]];
+                                                   }
+                                                   
+                                                   failure(nil);
+                                               }
+                                               
+                                           }
+                                           failure:failure];
+}
+
 - (id)getColleges:(void (^)(NSArray *colleges))success
           failure:(void (^)(NSError * error))failure
 {
@@ -275,6 +387,41 @@ static NSString *kCurrentUserPath = @"current_user";
                                            }
                                            failure:failure];
 }
+
+- (id)loginWithFBToken:(NSString *)token
+                  fbId:(NSString *)fbId
+               success:(void (^)(void))success
+               failure:(void (^)(NSError * error))failure
+{
+    NSDictionary *params = @{@"token" : token,@"fb_id" : fbId};
+    return [self standardDictionaryRequestWithPath:@"Login"
+                                            params:params
+                                            method:@"PUT"
+                                      noAuthNeeded:YES
+                                           success:^(id result) {
+                                               if([result isKindOfClass:[NSDictionary class]] && [result objectForKey:@"auth_token"])
+                                               {
+                                                   
+                                                   dispatch_async(dispatch_get_main_queue(), ^{
+                                                       [[NSNotificationCenter defaultCenter] postNotificationName:kUserSessionChangeNotification object:kUserNewSessionLogin];
+                                                       
+                                                   });
+                                                   
+                                                   success();
+                                                   
+                                               }else{
+                                                   if([result objectForKey:@"error"])
+                                                   {
+                                                       //[STUIHelpers handleApiError:[result objectForKey:@"error"]];
+                                                   }
+                                                   
+                                                   failure(nil);
+                                               }
+                                               
+                                           }
+                                           failure:failure];
+}
+
 
 /* Login with credintials */
 - (id)loginInWithEmail:(NSString *)email

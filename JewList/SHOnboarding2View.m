@@ -13,6 +13,7 @@
 #import "User.h"
 #import "JLColors.h"
 #import <QuartzCore/QuartzCore.h>
+#import "SHUIHelpers.h"
 
 @implementation SHOnboarding2View
 
@@ -34,13 +35,22 @@
     
 }
 
+- (void)popScreen
+{
+    if(_delegate && [_delegate respondsToSelector:@selector(goToPreviousStep:)])
+        [_delegate goToPreviousStep:self];
+    
+    [_searchBar resignFirstResponder];
+
+}
+
 - (void)loadUI
 {
-    self.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = [UIColor clearColor];
     
-    UIView *progressBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 36)];
+    UIView *progressBar = [[UIView alloc] initWithFrame:CGRectMake(0, IS_IOS7 ? 20 : 0, self.frame.size.width, 5)];
     progressBar.backgroundColor = [UIColor JLGreen];
-    UIView *progressMade = [[UIView alloc] initWithFrame:CGRectMake(0, 0, (progressBar.width/3)*2 , progressBar.height)];
+    UIView *progressMade = [[UIView alloc] initWithFrame:CGRectMake(0, 0, (progressBar.width/4)*2 , progressBar.height)];
     progressMade.backgroundColor = [UIColor JLDarkGreen];
     [progressBar addSubview:progressMade];
     UILabel *progressLabel = [[UILabel alloc] initWithFrame:progressBar.frame];
@@ -49,12 +59,25 @@
     progressLabel.textAlignment = NSTextAlignmentCenter;
     progressLabel.textColor = [UIColor whiteColor];
     progressLabel.text = @"Step 2/3";
-    [progressBar addSubview:progressLabel];
+    progressLabel.centerY = floorf(progressBar.height/2);
+    //[progressBar addSubview:progressLabel];
     [self addSubview:progressBar];
 
     self.collegeTopView = [[UIView alloc] initWithFrame:CGRectMake(0, progressBar.bottom, self.width, 50)];
     _collegeTopView.backgroundColor = [UIColor JLGrey];
     [self addSubview:_collegeTopView];
+    
+    UIView *leftButtonView = [SHUIHelpers getCustomBarButtonView:CGRectMake(0, 0, 44, 44)
+                                                     buttonImage:@"iphone_navbar_button_back"
+                                                   selectedImage:@"iphone_navbar_button_back"
+                                                           title:@""
+                                                     andSelector:@selector(popScreen)
+                                                          sender:self
+                                                      titleColor:[UIColor clearColor]];
+    
+    leftButtonView.centerY = floorf(_collegeTopView.height/2);
+    leftButtonView.left = -2;
+    [_collegeTopView addSubview:leftButtonView];
     
     self.collegeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _collegeTopView.width, _collegeTopView.height)];
     _collegeLabel.textAlignment = NSTextAlignmentCenter;
@@ -77,12 +100,12 @@
     [self addSubview:_nextStepButton];
     
     [self loadTable];
-    [self loadColleges];
+    //[self loadColleges];
 }
 
 - (void)loadColleges
 {
-    __block SHOnboarding2View *weakSelf = self;
+    __weak __block SHOnboarding2View *weakSelf = self;
     [self showLoading];
     
     [[SHApi sharedInstance] getColleges:^(NSArray *colleges)
@@ -130,7 +153,7 @@
 {
     CGFloat width = self.width;
     
-    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(-5, 0, width + 10, 44)];
+    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, width, 44)];
     [[UISearchBar appearance] setSearchFieldBackgroundImage:[UIImage imageNamed:@"add_friends_input2"] forState:UIControlStateNormal];
     
     _searchBar.top = _collegeTopView.bottom;
@@ -186,6 +209,7 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{                     // called when keyboard search button pressed
     [_searchBar resignFirstResponder];
+    [self processNewCharsInTextView];
 }
 
 - (void)didBeginDragging {
@@ -195,8 +219,38 @@
 
 -(void)processNewCharsInTextView
 {
-    _filteredCollegesArray = nil;
+    CANCEL_RELEASE_REQUEST(_fetchCollegesRequest)
+    _fetchCollegesRequest = nil;
     
+    [self showLoading];
+    __weak __block SHOnboarding2View *weakSelf = self;
+
+    self.fetchCollegesRequest = [[SHApi sharedInstance] getSchoolsForSearchTerm:[_searchBar.text lowercaseString]
+                                                                        success:^(NSArray * colleges)
+                                 {
+                                    
+                                     dispatch_async(dispatch_get_main_queue(), ^{
+                                         
+                                         weakSelf.fullCollegesArray = colleges;
+                                         [weakSelf reloadTable];
+                                         [weakSelf hideLoading];
+                                         
+                                     });
+
+                                 }failure:^(NSError *error)
+                                 {
+                                     dispatch_async(dispatch_get_main_queue(), ^{
+                                         
+                                         [weakSelf reloadTable];
+                                         [weakSelf hideLoading];
+                                         
+                                     });
+   
+                                 }];
+    
+    
+    /*
+    _filteredCollegesArray = nil;
     _filteredCollegesArray = [[NSMutableArray alloc] init];
     
     for(College *college in self.fullCollegesArray)
@@ -213,6 +267,7 @@
     
     isFiltering = YES;
     [self.tableView reloadData];
+     */
     
 }
 
@@ -230,7 +285,7 @@
         [self.tableView reloadData];
         
     }else{
-        [self processNewCharsInTextView];
+        //[self processNewCharsInTextView];
         
     }
     
@@ -322,6 +377,9 @@
         
     }
     
+    if(_delegate && [_delegate respondsToSelector:@selector(continueToNextStep:)])
+        [_delegate continueToNextStep:self];
+
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView

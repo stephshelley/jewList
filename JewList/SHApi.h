@@ -40,6 +40,17 @@
 - (NSString *)userLogin;
 - (NSString *)userPassword;
 
+- (id)getUser:(NSString *)userId
+      success:(void (^)(User *user))success
+      failure:(void (^)(NSError * error))failure;
+
+- (id)getSchools:(void (^)(NSArray *colleges))success
+         failure:(void (^)(NSError * error))failure;
+
+- (id)getSchoolsForSearchTerm:(NSString *)term
+                      success:(void (^)(NSArray *colleges))success
+                      failure:(void (^)(NSError * error))failure;
+
 - (id)getColleges:(void (^)(NSArray *colleges))success
           failure:(void (^)(NSError * error))failure;
 

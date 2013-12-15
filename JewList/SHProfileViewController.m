@@ -41,7 +41,7 @@
                                                           sender:self
                                                       titleColor:[UIColor clearColor]];
 
-    leftButtonView.top = 0;
+    leftButtonView.top = IS_IOS7 ? 20 : 0;
     leftButtonView.left = 0;
     [self.view addSubview:leftButtonView];
     
@@ -49,7 +49,7 @@
     _nameLabel.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:(_nameLabel.height-2)];
     _nameLabel.textColor = [UIColor whiteColor];
     _nameLabel.centerX = floorf(self.view.width/2);
-    _nameLabel.top = 10;
+    _nameLabel.top = 10 + (IS_IOS7 ? 20 : 0);
     _nameLabel.adjustsFontSizeToFitWidth = YES;
     _nameLabel.backgroundColor = [UIColor clearColor];
     _nameLabel.textAlignment = NSTextAlignmentCenter;
@@ -273,10 +273,10 @@
 {
     NSString *gender = nil;
     
-    if([_user.gendre isEqualToString:@"male"])
+    if([_user.gender intValue] == 0)
     {
         gender = @"M";
-    }else if([_user.gendre isEqualToString:@"female"])
+    }else if([_user.gender intValue] == 1)
     {
         gender = @"F";
     }else{
