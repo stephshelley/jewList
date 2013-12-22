@@ -44,6 +44,10 @@
       success:(void (^)(User *user))success
       failure:(void (^)(NSError * error))failure;
 
+- (id)updateUser:(User *)user
+         success:(void (^)(User *user))success
+         failure:(void (^)(NSError * error))failure;
+
 - (id)getSchools:(void (^)(NSArray *colleges))success
          failure:(void (^)(NSError * error))failure;
 

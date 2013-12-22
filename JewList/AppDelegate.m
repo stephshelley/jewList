@@ -7,19 +7,26 @@
 //
 
 #import "AppDelegate.h"
+#import "SHApi.h"
+#import "LoginViewController.h"
+#import "ResultsViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+
+    if(![[SHApi sharedInstance] currentUser])
+    {
+        [self initLogedOut];
+    }
+    else
+    {
+        [self initLogedIn];
+        
+    }
     
-    //self.viewController = [[MainViewController alloc] init];
-    
-    self.loginViewController = [[LoginViewController alloc] init];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:_loginViewController];
-    self.window.rootViewController = navController;
     if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 
     if (!IsIpad && [[UINavigationBar class] respondsToSelector:@selector(appearance)])
@@ -43,6 +50,22 @@
     
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)initLogedOut
+{
+    LoginViewController *loginVC = [[LoginViewController alloc] init];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:loginVC];
+    self.window.rootViewController = navController;
+
+}
+
+- (void)initLogedIn
+{
+    ResultsViewController *resultsVC = [[ResultsViewController alloc] init];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:resultsVC];
+    self.window.rootViewController = navController;
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

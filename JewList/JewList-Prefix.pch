@@ -29,6 +29,9 @@
 
 #define IS_RETINA ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] && ([UIScreen mainScreen].scale == 2.0))
 
+#define REQUEST_TIMEOUT                     20
+#define SH_DEFAULT_CACHE_INVALIDATION_AGE (1.0 / 0.0)   // inf
+
 //RGB color macro
 #define UIColorFromRGB(rgbValue) [UIColor \
 colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \

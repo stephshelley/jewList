@@ -7,6 +7,7 @@
 //
 
 #import "NINetworkImageView.h"
+#import "SHUserCellItem.h"
 
 @class User;
 
@@ -18,6 +19,7 @@
 @property (nonatomic, strong) UIImageView *arrow;
 
 @property (nonatomic, strong) User *user;
+@property (nonatomic, strong) SHUserCellItem *item;
 
 + (float)rowHeight;
 

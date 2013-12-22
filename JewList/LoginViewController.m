@@ -11,6 +11,7 @@
 #import "User.h"
 #import "STFacebookManager.h"
 #import "SHProfileViewController.h"
+#import "ResultsViewController.h"
 
 @implementation LoginViewController
 
@@ -108,6 +109,7 @@
     {
         User *currentUser = [[SHApi sharedInstance] currentUser];
         _onboardingStep4 = [[STOnboarding4View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height - 20) andUser:currentUser];
+        _onboardingStep4.delegate = self;
         [_onboardingStep4.nextStepButton addTarget:self action:@selector(continueToStep4) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_onboardingStep4];
         
@@ -142,19 +144,53 @@
 - (void)continueToStep3
 {
     [self animateToNextStep:self.onboardingStep2 destination:self.onboardingStep4];
-    
+    [_onboardingStep2.searchBar resignFirstResponder];
 }
 
 - (void)continueToStep4
 {
-    [self animateToNextStep:self.onboardingStep4 destination:self.onboardingStep3];
+    //[self animateToNextStep:self.onboardingStep4 destination:self.onboardingStep3];
 
+    // perform put for user profile
+    
+    [_onboardingStep4 showLoading];
+    __weak __block STOnboarding4View *blockView4 = _onboardingStep4;
+    __weak __block LoginViewController *weakSelf = self;
+    
+    [[SHApi sharedInstance] updateUser:_onboardingStep4.user success:^(User *user)
+     {
+         dispatch_async(dispatch_get_main_queue(), ^{
+             [blockView4 hideLoading];
+             //[weakSelf animateToNextStep:self.onboardingStep4 destination:self.onboardingStep3];
+             [weakSelf showResultsScreen];
+
+         });
+
+         
+     }failure:^(NSError *error)
+     {
+         dispatch_async(dispatch_get_main_queue(), ^{
+             [blockView4 hideLoading];
+             [weakSelf showResultsScreen];
+            // [weakSelf animateToNextStep:self.onboardingStep4 destination:self.onboardingStep3];
+         });
+         
+
+     }];
+    
+}
+
+- (void)showResultsScreen
+{
+    ResultsViewController *vc = [[ResultsViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:NO];
+    
 }
 
 - (void)animateToNextStep:(UIView*)originView destination:(UIView*)destinationView
 {
     destinationView.left = self.view.width;
-    __block UIView *_originView = originView;
+    //__block UIView *_originView = originView;
     
     [UIView animateWithDuration:0.3
                           delay:0
@@ -206,6 +242,12 @@
         [self animateBacktStep:self.onboardingStep2 destination:self.onboardingStep1];
         
     }
+    else if(sender == _onboardingStep4)
+    {
+        [self animateBacktStep:self.onboardingStep4 destination:self.onboardingStep2];
+        
+    }
+    
 }
 
 @end

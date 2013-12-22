@@ -151,6 +151,19 @@
 		3A0CCC4F179A53C40000AA8C /* NSURL+NXOAuth2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CCC4A179A53C40000AA8C /* NSURL+NXOAuth2.m */; };
 		3A0CCC55179A54E20000AA8C /* SHLoginPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CCC54179A54E20000AA8C /* SHLoginPassword.m */; };
 		3A0CCC58179A632B0000AA8C /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CCC57179A632B0000AA8C /* UIViewAdditions.m */; };
+		3A5C349718676ABA0092F08A /* NSDictionary+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C348F18676ABA0092F08A /* NSDictionary+QueryString.m */; };
+		3A5C349818676ABA0092F08A /* LGURLJSONResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C349118676ABA0092F08A /* LGURLJSONResponse.m */; };
+		3A5C349918676ABA0092F08A /* LGURLRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C349318676ABA0092F08A /* LGURLRequestModel.m */; };
+		3A5C349A18676ABA0092F08A /* LGJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C349618676ABA0092F08A /* LGJSONRequestOperation.m */; };
+		3A5C349E18676B430092F08A /* SHMemberResultsJsonResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C349D18676B430092F08A /* SHMemberResultsJsonResponse.m */; };
+		3A5C34A118676BA40092F08A /* STBaseDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C34A018676BA40092F08A /* STBaseDataModel.m */; };
+		3A5C34A418676BAA0092F08A /* STRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C34A318676BAA0092F08A /* STRequestModel.m */; };
+		3A5C34A718676BC20092F08A /* SHMembersResultsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C34A618676BC20092F08A /* SHMembersResultsModel.m */; };
+		3A5C34AA18676D2C0092F08A /* NSObjectAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C34A918676D2C0092F08A /* NSObjectAdditions.m */; };
+		3A5C34AE18676D4D0092F08A /* TTURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C34AD18676D4D0092F08A /* TTURLCache.m */; };
+		3A5C34B118676E3D0092F08A /* STBaseDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C34B018676E3D0092F08A /* STBaseDataSource.m */; };
+		3A5C34B418676E540092F08A /* SHMemberResultsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C34B318676E540092F08A /* SHMemberResultsDataSource.m */; };
+		3A5C34B818676F8E0092F08A /* SHUserCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C34B718676F8E0092F08A /* SHUserCellItem.m */; };
 		3AAB1229185E448A00F592DD /* STOnboarding4View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB1228185E448A00F592DD /* STOnboarding4View.m */; };
 		3ADFA8ED179A69E000B66F78 /* STFacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA8EC179A69E000B66F78 /* STFacebookManager.m */; };
 		3ADFA8F1179A71DC00B66F78 /* SHOnboarding1View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA8F0179A71DC00B66F78 /* SHOnboarding1View.m */; };
@@ -486,6 +499,33 @@
 		3A0CCC54179A54E20000AA8C /* SHLoginPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHLoginPassword.m; sourceTree = "<group>"; };
 		3A0CCC56179A632B0000AA8C /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
 		3A0CCC57179A632B0000AA8C /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
+		3A5C348E18676ABA0092F08A /* NSDictionary+QueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+QueryString.h"; sourceTree = "<group>"; };
+		3A5C348F18676ABA0092F08A /* NSDictionary+QueryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+QueryString.m"; sourceTree = "<group>"; };
+		3A5C349018676ABA0092F08A /* LGURLJSONResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGURLJSONResponse.h; sourceTree = "<group>"; };
+		3A5C349118676ABA0092F08A /* LGURLJSONResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGURLJSONResponse.m; sourceTree = "<group>"; };
+		3A5C349218676ABA0092F08A /* LGURLRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGURLRequestModel.h; sourceTree = "<group>"; };
+		3A5C349318676ABA0092F08A /* LGURLRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGURLRequestModel.m; sourceTree = "<group>"; };
+		3A5C349418676ABA0092F08A /* LGURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGURLResponse.h; sourceTree = "<group>"; };
+		3A5C349518676ABA0092F08A /* LGJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGJSONRequestOperation.h; sourceTree = "<group>"; };
+		3A5C349618676ABA0092F08A /* LGJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGJSONRequestOperation.m; sourceTree = "<group>"; };
+		3A5C349C18676B430092F08A /* SHMemberResultsJsonResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHMemberResultsJsonResponse.h; sourceTree = "<group>"; };
+		3A5C349D18676B430092F08A /* SHMemberResultsJsonResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHMemberResultsJsonResponse.m; sourceTree = "<group>"; };
+		3A5C349F18676BA40092F08A /* STBaseDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STBaseDataModel.h; sourceTree = "<group>"; };
+		3A5C34A018676BA40092F08A /* STBaseDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STBaseDataModel.m; sourceTree = "<group>"; };
+		3A5C34A218676BAA0092F08A /* STRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRequestModel.h; sourceTree = "<group>"; };
+		3A5C34A318676BAA0092F08A /* STRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRequestModel.m; sourceTree = "<group>"; };
+		3A5C34A518676BC20092F08A /* SHMembersResultsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHMembersResultsModel.h; sourceTree = "<group>"; };
+		3A5C34A618676BC20092F08A /* SHMembersResultsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHMembersResultsModel.m; sourceTree = "<group>"; };
+		3A5C34A818676D2C0092F08A /* NSObjectAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSObjectAdditions.h; sourceTree = "<group>"; };
+		3A5C34A918676D2C0092F08A /* NSObjectAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSObjectAdditions.m; sourceTree = "<group>"; };
+		3A5C34AC18676D4D0092F08A /* TTURLCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTURLCache.h; sourceTree = "<group>"; };
+		3A5C34AD18676D4D0092F08A /* TTURLCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTURLCache.m; sourceTree = "<group>"; };
+		3A5C34AF18676E3D0092F08A /* STBaseDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STBaseDataSource.h; sourceTree = "<group>"; };
+		3A5C34B018676E3D0092F08A /* STBaseDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STBaseDataSource.m; sourceTree = "<group>"; };
+		3A5C34B218676E540092F08A /* SHMemberResultsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHMemberResultsDataSource.h; sourceTree = "<group>"; };
+		3A5C34B318676E540092F08A /* SHMemberResultsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHMemberResultsDataSource.m; sourceTree = "<group>"; };
+		3A5C34B618676F8E0092F08A /* SHUserCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHUserCellItem.h; sourceTree = "<group>"; };
+		3A5C34B718676F8E0092F08A /* SHUserCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHUserCellItem.m; sourceTree = "<group>"; };
 		3AAB1227185E448A00F592DD /* STOnboarding4View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboarding4View.h; sourceTree = "<group>"; };
 		3AAB1228185E448A00F592DD /* STOnboarding4View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOnboarding4View.m; sourceTree = "<group>"; };
 		3AAB122A185E545B00F592DD /* SHOnboardingDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHOnboardingDelegate.h; sourceTree = "<group>"; };
@@ -617,6 +657,12 @@
 		3A0ACC3D179A3F3C0083B80B /* JewList */ = {
 			isa = PBXGroup;
 			children = (
+				3A5C34B518676F7F0092F08A /* Cell Items */,
+				3A5C34AB18676D450092F08A /* Cache */,
+				3A5C349B18676AC30092F08A /* Json */,
+				3A5C348D18676AAC0092F08A /* Network */,
+				3A5C348B18676A6E0092F08A /* Models */,
+				3A5C348A18676A650092F08A /* Datasources */,
 				3ADFA900179A91DC00B66F78 /* Cells */,
 				3ADFA8FB179A91AC00B66F78 /* Resources */,
 				3ADFA8EE179A71C500B66F78 /* Views */,
@@ -1123,6 +1169,83 @@
 			name = Additions;
 			sourceTree = "<group>";
 		};
+		3A5C348A18676A650092F08A /* Datasources */ = {
+			isa = PBXGroup;
+			children = (
+				3A5C34AF18676E3D0092F08A /* STBaseDataSource.h */,
+				3A5C34B018676E3D0092F08A /* STBaseDataSource.m */,
+				3A5C34B218676E540092F08A /* SHMemberResultsDataSource.h */,
+				3A5C34B318676E540092F08A /* SHMemberResultsDataSource.m */,
+			);
+			name = Datasources;
+			sourceTree = "<group>";
+		};
+		3A5C348B18676A6E0092F08A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3A5C34A818676D2C0092F08A /* NSObjectAdditions.h */,
+				3A5C34A918676D2C0092F08A /* NSObjectAdditions.m */,
+				3A5C348C18676A8B0092F08A /* Json Responses */,
+				3A5C34A218676BAA0092F08A /* STRequestModel.h */,
+				3A5C34A318676BAA0092F08A /* STRequestModel.m */,
+				3A5C349F18676BA40092F08A /* STBaseDataModel.h */,
+				3A5C34A018676BA40092F08A /* STBaseDataModel.m */,
+				3A5C34A518676BC20092F08A /* SHMembersResultsModel.h */,
+				3A5C34A618676BC20092F08A /* SHMembersResultsModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		3A5C348C18676A8B0092F08A /* Json Responses */ = {
+			isa = PBXGroup;
+			children = (
+				3A5C349C18676B430092F08A /* SHMemberResultsJsonResponse.h */,
+				3A5C349D18676B430092F08A /* SHMemberResultsJsonResponse.m */,
+			);
+			name = "Json Responses";
+			sourceTree = "<group>";
+		};
+		3A5C348D18676AAC0092F08A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3A5C348E18676ABA0092F08A /* NSDictionary+QueryString.h */,
+				3A5C348F18676ABA0092F08A /* NSDictionary+QueryString.m */,
+				3A5C349018676ABA0092F08A /* LGURLJSONResponse.h */,
+				3A5C349118676ABA0092F08A /* LGURLJSONResponse.m */,
+				3A5C349218676ABA0092F08A /* LGURLRequestModel.h */,
+				3A5C349318676ABA0092F08A /* LGURLRequestModel.m */,
+				3A5C349418676ABA0092F08A /* LGURLResponse.h */,
+				3A5C349518676ABA0092F08A /* LGJSONRequestOperation.h */,
+				3A5C349618676ABA0092F08A /* LGJSONRequestOperation.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		3A5C349B18676AC30092F08A /* Json */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Json;
+			sourceTree = "<group>";
+		};
+		3A5C34AB18676D450092F08A /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				3A5C34AC18676D4D0092F08A /* TTURLCache.h */,
+				3A5C34AD18676D4D0092F08A /* TTURLCache.m */,
+			);
+			name = Cache;
+			sourceTree = "<group>";
+		};
+		3A5C34B518676F7F0092F08A /* Cell Items */ = {
+			isa = PBXGroup;
+			children = (
+				3A5C34B618676F8E0092F08A /* SHUserCellItem.h */,
+				3A5C34B718676F8E0092F08A /* SHUserCellItem.m */,
+			);
+			name = "Cell Items";
+			sourceTree = "<group>";
+		};
 		3ADFA8EE179A71C500B66F78 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1208,6 +1331,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Oren Zitoun";
+				TargetAttributes = {
+					3A0ACC33179A3F3C0083B80B = {
+						DevelopmentTeam = JR9E9LAGPW;
+					};
+				};
 			};
 			buildConfigurationList = 3A0ACC2F179A3F3C0083B80B /* Build configuration list for PBXProject "JewList" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1265,6 +1393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A5C34B818676F8E0092F08A /* SHUserCellItem.m in Sources */,
 				3A0ACC44179A3F3C0083B80B /* main.m in Sources */,
 				3A0ACC48179A3F3C0083B80B /* AppDelegate.m in Sources */,
 				3A0ACD9F179A42D00083B80B /* Jastor.m in Sources */,
@@ -1301,6 +1430,7 @@
 				3A0ACDCA179A42F50083B80B /* NSString+CamelCase.m in Sources */,
 				3A0ACDEA179A465C0083B80B /* NSObject+SBJSON.m in Sources */,
 				3A0ACDEB179A465C0083B80B /* NSString+SBJSON.m in Sources */,
+				3A5C349E18676B430092F08A /* SHMemberResultsJsonResponse.m in Sources */,
 				3A0ACDEC179A465C0083B80B /* JSONKit.m in Sources */,
 				3A0ACDED179A465C0083B80B /* SBJSON.m in Sources */,
 				3A0ACDEE179A465C0083B80B /* SBJsonBase.m in Sources */,
@@ -1322,6 +1452,7 @@
 				3A0CCBBB179A4F1B0000AA8C /* FBCrypto.m in Sources */,
 				3A0CCBBC179A4F1B0000AA8C /* Facebook.m in Sources */,
 				3A0CCBC9179A4F1B0000AA8C /* FBAccessTokenData.m in Sources */,
+				3A5C34B118676E3D0092F08A /* STBaseDataSource.m in Sources */,
 				3A0CCBCA179A4F1B0000AA8C /* FBAppBridge.m in Sources */,
 				3A0CCBCB179A4F1B0000AA8C /* FBAppBridgeTypeToJSONConverter.m in Sources */,
 				3A0CCBCC179A4F1B0000AA8C /* FBAppCall.m in Sources */,
@@ -1335,6 +1466,7 @@
 				3A0CCBD4179A4F1B0000AA8C /* FBDialogsParams.m in Sources */,
 				3A0CCBD5179A4F1B0000AA8C /* FBError.m in Sources */,
 				3A0CCBD6179A4F1B0000AA8C /* FBErrorUtility.m in Sources */,
+				3A5C34AE18676D4D0092F08A /* TTURLCache.m in Sources */,
 				3A0CCBD7179A4F1B0000AA8C /* FBFetchedAppSettings.m in Sources */,
 				3A0CCBD8179A4F1B0000AA8C /* FBFrictionlessRecipientCache.m in Sources */,
 				3A0CCBD9179A4F1B0000AA8C /* FBFrictionlessRequestSettings.m in Sources */,
@@ -1358,6 +1490,7 @@
 				3A0CCBEB179A4F1B0000AA8C /* FBRequest.m in Sources */,
 				3A0CCBEC179A4F1B0000AA8C /* FBRequestBody.m in Sources */,
 				3A0CCBED179A4F1B0000AA8C /* FBRequestConnection.m in Sources */,
+				3A5C34A118676BA40092F08A /* STBaseDataModel.m in Sources */,
 				3A0CCBEE179A4F1B0000AA8C /* FBSession.m in Sources */,
 				3A0CCBEF179A4F1B0000AA8C /* FBSessionInsightsState.m in Sources */,
 				3A0CCBF0179A4F1B0000AA8C /* FBSessionManualTokenCachingStrategy.m in Sources */,
@@ -1366,9 +1499,12 @@
 				3A0CCBF3179A4F1B0000AA8C /* FBShareDialogParams.m in Sources */,
 				3A0CCBF4179A4F1B0000AA8C /* FBSystemAccountStoreAdapter.m in Sources */,
 				3A0CCBF5179A4F1B0000AA8C /* FBTestSession.m in Sources */,
+				3A5C349818676ABA0092F08A /* LGURLJSONResponse.m in Sources */,
 				3A0CCBF6179A4F1B0000AA8C /* FBURLConnection.m in Sources */,
 				3A0CCBF7179A4F1B0000AA8C /* FBUserSettingsViewController.m in Sources */,
 				3A0CCBF9179A4F1B0000AA8C /* FBUtility.m in Sources */,
+				3A5C34A718676BC20092F08A /* SHMembersResultsModel.m in Sources */,
+				3A5C349A18676ABA0092F08A /* LGJSONRequestOperation.m in Sources */,
 				3A0CCBFA179A4F1B0000AA8C /* FBViewController.m in Sources */,
 				3A0CCBFB179A4F1B0000AA8C /* FBWebDialogs.m in Sources */,
 				3A0CCBFC179A4F1B0000AA8C /* NSError+FBError.m in Sources */,
@@ -1377,9 +1513,12 @@
 				3A0CCC3F179A53630000AA8C /* SHAccessToken.m in Sources */,
 				3A0CCC4B179A53C40000AA8C /* NXOAuth2FileStreamWrapper.m in Sources */,
 				3A0CCC4C179A53C40000AA8C /* NXOAuth2PostBodyPart.m in Sources */,
+				3A5C34A418676BAA0092F08A /* STRequestModel.m in Sources */,
 				3A0CCC4D179A53C40000AA8C /* NXOAuth2PostBodyStream.m in Sources */,
+				3A5C34AA18676D2C0092F08A /* NSObjectAdditions.m in Sources */,
 				3A0CCC4E179A53C40000AA8C /* NSString+NXOAuth2.m in Sources */,
 				3A0CCC4F179A53C40000AA8C /* NSURL+NXOAuth2.m in Sources */,
+				3A5C34B418676E540092F08A /* SHMemberResultsDataSource.m in Sources */,
 				3A0CCC55179A54E20000AA8C /* SHLoginPassword.m in Sources */,
 				3A0CCC58179A632B0000AA8C /* UIViewAdditions.m in Sources */,
 				3ADFA8ED179A69E000B66F78 /* STFacebookManager.m in Sources */,
@@ -1387,8 +1526,10 @@
 				3ADFA8F4179A727B00B66F78 /* SHTextFieldOnBoarding.m in Sources */,
 				3ADFA8F7179A74F700B66F78 /* SHLoginOnboardingView.m in Sources */,
 				3ADFA8FA179A8A4C00B66F78 /* SHOnboarding2View.m in Sources */,
+				3A5C349718676ABA0092F08A /* NSDictionary+QueryString.m in Sources */,
 				3ADFA903179A91EE00B66F78 /* SHCollegeCell.m in Sources */,
 				3ADFA906179A92EA00B66F78 /* College.m in Sources */,
+				3A5C349918676ABA0092F08A /* LGURLRequestModel.m in Sources */,
 				D02FD2FE179B278000D876D8 /* JLColors.m in Sources */,
 				3ADFA90B179B32EB00B66F78 /* ResultsViewController.m in Sources */,
 				3ADFA90E179B33DC00B66F78 /* SHOnboarding3View.m in Sources */,
@@ -1477,7 +1618,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -1489,8 +1630,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8FCB5F0A-B787-4DDE-8FDF-5D952DCA2E47";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8FCB5F0A-B787-4DDE-8FDF-5D952DCA2E47";
+				PROVISIONING_PROFILE = "3C20D75A-9B14-4E00-991C-3180F75C1193";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3C20D75A-9B14-4E00-991C-3180F75C1193";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -1501,7 +1642,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -1513,8 +1654,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8FCB5F0A-B787-4DDE-8FDF-5D952DCA2E47";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8FCB5F0A-B787-4DDE-8FDF-5D952DCA2E47";
+				PROVISIONING_PROFILE = "24C8FB2A-CACF-4D74-A224-98B66B8B92F8";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "24C8FB2A-CACF-4D74-A224-98B66B8B92F8";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;

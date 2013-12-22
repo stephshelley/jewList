@@ -59,11 +59,17 @@
     
 }
 
+- (void)setItem:(SHUserCellItem *)item
+{
+    _item = item;
+    [self setUser:_item.user];
+    
+}
 
 - (void)setUser:(User *)user
 {
     _user = user;
-    [_userImageView setPathToNetworkImage:_user.fbImageUrl forDisplaySize:_userImageView.size contentMode:UIViewContentModeScaleAspectFill];
+    [_userImageView setPathToNetworkImage:[_user fbImageUrlForSize:_userImageView.size] forDisplaySize:_userImageView.size contentMode:UIViewContentModeScaleAspectFill];
     _nameLabel.text = [NSString stringWithFormat:@"%@ %@", _user.firstName, _user.lastName];
     _accesoryLabel.text = [NSString stringWithFormat:@"%@, %@, %@", [self getGenderSign], @"30", _user.fbHometownName];
     
@@ -84,6 +90,13 @@
     }
     
     return gender;
+    
+}
+
+- (void)prepareForReuse
+{
+    [super prepareForReuse];
+    [_userImageView prepareForReuse];
     
 }
 

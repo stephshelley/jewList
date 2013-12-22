@@ -52,7 +52,7 @@
     self.topResultsBgView = [[UIView alloc] initWithFrame:CGRectMake(0, progressBar.bottom, self.width, 50)];
     _topResultsBgView.backgroundColor = [UIColor JLGrey];
     [self addSubview:_topResultsBgView];
-    
+        
     self.somePotentialResultsLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, _topResultsBgView.top, _topResultsBgView.width - 20, _topResultsBgView.height)];
     _somePotentialResultsLabel.textAlignment = NSTextAlignmentCenter;
     _somePotentialResultsLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
@@ -72,7 +72,6 @@
     _nextStepButton.titleLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_nextStepButton];
     
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, _somePotentialResultsLabel.bottom, self.width,_nextStepButton.top - _somePotentialResultsLabel.bottom) style:UITableViewStylePlain];
     
     if(!IsIpad)

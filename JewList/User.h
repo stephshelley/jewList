@@ -7,6 +7,7 @@
 //
 
 #import "Jastor.h"
+#import "College.h"
 
 @interface User : Jastor
 
@@ -42,9 +43,12 @@
 @property (nonatomic, strong) NSString *roommatePrefs;
 @property (nonatomic, strong) NSString *school;
 @property (nonatomic, strong) NSNumber *social;
+@property (nonatomic, assign) BOOL didFinishSignup;
+@property (nonatomic, strong) College *college;
 
 @property (nonatomic, strong) NSDictionary *fbMeResult;
 @property (nonatomic, strong) NSDictionary *fbUsername;
 
+- (NSString *)fbImageUrlForSize:(CGSize)size;
 
 @end

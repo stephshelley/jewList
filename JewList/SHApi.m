@@ -216,10 +216,10 @@ static NSString *kCurrentUserPath = @"current_user";
 {
     /*
     [self logoutUser:^(void){
-        STORM_LOG(@"logout Success");
+        BD_LOG(@"logout Success");
     }failure:^(NSError *error)
      {
-         STORM_LOG(@"failed to logout");
+         BD_LOG(@"failed to logout");
      }];
      */
     
@@ -239,6 +239,129 @@ static NSString *kCurrentUserPath = @"current_user";
         
     });
         
+}
+
+- (NSDictionary *)generateUserParams:(User *)user
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    if(user.firstName != nil)
+        [params setObject:user.firstName forKey:@"first_name"];
+
+    if(user.lastName != nil)
+        [params setObject:user.lastName forKey:@"last_name"];
+
+    if(user.gender != nil)
+        [params setObject:[user.gender stringValue] forKey:@"gender"];
+
+    if(user.gradYear != nil)
+        [params setObject:[user.gradYear stringValue] forKey:@"grad_year"];
+    
+    if(user.personality != nil)
+    [params setObject:[user.personality stringValue] forKey:@"personality"];
+
+    if(user.campus != nil)
+        [params setObject:[user.campus stringValue] forKey:@"campus"];
+    
+    if(user.social != nil)
+        [params setObject:[user.social stringValue] forKey:@"social"];
+    
+    if(user.cleaning != nil)
+        [params setObject:[user.cleaning stringValue] forKey:@"cleaning"];
+    
+    if(user.diet != nil)
+        [params setObject:[user.diet stringValue] forKey:@"diet"];
+    
+    if(user.religious != nil)
+        [params setObject:[user.religious stringValue] forKey:@"religious"];
+    
+    if(user.roommatePrefs != nil)
+    {
+        [params setObject:user.roommatePrefs forKey:@"roommate_prefs"];
+    }else{
+        [params setObject:@"" forKey:@"roommate_prefs"];
+        
+    }
+
+    if(user.hsEngagement)
+    {
+        [params setObject:user.hsEngagement forKey:@"hs_engagement"];
+    }else{
+        [params setObject:@"" forKey:@"hs_engagement"];
+        
+    }
+    
+    if(user.school)
+    {
+        [params setObject:user.school forKey:@"school"];
+    }else{
+        [params setObject:@"" forKey:@"school"];
+        
+    }
+    
+    if(user.college)
+    {
+        if(user.college.dbId)
+            [params setObject:user.college.dbId forKey:@"college_id"];
+        
+        if(user.college.name)
+            [params setObject:user.college.name forKey:@"college_name"];
+        
+    }
+    
+    if(user.fbUsername)
+    {
+        [params setObject:user.fbUsername forKey:@"fb"];
+        
+    }else{
+        [params setObject:@"" forKey:@"fb"];
+        
+    }
+    
+    return params;
+    
+}
+
+- (id)updateUser:(User *)user
+         success:(void (^)(User *user))success
+         failure:(void (^)(NSError * error))failure
+{
+    
+    NSDictionary *userParams = [self generateUserParams:user];
+    NSDictionary *params = @{@"member" : [userParams JSONString]};
+    
+    
+    return [self standardDictionaryRequestWithPath:@"PutMember"
+                                            params:params
+                                            method:@"PUT"
+                                      noAuthNeeded:YES
+                                           success:^(id result) {
+                                               if([result isKindOfClass:[NSDictionary class]] && [result objectForKey:@"member1"])
+                                               {
+                                                   NSArray *results = [result objectForKey:@"member1"];
+                                                   
+                                                   for(NSDictionary *dict in results)
+                                                   {
+                                                       User *user = [[User alloc] initWithDictionary:dict];
+                                                       success(user);
+                                                       
+                                                   }
+                                                   
+                                                   success(nil);
+                                                   
+                                                   
+                                                   
+                                               } else {
+                                                   if([result objectForKey:@"error"])
+                                                   {
+                                                       //[UIHelpers handleApiError:[result objectForKey:@"error"]];
+                                                   }
+                                                   
+                                                   failure(nil);
+                                               }
+                                               
+                                           }
+                                           failure:failure];
 }
 
 - (id)getUser:(NSString *)userId

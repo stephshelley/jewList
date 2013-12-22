@@ -33,6 +33,7 @@
     self.title = @"Profile";
     self.view.backgroundColor = DEFAULT_BACKGROUND_COLOR;
     
+    /*
     UIView *leftButtonView = [SHUIHelpers getCustomBarButtonView:CGRectMake(0, 0, 44, 44)
                                                      buttonImage:@"iphone_navbar_button_back"
                                                    selectedImage:@"iphone_navbar_button_back"
@@ -44,12 +45,13 @@
     leftButtonView.top = IS_IOS7 ? 20 : 0;
     leftButtonView.left = 0;
     [self.view addSubview:leftButtonView];
+     */
     
     self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.width - 40,24)];
     _nameLabel.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:(_nameLabel.height-2)];
     _nameLabel.textColor = [UIColor whiteColor];
     _nameLabel.centerX = floorf(self.view.width/2);
-    _nameLabel.top = 10 + (IS_IOS7 ? 20 : 0);
+    _nameLabel.top = (IS_IOS7 ? 20 : 0);
     _nameLabel.adjustsFontSizeToFitWidth = YES;
     _nameLabel.backgroundColor = [UIColor clearColor];
     _nameLabel.textAlignment = NSTextAlignmentCenter;
@@ -64,8 +66,9 @@
     _userImageView.layer.borderWidth = 2.0;
     [self.view addSubview:_userImageView];
 
-    [_userImageView setPathToNetworkImage:_user.fbImageUrl forDisplaySize:_userImageView.size contentMode:UIViewContentModeScaleAspectFill];
-    
+    //[_userImageView setPathToNetworkImage:_user.fbImageUrl forDisplaySize:_userImageView.size contentMode:UIViewContentModeScaleAspectFill];
+    [_userImageView setPathToNetworkImage:[_user fbImageUrlForSize:_userImageView.size] forDisplaySize:_userImageView.size contentMode:UIViewContentModeScaleAspectFill];
+
     self.detailLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _nameLabel.width,20)];
     _detailLabel.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:(_detailLabel.height-2)];
     _detailLabel.textColor = [UIColor whiteColor];

@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Oren Zitoun. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 @class User;
 
 @interface SHOnboarding3View : UIView <UITableViewDataSource,UITableViewDelegate>

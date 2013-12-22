@@ -8,6 +8,8 @@
 
 #import "STOnboarding4View.h"
 #import "JLColors.h"
+#import "SHUIHelpers.h"
+#import "User.h"
 
 const CGFloat kOptimumPickerHeight = 216;
 const CGFloat kOptimumPickerWidth = 320;
@@ -25,6 +27,15 @@ const CGFloat kOptimumPickerWidth = 320;
     }
     
     return self;
+    
+}
+
+
+- (void)popScreen
+{
+    if(_delegate && [_delegate respondsToSelector:@selector(goToPreviousStep:)])
+        [_delegate goToPreviousStep:self];
+    
     
 }
 
@@ -51,6 +62,18 @@ const CGFloat kOptimumPickerWidth = 320;
     _yearTopView.backgroundColor = [UIColor JLGrey];
     [self addSubview:_yearTopView];
     
+    UIView *leftButtonView = [SHUIHelpers getCustomBarButtonView:CGRectMake(0, 0, 44, 44)
+                                                     buttonImage:@"iphone_navbar_button_back"
+                                                   selectedImage:@"iphone_navbar_button_back"
+                                                           title:@""
+                                                     andSelector:@selector(popScreen)
+                                                          sender:self
+                                                      titleColor:[UIColor clearColor]];
+    
+    leftButtonView.centerY = floorf(_yearTopView.height/2);
+    leftButtonView.left = -2;
+    [_yearTopView addSubview:leftButtonView];
+    
     self.chooseYearLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _yearTopView.width, _yearTopView.height)];
     _chooseYearLabel.textAlignment = NSTextAlignmentCenter;
     _chooseYearLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
@@ -72,8 +95,34 @@ const CGFloat kOptimumPickerWidth = 320;
     [self addSubview:_nextStepButton];
     
     self.yearsArray = [NSMutableArray arrayWithArray:@[@2015,@2016,@2017,@2018,@2019,@2020,@2021,@2022,@2023,@2024,@2025,@2026,@2027,@2028,@2029,@2030]];
+    _user.gradYear = [_yearsArray firstObject];
+    
     [self loadPicker];
 
+}
+
+- (void)showLoading
+{
+    if(nil == _activityView)
+    {
+        _activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        _activityView.center = self.center;
+        [self addSubview:_activityView];
+        [_activityView startAnimating];
+        _yearPickerView.hidden = YES;
+        _activityView.hidesWhenStopped = YES;
+    }
+    
+}
+
+- (void)hideLoading
+{
+    [_activityView stopAnimating];
+    [_activityView removeFromSuperview];
+    _activityView = nil;
+    _yearPickerView.hidden = NO;
+
+    
 }
 
 - (void)loadPicker
@@ -122,7 +171,9 @@ const CGFloat kOptimumPickerWidth = 320;
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-	
+    NSNumber *number = [_yearsArray objectAtIndex:row];
+    _user.gradYear = number;
+    
 }
 
 - (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component

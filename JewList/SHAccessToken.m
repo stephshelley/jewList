@@ -191,7 +191,7 @@
         SecKeychainItemFreeContent(&list, password);
     } else {
 		// TODO find out why this always works in i386 and always fails on ppc
-		STORM_LOG(@"Error from SecKeychainItemCopyContent: %d", err);
+		BD_LOG(@"Error from SecKeychainItemCopyContent: %d", err);
         return nil;
     }
     CFRelease(item);

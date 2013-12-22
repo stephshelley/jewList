@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SHOnboardingDelegate.h"
+
 @class User;
 
 @interface SHOnboarding2View : UIView <UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate>
