@@ -1,12 +1,12 @@
 /*
  *  File    : STRequestModel.h
- *  Project : Storm Frontend
+ *  Project Schmooz
  *
  *  Description : This class will handle network requests using AFnetworking JsonRequest Operations
  *
  *  DRI     : Oren Zitoun
  *  Created : 12/12/12.
- *  Copyright 2010-2011 MilestoneLab. All rights reserved.
+ *  Copyright 2010-2011 BBYO. All rights reserved.
  *
  */
 

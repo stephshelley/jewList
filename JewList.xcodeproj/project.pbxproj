@@ -151,6 +151,19 @@
 		3A0CCC4F179A53C40000AA8C /* NSURL+NXOAuth2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CCC4A179A53C40000AA8C /* NSURL+NXOAuth2.m */; };
 		3A0CCC55179A54E20000AA8C /* SHLoginPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CCC54179A54E20000AA8C /* SHLoginPassword.m */; };
 		3A0CCC58179A632B0000AA8C /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CCC57179A632B0000AA8C /* UIViewAdditions.m */; };
+		3A306ED1186793480008755F /* SHEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306ED0186793480008755F /* SHEditProfileViewController.m */; };
+		3A306ED7186793BA0008755F /* SHGraduationYearCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306ED6186793BA0008755F /* SHGraduationYearCell.m */; };
+		3A306EDA186795460008755F /* SHPersonalInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306ED9186795460008755F /* SHPersonalInfoCell.m */; };
+		3A306EDD186795E60008755F /* SHGenderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306EDC186795E60008755F /* SHGenderCell.m */; };
+		3A306EE018679C3C0008755F /* SHGradYearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306EDF18679C3C0008755F /* SHGradYearViewController.m */; };
+		3A306EE31867AC920008755F /* SHGenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306EE21867AC920008755F /* SHGenderViewController.m */; };
+		3A306EE71867AEC20008755F /* SHTextItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306EE61867AEC20008755F /* SHTextItemCell.m */; };
+		3A306EEA1867AFD70008755F /* SHHighSchoolInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306EE91867AFD70008755F /* SHHighSchoolInfoCell.m */; };
+		3A306EED1867B0410008755F /* SHAboutMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306EEC1867B0410008755F /* SHAboutMeCell.m */; };
+		3A306EF01867B3570008755F /* SHTextEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306EEF1867B3570008755F /* SHTextEditViewController.m */; };
+		3A306EF31867B6030008755F /* SHHSEngadmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306EF21867B6030008755F /* SHHSEngadmentViewController.m */; };
+		3A306EF61867B78E0008755F /* SHAboutMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306EF51867B78E0008755F /* SHAboutMeViewController.m */; };
+		3A306EF91867BB0D0008755F /* SHWorkPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306EF81867BB0D0008755F /* SHWorkPartyViewController.m */; };
 		3A5C349718676ABA0092F08A /* NSDictionary+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C348F18676ABA0092F08A /* NSDictionary+QueryString.m */; };
 		3A5C349818676ABA0092F08A /* LGURLJSONResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C349118676ABA0092F08A /* LGURLJSONResponse.m */; };
 		3A5C349918676ABA0092F08A /* LGURLRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C349318676ABA0092F08A /* LGURLRequestModel.m */; };
@@ -499,6 +512,32 @@
 		3A0CCC54179A54E20000AA8C /* SHLoginPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHLoginPassword.m; sourceTree = "<group>"; };
 		3A0CCC56179A632B0000AA8C /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
 		3A0CCC57179A632B0000AA8C /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
+		3A306ECF186793480008755F /* SHEditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHEditProfileViewController.h; sourceTree = "<group>"; };
+		3A306ED0186793480008755F /* SHEditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHEditProfileViewController.m; sourceTree = "<group>"; };
+		3A306ED5186793BA0008755F /* SHGraduationYearCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHGraduationYearCell.h; sourceTree = "<group>"; };
+		3A306ED6186793BA0008755F /* SHGraduationYearCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHGraduationYearCell.m; sourceTree = "<group>"; };
+		3A306ED8186795460008755F /* SHPersonalInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHPersonalInfoCell.h; sourceTree = "<group>"; };
+		3A306ED9186795460008755F /* SHPersonalInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHPersonalInfoCell.m; sourceTree = "<group>"; };
+		3A306EDB186795E60008755F /* SHGenderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHGenderCell.h; sourceTree = "<group>"; };
+		3A306EDC186795E60008755F /* SHGenderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHGenderCell.m; sourceTree = "<group>"; };
+		3A306EDE18679C3C0008755F /* SHGradYearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHGradYearViewController.h; sourceTree = "<group>"; };
+		3A306EDF18679C3C0008755F /* SHGradYearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHGradYearViewController.m; sourceTree = "<group>"; };
+		3A306EE11867AC920008755F /* SHGenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHGenderViewController.h; sourceTree = "<group>"; };
+		3A306EE21867AC920008755F /* SHGenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHGenderViewController.m; sourceTree = "<group>"; };
+		3A306EE51867AEC20008755F /* SHTextItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTextItemCell.h; sourceTree = "<group>"; };
+		3A306EE61867AEC20008755F /* SHTextItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTextItemCell.m; sourceTree = "<group>"; };
+		3A306EE81867AFD70008755F /* SHHighSchoolInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHHighSchoolInfoCell.h; sourceTree = "<group>"; };
+		3A306EE91867AFD70008755F /* SHHighSchoolInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHHighSchoolInfoCell.m; sourceTree = "<group>"; };
+		3A306EEB1867B0410008755F /* SHAboutMeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAboutMeCell.h; sourceTree = "<group>"; };
+		3A306EEC1867B0410008755F /* SHAboutMeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAboutMeCell.m; sourceTree = "<group>"; };
+		3A306EEE1867B3570008755F /* SHTextEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTextEditViewController.h; sourceTree = "<group>"; };
+		3A306EEF1867B3570008755F /* SHTextEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTextEditViewController.m; sourceTree = "<group>"; };
+		3A306EF11867B6030008755F /* SHHSEngadmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHHSEngadmentViewController.h; sourceTree = "<group>"; };
+		3A306EF21867B6030008755F /* SHHSEngadmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHHSEngadmentViewController.m; sourceTree = "<group>"; };
+		3A306EF41867B78E0008755F /* SHAboutMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAboutMeViewController.h; sourceTree = "<group>"; };
+		3A306EF51867B78E0008755F /* SHAboutMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAboutMeViewController.m; sourceTree = "<group>"; };
+		3A306EF71867BB0D0008755F /* SHWorkPartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHWorkPartyViewController.h; sourceTree = "<group>"; };
+		3A306EF81867BB0D0008755F /* SHWorkPartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHWorkPartyViewController.m; sourceTree = "<group>"; };
 		3A5C348E18676ABA0092F08A /* NSDictionary+QueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+QueryString.h"; sourceTree = "<group>"; };
 		3A5C348F18676ABA0092F08A /* NSDictionary+QueryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+QueryString.m"; sourceTree = "<group>"; };
 		3A5C349018676ABA0092F08A /* LGURLJSONResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGURLJSONResponse.h; sourceTree = "<group>"; };
@@ -717,6 +756,7 @@
 		3A0ACD01179A413A0083B80B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3A306EE41867AE550008755F /* Edit Profile */,
 				3A0CC857179A4DAF0000AA8C /* LoginViewController.h */,
 				3A0CC858179A4DAF0000AA8C /* LoginViewController.m */,
 				3A0CC85A179A4DBC0000AA8C /* SettingsViewController.h */,
@@ -1169,6 +1209,27 @@
 			name = Additions;
 			sourceTree = "<group>";
 		};
+		3A306EE41867AE550008755F /* Edit Profile */ = {
+			isa = PBXGroup;
+			children = (
+				3A306ECF186793480008755F /* SHEditProfileViewController.h */,
+				3A306ED0186793480008755F /* SHEditProfileViewController.m */,
+				3A306EDE18679C3C0008755F /* SHGradYearViewController.h */,
+				3A306EDF18679C3C0008755F /* SHGradYearViewController.m */,
+				3A306EE11867AC920008755F /* SHGenderViewController.h */,
+				3A306EE21867AC920008755F /* SHGenderViewController.m */,
+				3A306EEE1867B3570008755F /* SHTextEditViewController.h */,
+				3A306EEF1867B3570008755F /* SHTextEditViewController.m */,
+				3A306EF11867B6030008755F /* SHHSEngadmentViewController.h */,
+				3A306EF21867B6030008755F /* SHHSEngadmentViewController.m */,
+				3A306EF41867B78E0008755F /* SHAboutMeViewController.h */,
+				3A306EF51867B78E0008755F /* SHAboutMeViewController.m */,
+				3A306EF71867BB0D0008755F /* SHWorkPartyViewController.h */,
+				3A306EF81867BB0D0008755F /* SHWorkPartyViewController.m */,
+			);
+			name = "Edit Profile";
+			sourceTree = "<group>";
+		};
 		3A5C348A18676A650092F08A /* Datasources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1299,6 +1360,18 @@
 				3ADFA902179A91EE00B66F78 /* SHCollegeCell.m */,
 				3ADFA90F179B36E500B66F78 /* UserResultCell.h */,
 				3ADFA910179B36E500B66F78 /* UserResultCell.m */,
+				3A306ED5186793BA0008755F /* SHGraduationYearCell.h */,
+				3A306ED6186793BA0008755F /* SHGraduationYearCell.m */,
+				3A306ED8186795460008755F /* SHPersonalInfoCell.h */,
+				3A306ED9186795460008755F /* SHPersonalInfoCell.m */,
+				3A306EDB186795E60008755F /* SHGenderCell.h */,
+				3A306EDC186795E60008755F /* SHGenderCell.m */,
+				3A306EE51867AEC20008755F /* SHTextItemCell.h */,
+				3A306EE61867AEC20008755F /* SHTextItemCell.m */,
+				3A306EE81867AFD70008755F /* SHHighSchoolInfoCell.h */,
+				3A306EE91867AFD70008755F /* SHHighSchoolInfoCell.m */,
+				3A306EEB1867B0410008755F /* SHAboutMeCell.h */,
+				3A306EEC1867B0410008755F /* SHAboutMeCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -1394,6 +1467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A5C34B818676F8E0092F08A /* SHUserCellItem.m in Sources */,
+				3A306EE018679C3C0008755F /* SHGradYearViewController.m in Sources */,
 				3A0ACC44179A3F3C0083B80B /* main.m in Sources */,
 				3A0ACC48179A3F3C0083B80B /* AppDelegate.m in Sources */,
 				3A0ACD9F179A42D00083B80B /* Jastor.m in Sources */,
@@ -1416,6 +1490,7 @@
 				3A0ACDB8179A42D00083B80B /* NINetworkActivity.m in Sources */,
 				3A0ACDB9179A42D00083B80B /* NINonEmptyCollectionTesting.m in Sources */,
 				3A0ACDBA179A42D00083B80B /* NINonRetainingCollections.m in Sources */,
+				3A306EEA1867AFD70008755F /* SHHighSchoolInfoCell.m in Sources */,
 				3A0ACDBB179A42D00083B80B /* NIOperations.m in Sources */,
 				3A0ACDBC179A42D00083B80B /* NIPaths.m in Sources */,
 				3A0ACDBD179A42D00083B80B /* NIRuntimeClassModifications.m in Sources */,
@@ -1430,6 +1505,7 @@
 				3A0ACDCA179A42F50083B80B /* NSString+CamelCase.m in Sources */,
 				3A0ACDEA179A465C0083B80B /* NSObject+SBJSON.m in Sources */,
 				3A0ACDEB179A465C0083B80B /* NSString+SBJSON.m in Sources */,
+				3A306EE71867AEC20008755F /* SHTextItemCell.m in Sources */,
 				3A5C349E18676B430092F08A /* SHMemberResultsJsonResponse.m in Sources */,
 				3A0ACDEC179A465C0083B80B /* JSONKit.m in Sources */,
 				3A0ACDED179A465C0083B80B /* SBJSON.m in Sources */,
@@ -1442,6 +1518,7 @@
 				3A0CC84D179A474B0000AA8C /* AFJSONRequestOperation.m in Sources */,
 				3A0CC84E179A474B0000AA8C /* AFNetworkActivityIndicatorManager.m in Sources */,
 				3A0CC84F179A474B0000AA8C /* AFPropertyListRequestOperation.m in Sources */,
+				3A306EDD186795E60008755F /* SHGenderCell.m in Sources */,
 				3A0CC850179A474B0000AA8C /* AFURLConnectionOperation.m in Sources */,
 				3A0CC851179A474B0000AA8C /* AFXMLRequestOperation.m in Sources */,
 				3A0CC852179A474B0000AA8C /* UIImageView+AFNetworking.m in Sources */,
@@ -1454,6 +1531,7 @@
 				3A0CCBC9179A4F1B0000AA8C /* FBAccessTokenData.m in Sources */,
 				3A5C34B118676E3D0092F08A /* STBaseDataSource.m in Sources */,
 				3A0CCBCA179A4F1B0000AA8C /* FBAppBridge.m in Sources */,
+				3A306EED1867B0410008755F /* SHAboutMeCell.m in Sources */,
 				3A0CCBCB179A4F1B0000AA8C /* FBAppBridgeTypeToJSONConverter.m in Sources */,
 				3A0CCBCC179A4F1B0000AA8C /* FBAppCall.m in Sources */,
 				3A0CCBCD179A4F1B0000AA8C /* FBAppLinkData.m in Sources */,
@@ -1492,11 +1570,14 @@
 				3A0CCBED179A4F1B0000AA8C /* FBRequestConnection.m in Sources */,
 				3A5C34A118676BA40092F08A /* STBaseDataModel.m in Sources */,
 				3A0CCBEE179A4F1B0000AA8C /* FBSession.m in Sources */,
+				3A306ED7186793BA0008755F /* SHGraduationYearCell.m in Sources */,
 				3A0CCBEF179A4F1B0000AA8C /* FBSessionInsightsState.m in Sources */,
+				3A306EF01867B3570008755F /* SHTextEditViewController.m in Sources */,
 				3A0CCBF0179A4F1B0000AA8C /* FBSessionManualTokenCachingStrategy.m in Sources */,
 				3A0CCBF1179A4F1B0000AA8C /* FBSessionTokenCachingStrategy.m in Sources */,
 				3A0CCBF2179A4F1B0000AA8C /* FBSettings.m in Sources */,
 				3A0CCBF3179A4F1B0000AA8C /* FBShareDialogParams.m in Sources */,
+				3A306ED1186793480008755F /* SHEditProfileViewController.m in Sources */,
 				3A0CCBF4179A4F1B0000AA8C /* FBSystemAccountStoreAdapter.m in Sources */,
 				3A0CCBF5179A4F1B0000AA8C /* FBTestSession.m in Sources */,
 				3A5C349818676ABA0092F08A /* LGURLJSONResponse.m in Sources */,
@@ -1517,11 +1598,13 @@
 				3A0CCC4D179A53C40000AA8C /* NXOAuth2PostBodyStream.m in Sources */,
 				3A5C34AA18676D2C0092F08A /* NSObjectAdditions.m in Sources */,
 				3A0CCC4E179A53C40000AA8C /* NSString+NXOAuth2.m in Sources */,
+				3A306EF91867BB0D0008755F /* SHWorkPartyViewController.m in Sources */,
 				3A0CCC4F179A53C40000AA8C /* NSURL+NXOAuth2.m in Sources */,
 				3A5C34B418676E540092F08A /* SHMemberResultsDataSource.m in Sources */,
 				3A0CCC55179A54E20000AA8C /* SHLoginPassword.m in Sources */,
 				3A0CCC58179A632B0000AA8C /* UIViewAdditions.m in Sources */,
 				3ADFA8ED179A69E000B66F78 /* STFacebookManager.m in Sources */,
+				3A306EF61867B78E0008755F /* SHAboutMeViewController.m in Sources */,
 				3ADFA8F1179A71DC00B66F78 /* SHOnboarding1View.m in Sources */,
 				3ADFA8F4179A727B00B66F78 /* SHTextFieldOnBoarding.m in Sources */,
 				3ADFA8F7179A74F700B66F78 /* SHLoginOnboardingView.m in Sources */,
@@ -1531,13 +1614,16 @@
 				3ADFA906179A92EA00B66F78 /* College.m in Sources */,
 				3A5C349918676ABA0092F08A /* LGURLRequestModel.m in Sources */,
 				D02FD2FE179B278000D876D8 /* JLColors.m in Sources */,
+				3A306EDA186795460008755F /* SHPersonalInfoCell.m in Sources */,
 				3ADFA90B179B32EB00B66F78 /* ResultsViewController.m in Sources */,
 				3ADFA90E179B33DC00B66F78 /* SHOnboarding3View.m in Sources */,
 				3ADFA911179B36E500B66F78 /* UserResultCell.m in Sources */,
+				3A306EE31867AC920008755F /* SHGenderViewController.m in Sources */,
 				3ADFA914179B3DD500B66F78 /* SHProfileViewController.m in Sources */,
 				F8F2F064179B37A10088BF2B /* SHToggleButton.m in Sources */,
 				3ADFA91A179B4DCB00B66F78 /* UIView+FindUIViewController.m in Sources */,
 				F8A02848179B4FA600253FFA /* UIView+FindAndResignFirstResponder.m in Sources */,
+				3A306EF31867B6030008755F /* SHHSEngadmentViewController.m in Sources */,
 				3ADFA929179B5B5A00B66F78 /* SHUIHelpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

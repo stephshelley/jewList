@@ -10,4 +10,14 @@
 
 @implementation College
 
+
+-(id)copyWithZone:(NSZone *)zone
+{
+    College *newCollege = [[College alloc] init];
+    newCollege.dbId = [self.dbId copyWithZone:zone];
+    newCollege.name = [_name copyWithZone:zone];
+    return newCollege;
+    
+}
+
 @end

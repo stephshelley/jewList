@@ -110,7 +110,6 @@ static NSString *kCurrentUserPath = @"current_user";
 {
 	if (!_currentUser) {
 		_currentUser = [NSKeyedUnarchiver unarchiveObjectWithFile:[SHApi dataFilePath:kCurrentUserPath]];
-        if (_currentUser) BD_LOG(@"StormApi#currentUser from file:");
 	}
 	return _currentUser;
 }
@@ -158,25 +157,20 @@ static NSString *kCurrentUserPath = @"current_user";
 	}
 	if (currentUser) {
 		_currentUser = currentUser;
-        
-        
-		
+
 		if(![NSKeyedArchiver archiveRootObject:_currentUser toFile:[SHApi dataFilePath:kCurrentUserPath]])
         {
             BD_LOG(@"user object cache failed");
             
         }
-        
-		dispatch_async(dispatch_get_main_queue(), ^{
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"CurrentUserUpdated" object:currentUser];
-        });
+
 	}
 	else {
 		[SHApi deleteDataFile:[SHApi dataFilePath:kCurrentUserPath] error:nil];
         
         //clean the network cache.
         [[NSURLCache sharedURLCache] removeAllCachedResponses];
-		BD_LOG(@"StormApi#setCurrentUser = nil");
+		BD_LOG(@"setCurrentUser = nil");
 	}
 }
 
@@ -602,13 +596,6 @@ static NSString *kCurrentUserPath = @"current_user";
 }
 
 
-
-
-
-
-
-
-
 - (void)cancelRequest:(id)request
 {
     if (!request) return;
@@ -620,13 +607,6 @@ static NSString *kCurrentUserPath = @"current_user";
 	}
 
 }
-
-
-
-
-
-
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 

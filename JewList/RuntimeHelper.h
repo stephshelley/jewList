@@ -1,12 +1,12 @@
 /*
  *  File    : RuntimeHelper.h
- *  Project : Storm Frontend
+ *  Project Schmooz
  *
  *  Description : This class will help fetch our basic object properites names
  *
  *  DRI     : Oren Zitoun
  *  Created : 12/23/12.
- *  Copyright 2010-2012 MilestoneLab. All rights reserved.
+ *  Copyright 2010-2012 BBYO. All rights reserved.
  *
  */
 

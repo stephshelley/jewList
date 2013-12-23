@@ -1,12 +1,12 @@
 /*
  *  File    : STBaseDataModel.h
- *  Project : Storm Frontend
+ *  Project Schmooz
  *
  *  Description : The Base Data Model is a basic implementation of a class to hanle network requests for table-view based controllers with reload capabilities 
  *
  *  DRI     : Oren Zitoun
  *  Created : 12/12/12.
- *  Copyright 2010-2011 MilestoneLab. All rights reserved.
+ *  Copyright 2010-2011 BBYO. All rights reserved.
  *
  */
 

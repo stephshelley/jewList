@@ -1,13 +1,13 @@
 /*
  *  File    : STBaseDataSource.m
- *  Project : Storm Frontend
+ *  Project Schmooz
  *
  *  Description : The base data source represent a simple data source model to hold json request results and
  pass it back to the calling controller
  *
  *  DRI     : Oren Zitoun
  *  Created : 12/12/12.
- *  Copyright 2010-2011 MilestoneLab. All rights reserved.
+ *  Copyright 2010-2011 BBYO. All rights reserved.
  *
  */
 

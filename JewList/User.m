@@ -26,6 +26,31 @@
     
 }
 
+-(id)copyWithZone:(NSZone *)zone
+{
+    User *newUser = [[User alloc] init];
+    newUser.fbId = [_fb copyWithZone:zone];
+    newUser.dbId = [self.dbId copyWithZone:zone];
+    newUser.fbToken = [_fbToken copyWithZone:zone];
+    newUser.fbImageUrl = [_fbImageUrl copyWithZone:zone];
+    newUser.campus = [_campus copyWithZone:zone];
+    newUser.cleaning = [_cleaning copyWithZone:zone];
+    newUser.diet = [_diet copyWithZone:zone];
+    newUser.firstName = [_firstName copyWithZone:zone];
+    newUser.gender = [_gender copyWithZone:zone];
+    newUser.gradYear = [_gradYear copyWithZone:zone];
+    newUser.hsEngagement = [_hsEngagement copyWithZone:zone];
+    newUser.personality = [_personality copyWithZone:zone];
+    newUser.religious = [_religious copyWithZone:zone];
+    newUser.roommatePrefs = [_roommatePrefs copyWithZone:zone];
+    newUser.school = [_school copyWithZone:zone];
+    newUser.didFinishSignup = _didFinishSignup;
+    newUser.college = [_college copy];
+    
+    return newUser;
+}
+
+
 - (NSString *)fbImageUrlForSize:(CGSize)size
 {
     NSInteger scale = [UIScreen mainScreen].scale;

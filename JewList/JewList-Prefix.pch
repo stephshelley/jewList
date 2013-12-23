@@ -63,6 +63,9 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define kFBSessionStateChangedNotification         @"FBSessionStateChangedNotification"
 
 
+#define kOptimumPickerHeight 216
+#define kOptimumPickerWidth 320
+
 
 
 #ifdef APP_STORE

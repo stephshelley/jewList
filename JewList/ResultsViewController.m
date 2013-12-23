@@ -12,6 +12,7 @@
 #import "User.h"
 #import "SHProfileViewController.h"
 #import "SHUserCellItem.h"
+#import "SHEditProfileViewController.h"
 
 @implementation ResultsViewController
 
@@ -22,6 +23,8 @@
     self.title = @"Results";
     self.navigationController.navigationBarHidden = NO;
     self.navigationItem.hidesBackButton = YES;
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Profile" style:UIBarButtonItemStylePlain target:self action:@selector(openProfile)];
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height - 44 - (IS_IOS7 ? 20 : 0)) style:UITableViewStylePlain];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -42,6 +45,17 @@
     [super viewDidLoad];
     if(IS_IOS7) [self setNeedsStatusBarAppearanceUpdate];
 
+    
+}
+
+- (void)openProfile
+{
+    User *currentUser = [[SHApi sharedInstance] currentUser];
+    User *currentUserCopy = [currentUser copy];
+    
+    SHEditProfileViewController *vc = [[SHEditProfileViewController alloc] initWithUser:currentUserCopy];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self.navigationController presentViewController:nav animated:YES completion:nil];
     
 }
 

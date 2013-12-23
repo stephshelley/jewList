@@ -32,7 +32,7 @@
     
     self.title = @"Profile";
     self.view.backgroundColor = DEFAULT_BACKGROUND_COLOR;
-    
+
     /*
     UIView *leftButtonView = [SHUIHelpers getCustomBarButtonView:CGRectMake(0, 0, 44, 44)
                                                      buttonImage:@"iphone_navbar_button_back"
@@ -66,7 +66,6 @@
     _userImageView.layer.borderWidth = 2.0;
     [self.view addSubview:_userImageView];
 
-    //[_userImageView setPathToNetworkImage:_user.fbImageUrl forDisplaySize:_userImageView.size contentMode:UIViewContentModeScaleAspectFill];
     [_userImageView setPathToNetworkImage:[_user fbImageUrlForSize:_userImageView.size] forDisplaySize:_userImageView.size contentMode:UIViewContentModeScaleAspectFill];
 
     self.detailLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _nameLabel.width,20)];

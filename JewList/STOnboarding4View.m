@@ -11,8 +11,6 @@
 #import "SHUIHelpers.h"
 #import "User.h"
 
-const CGFloat kOptimumPickerHeight = 216;
-const CGFloat kOptimumPickerWidth = 320;
 
 @implementation STOnboarding4View
 

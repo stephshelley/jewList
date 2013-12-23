@@ -32,6 +32,7 @@
 @property (nonatomic, strong) NSNumber *cleaning;
 @property (nonatomic, strong) NSNumber *diet;
 @property (nonatomic, strong) NSString *fb;
+@property (nonatomic, strong) NSString *aboutMe;
 @property (nonatomic, strong) NSString *firstName;
 @property (nonatomic, strong) NSString *lastName;
 @property (nonatomic, strong) NSNumber *gender;

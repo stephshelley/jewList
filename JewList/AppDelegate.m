@@ -27,8 +27,10 @@
         
     }
     
+    self.window.tintColor = UIColorFromRGB(0x54add5);
     if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 
+    
     if (!IsIpad && [[UINavigationBar class] respondsToSelector:@selector(appearance)])
     {
         [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar_bkg"] forBarMetrics:UIBarMetricsDefault];
@@ -36,17 +38,14 @@
          [NSDictionary dictionaryWithObjectsAndKeys:
           [UIColor whiteColor],
           UITextAttributeTextColor,
-          UIColorFromRGB(0x44809c),
-          UITextAttributeTextShadowColor,
-          [NSValue valueWithUIOffset:UIOffsetMake(0, 0)],
-          UITextAttributeTextShadowOffset,
           [UIFont fontWithName:DEFAULT_FONT size:20.0],
           UITextAttributeFont,
           nil]];
         
-        [[UINavigationBar appearance] setTintColor:UIColorFromRGB(0x83d4fa)];
+        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 
 	}
+    
     
     [self.window makeKeyAndVisible];
     return YES;
