@@ -251,8 +251,11 @@ static NSString *kCurrentUserPath = @"current_user";
     if(user.gradYear != nil)
         [params setObject:[user.gradYear stringValue] forKey:@"grad_year"];
     
+    if(user.personalityText != nil)
+        [params setObject:user.personalityText forKey:@"personality_text"];
+
     if(user.personality != nil)
-    [params setObject:[user.personality stringValue] forKey:@"personality"];
+        [params setObject:[user.personality stringValue] forKey:@"personality"];
 
     if(user.campus != nil)
         [params setObject:[user.campus stringValue] forKey:@"campus"];
@@ -260,15 +263,30 @@ static NSString *kCurrentUserPath = @"current_user";
     if(user.social != nil)
         [params setObject:[user.social stringValue] forKey:@"social"];
     
+    if(user.cleaningText != nil)
+        [params setObject:user.cleaningText forKey:@"cleaning_text"];
+
     if(user.cleaning != nil)
         [params setObject:[user.cleaning stringValue] forKey:@"cleaning"];
-    
+
     if(user.diet != nil)
         [params setObject:[user.diet stringValue] forKey:@"diet"];
-    
+
+    if(user.dietText != nil)
+        [params setObject:user.dietText forKey:@"diet_text"];
+
     if(user.religious != nil)
         [params setObject:[user.religious stringValue] forKey:@"religious"];
-    
+
+    if(user.religiousText != nil)
+        [params setObject:user.religiousText forKey:@"religious_text"];
+
+    if(user.aboutMe != nil)
+        [params setObject:user.aboutMe forKey:@"about_me"];
+
+    if(user.fbToken != nil)
+        [params setObject:user.fbToken forKey:@"fb_token"];
+
     if(user.roommatePrefs != nil)
     {
         [params setObject:user.roommatePrefs forKey:@"roommate_prefs"];
@@ -516,7 +534,7 @@ static NSString *kCurrentUserPath = @"current_user";
                                             method:@"PUT"
                                       noAuthNeeded:YES
                                            success:^(id result) {
-                                               if([result isKindOfClass:[NSDictionary class]] && [result objectForKey:@"auth_token"])
+                                               if([result isKindOfClass:[NSDictionary class]] && [result objectForKey:@"token"])
                                                {
                                                    
                                                    dispatch_async(dispatch_get_main_queue(), ^{
@@ -869,6 +887,16 @@ static NSString *kCurrentUserPath = @"current_user";
 		NSString *contentLength = [NSString stringWithFormat:@"%lld", [(NXOAuth2PostBodyStream *)postBodyStream length]];
 		[aRequest setValue:contentType forHTTPHeaderField:@"Content-Type"];
 		[aRequest setValue:contentLength forHTTPHeaderField:@"Content-Length"];
+        
+        /*
+         NSString *contentType = [NSString stringWithFormat:@"application/json; boundary=%@", [(NXOAuth2PostBodyStream *)postBodyStream boundary]];
+         NSString *contentLength = [NSString stringWithFormat:@"%lld", [(NXOAuth2PostBodyStream *)postBodyStream length]];
+         [aRequest setValue:contentType forHTTPHeaderField:@"Content-Type"];
+         [aRequest setValue:contentLength forHTTPHeaderField:@"Content-Length"];
+         [aRequest setValue:@"Fiddler" forHTTPHeaderField:@"User-Agent"];
+         [aRequest setValue:@"bbyo.cloudapp.net" forHTTPHeaderField:@"Host"];
+
+         */
 		
 		[aRequest setHTTPBodyStream:postBodyStream];
 	}

@@ -1776,7 +1776,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -1788,8 +1788,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3C20D75A-9B14-4E00-991C-3180F75C1193";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3C20D75A-9B14-4E00-991C-3180F75C1193";
+				PROVISIONING_PROFILE = "E3F2C693-62F3-4167-B515-EABAE17D142E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E3F2C693-62F3-4167-B515-EABAE17D142E";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -1800,7 +1800,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -1812,8 +1812,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "24C8FB2A-CACF-4D74-A224-98B66B8B92F8";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "24C8FB2A-CACF-4D74-A224-98B66B8B92F8";
+				PROVISIONING_PROFILE = "BBBDA0BD-3333-4E3D-B417-381526DAB125";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BBBDA0BD-3333-4E3D-B417-381526DAB125";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;

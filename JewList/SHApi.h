@@ -63,4 +63,9 @@
                success:(void (^)(void))success
                failure:(void (^)(NSError * error))failure;
 
+- (id)loginWithFBToken:(NSString *)token
+                  fbId:(NSString *)fbId
+               success:(void (^)(void))success
+               failure:(void (^)(NSError * error))failure;
+
 @end

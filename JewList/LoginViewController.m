@@ -37,7 +37,22 @@
      {
          if([response isKindOfClass:[NSDictionary class]] && [response objectForKey:@"id"] && [response objectForKey:@"token"])
          {
+             NSString *token = [response objectForKey:@"token"];
+             NSString *fbId = [response objectForKey:@"id"];
              [self processLoginResponse:[response objectForKey:@"id"] withToken:[response objectForKey:@"token"]];
+
+             
+             [[SHApi sharedInstance] loginWithFBToken:token fbId:fbId success:^(void)
+              {
+                  [self processLoginResponse:[response objectForKey:@"id"] withToken:[response objectForKey:@"token"]];
+                  
+              }failure:^(NSError *error)
+              {
+                  
+              }];
+              
+             
+             
          }
      } failure:^(NSError *error)
      {
