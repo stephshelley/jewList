@@ -30,7 +30,7 @@
     self.textView.text = self.currentUser.religiousText;
     self.textView.height = 100;
     self.textView.delegate = self;
-    self.headerLabel.text = @"Do you keep kosher?";
+    self.headerLabel.text = @"Rate your Jewness?";
     
 }
 

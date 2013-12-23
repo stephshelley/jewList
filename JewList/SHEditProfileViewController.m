@@ -24,6 +24,10 @@
 #import "SHDietCell.h"
 #import "SHShabatCell.h"
 #import "SHShabbatViewController.h"
+#import "SHWhatIWantInARoomateViewController.h"
+#import "SHRoomatePrefCell.h"
+#import "SHCampusViewController.h"
+#import "SHLocationCell.h"
 
 @interface SHEditProfileViewController ()
 
@@ -70,6 +74,8 @@
     [_tableView registerClass:[SHCleanMessyCell class] forCellReuseIdentifier:NSStringFromClass([SHCleanMessyCell class])];
     [_tableView registerClass:[SHDietCell class] forCellReuseIdentifier:NSStringFromClass([SHDietCell class])];
     [_tableView registerClass:[SHShabatCell class] forCellReuseIdentifier:NSStringFromClass([SHShabatCell class])];
+    [_tableView registerClass:[SHRoomatePrefCell class] forCellReuseIdentifier:NSStringFromClass([SHRoomatePrefCell class])];
+    [_tableView registerClass:[SHLocationCell class] forCellReuseIdentifier:NSStringFromClass([SHLocationCell class])];
 
     [self.view addSubview:_tableView];
     
@@ -85,6 +91,7 @@
 
 - (void)saveProfile
 {
+    [[SHApi sharedInstance] setCurrentUser:_currentUser];
     [self closeVC];
     
 }
@@ -98,7 +105,7 @@
 #pragma mark - UITableView Delegate -
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -109,7 +116,11 @@
         count = 4;
     }else if(section == 1)
     {
-        count = 4;
+        count = 1;
+    }
+    else if(section == 2)
+    {
+        count = 5;
     }
     
     return count;
@@ -122,6 +133,10 @@
     {
         title = @"Personal Info";
     }else if(section == 1)
+    {
+        title = @"Location";
+    }
+    else if(section == 2)
     {
         title = @"Lifestyle";
     }
@@ -142,6 +157,11 @@
         cellHeight = (row == 0 || row == 1) ? [SHPersonalInfoCell rowHeight] : [SHTextItemCell rowHeight];
         
     }else if(section == 1)
+    {
+        cellHeight = [SHLocationCell rowHeight];
+        
+    }
+    else if(section == 2)
     {
         cellHeight = [SHWorkPartyCell rowHeight];
         
@@ -196,13 +216,38 @@
         switch (row) {
             case 0:
             {
+                cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHLocationCell class])];
+                SHLocationCell *gradCell = (SHLocationCell *)cell;
+                gradCell.user = _currentUser;
+                
+                break;
+            }
+
+            default:
+                break;
+
+        }
+    }
+    else if(section == 2)
+    {
+        switch (row) {
+            case 0:
+            {
+                cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHRoomatePrefCell class])];
+                SHRoomatePrefCell *gradCell = (SHRoomatePrefCell *)cell;
+                gradCell.user = _currentUser;
+                
+                break;
+            }
+            case 1:
+            {
                 cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHWorkPartyCell class])];
                 SHWorkPartyCell *gradCell = (SHWorkPartyCell *)cell;
                 gradCell.user = _currentUser;
                 
                 break;
             }
-            case 1:
+            case 2:
             {
                 cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHCleanMessyCell class])];
                 SHCleanMessyCell *gradCell = (SHCleanMessyCell *)cell;
@@ -210,7 +255,7 @@
 
                 break;
             }
-            case 2:
+            case 3:
             {
 
                 cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHDietCell class])];
@@ -218,7 +263,7 @@
                 gradCell.user = _currentUser;
                 break;
             }
-            case 3:
+            case 4:
             {
                 cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHShabatCell class])];
                 SHShabatCell *gradCell = (SHShabatCell *)cell;
@@ -277,24 +322,46 @@
         switch (row) {
             case 0:
             {
-                SHWorkPartyViewController *vc = [[SHWorkPartyViewController alloc] initWithUser:_currentUser];
+                SHCampusViewController *vc = [[SHCampusViewController alloc] initWithUser:_currentUser];
+                [self.navigationController  pushViewController:vc animated:YES];
+                
+                break;
+            }
+            
+            default:
+                break;
+        }
+
+    }else if(section == 2)
+    {
+        switch (row) {
+            case 0:
+            {
+                SHWhatIWantInARoomateViewController *vc = [[SHWhatIWantInARoomateViewController alloc] initWithUser:_currentUser];
                 [self.navigationController  pushViewController:vc animated:YES];
                 
                 break;
             }
             case 1:
             {
+                SHWorkPartyViewController *vc = [[SHWorkPartyViewController alloc] initWithUser:_currentUser];
+                [self.navigationController  pushViewController:vc animated:YES];
+                
+                break;
+            }
+            case 2:
+            {
                 SHCleanMessyViewController *vc = [[SHCleanMessyViewController alloc] initWithUser:_currentUser];
                 [self.navigationController  pushViewController:vc animated:YES];
                 break;
             }
-            case 2:
+            case 3:
             {
                 SHDietViewController *vc = [[SHDietViewController alloc] initWithUser:_currentUser];
                 [self.navigationController  pushViewController:vc animated:YES];
                 break;
             }
-            case 3:
+            case 4:
             {
                 SHShabbatViewController *vc = [[SHShabbatViewController alloc] initWithUser:_currentUser];
                 [self.navigationController  pushViewController:vc animated:YES];

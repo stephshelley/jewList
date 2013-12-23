@@ -29,7 +29,13 @@
 -(id)copyWithZone:(NSZone *)zone
 {
     User *newUser = [[User alloc] init];
-    newUser.fbId = [_fb copyWithZone:zone];
+    newUser.email = [_email copyWithZone:zone];
+    newUser.fbHometownName = [_fbHometownName copyWithZone:zone];
+    newUser.fbHometownId = [_fbHometownId copyWithZone:zone];
+    newUser.fbId = [_fbId copyWithZone:zone];
+    newUser.fbToken = [_fbToken copyWithZone:zone];
+    newUser.campus = [_campus copyWithZone:zone];
+    newUser.age = [_age copyWithZone:zone];
     newUser.dbId = [self.dbId copyWithZone:zone];
     newUser.fbToken = [_fbToken copyWithZone:zone];
     newUser.fbImageUrl = [_fbImageUrl copyWithZone:zone];

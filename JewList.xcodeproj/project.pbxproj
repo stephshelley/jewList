@@ -172,6 +172,10 @@
 		3A306F0B1867C7730008755F /* SHDietViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F0A1867C7730008755F /* SHDietViewController.m */; };
 		3A306F0E1867CA010008755F /* SHShabatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F0D1867CA010008755F /* SHShabatCell.m */; };
 		3A306F111867CB160008755F /* SHShabbatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F101867CB160008755F /* SHShabbatViewController.m */; };
+		3A306F141867CE1E0008755F /* SHRoomatePrefCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F131867CE1E0008755F /* SHRoomatePrefCell.m */; };
+		3A306F171867CE520008755F /* SHWhatIWantInARoomateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F161867CE520008755F /* SHWhatIWantInARoomateViewController.m */; };
+		3A306F1A1867D0380008755F /* SHLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F191867D0380008755F /* SHLocationCell.m */; };
+		3A306F1D1867D08E0008755F /* SHCampusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F1C1867D08E0008755F /* SHCampusViewController.m */; };
 		3A5C349718676ABA0092F08A /* NSDictionary+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C348F18676ABA0092F08A /* NSDictionary+QueryString.m */; };
 		3A5C349818676ABA0092F08A /* LGURLJSONResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C349118676ABA0092F08A /* LGURLJSONResponse.m */; };
 		3A5C349918676ABA0092F08A /* LGURLRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C349318676ABA0092F08A /* LGURLRequestModel.m */; };
@@ -562,6 +566,14 @@
 		3A306F0D1867CA010008755F /* SHShabatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHShabatCell.m; sourceTree = "<group>"; };
 		3A306F0F1867CB160008755F /* SHShabbatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHShabbatViewController.h; sourceTree = "<group>"; };
 		3A306F101867CB160008755F /* SHShabbatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHShabbatViewController.m; sourceTree = "<group>"; };
+		3A306F121867CE1E0008755F /* SHRoomatePrefCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHRoomatePrefCell.h; sourceTree = "<group>"; };
+		3A306F131867CE1E0008755F /* SHRoomatePrefCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHRoomatePrefCell.m; sourceTree = "<group>"; };
+		3A306F151867CE520008755F /* SHWhatIWantInARoomateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHWhatIWantInARoomateViewController.h; sourceTree = "<group>"; };
+		3A306F161867CE520008755F /* SHWhatIWantInARoomateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHWhatIWantInARoomateViewController.m; sourceTree = "<group>"; };
+		3A306F181867D0380008755F /* SHLocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHLocationCell.h; sourceTree = "<group>"; };
+		3A306F191867D0380008755F /* SHLocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHLocationCell.m; sourceTree = "<group>"; };
+		3A306F1B1867D08E0008755F /* SHCampusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHCampusViewController.h; sourceTree = "<group>"; };
+		3A306F1C1867D08E0008755F /* SHCampusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHCampusViewController.m; sourceTree = "<group>"; };
 		3A5C348E18676ABA0092F08A /* NSDictionary+QueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+QueryString.h"; sourceTree = "<group>"; };
 		3A5C348F18676ABA0092F08A /* NSDictionary+QueryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+QueryString.m"; sourceTree = "<group>"; };
 		3A5C349018676ABA0092F08A /* LGURLJSONResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGURLJSONResponse.h; sourceTree = "<group>"; };
@@ -1256,6 +1268,10 @@
 				3A306F0A1867C7730008755F /* SHDietViewController.m */,
 				3A306F0F1867CB160008755F /* SHShabbatViewController.h */,
 				3A306F101867CB160008755F /* SHShabbatViewController.m */,
+				3A306F151867CE520008755F /* SHWhatIWantInARoomateViewController.h */,
+				3A306F161867CE520008755F /* SHWhatIWantInARoomateViewController.m */,
+				3A306F1B1867D08E0008755F /* SHCampusViewController.h */,
+				3A306F1C1867D08E0008755F /* SHCampusViewController.m */,
 			);
 			name = "Edit Profile";
 			sourceTree = "<group>";
@@ -1396,6 +1412,8 @@
 				3A306ED9186795460008755F /* SHPersonalInfoCell.m */,
 				3A306EDB186795E60008755F /* SHGenderCell.h */,
 				3A306EDC186795E60008755F /* SHGenderCell.m */,
+				3A306F181867D0380008755F /* SHLocationCell.h */,
+				3A306F191867D0380008755F /* SHLocationCell.m */,
 				3A306EE51867AEC20008755F /* SHTextItemCell.h */,
 				3A306EE61867AEC20008755F /* SHTextItemCell.m */,
 				3A306EE81867AFD70008755F /* SHHighSchoolInfoCell.h */,
@@ -1412,6 +1430,8 @@
 				3A306F071867C72D0008755F /* SHDietCell.m */,
 				3A306F0C1867CA010008755F /* SHShabatCell.h */,
 				3A306F0D1867CA010008755F /* SHShabatCell.m */,
+				3A306F121867CE1E0008755F /* SHRoomatePrefCell.h */,
+				3A306F131867CE1E0008755F /* SHRoomatePrefCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -1559,6 +1579,7 @@
 				3A0CC84B179A474B0000AA8C /* AFHTTPRequestOperation.m in Sources */,
 				3A0CC84C179A474B0000AA8C /* AFImageRequestOperation.m in Sources */,
 				3A0CC84D179A474B0000AA8C /* AFJSONRequestOperation.m in Sources */,
+				3A306F141867CE1E0008755F /* SHRoomatePrefCell.m in Sources */,
 				3A0CC84E179A474B0000AA8C /* AFNetworkActivityIndicatorManager.m in Sources */,
 				3A0CC84F179A474B0000AA8C /* AFPropertyListRequestOperation.m in Sources */,
 				3A306EDD186795E60008755F /* SHGenderCell.m in Sources */,
@@ -1572,7 +1593,9 @@
 				3A0CCBBA179A4F1B0000AA8C /* FBBase64.m in Sources */,
 				3A306EFC1867C16E0008755F /* SHTextAndOptionCell.m in Sources */,
 				3A0CCBBB179A4F1B0000AA8C /* FBCrypto.m in Sources */,
+				3A306F1A1867D0380008755F /* SHLocationCell.m in Sources */,
 				3A0CCBBC179A4F1B0000AA8C /* Facebook.m in Sources */,
+				3A306F1D1867D08E0008755F /* SHCampusViewController.m in Sources */,
 				3A0CCBC9179A4F1B0000AA8C /* FBAccessTokenData.m in Sources */,
 				3A5C34B118676E3D0092F08A /* STBaseDataSource.m in Sources */,
 				3A0CCBCA179A4F1B0000AA8C /* FBAppBridge.m in Sources */,
@@ -1635,6 +1658,7 @@
 				3A0CCBFA179A4F1B0000AA8C /* FBViewController.m in Sources */,
 				3A0CCBFB179A4F1B0000AA8C /* FBWebDialogs.m in Sources */,
 				3A306EFF1867C2170008755F /* SHWorkPartyCell.m in Sources */,
+				3A306F171867CE520008755F /* SHWhatIWantInARoomateViewController.m in Sources */,
 				3A0CCBFC179A4F1B0000AA8C /* NSError+FBError.m in Sources */,
 				3A306F0E1867CA010008755F /* SHShabatCell.m in Sources */,
 				3A0CCC38179A53050000AA8C /* Pref.m in Sources */,
