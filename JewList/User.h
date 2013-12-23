@@ -30,7 +30,9 @@
 
 @property (nonatomic, strong) NSNumber *campus;
 @property (nonatomic, strong) NSNumber *cleaning;
+@property (nonatomic, strong) NSString *cleaningText;
 @property (nonatomic, strong) NSNumber *diet;
+@property (nonatomic, strong) NSString *dietText;
 @property (nonatomic, strong) NSString *fb;
 @property (nonatomic, strong) NSString *aboutMe;
 @property (nonatomic, strong) NSString *firstName;
@@ -39,8 +41,10 @@
 @property (nonatomic, strong) NSNumber *gradYear;
 @property (nonatomic, strong) NSString *hsEngagement;
 @property (nonatomic, strong) NSNumber *personality;
+@property (nonatomic, strong) NSString *personalityText;
 @property (nonatomic, strong) NSNumber *primaryId;
 @property (nonatomic, strong) NSNumber *religious;
+@property (nonatomic, strong) NSString *religiousText;
 @property (nonatomic, strong) NSString *roommatePrefs;
 @property (nonatomic, strong) NSString *school;
 @property (nonatomic, strong) NSNumber *social;

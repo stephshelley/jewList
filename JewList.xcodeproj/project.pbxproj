@@ -164,6 +164,14 @@
 		3A306EF31867B6030008755F /* SHHSEngadmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306EF21867B6030008755F /* SHHSEngadmentViewController.m */; };
 		3A306EF61867B78E0008755F /* SHAboutMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306EF51867B78E0008755F /* SHAboutMeViewController.m */; };
 		3A306EF91867BB0D0008755F /* SHWorkPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306EF81867BB0D0008755F /* SHWorkPartyViewController.m */; };
+		3A306EFC1867C16E0008755F /* SHTextAndOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306EFB1867C16E0008755F /* SHTextAndOptionCell.m */; };
+		3A306EFF1867C2170008755F /* SHWorkPartyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306EFE1867C2170008755F /* SHWorkPartyCell.m */; };
+		3A306F021867C4C30008755F /* SHCleanMessyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F011867C4C30008755F /* SHCleanMessyViewController.m */; };
+		3A306F051867C62C0008755F /* SHCleanMessyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F041867C62C0008755F /* SHCleanMessyCell.m */; };
+		3A306F081867C72D0008755F /* SHDietCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F071867C72D0008755F /* SHDietCell.m */; };
+		3A306F0B1867C7730008755F /* SHDietViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F0A1867C7730008755F /* SHDietViewController.m */; };
+		3A306F0E1867CA010008755F /* SHShabatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F0D1867CA010008755F /* SHShabatCell.m */; };
+		3A306F111867CB160008755F /* SHShabbatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F101867CB160008755F /* SHShabbatViewController.m */; };
 		3A5C349718676ABA0092F08A /* NSDictionary+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C348F18676ABA0092F08A /* NSDictionary+QueryString.m */; };
 		3A5C349818676ABA0092F08A /* LGURLJSONResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C349118676ABA0092F08A /* LGURLJSONResponse.m */; };
 		3A5C349918676ABA0092F08A /* LGURLRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C349318676ABA0092F08A /* LGURLRequestModel.m */; };
@@ -538,6 +546,22 @@
 		3A306EF51867B78E0008755F /* SHAboutMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAboutMeViewController.m; sourceTree = "<group>"; };
 		3A306EF71867BB0D0008755F /* SHWorkPartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHWorkPartyViewController.h; sourceTree = "<group>"; };
 		3A306EF81867BB0D0008755F /* SHWorkPartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHWorkPartyViewController.m; sourceTree = "<group>"; };
+		3A306EFA1867C16E0008755F /* SHTextAndOptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTextAndOptionCell.h; sourceTree = "<group>"; };
+		3A306EFB1867C16E0008755F /* SHTextAndOptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTextAndOptionCell.m; sourceTree = "<group>"; };
+		3A306EFD1867C2170008755F /* SHWorkPartyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHWorkPartyCell.h; sourceTree = "<group>"; };
+		3A306EFE1867C2170008755F /* SHWorkPartyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHWorkPartyCell.m; sourceTree = "<group>"; };
+		3A306F001867C4C30008755F /* SHCleanMessyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHCleanMessyViewController.h; sourceTree = "<group>"; };
+		3A306F011867C4C30008755F /* SHCleanMessyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHCleanMessyViewController.m; sourceTree = "<group>"; };
+		3A306F031867C62C0008755F /* SHCleanMessyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHCleanMessyCell.h; sourceTree = "<group>"; };
+		3A306F041867C62C0008755F /* SHCleanMessyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHCleanMessyCell.m; sourceTree = "<group>"; };
+		3A306F061867C72D0008755F /* SHDietCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDietCell.h; sourceTree = "<group>"; };
+		3A306F071867C72D0008755F /* SHDietCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDietCell.m; sourceTree = "<group>"; };
+		3A306F091867C7730008755F /* SHDietViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDietViewController.h; sourceTree = "<group>"; };
+		3A306F0A1867C7730008755F /* SHDietViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDietViewController.m; sourceTree = "<group>"; };
+		3A306F0C1867CA010008755F /* SHShabatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHShabatCell.h; sourceTree = "<group>"; };
+		3A306F0D1867CA010008755F /* SHShabatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHShabatCell.m; sourceTree = "<group>"; };
+		3A306F0F1867CB160008755F /* SHShabbatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHShabbatViewController.h; sourceTree = "<group>"; };
+		3A306F101867CB160008755F /* SHShabbatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHShabbatViewController.m; sourceTree = "<group>"; };
 		3A5C348E18676ABA0092F08A /* NSDictionary+QueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+QueryString.h"; sourceTree = "<group>"; };
 		3A5C348F18676ABA0092F08A /* NSDictionary+QueryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+QueryString.m"; sourceTree = "<group>"; };
 		3A5C349018676ABA0092F08A /* LGURLJSONResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGURLJSONResponse.h; sourceTree = "<group>"; };
@@ -1226,6 +1250,12 @@
 				3A306EF51867B78E0008755F /* SHAboutMeViewController.m */,
 				3A306EF71867BB0D0008755F /* SHWorkPartyViewController.h */,
 				3A306EF81867BB0D0008755F /* SHWorkPartyViewController.m */,
+				3A306F001867C4C30008755F /* SHCleanMessyViewController.h */,
+				3A306F011867C4C30008755F /* SHCleanMessyViewController.m */,
+				3A306F091867C7730008755F /* SHDietViewController.h */,
+				3A306F0A1867C7730008755F /* SHDietViewController.m */,
+				3A306F0F1867CB160008755F /* SHShabbatViewController.h */,
+				3A306F101867CB160008755F /* SHShabbatViewController.m */,
 			);
 			name = "Edit Profile";
 			sourceTree = "<group>";
@@ -1372,6 +1402,16 @@
 				3A306EE91867AFD70008755F /* SHHighSchoolInfoCell.m */,
 				3A306EEB1867B0410008755F /* SHAboutMeCell.h */,
 				3A306EEC1867B0410008755F /* SHAboutMeCell.m */,
+				3A306EFA1867C16E0008755F /* SHTextAndOptionCell.h */,
+				3A306EFB1867C16E0008755F /* SHTextAndOptionCell.m */,
+				3A306EFD1867C2170008755F /* SHWorkPartyCell.h */,
+				3A306EFE1867C2170008755F /* SHWorkPartyCell.m */,
+				3A306F031867C62C0008755F /* SHCleanMessyCell.h */,
+				3A306F041867C62C0008755F /* SHCleanMessyCell.m */,
+				3A306F061867C72D0008755F /* SHDietCell.h */,
+				3A306F071867C72D0008755F /* SHDietCell.m */,
+				3A306F0C1867CA010008755F /* SHShabatCell.h */,
+				3A306F0D1867CA010008755F /* SHShabatCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -1487,6 +1527,7 @@
 				3A0ACDB5179A42D00083B80B /* NIInMemoryCache.m in Sources */,
 				3A0ACDB6179A42D00083B80B /* NIInvocationMethods.m in Sources */,
 				3A0ACDB7179A42D00083B80B /* NINavigationAppearance.m in Sources */,
+				3A306F021867C4C30008755F /* SHCleanMessyViewController.m in Sources */,
 				3A0ACDB8179A42D00083B80B /* NINetworkActivity.m in Sources */,
 				3A0ACDB9179A42D00083B80B /* NINonEmptyCollectionTesting.m in Sources */,
 				3A0ACDBA179A42D00083B80B /* NINonRetainingCollections.m in Sources */,
@@ -1503,11 +1544,13 @@
 				3A0ACDC4179A42D00083B80B /* NINetworkImageView.m in Sources */,
 				3A0ACDC9179A42F50083B80B /* RuntimeHelper.m in Sources */,
 				3A0ACDCA179A42F50083B80B /* NSString+CamelCase.m in Sources */,
+				3A306F0B1867C7730008755F /* SHDietViewController.m in Sources */,
 				3A0ACDEA179A465C0083B80B /* NSObject+SBJSON.m in Sources */,
 				3A0ACDEB179A465C0083B80B /* NSString+SBJSON.m in Sources */,
 				3A306EE71867AEC20008755F /* SHTextItemCell.m in Sources */,
 				3A5C349E18676B430092F08A /* SHMemberResultsJsonResponse.m in Sources */,
 				3A0ACDEC179A465C0083B80B /* JSONKit.m in Sources */,
+				3A306F051867C62C0008755F /* SHCleanMessyCell.m in Sources */,
 				3A0ACDED179A465C0083B80B /* SBJSON.m in Sources */,
 				3A0ACDEE179A465C0083B80B /* SBJsonBase.m in Sources */,
 				3A0ACDEF179A465C0083B80B /* SBJsonParser.m in Sources */,
@@ -1521,11 +1564,13 @@
 				3A306EDD186795E60008755F /* SHGenderCell.m in Sources */,
 				3A0CC850179A474B0000AA8C /* AFURLConnectionOperation.m in Sources */,
 				3A0CC851179A474B0000AA8C /* AFXMLRequestOperation.m in Sources */,
+				3A306F111867CB160008755F /* SHShabbatViewController.m in Sources */,
 				3A0CC852179A474B0000AA8C /* UIImageView+AFNetworking.m in Sources */,
 				3A0CC856179A4D880000AA8C /* User.m in Sources */,
 				3A0CC859179A4DAF0000AA8C /* LoginViewController.m in Sources */,
 				3A0CC85C179A4DBC0000AA8C /* SettingsViewController.m in Sources */,
 				3A0CCBBA179A4F1B0000AA8C /* FBBase64.m in Sources */,
+				3A306EFC1867C16E0008755F /* SHTextAndOptionCell.m in Sources */,
 				3A0CCBBB179A4F1B0000AA8C /* FBCrypto.m in Sources */,
 				3A0CCBBC179A4F1B0000AA8C /* Facebook.m in Sources */,
 				3A0CCBC9179A4F1B0000AA8C /* FBAccessTokenData.m in Sources */,
@@ -1583,12 +1628,15 @@
 				3A5C349818676ABA0092F08A /* LGURLJSONResponse.m in Sources */,
 				3A0CCBF6179A4F1B0000AA8C /* FBURLConnection.m in Sources */,
 				3A0CCBF7179A4F1B0000AA8C /* FBUserSettingsViewController.m in Sources */,
+				3A306F081867C72D0008755F /* SHDietCell.m in Sources */,
 				3A0CCBF9179A4F1B0000AA8C /* FBUtility.m in Sources */,
 				3A5C34A718676BC20092F08A /* SHMembersResultsModel.m in Sources */,
 				3A5C349A18676ABA0092F08A /* LGJSONRequestOperation.m in Sources */,
 				3A0CCBFA179A4F1B0000AA8C /* FBViewController.m in Sources */,
 				3A0CCBFB179A4F1B0000AA8C /* FBWebDialogs.m in Sources */,
+				3A306EFF1867C2170008755F /* SHWorkPartyCell.m in Sources */,
 				3A0CCBFC179A4F1B0000AA8C /* NSError+FBError.m in Sources */,
+				3A306F0E1867CA010008755F /* SHShabatCell.m in Sources */,
 				3A0CCC38179A53050000AA8C /* Pref.m in Sources */,
 				3A0CCC3C179A53320000AA8C /* SHApi.m in Sources */,
 				3A0CCC3F179A53630000AA8C /* SHAccessToken.m in Sources */,

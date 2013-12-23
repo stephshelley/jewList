@@ -16,6 +16,14 @@
 #import "SHHighSchoolInfoCell.h"
 #import "SHHSEngadmentViewController.h"
 #import "SHAboutMeViewController.h"
+#import "SHWorkPartyCell.h"
+#import "SHWorkPartyViewController.h"
+#import "SHCleanMessyViewController.h"
+#import "SHCleanMessyCell.h"
+#import "SHDietViewController.h"
+#import "SHDietCell.h"
+#import "SHShabatCell.h"
+#import "SHShabbatViewController.h"
 
 @interface SHEditProfileViewController ()
 
@@ -58,6 +66,10 @@
     [_tableView registerClass:[SHGraduationYearCell class] forCellReuseIdentifier:NSStringFromClass([SHGraduationYearCell class])];
     [_tableView registerClass:[SHAboutMeCell class] forCellReuseIdentifier:NSStringFromClass([SHAboutMeCell class])];
     [_tableView registerClass:[SHHighSchoolInfoCell class] forCellReuseIdentifier:NSStringFromClass([SHHighSchoolInfoCell class])];
+    [_tableView registerClass:[SHWorkPartyCell class] forCellReuseIdentifier:NSStringFromClass([SHWorkPartyCell class])];
+    [_tableView registerClass:[SHCleanMessyCell class] forCellReuseIdentifier:NSStringFromClass([SHCleanMessyCell class])];
+    [_tableView registerClass:[SHDietCell class] forCellReuseIdentifier:NSStringFromClass([SHDietCell class])];
+    [_tableView registerClass:[SHShabatCell class] forCellReuseIdentifier:NSStringFromClass([SHShabatCell class])];
 
     [self.view addSubview:_tableView];
     
@@ -86,12 +98,21 @@
 #pragma mark - UITableView Delegate -
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    NSInteger count = 0;
+    if(section == 0)
+    {
+        count = 4;
+    }else if(section == 1)
+    {
+        count = 4;
+    }
+    
+    return count;
     
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -100,6 +121,9 @@
     if(section == 0)
     {
         title = @"Personal Info";
+    }else if(section == 1)
+    {
+        title = @"Lifestyle";
     }
     
     return title;
@@ -116,6 +140,10 @@
     if(section == 0)
     {
         cellHeight = (row == 0 || row == 1) ? [SHPersonalInfoCell rowHeight] : [SHTextItemCell rowHeight];
+        
+    }else if(section == 1)
+    {
+        cellHeight = [SHWorkPartyCell rowHeight];
         
     }
     
@@ -163,6 +191,44 @@
             default:
                 break;
         }
+    }else if(section == 1)
+    {
+        switch (row) {
+            case 0:
+            {
+                cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHWorkPartyCell class])];
+                SHWorkPartyCell *gradCell = (SHWorkPartyCell *)cell;
+                gradCell.user = _currentUser;
+                
+                break;
+            }
+            case 1:
+            {
+                cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHCleanMessyCell class])];
+                SHCleanMessyCell *gradCell = (SHCleanMessyCell *)cell;
+                gradCell.user = _currentUser;
+
+                break;
+            }
+            case 2:
+            {
+
+                cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHDietCell class])];
+                SHDietCell *gradCell = (SHDietCell *)cell;
+                gradCell.user = _currentUser;
+                break;
+            }
+            case 3:
+            {
+                cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHShabatCell class])];
+                SHShabatCell *gradCell = (SHShabatCell *)cell;
+                gradCell.user = _currentUser;
+
+                break;
+            }
+            default:
+                break;
+        }
     }
 
     return cell;
@@ -199,6 +265,38 @@
             case 3:
             {
                 SHAboutMeViewController *vc = [[SHAboutMeViewController alloc] initWithUser:_currentUser];
+                [self.navigationController  pushViewController:vc animated:YES];
+                break;
+            }
+                
+            default:
+                break;
+        }
+    }else if(section == 1)
+    {
+        switch (row) {
+            case 0:
+            {
+                SHWorkPartyViewController *vc = [[SHWorkPartyViewController alloc] initWithUser:_currentUser];
+                [self.navigationController  pushViewController:vc animated:YES];
+                
+                break;
+            }
+            case 1:
+            {
+                SHCleanMessyViewController *vc = [[SHCleanMessyViewController alloc] initWithUser:_currentUser];
+                [self.navigationController  pushViewController:vc animated:YES];
+                break;
+            }
+            case 2:
+            {
+                SHDietViewController *vc = [[SHDietViewController alloc] initWithUser:_currentUser];
+                [self.navigationController  pushViewController:vc animated:YES];
+                break;
+            }
+            case 3:
+            {
+                SHShabbatViewController *vc = [[SHShabbatViewController alloc] initWithUser:_currentUser];
                 [self.navigationController  pushViewController:vc animated:YES];
                 break;
             }

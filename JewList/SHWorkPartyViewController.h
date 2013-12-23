@@ -7,7 +7,11 @@
 //
 
 #import "SHTextEditViewController.h"
+#import "SHToggleButton.h"
 
-@interface SHWorkPartyViewController : SHTextEditViewController
+@interface SHWorkPartyViewController : SHTextEditViewController <UITextViewDelegate>
+
+@property (nonatomic, strong) SHToggleButton *workButton;
+@property (nonatomic, strong) SHToggleButton *playButton;
 
 @end

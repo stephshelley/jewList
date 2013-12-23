@@ -38,11 +38,13 @@
     _headerTopView.backgroundColor = [UIColor JLGrey];
     [self.view addSubview:_headerTopView];
     
-    self.headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _headerTopView.width, _headerTopView.height)];
+    self.headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _headerTopView.width - 20, _headerTopView.height)];
     _headerLabel.textAlignment = NSTextAlignmentCenter;
     _headerLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
     _headerLabel.textColor = [UIColor whiteColor];
+    _headerLabel.adjustsFontSizeToFitWidth = YES;
     _headerLabel.backgroundColor = [UIColor clearColor];
+    _headerLabel.centerX = floorf(_headerTopView.width/2);
     [_headerTopView addSubview:_headerLabel];
     
     self.textView = [[UITextView alloc] initWithFrame:CGRectMake(0, _headerTopView.bottom + 5, 300, 200)];
