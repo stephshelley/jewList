@@ -11,6 +11,22 @@
 @implementation College
 
 
+#pragma mark == SERIALIZATION ==
+/* Deserialize */
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    self = [super initWithCoder:decoder];
+	return self;
+    
+}
+
+/* Serialize */
+- (void)encodeWithCoder:(NSCoder*)encoder
+{
+    [super encodeWithCoder:encoder];
+    
+}
+
 -(id)copyWithZone:(NSZone *)zone
 {
     College *newCollege = [[College alloc] init];

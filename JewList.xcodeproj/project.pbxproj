@@ -189,6 +189,14 @@
 		3A5C34B118676E3D0092F08A /* STBaseDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C34B018676E3D0092F08A /* STBaseDataSource.m */; };
 		3A5C34B418676E540092F08A /* SHMemberResultsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C34B318676E540092F08A /* SHMemberResultsDataSource.m */; };
 		3A5C34B818676F8E0092F08A /* SHUserCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C34B718676F8E0092F08A /* SHUserCellItem.m */; };
+		3A964887186F9FE60026A559 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A964886186F9FE60026A559 /* MessageViewController.m */; };
+		3A96488A186FB2DB0026A559 /* STOnboarding5View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A964889186FB2DB0026A559 /* STOnboarding5View.m */; };
+		3A96488D186FB5F90026A559 /* SHAgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A96488C186FB5F90026A559 /* SHAgeViewController.m */; };
+		3A964890186FB7260026A559 /* SHAgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A96488F186FB7260026A559 /* SHAgeCell.m */; };
+		3A964893186FCB270026A559 /* mosaic_empty_user.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A964891186FCB270026A559 /* mosaic_empty_user.png */; };
+		3A964894186FCB270026A559 /* mosaic_empty_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A964892186FCB270026A559 /* mosaic_empty_user@2x.png */; };
+		3A964897186FD4B60026A559 /* SHTextCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A964896186FD4B60026A559 /* SHTextCellItem.m */; };
+		3A96489B186FD4D70026A559 /* SHUserProfileTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A96489A186FD4D70026A559 /* SHUserProfileTextCell.m */; };
 		3AAB1229185E448A00F592DD /* STOnboarding4View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB1228185E448A00F592DD /* STOnboarding4View.m */; };
 		3ADFA8ED179A69E000B66F78 /* STFacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA8EC179A69E000B66F78 /* STFacebookManager.m */; };
 		3ADFA8F1179A71DC00B66F78 /* SHOnboarding1View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA8F0179A71DC00B66F78 /* SHOnboarding1View.m */; };
@@ -601,6 +609,20 @@
 		3A5C34B318676E540092F08A /* SHMemberResultsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHMemberResultsDataSource.m; sourceTree = "<group>"; };
 		3A5C34B618676F8E0092F08A /* SHUserCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHUserCellItem.h; sourceTree = "<group>"; };
 		3A5C34B718676F8E0092F08A /* SHUserCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHUserCellItem.m; sourceTree = "<group>"; };
+		3A964885186F9FE60026A559 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		3A964886186F9FE60026A559 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		3A964888186FB2DB0026A559 /* STOnboarding5View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboarding5View.h; sourceTree = "<group>"; };
+		3A964889186FB2DB0026A559 /* STOnboarding5View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOnboarding5View.m; sourceTree = "<group>"; };
+		3A96488B186FB5F90026A559 /* SHAgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAgeViewController.h; sourceTree = "<group>"; };
+		3A96488C186FB5F90026A559 /* SHAgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAgeViewController.m; sourceTree = "<group>"; };
+		3A96488E186FB7260026A559 /* SHAgeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAgeCell.h; sourceTree = "<group>"; };
+		3A96488F186FB7260026A559 /* SHAgeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAgeCell.m; sourceTree = "<group>"; };
+		3A964891186FCB270026A559 /* mosaic_empty_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mosaic_empty_user.png; sourceTree = "<group>"; };
+		3A964892186FCB270026A559 /* mosaic_empty_user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mosaic_empty_user@2x.png"; sourceTree = "<group>"; };
+		3A964895186FD4B60026A559 /* SHTextCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTextCellItem.h; sourceTree = "<group>"; };
+		3A964896186FD4B60026A559 /* SHTextCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTextCellItem.m; sourceTree = "<group>"; };
+		3A964899186FD4D70026A559 /* SHUserProfileTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHUserProfileTextCell.h; sourceTree = "<group>"; };
+		3A96489A186FD4D70026A559 /* SHUserProfileTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHUserProfileTextCell.m; sourceTree = "<group>"; };
 		3AAB1227185E448A00F592DD /* STOnboarding4View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboarding4View.h; sourceTree = "<group>"; };
 		3AAB1228185E448A00F592DD /* STOnboarding4View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOnboarding4View.m; sourceTree = "<group>"; };
 		3AAB122A185E545B00F592DD /* SHOnboardingDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHOnboardingDelegate.h; sourceTree = "<group>"; };
@@ -801,6 +823,8 @@
 				3ADFA90A179B32EB00B66F78 /* ResultsViewController.m */,
 				3ADFA912179B3DD500B66F78 /* SHProfileViewController.h */,
 				3ADFA913179B3DD500B66F78 /* SHProfileViewController.m */,
+				3A964885186F9FE60026A559 /* MessageViewController.h */,
+				3A964886186F9FE60026A559 /* MessageViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -1252,6 +1276,8 @@
 				3A306ED0186793480008755F /* SHEditProfileViewController.m */,
 				3A306EDE18679C3C0008755F /* SHGradYearViewController.h */,
 				3A306EDF18679C3C0008755F /* SHGradYearViewController.m */,
+				3A96488B186FB5F90026A559 /* SHAgeViewController.h */,
+				3A96488C186FB5F90026A559 /* SHAgeViewController.m */,
 				3A306EE11867AC920008755F /* SHGenderViewController.h */,
 				3A306EE21867AC920008755F /* SHGenderViewController.m */,
 				3A306EEE1867B3570008755F /* SHTextEditViewController.h */,
@@ -1353,6 +1379,15 @@
 			name = "Cell Items";
 			sourceTree = "<group>";
 		};
+		3A964898186FD4BE0026A559 /* Cell items */ = {
+			isa = PBXGroup;
+			children = (
+				3A964895186FD4B60026A559 /* SHTextCellItem.h */,
+				3A964896186FD4B60026A559 /* SHTextCellItem.m */,
+			);
+			name = "Cell items";
+			sourceTree = "<group>";
+		};
 		3ADFA8EE179A71C500B66F78 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1366,6 +1401,8 @@
 				3ADFA90D179B33DC00B66F78 /* SHOnboarding3View.m */,
 				3AAB1227185E448A00F592DD /* STOnboarding4View.h */,
 				3AAB1228185E448A00F592DD /* STOnboarding4View.m */,
+				3A964888186FB2DB0026A559 /* STOnboarding5View.h */,
+				3A964889186FB2DB0026A559 /* STOnboarding5View.m */,
 				3ADFA8F5179A74F700B66F78 /* SHLoginOnboardingView.h */,
 				3ADFA8F6179A74F700B66F78 /* SHLoginOnboardingView.m */,
 				F8F2F062179B37A10088BF2B /* SHToggleButton.h */,
@@ -1380,6 +1417,8 @@
 		3ADFA8FB179A91AC00B66F78 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3A964891186FCB270026A559 /* mosaic_empty_user.png */,
+				3A964892186FCB270026A559 /* mosaic_empty_user@2x.png */,
 				3ADFA932179B76B000B66F78 /* boyfinal.png */,
 				3ADFA933179B76B000B66F78 /* girlfinal.png */,
 				3ADFA934179B76B000B66F78 /* boyfinal@2x.png */,
@@ -1402,12 +1441,15 @@
 		3ADFA900179A91DC00B66F78 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				3A964898186FD4BE0026A559 /* Cell items */,
 				3ADFA901179A91EE00B66F78 /* SHCollegeCell.h */,
 				3ADFA902179A91EE00B66F78 /* SHCollegeCell.m */,
 				3ADFA90F179B36E500B66F78 /* UserResultCell.h */,
 				3ADFA910179B36E500B66F78 /* UserResultCell.m */,
 				3A306ED5186793BA0008755F /* SHGraduationYearCell.h */,
 				3A306ED6186793BA0008755F /* SHGraduationYearCell.m */,
+				3A96488E186FB7260026A559 /* SHAgeCell.h */,
+				3A96488F186FB7260026A559 /* SHAgeCell.m */,
 				3A306ED8186795460008755F /* SHPersonalInfoCell.h */,
 				3A306ED9186795460008755F /* SHPersonalInfoCell.m */,
 				3A306EDB186795E60008755F /* SHGenderCell.h */,
@@ -1432,6 +1474,8 @@
 				3A306F0D1867CA010008755F /* SHShabatCell.m */,
 				3A306F121867CE1E0008755F /* SHRoomatePrefCell.h */,
 				3A306F131867CE1E0008755F /* SHRoomatePrefCell.m */,
+				3A964899186FD4D70026A559 /* SHUserProfileTextCell.h */,
+				3A96489A186FD4D70026A559 /* SHUserProfileTextCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -1495,7 +1539,9 @@
 				3A0ACC42179A3F3C0083B80B /* InfoPlist.strings in Resources */,
 				3A0ACC4A179A3F3C0083B80B /* Default.png in Resources */,
 				3A0ACC4C179A3F3C0083B80B /* Default@2x.png in Resources */,
+				3A964893186FCB270026A559 /* mosaic_empty_user.png in Resources */,
 				3A0ACC4E179A3F3C0083B80B /* Default-568h@2x.png in Resources */,
+				3A964894186FCB270026A559 /* mosaic_empty_user@2x.png in Resources */,
 				3A0CCBC8179A4F1B0000AA8C /* FacebookSDKResources.bundle in Resources */,
 				3A0CCBF8179A4F1B0000AA8C /* FBUserSettingsViewResources.bundle in Resources */,
 				3A0CCBFD179A4F1B0000AA8C /* 01package-contents.xml in Resources */,
@@ -1532,9 +1578,11 @@
 				3A0ACC48179A3F3C0083B80B /* AppDelegate.m in Sources */,
 				3A0ACD9F179A42D00083B80B /* Jastor.m in Sources */,
 				3A0ACDA0179A42D00083B80B /* JastorRuntimeHelper.m in Sources */,
+				3A964890186FB7260026A559 /* SHAgeCell.m in Sources */,
 				3AAB1229185E448A00F592DD /* STOnboarding4View.m in Sources */,
 				3A0ACDA1179A42D00083B80B /* NSObject+SBJSON.m in Sources */,
 				3A0ACDA2179A42D00083B80B /* NSString+SBJSON.m in Sources */,
+				3A96488D186FB5F90026A559 /* SHAgeViewController.m in Sources */,
 				3A0ACDAC179A42D00083B80B /* NIActions.m in Sources */,
 				3A0ACDAD179A42D00083B80B /* NIButtonUtilities.m in Sources */,
 				3A0ACDAE179A42D00083B80B /* NICommonMetrics.m in Sources */,
@@ -1544,6 +1592,7 @@
 				3A0ACDB2179A42D00083B80B /* NIError.m in Sources */,
 				3A0ACDB3179A42D00083B80B /* NIFoundationMethods.m in Sources */,
 				3A0ACDB4179A42D00083B80B /* NIImageUtilities.m in Sources */,
+				3A96489B186FD4D70026A559 /* SHUserProfileTextCell.m in Sources */,
 				3A0ACDB5179A42D00083B80B /* NIInMemoryCache.m in Sources */,
 				3A0ACDB6179A42D00083B80B /* NIInvocationMethods.m in Sources */,
 				3A0ACDB7179A42D00083B80B /* NINavigationAppearance.m in Sources */,
@@ -1569,6 +1618,7 @@
 				3A0ACDEB179A465C0083B80B /* NSString+SBJSON.m in Sources */,
 				3A306EE71867AEC20008755F /* SHTextItemCell.m in Sources */,
 				3A5C349E18676B430092F08A /* SHMemberResultsJsonResponse.m in Sources */,
+				3A96488A186FB2DB0026A559 /* STOnboarding5View.m in Sources */,
 				3A0ACDEC179A465C0083B80B /* JSONKit.m in Sources */,
 				3A306F051867C62C0008755F /* SHCleanMessyCell.m in Sources */,
 				3A0ACDED179A465C0083B80B /* SBJSON.m in Sources */,
@@ -1640,6 +1690,7 @@
 				3A0CCBEE179A4F1B0000AA8C /* FBSession.m in Sources */,
 				3A306ED7186793BA0008755F /* SHGraduationYearCell.m in Sources */,
 				3A0CCBEF179A4F1B0000AA8C /* FBSessionInsightsState.m in Sources */,
+				3A964887186F9FE60026A559 /* MessageViewController.m in Sources */,
 				3A306EF01867B3570008755F /* SHTextEditViewController.m in Sources */,
 				3A0CCBF0179A4F1B0000AA8C /* FBSessionManualTokenCachingStrategy.m in Sources */,
 				3A0CCBF1179A4F1B0000AA8C /* FBSessionTokenCachingStrategy.m in Sources */,
@@ -1692,6 +1743,7 @@
 				3ADFA911179B36E500B66F78 /* UserResultCell.m in Sources */,
 				3A306EE31867AC920008755F /* SHGenderViewController.m in Sources */,
 				3ADFA914179B3DD500B66F78 /* SHProfileViewController.m in Sources */,
+				3A964897186FD4B60026A559 /* SHTextCellItem.m in Sources */,
 				F8F2F064179B37A10088BF2B /* SHToggleButton.m in Sources */,
 				3ADFA91A179B4DCB00B66F78 /* UIView+FindUIViewController.m in Sources */,
 				F8A02848179B4FA600253FFA /* UIView+FindAndResignFirstResponder.m in Sources */,

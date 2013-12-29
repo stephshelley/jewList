@@ -28,6 +28,8 @@
 #import "SHRoomatePrefCell.h"
 #import "SHCampusViewController.h"
 #import "SHLocationCell.h"
+#import "SHAgeViewController.h"
+#import "SHAgeCell.h"
 
 @interface SHEditProfileViewController ()
 
@@ -76,6 +78,7 @@
     [_tableView registerClass:[SHShabatCell class] forCellReuseIdentifier:NSStringFromClass([SHShabatCell class])];
     [_tableView registerClass:[SHRoomatePrefCell class] forCellReuseIdentifier:NSStringFromClass([SHRoomatePrefCell class])];
     [_tableView registerClass:[SHLocationCell class] forCellReuseIdentifier:NSStringFromClass([SHLocationCell class])];
+    [_tableView registerClass:[SHAgeCell class] forCellReuseIdentifier:NSStringFromClass([SHAgeCell class])];
 
     [self.view addSubview:_tableView];
     
@@ -113,7 +116,7 @@
     NSInteger count = 0;
     if(section == 0)
     {
-        count = 4;
+        count = 5;
     }else if(section == 1)
     {
         count = 1;
@@ -154,7 +157,7 @@
     
     if(section == 0)
     {
-        cellHeight = (row == 0 || row == 1) ? [SHPersonalInfoCell rowHeight] : [SHTextItemCell rowHeight];
+        cellHeight = (row == 0 || row == 1 || row == 2) ? [SHPersonalInfoCell rowHeight] : [SHTextItemCell rowHeight];
         
     }else if(section == 1)
     {
@@ -189,19 +192,26 @@
             }
             case 1:
             {
+                cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHAgeCell class])];
+                SHAgeCell *genderCell = (SHAgeCell *)cell;
+                genderCell.user = _currentUser;
+                break;
+            }
+            case 2:
+            {
                 cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHGenderCell class])];
                 SHGenderCell *genderCell = (SHGenderCell *)cell;
                 genderCell.user = _currentUser;
                 break;
             }
-            case 2:
+            case 3:
             {
                 cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHHighSchoolInfoCell class])];
                 SHHighSchoolInfoCell *genderCell = (SHHighSchoolInfoCell *)cell;
                 genderCell.user = _currentUser;
                 break;
             }
-            case 3:
+            case 4:
             {
                 cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHAboutMeCell class])];
                 SHAboutMeCell *genderCell = (SHAboutMeCell *)cell;
@@ -297,17 +307,23 @@
             }
             case 1:
             {
-                SHGenderViewController *vc = [[SHGenderViewController alloc] initWithUser:_currentUser];
+                SHAgeViewController *vc = [[SHAgeViewController alloc] initWithUser:_currentUser];
                 [self.navigationController  pushViewController:vc animated:YES];
                 break;
             }
             case 2:
             {
-                SHHSEngadmentViewController *vc = [[SHHSEngadmentViewController alloc] initWithUser:_currentUser];
+                SHGenderViewController *vc = [[SHGenderViewController alloc] initWithUser:_currentUser];
                 [self.navigationController  pushViewController:vc animated:YES];
                 break;
             }
             case 3:
+            {
+                SHHSEngadmentViewController *vc = [[SHHSEngadmentViewController alloc] initWithUser:_currentUser];
+                [self.navigationController  pushViewController:vc animated:YES];
+                break;
+            }
+            case 4:
             {
                 SHAboutMeViewController *vc = [[SHAboutMeViewController alloc] initWithUser:_currentUser];
                 [self.navigationController  pushViewController:vc animated:YES];

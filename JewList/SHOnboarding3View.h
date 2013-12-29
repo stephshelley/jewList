@@ -6,9 +6,11 @@
 //  Copyright (c) 2013 Oren Zitoun. All rights reserved.
 //
 
+#import "SHMemberResultsDataSource.h"
+
 @class User;
 
-@interface SHOnboarding3View : UIView <UITableViewDataSource,UITableViewDelegate>
+@interface SHOnboarding3View : UIView <UITableViewDataSource,UITableViewDelegate,STBaseDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *items;
@@ -19,6 +21,7 @@
 @property (nonatomic, strong) User *user;
 
 @property (nonatomic, strong) UIButton *nextStepButton;
+@property (nonatomic, strong) SHMemberResultsDataSource *dataSource;
 
 - (id)initWithFrame:(CGRect)frame andUser:(User*)user;
 

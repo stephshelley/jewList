@@ -313,6 +313,24 @@
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)setUserImagePathToNetworkImage:(NSString *)pathToNetworkImage forDisplaySize:(CGSize)displaySize contentMode:(UIViewContentMode)contentMode
+{
+    if(nil == pathToNetworkImage || pathToNetworkImage.length == 0 )
+    {
+        self.initialImage = [UIImage imageNamed:@"mosaic_empty_user"];
+        return;
+    }
+    
+    _roundCorners = YES;
+    
+    [self setPathToNetworkImage: pathToNetworkImage
+                 forDisplaySize: displaySize
+                    contentMode: contentMode
+                       cropRect: CGRectZero];
+    
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)setPathToNetworkImage:(NSString *)pathToNetworkImage forDisplaySize:(CGSize)displaySize contentMode:(UIViewContentMode)contentMode cropRect:(CGRect)cropRect {
   [self cancelOperation];
 
@@ -376,10 +394,12 @@
       AFImageRequestOperation *operation =
       [AFImageRequestOperation imageRequestOperationWithRequest:request imageProcessingBlock:
        ^UIImage *(UIImage *downloadedImage) {
+           
          return [NIImageProcessing imageFromSource:downloadedImage
                                    withContentMode:contentMode
                                           cropRect:cropRect
                                        displaySize:displaySize
+                                      roundCorners:_roundCorners
                                       scaleOptions:self.scaleOptions
                               interpolationQuality:self.interpolationQuality];
 

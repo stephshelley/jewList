@@ -36,7 +36,7 @@
     
     [self.view addSubview:self.tableView];
     [self showLoading];
-    [self.dataSource generateDemoItems];
+    [self.dataSource loadModel];
 
 }
 
@@ -132,16 +132,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UserResultCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UserResultCell class])];
-    
-    if(!IS_IOS6)
-    {
-        if(nil == cell)
-        {
-            cell = [[UserResultCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([UserResultCell class])];
-        }
-        
-    }
-    
+    cell = [[UserResultCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([UserResultCell class])];
     SHUserCellItem *item = [_dataSource.items objectAtIndex:indexPath.row];
     cell.item = item;
     

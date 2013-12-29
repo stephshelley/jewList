@@ -150,11 +150,12 @@ static NSString *kCurrentUserPath = @"current_user";
         return;
     }
     
-	if (_currentUser == currentUser && currentUser != nil) return;
+	//if (_currentUser == currentUser && currentUser != nil) return;
     
 	if (_currentUser) {
 		_currentUser = nil;
 	}
+    
 	if (currentUser) {
 		_currentUser = currentUser;
 
@@ -340,11 +341,12 @@ static NSString *kCurrentUserPath = @"current_user";
 {
     
     NSDictionary *userParams = [self generateUserParams:user];
-    NSDictionary *params = @{@"member" : [userParams JSONString]};
+    //NSDictionary *params = @{@"member" : [userParams JSONString]};
     
+    NSString *endpoint = [NSString stringWithFormat:@"member/%@",user.dbId];
     
-    return [self standardDictionaryRequestWithPath:@"PutMember"
-                                            params:params
+    return [self standardDictionaryRequestWithPath:endpoint
+                                            params:userParams
                                             method:@"PUT"
                                       noAuthNeeded:YES
                                            success:^(id result) {
@@ -419,15 +421,15 @@ static NSString *kCurrentUserPath = @"current_user";
                       success:(void (^)(NSArray *colleges))success
                       failure:(void (^)(NSError * error))failure
 {
-    NSString *path = [NSString stringWithFormat:@"GetSchoolsByName/%@",term];
+    NSString *path = [NSString stringWithFormat:@"school?name=%@",term];
     return [self standardDictionaryRequestWithPath:path
                                             params:nil
                                             method:@"GET"
                                       noAuthNeeded:YES
                                            success:^(id result) {
-                                               if([result isKindOfClass:[NSDictionary class]] && [result objectForKey:@"GetSchoolsByNameResult"])
+                                               if([result isKindOfClass:[NSArray class]])
                                                {
-                                                   NSArray *results = [result objectForKey:@"GetSchoolsByNameResult"];
+                                                   NSArray *results = (NSArray *)result;
                                                    
                                                    NSMutableArray *colleges = [NSMutableArray array];
                                                    for(NSDictionary *dict in results)
@@ -523,15 +525,80 @@ static NSString *kCurrentUserPath = @"current_user";
                                            failure:failure];
 }
 
+- (id)getUsersForCollege:(College *)college
+                 success: (void (^)(NSArray *colleges))success
+                 failure:(void (^)(NSError * error))failure
+{
+    NSString *endpoint = [NSString stringWithFormat:@"member?school=%@",college.dbId];
+    return [self standardDictionaryRequestWithPath:endpoint
+                                            params:nil
+                                            method:@"GET"
+                                      noAuthNeeded:YES
+                                           success:^(id result) {
+                                               if([result isKindOfClass:[NSArray class]])
+                                               {
+                                                   NSMutableArray *users = [NSMutableArray array];
+                                                   for(NSDictionary *dict in result)
+                                                   {
+                                                       User *user = [[User alloc] initWithDictionary:dict];
+                                                       [users addObject:user];
+                                                       
+                                                   }
+                                                   
+                                                   success(users);
+                                                   
+                                               } else {
+                                                   if([result objectForKey:@"error"])
+                                                   {
+                                                       //[UIHelpers handleApiError:[result objectForKey:@"error"]];
+                                                   }
+                                                   
+                                                   failure(nil);
+                                               }
+                                               
+                                           }
+                                           failure:failure];
+    
+}
+
+- (id)sendMessage:(User *)sender
+        recipient:(User *)recipient
+          message:(NSString *)message
+          success:(void (^)(void))success
+          failure:(void (^)(NSError * error))failure
+{
+    NSDictionary *params = @{@"sender" : sender.dbId,@"recipient" : recipient.dbId, @"msg" : message};
+
+    return [self standardDictionaryRequestWithPath:@"message"
+                                            params:params
+                                            method:@"POST"
+                                      noAuthNeeded:NO
+                                           success:^(id result) {
+                                               
+                                               if([result objectForKey:@"error"])
+                                               {
+                                                   //[UIHelpers handleApiError:[result objectForKey:@"error"]];
+                                                   failure(nil);
+                                               }else{
+                                                   success();
+                                               }
+                                               
+                                           }
+                                           failure:failure];
+    
+}
+
 - (id)loginWithFBToken:(NSString *)token
                   fbId:(NSString *)fbId
                success:(void (^)(void))success
                failure:(void (^)(NSError * error))failure
 {
-    NSDictionary *params = @{@"token" : token,@"fb_id" : fbId};
-    return [self standardDictionaryRequestWithPath:@"Login"
-                                            params:params
-                                            method:@"PUT"
+    //NSDictionary *params = @{@"token" : token,@"fb_id" : fbId};
+    
+    NSString *endpoint = [NSString stringWithFormat:@"member?token=%@",@"fsdifsdifsldfsdlfsdfdsfsdfs"];
+    return [self standardDictionaryRequestWithPath:endpoint
+                                            params:nil
+                                            method:@"GET"
                                       noAuthNeeded:YES
                                            success:^(id result) {
                                                if([result isKindOfClass:[NSDictionary class]] && [result objectForKey:@"token"])
@@ -624,6 +691,56 @@ static NSString *kCurrentUserPath = @"current_user";
 		[((AFURLConnectionOperation *)request) cancel];
 	}
 
+}
+
+
+- (id)getCoverUrl:(NSString *)fbId
+          success:(void (^)(NSString *url))success
+          failure:(void (^)(NSError *error))failure
+{
+    if(nil == fbId)
+    {
+        failure(nil);
+        return nil;
+    }
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@?fields=cover",fbId]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:60.0];
+    [[AFNetworkActivityIndicatorManager sharedManager] incrementActivityCount];
+
+    AFURLConnectionOperation *_requestOperation = [[AFURLConnectionOperation alloc] initWithRequest:request];
+    __unsafe_unretained __block AFURLConnectionOperation *requestOperation = _requestOperation;
+    
+    [requestOperation setCompletionBlock:^
+     {
+         [[AFNetworkActivityIndicatorManager sharedManager] decrementActivityCount];
+         
+         if(requestOperation.error)
+         {
+             NSError *error = requestOperation.error;
+             BD_LOG(@"errors = %@",[[error userInfo] objectForKey:@"errors"]);
+             
+             if (failure && ([requestOperation.error code] != NSURLErrorCancelled)) failure(error);
+         }else{
+             
+             BD_LOG(@"response string = %@",requestOperation.responseString);
+             BD_LOG(@"response data size = %db",[requestOperation.responseData length]);
+             
+             NSDictionary *response = [self jsonToDictionary:requestOperation.responseData];
+             if([response isKindOfClass:[NSDictionary class]] && [response objectForKey:@"cover"])
+             {
+                 NSDictionary *coverDict = [response objectForKey:@"cover"];
+                 NSString *coverUrl = [coverDict objectForKey:@"source"];
+                 if (success) success(coverUrl);
+             }
+             
+             
+         }
+         
+     }];
+    
+    [requestOperation start];
+    return request;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -885,7 +1002,7 @@ static NSString *kCurrentUserPath = @"current_user";
 		
 		NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", [(NXOAuth2PostBodyStream *)postBodyStream boundary]];
 		NSString *contentLength = [NSString stringWithFormat:@"%lld", [(NXOAuth2PostBodyStream *)postBodyStream length]];
-		[aRequest setValue:contentType forHTTPHeaderField:@"Content-Type"];
+		[aRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
 		[aRequest setValue:contentLength forHTTPHeaderField:@"Content-Length"];
         
         /*

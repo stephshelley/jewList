@@ -65,6 +65,8 @@
 
 - (NSString *)fbImageUrlForSize:(CGSize)size
 {
+    if(nil == _fbId) return nil;
+    
     NSInteger scale = [UIScreen mainScreen].scale;
     NSString *url = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?width=%d&height=%d", self.fbId,(int)size.width*scale,(int)size.height*scale];
     return url;

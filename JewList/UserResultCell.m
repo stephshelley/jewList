@@ -31,7 +31,7 @@
         self.userImageView = [[NINetworkImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
         _userImageView.left = 10;
         _userImageView.top = 10;
-        _userImageView.backgroundColor = [UIColor redColor];
+        _userImageView.backgroundColor = [UIColor clearColor];
         [self.contentView addSubview:_userImageView];
         
         self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 280,20)];
@@ -69,10 +69,28 @@
 - (void)setUser:(User *)user
 {
     _user = user;
-    [_userImageView setPathToNetworkImage:[_user fbImageUrlForSize:_userImageView.size] forDisplaySize:_userImageView.size contentMode:UIViewContentModeScaleAspectFill];
-    _nameLabel.text = [NSString stringWithFormat:@"%@ %@", _user.firstName, _user.lastName];
-    _accesoryLabel.text = [NSString stringWithFormat:@"%@, %@, %@", [self getGenderSign], @"30", _user.fbHometownName];
+    [_userImageView setUserImagePathToNetworkImage:[_user fbImageUrlForSize:_userImageView.size] forDisplaySize:_userImageView.size contentMode:UIViewContentModeScaleAspectFill];
+    _nameLabel.text = _user.firstName;
     
+    NSMutableArray *items = [NSMutableArray array];
+    
+    if(nil != _user.gender)
+    {
+        [items addObject:[NSString stringWithFormat:@"%@",[self getGenderSign]]];
+    }
+    
+    if(nil != _user.age)
+    {
+        [items addObject:[NSString stringWithFormat:@"%d",[_user.age integerValue]]];
+    }
+    
+    if(nil != _user.gradYear)
+    {
+        [items addObject:[NSString stringWithFormat:@"Class of %d",[_user.gradYear integerValue]]];
+    }
+    
+    _accesoryLabel.text = [items componentsJoinedByString:@", "];
+
 }
 
 - (NSString*)getGenderSign

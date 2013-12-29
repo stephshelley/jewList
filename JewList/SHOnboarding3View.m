@@ -12,6 +12,7 @@
 #import "SHProfileViewController.h"
 #import "UIView+FindUIViewController.h"
 #import "JLColors.h"
+#import "SHUserCellItem.h"
 
 @implementation SHOnboarding3View
 
@@ -89,10 +90,37 @@
         [self.tableView registerClass:[UserResultCell class] forCellReuseIdentifier:NSStringFromClass([UserResultCell class])];
     
     [self addSubview:self.tableView];
-    
-    [self loadTestData];
+    [self.dataSource loadModel];
     
 }
+
+- (SHMemberResultsDataSource *)dataSource
+{
+    if(_dataSource == nil)
+    {
+        _dataSource = [[SHMemberResultsDataSource alloc] initWithCollege:_user.college];
+        _dataSource.delegate = self;
+    }
+    
+    return _dataSource;
+    
+}
+
+#pragma mark - STBaseDataSource Delegate -
+
+- (void)dataSourceLoaded:(id)dataSource
+{
+    
+    [_tableView reloadData];
+
+}
+
+- (void)dataSourceError:(NSError *)error
+{
+    
+}
+
+
 
 - (void)loadTestData
 {
@@ -116,7 +144,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _items.count;
+    return _dataSource.items.count;
     
 }
 
@@ -138,16 +166,16 @@
         
     }
     
-    User *item = [_items objectAtIndex:indexPath.row];
-    cell.user = item;
+    SHUserCellItem *item = [_dataSource.items objectAtIndex:indexPath.row];
+    cell.user = item.user;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    User *item = [_items objectAtIndex:indexPath.row];
-    SHProfileViewController *userVC = [[SHProfileViewController alloc] initWithUser:item];
+    SHUserCellItem *item = [_dataSource.items objectAtIndex:indexPath.row];
+    SHProfileViewController *userVC = [[SHProfileViewController alloc] initWithUser:item.user];
     [[[self firstAvailableUIViewController] navigationController] pushViewController:userVC animated:YES];
     
 }

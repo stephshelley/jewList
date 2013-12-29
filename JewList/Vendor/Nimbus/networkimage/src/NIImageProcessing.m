@@ -161,182 +161,241 @@
              withContentMode: (UIViewContentMode)contentMode
                     cropRect: (CGRect)cropRect
                  displaySize: (CGSize)displaySize
+                roundCorners:(BOOL)roundCorners
                 scaleOptions: (NINetworkImageViewScaleOptions)scaleOptions
         interpolationQuality: (CGInterpolationQuality)interpolationQuality {
-
-  UIImage* resultImage = src;
-
-  CGImageRef srcImageRef = src.CGImage;
-  CGImageRef croppedImageRef = nil;
-  CGImageRef trimmedImageRef = nil;
-
-  CGRect srcRect = CGRectMake(0, 0, src.size.width, src.size.height);
-
-  // Cropping
-  if (!CGRectIsEmpty(cropRect)
-      && !CGRectEqualToRect(cropRect, CGRectMake(0, 0, 1, 1))) {
-    CGRect innerRect = CGRectMake(floorf(src.size.width * cropRect.origin.x),
-                                  floorf(src.size.height * cropRect.origin.y),
-                                  floorf(src.size.width * cropRect.size.width),
-                                  floorf(src.size.height * cropRect.size.height));
-
-    // Create a new image containing only the cropped inner rect.
-    srcImageRef = CGImageCreateWithImageInRect(srcImageRef, innerRect);
-    croppedImageRef = srcImageRef;
-
-    // This new image will likely have a different width and height, so we have to update
-    // the source rect as a result.
-    srcRect = CGRectMake(0, 0,
-                         CGRectGetWidth(innerRect),
-                         CGRectGetHeight(innerRect));
-  }
-
-  // Display
-  if (0 < displaySize.width
-      && 0 < displaySize.height) {
-
-    if ((NINetworkImageViewScaleToFillLeavesExcess
-         == (NINetworkImageViewScaleToFillLeavesExcess & scaleOptions))
-        && UIViewContentModeScaleAspectFill == contentMode) {
-      // Make the display size match the aspect ratio of the source image by growing the
-      // display size.
-      CGFloat imageAspectRatio = srcRect.size.width / srcRect.size.height;
-      CGFloat displayAspectRatio = displaySize.width / displaySize.height;
-
-      if (imageAspectRatio > displayAspectRatio) {
-        // The image is wider than the display, so let's increase the width.
-        displaySize.width = displaySize.height * imageAspectRatio;
-
-      } else if (imageAspectRatio < displayAspectRatio) {
-        // The image is taller than the display, so let's increase the height.
-        displaySize.height = displaySize.width * (srcRect.size.height / srcRect.size.width);
-      }
-
-    } else if ((NINetworkImageViewScaleToFitCropsExcess
-                == (NINetworkImageViewScaleToFitCropsExcess & scaleOptions))
-               && UIViewContentModeScaleAspectFit == contentMode) {
-      // Make the display size match the aspect ratio of the source image by shrinking the
-      // display size.
-      CGFloat imageAspectRatio = srcRect.size.width / srcRect.size.height;
-      CGFloat displayAspectRatio = displaySize.width / displaySize.height;
-
-      if (imageAspectRatio > displayAspectRatio) {
-        // The image is wider than the display, so let's decrease the height.
-        displaySize.height = displaySize.width * (srcRect.size.height / srcRect.size.width);
-
-      } else if (imageAspectRatio < displayAspectRatio) {
-        // The image is taller than the display, so let's decrease the width.
-        displaySize.width = displaySize.height * imageAspectRatio;
-      }
+    
+    UIImage* resultImage = src;
+    
+    CGImageRef srcImageRef = src.CGImage;
+    CGImageRef croppedImageRef = nil;
+    CGImageRef trimmedImageRef = nil;
+    
+    CGRect srcRect = CGRectMake(0, 0, src.size.width, src.size.height);
+    
+    // Cropping
+    if (!CGRectIsEmpty(cropRect)
+        && !CGRectEqualToRect(cropRect, CGRectMake(0, 0, 1, 1))) {
+        CGRect innerRect = CGRectMake(floorf(src.size.width * cropRect.origin.x),
+                                      floorf(src.size.height * cropRect.origin.y),
+                                      floorf(src.size.width * cropRect.size.width),
+                                      floorf(src.size.height * cropRect.size.height));
+        
+        // Create a new image containing only the cropped inner rect.
+        srcImageRef = CGImageCreateWithImageInRect(srcImageRef, innerRect);
+        croppedImageRef = srcImageRef;
+        
+        // This new image will likely have a different width and height, so we have to update
+        // the source rect as a result.
+        srcRect = CGRectMake(0, 0,
+                             CGRectGetWidth(innerRect),
+                             CGRectGetHeight(innerRect));
     }
-
-    CGRect srcCropRect = [self sourceRectWithImageSize: srcRect.size
-                                           displaySize: displaySize
-                                           contentMode: contentMode];
-    srcCropRect = CGRectMake(floorf(srcCropRect.origin.x),
-                             floorf(srcCropRect.origin.y),
-                             roundf(srcCropRect.size.width),
-                             roundf(srcCropRect.size.height));
-
-    // Do we need to crop the source?
-    if (!CGRectEqualToRect(srcCropRect, srcRect)) {
-      srcImageRef = CGImageCreateWithImageInRect(srcImageRef, srcCropRect);
-      trimmedImageRef = srcImageRef;
-
-      srcRect = CGRectMake(0, 0,
-                           CGRectGetWidth(srcCropRect),
-                           CGRectGetHeight(srcCropRect));
-
-      // Release the cropped image source to reduce this thread's memory consumption.
-      if (nil != croppedImageRef) {
-        CGImageRelease(croppedImageRef);
-        croppedImageRef = nil;
-      }
-    }
-
-    // Calcuate the destination frame.
-    CGRect dstBlitRect = [self destinationRectWithImageSize: srcRect.size
-                                                displaySize: displaySize
-                                                contentMode: contentMode];
-    dstBlitRect = CGRectMake(floorf(dstBlitRect.origin.x),
-                             floorf(dstBlitRect.origin.y),
-                             roundf(dstBlitRect.size.width),
-                             roundf(dstBlitRect.size.height));
-
-    // Round any remainder on the display size dimensions.
-    displaySize = CGSizeMake(roundf(displaySize.width), roundf(displaySize.height));
-
-    // See table "Supported Pixel Formats" in the following guide for support iOS bitmap formats:
-    // http://developer.apple.com/library/mac/#documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/dq_context/dq_context.html
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGBitmapInfo bmi = kCGImageAlphaPremultipliedLast;
-
-    // For screen sizes with higher resolutions, we create a larger image with a scale value
-    // so that it appears crisper on the screen.
-    CGFloat screenScale = NIScreenScale();
-
-    // Create our final composite image.
-    CGContextRef dstBmp = CGBitmapContextCreate(NULL,
-                                                displaySize.width * screenScale,
-                                                displaySize.height * screenScale,
-                                                8,
-                                                0,
-                                                colorSpace,
-                                                bmi);
-
-    // If this fails then we're likely creating an invalid bitmap and shit's about to go down.
-    // In production this will fail somewhat gracefully, in that we'll end up just using the
-    // source image instead of the cropped and resized image.
-    NIDASSERT(nil != dstBmp);
-
-    if (nil != dstBmp) {
-      CGRect dstRect = CGRectMake(0, 0,
-                                  displaySize.width * screenScale,
-                                  displaySize.height * screenScale);
-
-      // Render the source image into the destination image.
-      CGContextClearRect(dstBmp, dstRect);
-      CGContextSetInterpolationQuality(dstBmp, interpolationQuality);
-
-      CGRect scaledBlitRect = CGRectMake(dstBlitRect.origin.x * screenScale,
-                                         dstBlitRect.origin.y * screenScale,
-                                         dstBlitRect.size.width * screenScale,
-                                         dstBlitRect.size.height * screenScale);
-      CGContextDrawImage(dstBmp, scaledBlitRect, srcImageRef);
-
-      CGImageRef resultImageRef = CGBitmapContextCreateImage(dstBmp);
-
-      if (nil != resultImageRef) {
-        if ([[UIImage class] respondsToSelector:@selector(imageWithCGImage:scale:orientation:)]) {
-          resultImage = [UIImage imageWithCGImage: resultImageRef
-                                            scale: screenScale
-                                      orientation: src.imageOrientation];
-
-        } else {
-          resultImage = [UIImage imageWithCGImage: resultImageRef];
+    
+    // Display
+    if (0 < displaySize.width
+        && 0 < displaySize.height) {
+        
+        if ((NINetworkImageViewScaleToFillLeavesExcess
+             == (NINetworkImageViewScaleToFillLeavesExcess & scaleOptions))
+            && UIViewContentModeScaleAspectFill == contentMode) {
+            // Make the display size match the aspect ratio of the source image by growing the
+            // display size.
+            CGFloat imageAspectRatio = srcRect.size.width / srcRect.size.height;
+            CGFloat displayAspectRatio = displaySize.width / displaySize.height;
+            
+            if (imageAspectRatio > displayAspectRatio) {
+                // The image is wider than the display, so let's increase the width.
+                displaySize.width = displaySize.height * imageAspectRatio;
+                
+            } else if (imageAspectRatio < displayAspectRatio) {
+                // The image is taller than the display, so let's increase the height.
+                displaySize.height = displaySize.width * (srcRect.size.height / srcRect.size.width);
+            }
+            
+        } else if ((NINetworkImageViewScaleToFitCropsExcess
+                    == (NINetworkImageViewScaleToFitCropsExcess & scaleOptions))
+                   && UIViewContentModeScaleAspectFit == contentMode) {
+            // Make the display size match the aspect ratio of the source image by shrinking the
+            // display size.
+            CGFloat imageAspectRatio = srcRect.size.width / srcRect.size.height;
+            CGFloat displayAspectRatio = displaySize.width / displaySize.height;
+            
+            if (imageAspectRatio > displayAspectRatio) {
+                // The image is wider than the display, so let's decrease the height.
+                displaySize.height = displaySize.width * (srcRect.size.height / srcRect.size.width);
+                
+            } else if (imageAspectRatio < displayAspectRatio) {
+                // The image is taller than the display, so let's decrease the width.
+                displaySize.width = displaySize.height * imageAspectRatio;
+            }
         }
-        CGImageRelease(resultImageRef);
-      }
-
-      CGContextRelease(dstBmp);
+        
+        CGRect srcCropRect = [self sourceRectWithImageSize: srcRect.size
+                                               displaySize: displaySize
+                                               contentMode: contentMode];
+        srcCropRect = CGRectMake(floorf(srcCropRect.origin.x),
+                                 floorf(srcCropRect.origin.y),
+                                 roundf(srcCropRect.size.width),
+                                 roundf(srcCropRect.size.height));
+        
+        // Do we need to crop the source?
+        if (!CGRectEqualToRect(srcCropRect, srcRect)) {
+            srcImageRef = CGImageCreateWithImageInRect(srcImageRef, srcCropRect);
+            trimmedImageRef = srcImageRef;
+            
+            srcRect = CGRectMake(0, 0,
+                                 CGRectGetWidth(srcCropRect),
+                                 CGRectGetHeight(srcCropRect));
+            
+            // Release the cropped image source to reduce this thread's memory consumption.
+            if (nil != croppedImageRef) {
+                CGImageRelease(croppedImageRef);
+                croppedImageRef = nil;
+            }
+        }
+        
+        // Calcuate the destination frame.
+        CGRect dstBlitRect = [self destinationRectWithImageSize: srcRect.size
+                                                    displaySize: displaySize
+                                                    contentMode: contentMode];
+        dstBlitRect = CGRectMake(floorf(dstBlitRect.origin.x),
+                                 floorf(dstBlitRect.origin.y),
+                                 roundf(dstBlitRect.size.width),
+                                 roundf(dstBlitRect.size.height));
+        
+        // Round any remainder on the display size dimensions.
+        displaySize = CGSizeMake(roundf(displaySize.width), roundf(displaySize.height));
+        
+        // See table "Supported Pixel Formats" in the following guide for support iOS bitmap formats:
+        // http://developer.apple.com/library/mac/#documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/dq_context/dq_context.html
+        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+        CGBitmapInfo bmi = kCGImageAlphaPremultipliedLast;
+        
+        // For screen sizes with higher resolutions, we create a larger image with a scale value
+        // so that it appears crisper on the screen.
+        CGFloat screenScale = NIScreenScale();
+        
+        // Create our final composite image.
+        CGContextRef dstBmp = CGBitmapContextCreate(NULL,
+                                                    displaySize.width * screenScale,
+                                                    displaySize.height * screenScale,
+                                                    8,
+                                                    0,
+                                                    colorSpace,
+                                                    bmi);
+        
+        // If this fails then we're likely creating an invalid bitmap and shit's about to go down.
+        // In production this will fail somewhat gracefully, in that we'll end up just using the
+        // source image instead of the cropped and resized image.
+        NIDASSERT(nil != dstBmp);
+        
+        if (nil != dstBmp) {
+            CGRect dstRect = CGRectMake(0, 0,
+                                        displaySize.width * screenScale,
+                                        displaySize.height * screenScale);
+            
+            // Render the source image into the destination image.
+            CGContextClearRect(dstBmp, dstRect);
+            CGContextSetInterpolationQuality(dstBmp, interpolationQuality);
+            
+            CGRect scaledBlitRect = CGRectMake(dstBlitRect.origin.x * screenScale,
+                                               dstBlitRect.origin.y * screenScale,
+                                               dstBlitRect.size.width * screenScale,
+                                               dstBlitRect.size.height * screenScale);
+            
+            if(roundCorners)
+            {
+                CGFloat factor = IS_RETINA ? 1 : 2;
+                
+                
+                addRoundedStrokeToPath(dstBmp, scaledBlitRect, dstBlitRect.size.width/factor, dstBlitRect.size.height/factor);
+                
+                CGFloat radius = 8.0;
+                scaledBlitRect.size.width-=radius;
+                scaledBlitRect.size.height-=radius;
+                scaledBlitRect.origin.x+=radius/2;
+                scaledBlitRect.origin.y+=radius/2;
+                
+                addRoundedRectToPath(dstBmp, scaledBlitRect, dstBlitRect.size.width/factor, dstBlitRect.size.height/factor);
+                CGContextClosePath(dstBmp);
+                CGContextClip(dstBmp);
+                
+                
+                
+                //CGContextClosePath(dstBmp);
+                
+            }
+            
+            CGContextDrawImage(dstBmp, scaledBlitRect, srcImageRef);
+            
+            CGImageRef resultImageRef = CGBitmapContextCreateImage(dstBmp);
+            
+            if (nil != resultImageRef) {
+                if ([[UIImage class] respondsToSelector:@selector(imageWithCGImage:scale:orientation:)]) {
+                    resultImage = [UIImage imageWithCGImage: resultImageRef
+                                                      scale: screenScale
+                                                orientation: src.imageOrientation];
+                    
+                } else {
+                    resultImage = [UIImage imageWithCGImage: resultImageRef];
+                }
+                CGImageRelease(resultImageRef);
+            }
+            
+            CGContextRelease(dstBmp);
+        }
+        
+        CGColorSpaceRelease(colorSpace);
+        
+    } else if (nil != croppedImageRef) {
+        resultImage = [UIImage imageWithCGImage:srcImageRef];
     }
-
-    CGColorSpaceRelease(colorSpace);
-
-  } else if (nil != croppedImageRef) {
-    resultImage = [UIImage imageWithCGImage:srcImageRef];
-  }
-
-  // Memory cleanup.
-  if (nil != trimmedImageRef) {
-    CGImageRelease(trimmedImageRef);
-  }
-  if (nil != croppedImageRef) {
-    CGImageRelease(croppedImageRef);
-  }
-
-  return resultImage;
+    
+    // Memory cleanup.
+    if (nil != trimmedImageRef) {
+        CGImageRelease(trimmedImageRef);
+    }
+    if (nil != croppedImageRef) {
+        CGImageRelease(croppedImageRef);
+    }
+    
+    return resultImage;
+    
 }
 
+static void addRoundedStrokeToPath(CGContextRef context, CGRect rect, float ovalWidth, float ovalHeight)
+{
+    CGFloat radius = 8.0;
+
+    CGContextSetLineWidth(context, 8.0);
+    CGContextSetStrokeColorWithColor(context, [[UIColor whiteColor] CGColor]);
+    CGRect circlePoint = (CGRectMake(rect.origin.x+radius/2 , rect.origin.y+radius/2, rect.size.width-radius, rect.size.height-radius));
+    
+    CGContextStrokeEllipseInRect(context, circlePoint);
+    CGContextStrokePath(context);
+}
+
+static void addRoundedRectToPath(CGContextRef context, CGRect rect, float ovalWidth, float ovalHeight)
+{
+    float fw, fh;
+    if (ovalWidth == 0 || ovalHeight == 0) {
+        CGContextAddRect(context, rect);
+        return;
+    }
+    
+    CGContextSaveGState(context);
+    CGContextTranslateCTM (context, CGRectGetMinX(rect), CGRectGetMinY(rect));
+    CGContextScaleCTM (context, ovalWidth, ovalHeight);
+    fw = CGRectGetWidth (rect) / ovalWidth;
+    fh = CGRectGetHeight (rect) / ovalHeight;
+    CGContextMoveToPoint(context, fw, fh/2);
+    CGContextAddArcToPoint(context, fw, fh, fw/2, fh, 1);
+    CGContextAddArcToPoint(context, 0, fh, 0, fh/2, 1);
+    CGContextAddArcToPoint(context, 0, 0, fw/2, 0, 1);
+    CGContextAddArcToPoint(context, fw, 0, fw, fh/2, 1);
+    CGContextClosePath(context);
+    CGContextRestoreGState(context);
+}
 
 @end

@@ -6,32 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JewList/SHApi.m"
-            timestampString = "409437912.388307"
+            filePath = "JewList/SHOnboarding3View.m"
+            timestampString = "409966170.411437"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "333"
-            endingLineNumber = "333"
-            landmarkName = "-generateUserParams:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JewList/User.m"
-            timestampString = "409458083.524234"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "-fbImageUrlForSize:"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "-dataSource"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JewList/SHApi.m"
-            timestampString = "409459910.862318"
+            filePath = "JewList/SHOnboarding3View.m"
+            timestampString = "409966171.461254"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "513"
-            endingLineNumber = "513"
-            landmarkName = "-getColleges:failure:"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "-loadUI"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,14 +41,44 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JewList/SHApi.m"
-            timestampString = "409459921.086723"
+            filePath = "JewList/MessageViewController.m"
+            timestampString = "409972652.110488"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "519"
-            endingLineNumber = "519"
-            landmarkName = "-getColleges:failure:"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "-sendMessage"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MessageViewController sendMessage]"
+                  moduleName = "JewList"
+                  urlString = "file:///Users/orenzitoun/Documents/JewsList/JewList/MessageViewController.m"
+                  timestampString = "409984788.788668"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MessageViewController sendMessage]"
+                  moduleName = "JewList"
+                  urlString = "file:///Users/orenzitoun/Documents/JewsList/JewList/MessageViewController.m"
+                  timestampString = "409984788.788833"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "810">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -74,28 +88,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JewList/SHApi.m"
-            timestampString = "409462026.003843"
+            timestampString = "409972659.549965"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "651"
-            endingLineNumber = "651"
-            landmarkName = "-standardRequestWithPath:params:method:noAuthNeeded:success:failure:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JewList/SHApi.m"
-            timestampString = "409462397.079041"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "531"
-            endingLineNumber = "531"
-            landmarkName = "-loginWithFBToken:fbId:success:failure:"
+            startingLineNumber = "570"
+            endingLineNumber = "570"
+            landmarkName = "-sendMessage:recipient:message:success:failure:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -22,12 +22,12 @@
     if (self) {
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 18)];
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 19)];
         _titleLabel.textColor = DEFAULT_BLUE_COLOR;
         _titleLabel.textAlignment = NSTextAlignmentLeft;
         _titleLabel.centerY = floorf([SHPersonalInfoCell rowHeight]/2);
         _titleLabel.left = 10;
-        _titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:_titleLabel.height-2];
+        _titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:_titleLabel.height-3];
         [self.contentView addSubview:_titleLabel];
         
         self.accesoryLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 90, 18)];

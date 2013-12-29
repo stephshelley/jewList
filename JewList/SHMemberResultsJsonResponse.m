@@ -26,7 +26,7 @@
 	
 	NSDictionary *root = self.rootObject;
 	
-    NSArray *entries = [root objectForKey:@"members"];
+    NSArray *entries = self.rootObject;//[root objectForKey:@"members"];
     
     if (entries && [entries isKindOfClass:[NSArray class]] && [entries count] > 0) {
         NSMutableArray *currItems = [NSMutableArray arrayWithCapacity:[entries count]];

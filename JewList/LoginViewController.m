@@ -133,6 +133,25 @@
     return _onboardingStep4;
     
 }
+
+- (STOnboarding5View*)onboardingStep5
+{
+    self.title = @"Age";
+    
+    if(nil == _onboardingStep5)
+    {
+        User *currentUser = [[SHApi sharedInstance] currentUser];
+        _onboardingStep5 = [[STOnboarding5View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height - 20) andUser:currentUser];
+        _onboardingStep5.delegate = self;
+        [_onboardingStep5.nextStepButton addTarget:self action:@selector(continueToStep5) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_onboardingStep5];
+        
+    }
+    
+    return _onboardingStep5;
+    
+}
+
 - (void)continueToStep1
 {
     /*
@@ -164,19 +183,25 @@
 
 - (void)continueToStep4
 {
-    //[self animateToNextStep:self.onboardingStep4 destination:self.onboardingStep3];
-
-    // perform put for user profile
+    [self animateToNextStep:self.onboardingStep4 destination:self.onboardingStep5];
     
-    [_onboardingStep4 showLoading];
-    __weak __block STOnboarding4View *blockView4 = _onboardingStep4;
+}
+
+- (void)continueToStep5
+{
+    [_onboardingStep5 showLoading];
+    __weak __block STOnboarding5View *blockView5 = _onboardingStep5;
     __weak __block LoginViewController *weakSelf = self;
     
-    [[SHApi sharedInstance] updateUser:_onboardingStep4.user success:^(User *user)
+    User *user = _onboardingStep5.user;
+    user.dbId = @"6";
+    [[SHApi sharedInstance] setCurrentUser:user];
+    User *currentUser = [[SHApi sharedInstance] currentUser];
+    
+    [[SHApi sharedInstance] updateUser:_onboardingStep5.user success:^(User *user)
      {
          dispatch_async(dispatch_get_main_queue(), ^{
-             [blockView4 hideLoading];
-             //[weakSelf animateToNextStep:self.onboardingStep4 destination:self.onboardingStep3];
+             [blockView5 hideLoading];
              [weakSelf showResultsScreen];
 
          });
@@ -185,9 +210,9 @@
      }failure:^(NSError *error)
      {
          dispatch_async(dispatch_get_main_queue(), ^{
-             [blockView4 hideLoading];
+             [blockView5 hideLoading];
              [weakSelf showResultsScreen];
-            // [weakSelf animateToNextStep:self.onboardingStep4 destination:self.onboardingStep3];
+
          });
          
 
@@ -224,7 +249,7 @@
 - (void)animateBacktStep:(UIView*)originView destination:(UIView*)destinationView
 {
     destinationView.right = 0;
-    __block UIView *_originView = originView;
+    //__block UIView *_originView = originView;
     
     [UIView animateWithDuration:0.3
                           delay:0
@@ -260,6 +285,10 @@
     else if(sender == _onboardingStep4)
     {
         [self animateBacktStep:self.onboardingStep4 destination:self.onboardingStep2];
+        
+    }else if(sender == _onboardingStep5)
+    {
+        [self animateBacktStep:self.onboardingStep5 destination:self.onboardingStep4];
         
     }
     

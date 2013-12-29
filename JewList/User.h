@@ -14,7 +14,6 @@
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *displayName;
 @property (nonatomic, strong) NSString *email;
-@property (nonatomic, strong) NSString *age;
 @property (nonatomic, strong) NSString *avatarUrl;
 @property (nonatomic, strong) NSString *kosher;
 @property (nonatomic, strong) NSString *shabat;
@@ -28,6 +27,7 @@
 @property (nonatomic, strong) NSString *fbLocationName;
 @property (nonatomic, strong) NSString *fbCollegeName;
 
+@property (nonatomic, strong) NSNumber *age;
 @property (nonatomic, strong) NSNumber *campus;
 @property (nonatomic, strong) NSNumber *cleaning;
 @property (nonatomic, strong) NSString *cleaningText;

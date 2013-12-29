@@ -14,6 +14,7 @@
 #define CANCEL_RELEASE_REQUEST(req) if (req) { [[SHApi sharedInstance] cancelRequest:req]; req  = nil; }
 
 @class User;
+@class College;
 
 @interface SHApi : NSObject
 
@@ -67,5 +68,19 @@
                   fbId:(NSString *)fbId
                success:(void (^)(void))success
                failure:(void (^)(NSError * error))failure;
+
+- (id)getUsersForCollege:(College *)college
+                 success: (void (^)(NSArray *colleges))success
+                 failure:(void (^)(NSError * error))failure;
+
+- (id)sendMessage:(User *)sender
+        recipient:(User *)recipient
+          message:(NSString *)message
+          success:(void (^)(void))success
+          failure:(void (^)(NSError * error))failure;
+
+- (id)getCoverUrl:(NSString *)fbId
+          success:(void (^)(NSString *url))success
+          failure:(void (^)(NSError *error))failure;
 
 @end

@@ -43,11 +43,12 @@
  *
  *      @returns The resized and cropped image.
  */
-+ (UIImage *)imageFromSource:(UIImage *)src
-             withContentMode:(UIViewContentMode)contentMode
-                    cropRect:(CGRect)cropRect
-                 displaySize:(CGSize)displaySize
-                scaleOptions:(NINetworkImageViewScaleOptions)scaleOptions
-        interpolationQuality:(CGInterpolationQuality)interpolationQuality;
++ (UIImage *)imageFromSource: (UIImage *)src
+             withContentMode: (UIViewContentMode)contentMode
+                    cropRect: (CGRect)cropRect
+                 displaySize: (CGSize)displaySize
+                roundCorners:(BOOL)roundCorners
+                scaleOptions: (NINetworkImageViewScaleOptions)scaleOptions
+        interpolationQuality: (CGInterpolationQuality)interpolationQuality;
 
 @end

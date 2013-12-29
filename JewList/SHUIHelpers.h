@@ -11,5 +11,9 @@
 @interface SHUIHelpers : NSObject
 
 + (UIView*)getCustomBarButtonView:(CGRect)frame buttonImage:(NSString*)buttonImage selectedImage:(NSString*)selectedImage title:(NSString*)title andSelector:(SEL)selector sender:(id)sender titleColor:(UIColor*)color;
++ (void)alertWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle;
++ (void)alertErrorWithMessage:(NSString *)message;
++ (void)handleApiError:(NSDictionary *)errorDict;
++ (CGFloat)getTextHeight:(NSString*)text font:(UIFont*)font withCapHeight:(CGFloat)capHeight width:(CGFloat)width;
 
 @end
