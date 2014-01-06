@@ -593,12 +593,12 @@ static NSString *kCurrentUserPath = @"current_user";
                success:(void (^)(void))success
                failure:(void (^)(NSError * error))failure
 {
-    //NSDictionary *params = @{@"token" : token,@"fb_id" : fbId};
+    NSDictionary *params = @{@"token" : token,@"fb_id" : fbId};
     
-    NSString *endpoint = [NSString stringWithFormat:@"member?token=%@",@"fsdifsdifsldfsdlfsdfdsfsdfs"];
-    return [self standardDictionaryRequestWithPath:endpoint
-                                            params:nil
-                                            method:@"GET"
+    //NSString *endpoint = [NSString stringWithFormat:@"member?token=%@",token];
+    return [self standardDictionaryRequestWithPath:@"login"
+                                            params:params
+                                            method:@"POST"
                                       noAuthNeeded:YES
                                            success:^(id result) {
                                                if([result isKindOfClass:[NSDictionary class]] && [result objectForKey:@"token"])
@@ -1002,7 +1002,7 @@ static NSString *kCurrentUserPath = @"current_user";
 		
 		NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", [(NXOAuth2PostBodyStream *)postBodyStream boundary]];
 		NSString *contentLength = [NSString stringWithFormat:@"%lld", [(NXOAuth2PostBodyStream *)postBodyStream length]];
-		[aRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+		[aRequest setValue:contentType forHTTPHeaderField:@"Content-Type"];
 		[aRequest setValue:contentLength forHTTPHeaderField:@"Content-Length"];
         
         /*
