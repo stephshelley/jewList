@@ -57,6 +57,8 @@
     _messyButton.tag = MESSY_BUTTON;
     _messyButton.right = floor(buttonsBackgroundView.width/2) - 10;
     _messyButton.top = 0;
+    _messyButton.onImage = @"party_s";
+    _messyButton.offImage = @"party_d";
     [_messyButton toggle:[self.currentUser.cleaning intValue] == 1];
     [_messyButton addTarget:self action:@selector(togglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [buttonsBackgroundView addSubview:_messyButton];

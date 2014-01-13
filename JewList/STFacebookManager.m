@@ -90,7 +90,7 @@
     [defaults synchronize];
 }
 
-- (void)connectWithSuccess:(void (^)(NSDictionary *dict))success
+- (void)connectWithSuccess:(void (^)(NSDictionary *dict, User *user))success
 				   failure:(void (^)(NSError *error))failure
 {
 
@@ -187,8 +187,6 @@
         {
              if (!error)
              {
-                 NSDictionary *response = @{@"id" : [user objectForKey:@"id"] , @"token" : _fbToken};
-                 BD_LOG(@"FB response = %@",response);
                  
                  User *currentUser = [[User alloc] init];
                  currentUser.fbId = [user objectForKey:@"id"];
@@ -201,6 +199,9 @@
                  currentUser.fbUsername = [user objectForKey:@"username"];
                  currentUser.fbImageUrl = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture",currentUser.fbId];
                  
+                 NSDictionary *response = @{@"id" : [user objectForKey:@"id"] , @"token" : _fbToken};
+                 BD_LOG(@"FB response = %@",response);
+
                  if([user objectForKey:@"hometown"] && [[user objectForKey:@"hometown"] objectForKey:@"id"])
                  {
                      currentUser.fbHometownId = SAFE_VAL([[user objectForKey:@"hometown"] objectForKey:@"id"]);
@@ -244,10 +245,8 @@
                      }
                  }
                  
-                 [[SHApi sharedInstance] setCurrentUser:currentUser];
-
                  if(nil != _success)
-                     _success(response);
+                     _success(response,currentUser);
 
              }else
              {

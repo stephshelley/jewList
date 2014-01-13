@@ -57,18 +57,22 @@
     _mildJew.tag = MILD_BUTTON;
     _mildJew.centerX = floor(buttonsBackgroundView.width/2);
     _mildJew.top = 0;
+    _mildJew.onImage = @"mild_s";
+    _mildJew.offImage = @"mild_d";
     _mildJew.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:14];
     _mildJew.titleLabel.adjustsFontSizeToFitWidth = YES;
     [_mildJew toggle:[self.currentUser.religious intValue] == 1];
     [_mildJew addTarget:self action:@selector(togglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [buttonsBackgroundView addSubview:_mildJew];
     
+    /*
     UIImageView *mildImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
     mildImage.image = [UIImage imageNamed:@"girlfinal"];
     mildImage.centerX = floorf(_mildJew.width/2);
     mildImage.centerY = floorf(_mildJew.height/2);
     mildImage.userInteractionEnabled = NO;
     [_mildJew addSubview:mildImage];
+     */
     
     self.uberJew = [[SHToggleButton alloc] initWithFrame:CGRectMake(0,0, buttonHeight + 20, buttonHeight)];
     [_uberJew setColorOff:[UIColor grayColor]];
@@ -79,18 +83,22 @@
     _uberJew.tag = UBER_BUTTON;
     _uberJew.right = _mildJew.left - 20;
     _uberJew.top = 0;
+    _uberJew.onImage = @"uber_s";
+    _uberJew.offImage = @"uber_d";
     _uberJew.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:14];
     _uberJew.titleLabel.adjustsFontSizeToFitWidth = YES;
     [_uberJew toggle:[self.currentUser.religious intValue] == 0];
     [_uberJew addTarget:self action:@selector(togglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [buttonsBackgroundView addSubview:_uberJew];
     
+    /*
     UIImageView *uberImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
     uberImage.image = [UIImage imageNamed:@"girlfinal"];
     uberImage.centerX = floorf(_uberJew.width/2);
     uberImage.centerY = floorf(_uberJew.height/2);
     uberImage.userInteractionEnabled = NO;
     [_uberJew addSubview:uberImage];
+     */
     
     self.mehJew = [[SHToggleButton alloc] initWithFrame:CGRectMake(0,0, buttonHeight + 20, buttonHeight)];
     [_mehJew setColorOff:[UIColor grayColor]];
@@ -100,6 +108,8 @@
     [_mehJew setTitle:@"Meh" forState:UIControlStateHighlighted];
     [_mehJew setTitleEdgeInsets:UIEdgeInsetsMake(90, 0, 0, 0)];
     _mehJew.tag = MEH_BUTTON;
+    _mehJew.onImage = @"meh_s";
+    _mehJew.offImage = @"meh_d";
     _mehJew.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:14];
     _mehJew.titleLabel.adjustsFontSizeToFitWidth = YES;
     _mehJew.top = _uberJew.top;

@@ -6,11 +6,13 @@
 
 #import "Facebook.h"
 
+@class User;
+
 @interface STFacebookManager : NSObject <FBSessionDelegate,UIAlertViewDelegate>
 
 + (STFacebookManager *)sharedInstance;
 
-@property (copy) void (^success)(NSDictionary *dict);
+@property (copy) void (^success)(NSDictionary *dict, User *user);
 @property (copy) void (^failure)(NSError *error);
 
 @property (nonatomic, strong) NSString *fbToken;
@@ -24,7 +26,7 @@
 - (void)logout;
 - (void)cancel;
 
-- (void)connectWithSuccess:(void (^)(NSDictionary *dict))success
+- (void)connectWithSuccess:(void (^)(NSDictionary *dict, User *user))success
 				   failure:(void (^)(NSError *error))failure;
 
 - (BOOL)application:(UIApplication *)application

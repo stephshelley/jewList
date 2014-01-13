@@ -17,13 +17,14 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    if(![[SHApi sharedInstance] currentUser])
+    User *currentUser = [[SHApi sharedInstance] currentUser];
+    if(!currentUser && currentUser.didFinishSignup)
     {
-        [self initLogedOut];
+        [self initLogedIn];
     }
     else
     {
-        [self initLogedIn];
+        [self initLogedOut];
         
     }
     

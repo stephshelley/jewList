@@ -57,16 +57,20 @@
     _playButton.tag = PLAY_BUTTON;
     _playButton.right = floor(buttonsBackgroundView.width/2) - 10;
     _playButton.top = 0;
+    _playButton.onImage = @"party_s";
+    _playButton.offImage = @"party_d";
     [_playButton toggle:[self.currentUser.personality intValue] == 1];
     [_playButton addTarget:self action:@selector(togglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [buttonsBackgroundView addSubview:_playButton];
     
+    /*
     UIImageView *femaleImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-    femaleImage.image = [UIImage imageNamed:@"girlfinal"];
+    femaleImage.image = [UIImage imageNamed:@"party_d"];
     femaleImage.centerX = floorf(_playButton.width/2);
     femaleImage.centerY = floorf(_playButton.height/2);
     femaleImage.userInteractionEnabled = NO;
     [_playButton addSubview:femaleImage];
+     */
     
     self.workButton = [[SHToggleButton alloc] initWithFrame:CGRectMake(_playButton.right +2, _playButton.top, _playButton.width, _playButton.height)];
     [_workButton setColorOff:[UIColor grayColor]];
@@ -76,19 +80,22 @@
     [_workButton setTitle:@"Work" forState:UIControlStateHighlighted];
     [_workButton setTitleEdgeInsets:UIEdgeInsetsMake(90, 0, 0, 0)];
     _workButton.tag = WORK_BUTTON;
+    _workButton.onImage = @"study_s";
+    _workButton.offImage = @"study_d";
     _workButton.top = _playButton.top;
     _workButton.left = _playButton.right + 20;
     [_workButton toggle:[self.currentUser.personality intValue] == 0];
     [_workButton addTarget:self action:@selector(togglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [buttonsBackgroundView addSubview:_workButton];
     
-    
+    /*
     UIImageView *boyImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-    boyImage.image = [UIImage imageNamed:@"boyfinal"];
+    boyImage.image = [UIImage imageNamed:@"study_d"];
     boyImage.centerX = floorf(_workButton.width/2);
     boyImage.centerY = floorf(_workButton.height/2);
     boyImage.userInteractionEnabled = NO;
     [_workButton addSubview:boyImage];
+     */
 
     return buttonsBackgroundView;
     

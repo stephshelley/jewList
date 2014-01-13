@@ -604,6 +604,21 @@ static NSString *kCurrentUserPath = @"current_user";
                                                if([result isKindOfClass:[NSDictionary class]] && [result objectForKey:@"token"])
                                                {
                                                    
+                                                   SHAccessToken *token = [[SHAccessToken alloc] initWithAccessToken:[result objectForKey:@"token"]];
+                                                   [self setShAccessToken:token];
+                                                   
+                                                   User *user = nil;
+                                                   if([result objectForKey:@"member"])
+                                                   {
+                                                       user = [[User alloc] initWithDictionary:[result objectForKey:@"member"]];
+                                                   }else{
+                                                       user = [[User alloc] init];
+                                                       user.email = [result objectForKey:@"email"];
+                                                       user.username = [result objectForKey:@"username"];
+                                                   }
+                                                   
+                                                   [self setCurrentUser:user];
+                                                   
                                                    dispatch_async(dispatch_get_main_queue(), ^{
                                                        [[NSNotificationCenter defaultCenter] postNotificationName:kUserSessionChangeNotification object:kUserNewSessionLogin];
                                                        

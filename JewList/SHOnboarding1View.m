@@ -181,6 +181,8 @@
     [_femaleButton setTitleEdgeInsets:UIEdgeInsetsMake(100, 0, 0, 0)];
     _femaleButton.tag = TAG_FEMALE_BUTTON;
     _femaleButton.top = 30;
+    _femaleButton.onImage = @"girlfinal";
+    _femaleButton.offImage = @"girlfinal";
     _femaleButton.right = floor(genderBackgroundView.width/2);
     [_femaleButton toggle:NO]; // OFF
     //[_femaleButton setBackgroundImage:[UIImage imageNamed:@"girlfinal"] forState:UIControlStateNormal];
@@ -188,12 +190,14 @@
     [_femaleButton addTarget:self action:@selector(genderTogglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [genderBackgroundView addSubview:_femaleButton];
     
+    /*
     UIImageView *femaleImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 90, 90)];
     femaleImage.image = [UIImage imageNamed:@"girlfinal"];
     femaleImage.centerX = floorf(_femaleButton.width/2);
     femaleImage.centerY = floorf(_femaleButton.height/2) - 10;
     femaleImage.userInteractionEnabled = NO;
     [_femaleButton addSubview:femaleImage];
+     */
      
     self.maleButton = [[SHToggleButton alloc] initWithFrame:CGRectMake(_femaleButton.right +2, _femaleButton.top, _femaleButton.width, _femaleButton.height)];
     [_maleButton setColorOff:[UIColor grayColor]];
@@ -205,6 +209,9 @@
     _maleButton.tag = TAG_MALE_BUTTON;
     _maleButton.top = _femaleButton.top;
     _maleButton.left = _femaleButton.right+1;
+    _maleButton.onImage = @"boyfinal";
+    _maleButton.offImage = @"boyfinal";
+
     [_maleButton toggle:NO]; // OFF
     //[_maleButton setBackgroundImage:[UIImage imageNamed:@"boyfinal"] forState:UIControlStateNormal];
     //[_maleButton setBackgroundImage:[UIImage imageNamed:@"boyfinal"] forState:UIControlStateHighlighted];

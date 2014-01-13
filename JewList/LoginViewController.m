@@ -33,18 +33,54 @@
 
 - (void)fbConnectButtonPressed
 {
-    [[STFacebookManager sharedInstance] connectWithSuccess:^(NSDictionary *response)
+    [[STFacebookManager sharedInstance] connectWithSuccess:^(NSDictionary *response, User *user)
      {
          if([response isKindOfClass:[NSDictionary class]] && [response objectForKey:@"id"] && [response objectForKey:@"token"])
          {
              NSString *token = [response objectForKey:@"token"];
              NSString *fbId = [response objectForKey:@"id"];
-             [self processLoginResponse:[response objectForKey:@"id"] withToken:[response objectForKey:@"token"]];
+             //[self processLoginResponse:[response objectForKey:@"id"] withToken:[response objectForKey:@"token"]];
 
              
              [[SHApi sharedInstance] loginWithFBToken:token fbId:fbId success:^(void)
               {
-                  [self processLoginResponse:[response objectForKey:@"id"] withToken:[response objectForKey:@"token"]];
+                  //[self processLoginResponse:[response objectForKey:@"id"] withToken:[response objectForKey:@"token"]];
+                  User *currentUser = [[SHApi sharedInstance] currentUser];
+                  
+                  if(currentUser.firstName == nil)
+                  {
+                      currentUser.firstName = user.firstName;
+                  }
+                  
+                  if(currentUser.lastName == nil)
+                  {
+                      currentUser.lastName = user.lastName;
+                  }
+                  
+                  if(currentUser.gender == nil)
+                  {
+                      currentUser.gender = user.gender;
+                  }
+                  
+                  if(currentUser.email == nil || currentUser.email.length == 0)
+                  {
+                      currentUser.email = user.email;
+                  }
+                  
+                  if(currentUser.fbImageUrl == nil)
+                  {
+                      currentUser.fbImageUrl = user.fbImageUrl;
+                  }
+
+                  
+                  [[SHApi sharedInstance] setCurrentUser:currentUser];
+                  
+                  
+                  dispatch_async(dispatch_get_main_queue(), ^{
+                      [self continueToStep1];
+                      
+                  });
+
                   
               }failure:^(NSError *error)
               {

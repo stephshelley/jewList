@@ -13,6 +13,9 @@
 @property BOOL isOn;
 @property (nonatomic, strong) UIColor *colorOn;
 @property (nonatomic, strong) UIColor *colorOff;
+@property (nonatomic, strong) NSString *onImage;
+@property (nonatomic, strong) NSString *offImage;
+@property (nonatomic, strong) UIImageView *buttonImage;
 
 - (void) toggle;
 - (void) toggle:(BOOL)isOn;
