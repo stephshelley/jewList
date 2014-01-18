@@ -15,6 +15,7 @@
     #import <MobileCoreServices/MobileCoreServices.h>
     #import "NimbusCore.h"
     #import "UIViewAdditions.h"
+    #import "SHUIHelpers.h"
 
 #endif
 
@@ -44,6 +45,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define IsIpad ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
 
 #define DEFAULT_FONT_REGULAR @"HelveticaNeue"
+#define DEFAULT_FONT_BOLD @"HelveticaNeue-Bold"
 #define DEFAULT_FONT @"HelveticaNeue-Light"
 
 #define DEFAULT_LIGHT_GRAY_COLOR [UIColor colorWithRed:0.705 green:0.705 blue:0.705 alpha:1]
@@ -51,7 +53,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 #define DEFAULT_DARK_COLOR UIColorFromRGB(0x282d2e)
 
-#define DEFAULT_BLUE_COLOR UIColorFromRGB(0x1b99c0)
+#define DEFAULT_BLUE_COLOR UIColorFromRGB(0x39a9ef)
 #define DEFAULT_BACKGROUND_COLOR UIColorFromRGB(0xf2efe9)
 #define DEFAULT_BLUE_COLOR_ALPHA(a) [UIColor colorWithRed:27/255 green:153/255 blue:192/255 alpha:a]
 #define DEFAULT_LIGHT_GRAY_COLOR_ALPHA(a) [UIColor colorWithRed:0.705 green:0.705 blue:0.705 alpha:a]

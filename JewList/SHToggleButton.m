@@ -23,12 +23,16 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        colorOn = DEFAULT_BLUE_COLOR;
+        colorOff = UIColorFromRGB(0xdadada);
         _buttonImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 90, 90)];
         _buttonImage.centerX = floorf(self.width/2);
-        _buttonImage.centerY = floorf(self.height/2);
+        _buttonImage.centerY = floorf(self.height/2) - 5;
         _buttonImage.userInteractionEnabled = NO;
         _buttonImage.backgroundColor = [UIColor clearColor];
         [self addSubview:_buttonImage];
+        [self setTitleEdgeInsets:UIEdgeInsetsMake(80, 0, 0, 0)];
+
         
     }
     return self;

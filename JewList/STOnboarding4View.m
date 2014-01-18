@@ -39,25 +39,12 @@
 
 - (void)loadUI
 {
-    self.backgroundColor = DEFAULT_BACKGROUND_COLOR;
 
-    UIView *progressBar = [[UIView alloc] initWithFrame:CGRectMake(0, IS_IOS7 ? 20 : 0, self.frame.size.width, 5)];
-    progressBar.backgroundColor = [UIColor JLGreen];
-    UIView *progressMade = [[UIView alloc] initWithFrame:CGRectMake(0, 0, (progressBar.width/4)*3 , progressBar.height)];
-    progressMade.backgroundColor = [UIColor JLDarkGreen];
-    [progressBar addSubview:progressMade];
-    UILabel *progressLabel = [[UILabel alloc] initWithFrame:progressBar.frame];
-    progressLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
-    progressLabel.backgroundColor = [UIColor clearColor];
-    progressLabel.textAlignment = NSTextAlignmentCenter;
-    progressLabel.textColor = [UIColor whiteColor];
-    progressLabel.text = @"Step 3/4";
-    progressLabel.centerY = floorf(progressBar.height/2);
-    //[progressBar addSubview:progressLabel];
-    [self addSubview:progressBar];
+    self.backgroundColor = DEFAULT_BLUE_COLOR;
+    if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 
-    self.yearTopView = [[UIView alloc] initWithFrame:CGRectMake(0, progressBar.bottom, self.width, 50)];
-    _yearTopView.backgroundColor = [UIColor JLGrey];
+    self.yearTopView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, self.width, 50)];
+    _yearTopView.backgroundColor = [UIColor clearColor];
     [self addSubview:_yearTopView];
     
     UIView *leftButtonView = [SHUIHelpers getCustomBarButtonView:CGRectMake(0, 0, 44, 44)
@@ -79,6 +66,11 @@
     _chooseYearLabel.backgroundColor = [UIColor clearColor];
     _chooseYearLabel.text = @"What year are you graduating?";
     [_yearTopView addSubview:_chooseYearLabel];
+    
+    UIView *bgColor = [[UIView alloc] initWithFrame:CGRectMake(0, _yearTopView.bottom, self.width, self.height - _yearTopView.bottom)];
+    bgColor.backgroundColor = DEFAULT_BACKGROUND_COLOR;
+    [self addSubview:bgColor];
+    [self sendSubviewToBack:bgColor];
 
     CGFloat buttonHeight = 63;
     self.nextStepButton = [[UIButton alloc] initWithFrame:CGRectMake(0, self.height-buttonHeight, self.width, buttonHeight)];
@@ -202,6 +194,18 @@
 
 	return returnStr;
     
+}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, pickerView.frame.size.width, 44)];
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor blackColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont fontWithName:@"HelveticaNeue" size:18];
+    NSNumber *number = [_yearsArray objectAtIndex:row];
+    label.text = [number stringValue];
+    return label;    
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component

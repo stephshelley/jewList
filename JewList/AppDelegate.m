@@ -29,7 +29,7 @@
     }
     
     self.window.tintColor = UIColorFromRGB(0x54add5);
-    if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 
     
     if (!IsIpad && [[UINavigationBar class] respondsToSelector:@selector(appearance)])

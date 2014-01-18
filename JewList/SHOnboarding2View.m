@@ -46,25 +46,11 @@
 
 - (void)loadUI
 {
-    self.backgroundColor = [UIColor clearColor];
-    
-    UIView *progressBar = [[UIView alloc] initWithFrame:CGRectMake(0, IS_IOS7 ? 20 : 0, self.frame.size.width, 5)];
-    progressBar.backgroundColor = [UIColor JLGreen];
-    UIView *progressMade = [[UIView alloc] initWithFrame:CGRectMake(0, 0, (progressBar.width/4)*2 , progressBar.height)];
-    progressMade.backgroundColor = [UIColor JLDarkGreen];
-    [progressBar addSubview:progressMade];
-    UILabel *progressLabel = [[UILabel alloc] initWithFrame:progressBar.frame];
-    progressLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
-    progressLabel.backgroundColor = [UIColor clearColor];
-    progressLabel.textAlignment = NSTextAlignmentCenter;
-    progressLabel.textColor = [UIColor whiteColor];
-    progressLabel.text = @"Step 2/3";
-    progressLabel.centerY = floorf(progressBar.height/2);
-    //[progressBar addSubview:progressLabel];
-    [self addSubview:progressBar];
+    self.backgroundColor = DEFAULT_BLUE_COLOR;
+    if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 
-    self.collegeTopView = [[UIView alloc] initWithFrame:CGRectMake(0, progressBar.bottom, self.width, 50)];
-    _collegeTopView.backgroundColor = [UIColor JLGrey];
+    self.collegeTopView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, self.width, 50)];
+    _collegeTopView.backgroundColor = [UIColor clearColor];
     [self addSubview:_collegeTopView];
     
     UIView *leftButtonView = [SHUIHelpers getCustomBarButtonView:CGRectMake(0, 0, 44, 44)
@@ -155,30 +141,32 @@
 {
     CGFloat width = self.width;
     
+    UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(0, _collegeTopView.bottom, width, 60)];
+    topView.backgroundColor = [UIColor whiteColor];
+    [self addSubview:topView];
+    
     self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, width, 44)];
-    [[UISearchBar appearance] setSearchFieldBackgroundImage:[UIImage imageNamed:@"add_friends_input2"] forState:UIControlStateNormal];
+    //[[UISearchBar appearance] setSearchFieldBackgroundImage:[UIImage imageNamed:@"add_friends_input2"] forState:UIControlStateNormal];
     
     _searchBar.top = _collegeTopView.bottom;
-    self.searchBar.backgroundColor = UIColorFromRGB(0xd4d5d5);
+    self.searchBar.backgroundColor = [UIColor clearColor];
     self.searchBar.barStyle = UIBarStyleDefault;
     self.searchBar.placeholder = NSLocalizedString(@"search", @"Search");
     self.searchBar.delegate = self;
     self.searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
     [self.searchBar setShowsCancelButton:NO animated:NO];
-    [self.searchBar setTintColor:[UIColor whiteColor]];
     [self.searchBar setBackgroundImage:[UIImage imageNamed:@"empty_pixel"]];
-    _searchBar.layer.borderWidth = 1.0;
-    _searchBar.layer.borderColor = [UIColor JLGrey].CGColor;
+    self.searchBar.centerY = floorf(topView.height/2);
     
     if(_user.fbCollegeName.length > 0)
     {
         //_searchBar.text = _user.fbCollegeName;
     }
     
-    [self addSubview:self.searchBar];
+    [topView addSubview:self.searchBar];
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.searchBar.bottom, width,self.height - _searchBar.bottom + 44) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, topView.bottom, width,self.height - topView.bottom) style:UITableViewStylePlain];
     self.tableView.tableFooterView = [[UIView alloc] init];
     
     if(!IsIpad)
@@ -188,7 +176,7 @@
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     self.tableView.separatorColor = [UIColor clearColor];
-    self.tableView.backgroundColor = UIColorFromRGB(0x101213);
+    self.tableView.backgroundColor = DEFAULT_BACKGROUND_COLOR;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     

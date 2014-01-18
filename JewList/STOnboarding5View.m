@@ -37,25 +37,10 @@
 
 - (void)loadUI
 {
-    self.backgroundColor = DEFAULT_BACKGROUND_COLOR;
-    
-    UIView *progressBar = [[UIView alloc] initWithFrame:CGRectMake(0, IS_IOS7 ? 20 : 0, self.frame.size.width, 5)];
-    progressBar.backgroundColor = [UIColor JLGreen];
-    UIView *progressMade = [[UIView alloc] initWithFrame:CGRectMake(0, 0, (progressBar.width/5)*4 , progressBar.height)];
-    progressMade.backgroundColor = [UIColor JLDarkGreen];
-    [progressBar addSubview:progressMade];
-    UILabel *progressLabel = [[UILabel alloc] initWithFrame:progressBar.frame];
-    progressLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
-    progressLabel.backgroundColor = [UIColor clearColor];
-    progressLabel.textAlignment = NSTextAlignmentCenter;
-    progressLabel.textColor = [UIColor whiteColor];
-    progressLabel.text = @"Step 3/4";
-    progressLabel.centerY = floorf(progressBar.height/2);
-    //[progressBar addSubview:progressLabel];
-    [self addSubview:progressBar];
-    
-    self.ageTopView = [[UIView alloc] initWithFrame:CGRectMake(0, progressBar.bottom, self.width, 50)];
-    _ageTopView.backgroundColor = [UIColor JLGrey];
+    self.backgroundColor = DEFAULT_BLUE_COLOR;
+
+    self.ageTopView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, self.width, 50)];
+    _ageTopView.backgroundColor = [UIColor clearColor];
     [self addSubview:_ageTopView];
     
     UIView *leftButtonView = [SHUIHelpers getCustomBarButtonView:CGRectMake(0, 0, 44, 44)
@@ -78,6 +63,11 @@
     _chooseYearLabel.text = @"How old are you";
     [_ageTopView addSubview:_chooseYearLabel];
     
+    UIView *bgColor = [[UIView alloc] initWithFrame:CGRectMake(0, _ageTopView.bottom, self.width, self.height - _ageTopView.bottom)];
+    bgColor.backgroundColor = DEFAULT_BACKGROUND_COLOR;
+    [self addSubview:bgColor];
+    [self sendSubviewToBack:bgColor];
+    
     CGFloat buttonHeight = 63;
     self.nextStepButton = [[UIButton alloc] initWithFrame:CGRectMake(0, self.height-buttonHeight, self.width, buttonHeight)];
     _nextStepButton.backgroundColor = DEFAULT_BLUE_COLOR;
@@ -92,7 +82,7 @@
     
     
     self.agesArray = [NSMutableArray array];
-    for(NSInteger i = 18; i < 50; i++)
+    for(NSInteger i = 16; i < 50; i++)
     {
         NSNumber *age = [NSNumber numberWithInteger:i];
         [_agesArray addObject:age];
@@ -167,7 +157,7 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     NSNumber *number = [_agesArray objectAtIndex:row];
-    _user.age = [number stringValue];
+    _user.age = number;
     
 }
 
@@ -199,6 +189,18 @@
     
 	return returnStr;
     
+}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, pickerView.frame.size.width, 44)];
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor blackColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont fontWithName:@"HelveticaNeue" size:18];
+    NSNumber *number = [_agesArray objectAtIndex:row];
+    label.text = [number stringValue];
+    return label;
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component

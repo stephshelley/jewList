@@ -20,16 +20,48 @@
 - (void)loadView
 {
     [super loadView];
+    self.view.backgroundColor = DEFAULT_BLUE_COLOR;
+    if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
     self.title = @"Results";
-    self.navigationController.navigationBarHidden = NO;
+    self.navigationController.navigationBarHidden = YES;
     self.navigationItem.hidesBackButton = YES;
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Profile" style:UIBarButtonItemStylePlain target:self action:@selector(openProfile)];
+    UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, self.view.width, 44)];
+    topView.backgroundColor = DEFAULT_BLUE_COLOR;
+    [self.view addSubview:topView];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height - 44 - (IS_IOS7 ? 20 : 0)) style:UITableViewStylePlain];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 160, 24)];
+    titleLabel.text = self.title;
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:titleLabel.height-2];
+    titleLabel.textColor = [UIColor whiteColor];
+    titleLabel.centerX = floorf(topView.width/2);
+    titleLabel.centerY = floorf(topView.height/2);
+    [topView addSubview:titleLabel];
+    
+    UIButton *profileButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
+    [profileButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [profileButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [profileButton setTitle:@"Profile" forState:UIControlStateNormal];
+    [profileButton setTitle:@"Profile" forState:UIControlStateHighlighted];
+    profileButton.titleLabel.textAlignment = NSTextAlignmentRight;
+    profileButton.titleLabel.backgroundColor = [UIColor clearColor];
+    profileButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
+    profileButton.backgroundColor = [UIColor clearColor];
+    [profileButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 50, 0, 0)];
+    profileButton.centerY = titleLabel.centerY;
+    profileButton.right = topView.width - 10;
+    [profileButton addTarget:self action:@selector(openProfile) forControlEvents:UIControlEventTouchUpInside];
+    [topView addSubview:profileButton];
+    
+   // self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Profile" style:UIBarButtonItemStylePlain target:self action:@selector(openProfile)];
+    
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, topView.bottom, self.view.width, self.view.height - topView.height - (IS_IOS7 ? 20 : 0)) style:UITableViewStylePlain];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.separatorColor = [UIColor clearColor];
-    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.backgroundColor = DEFAULT_BACKGROUND_COLOR;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerClass:[UserResultCell class] forCellReuseIdentifier:NSStringFromClass([UserResultCell class])];

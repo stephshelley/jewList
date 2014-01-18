@@ -29,18 +29,22 @@
         self.backgroundColor = [UIColor clearColor];
         
         UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 1, cellWidth, [SHCollegeCell rowHeight] - 2)];
-        bgView.backgroundColor = DEFAULT_DARK_COLOR;
+        bgView.backgroundColor = [UIColor clearColor];
         [self.contentView addSubview:bgView];
         
-        self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 280,18)];
-        _nameLabel.alpha = 0.8;
-        _nameLabel.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:(_nameLabel.height-2)];
+        self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, 280,20)];
+        _nameLabel.font = [UIFont fontWithName:DEFAULT_FONT size:(_nameLabel.height-4)];
         _nameLabel.textColor = DEFAULT_BLUE_COLOR;
         _nameLabel.centerY = floorf([SHCollegeCell rowHeight]/2);
         _nameLabel.adjustsFontSizeToFitWidth = NO;
         _nameLabel.backgroundColor = [UIColor clearColor];
         _nameLabel.textAlignment = NSTextAlignmentLeft;
         [self.contentView addSubview:_nameLabel];
+        
+        UIView *sep = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)];
+        sep.backgroundColor = UIColorFromRGB(0xcccccc);
+        sep.bottom = [SHCollegeCell rowHeight];
+        [self.contentView addSubview:sep];
         
     }
     

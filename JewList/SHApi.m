@@ -249,6 +249,9 @@ static NSString *kCurrentUserPath = @"current_user";
     if(user.gender != nil)
         [params setObject:[user.gender stringValue] forKey:@"gender"];
 
+    if(user.age != nil && [user.age integerValue] != 0)
+        [params setObject:[user.age stringValue] forKey:@"age"];
+
     if(user.gradYear != nil)
         [params setObject:[user.gradYear stringValue] forKey:@"grad_year"];
     
@@ -339,20 +342,17 @@ static NSString *kCurrentUserPath = @"current_user";
          success:(void (^)(User *user))success
          failure:(void (^)(NSError * error))failure
 {
-    
     NSDictionary *userParams = [self generateUserParams:user];
-    //NSDictionary *params = @{@"member" : [userParams JSONString]};
-    
     NSString *endpoint = [NSString stringWithFormat:@"member/%@",user.dbId];
     
     return [self standardDictionaryRequestWithPath:endpoint
                                             params:userParams
                                             method:@"PUT"
-                                      noAuthNeeded:YES
+                                      noAuthNeeded:NO
                                            success:^(id result) {
-                                               if([result isKindOfClass:[NSDictionary class]] && [result objectForKey:@"member1"])
+                                               if([result isKindOfClass:[NSDictionary class]] && [result objectForKey:@"member"])
                                                {
-                                                   NSArray *results = [result objectForKey:@"member1"];
+                                                   NSArray *results = [result objectForKey:@"member"];
                                                    
                                                    for(NSDictionary *dict in results)
                                                    {
@@ -882,7 +882,7 @@ static NSString *kCurrentUserPath = @"current_user";
     }
         
     if (self.shAccessToken.authToken) {
-        [request setValue:[NSString stringWithFormat:@"%@",self.shAccessToken.authToken] forHTTPHeaderField:@"SOMETOKENHEADER"];
+        [request setValue:[NSString stringWithFormat:@"%@",self.shAccessToken.authToken] forHTTPHeaderField:@"schmoozetoken"];
         
 	}
     

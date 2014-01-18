@@ -47,11 +47,16 @@
         
         self.accesoryLabel = [[UILabel alloc] initWithFrame:CGRectMake(_nameLabel.left, _nameLabel.bottom + 5, _nameLabel.width, 16)];
         _accesoryLabel.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:(_accesoryLabel.height - 2)];
-        _accesoryLabel.textColor = [UIColor whiteColor];
+        _accesoryLabel.textColor = [UIColor blackColor];
         _accesoryLabel.adjustsFontSizeToFitWidth = NO;
         _accesoryLabel.backgroundColor = [UIColor clearColor];
         _accesoryLabel.textAlignment = NSTextAlignmentLeft;
         [self.contentView addSubview:_accesoryLabel];
+        
+        UIView *sep = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)];
+        sep.backgroundColor = UIColorFromRGB(0xcccccc);
+        sep.bottom = [UserResultCell rowHeight];
+        [self.contentView addSubview:sep];
         
     }
     

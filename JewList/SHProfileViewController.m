@@ -46,7 +46,18 @@
     self.title = @"Profile";
     self.view.backgroundColor = DEFAULT_BACKGROUND_COLOR;
 
-    /*
+    UIView *statusBarView = nil;
+    if(IS_IOS7)
+    {
+        statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 20)];
+        statusBarView.backgroundColor = DEFAULT_BLUE_COLOR;
+        [self.view addSubview:statusBarView];
+    }
+    
+    UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, self.view.width, 44)];
+    topView.backgroundColor = DEFAULT_BLUE_COLOR;
+    [self.view addSubview:topView];
+    
     UIView *leftButtonView = [SHUIHelpers getCustomBarButtonView:CGRectMake(0, 0, 44, 44)
                                                      buttonImage:@"iphone_navbar_button_back"
                                                    selectedImage:@"iphone_navbar_button_back"
@@ -54,14 +65,40 @@
                                                      andSelector:@selector(popScreen)
                                                           sender:self
                                                       titleColor:[UIColor clearColor]];
-
-    leftButtonView.top = IS_IOS7 ? 20 : 0;
+    
+    leftButtonView.centerY = floorf(topView.height/2);
     leftButtonView.left = 0;
-    [self.view addSubview:leftButtonView];
-     */
+    [topView addSubview:leftButtonView];
     
     
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height - 44 - (IS_IOS7 ? 20 : 0))];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 160, 24)];
+    titleLabel.text = self.title;
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:titleLabel.height-2];
+    titleLabel.textColor = [UIColor whiteColor];
+    titleLabel.centerX = floorf(topView.width/2);
+    titleLabel.centerY = floorf(topView.height/2);
+    [topView addSubview:titleLabel];
+    
+    UIButton *profileButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 120, 50)];
+    [profileButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [profileButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [profileButton setTitle:@"Contact" forState:UIControlStateNormal];
+    [profileButton setTitle:@"Contact" forState:UIControlStateHighlighted];
+    profileButton.titleLabel.textAlignment = NSTextAlignmentRight;
+    profileButton.titleLabel.backgroundColor = [UIColor clearColor];
+    profileButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
+    profileButton.titleLabel.adjustsFontSizeToFitWidth = YES;
+    profileButton.backgroundColor = [UIColor clearColor];
+    [profileButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 50, 0, 0)];
+    profileButton.centerY = titleLabel.centerY;
+    profileButton.right = topView.width - 10;
+    [profileButton addTarget:self action:@selector(contactUser) forControlEvents:UIControlEventTouchUpInside];
+    [topView addSubview:profileButton];
+    
+    
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, topView.bottom, self.view.width, self.view.height - topView.height - 44)];
     _scrollView.backgroundColor = [UIColor clearColor];
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.showsVerticalScrollIndicator = NO;
@@ -71,8 +108,10 @@
     _scrollView.delegate = self;
     _scrollView.contentSize = CGSizeMake(_scrollView.width, 1000);
     [self.view addSubview:_scrollView];
+    if(IS_IOS7)
+        [self.view insertSubview:_scrollView belowSubview:statusBarView];
     
-    self.backdropView = [[NINetworkImageView alloc] initWithFrame:CGRectMake(0, -20, _scrollView.width, (IsIpad ? 350 : 240))];
+    self.backdropView = [[NINetworkImageView alloc] initWithFrame:CGRectMake(0, topView.bottom - 20, _scrollView.width, (IsIpad ? 350 : 240))];
     _backdropView.backgroundColor = [UIColor clearColor];
     _initialBackdropOriginY = _backdropView.top;
     [self.view addSubview:_backdropView];
@@ -90,7 +129,7 @@
     [_backdropView addSubview:_userImageView];
     [_userImageView setUserImagePathToNetworkImage:[_user fbImageUrlForSize:_userImageView.size] forDisplaySize:_userImageView.size contentMode:UIViewContentModeScaleAspectFill];
 
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Contact" style:UIBarButtonItemStylePlain target:self action:@selector(contactUser)];
+    //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Contact" style:UIBarButtonItemStylePlain target:self action:@selector(contactUser)];
 
     self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.width - 40,24)];
     _nameLabel.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:(_nameLabel.height-2)];

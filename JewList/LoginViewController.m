@@ -125,7 +125,7 @@
     if(nil == _onboardingStep2)
     {
         User *currentUser = [[SHApi sharedInstance] currentUser];
-        _onboardingStep2 = [[SHOnboarding2View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height - 20) andUser:currentUser];
+        _onboardingStep2 = [[SHOnboarding2View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height + (IS_IOS7 ? 20 : 0)) andUser:currentUser];
         _onboardingStep2.delegate = self;
         [_onboardingStep2.nextStepButton addTarget:self action:@selector(continueToStep3) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_onboardingStep2];
@@ -205,6 +205,31 @@
 
 - (void)continueToStep2
 {
+    if(_onboardingStep1.nameTextField.text.length == 0)
+    {
+        [SHUIHelpers alertErrorWithMessage:@"Please enter a name"];
+        return;
+    }
+    
+    if(_onboardingStep1.emailTextField.text.length == 0)
+    {
+        [SHUIHelpers alertErrorWithMessage:@"Please enter an email address"];
+        return;
+    }
+    
+    User *currentUser = [[SHApi sharedInstance] currentUser];
+    
+    NSArray *nameArray = [_onboardingStep1.nameTextField.text componentsSeparatedByString:@" "];
+    if(nameArray.count > 0)
+    {
+        currentUser.firstName = [nameArray firstObject];
+    }
+    
+    if(nameArray.count > 1)
+    {
+        currentUser.lastName = [[nameArray subarrayWithRange:NSMakeRange(1, nameArray.count - 1)] componentsJoinedByString:@" "];
+    }
+    
     [self animateToNextStep:self.onboardingStep1 destination:self.onboardingStep2];
     [_onboardingStep2.searchBar becomeFirstResponder];
 
@@ -234,7 +259,7 @@
     [[SHApi sharedInstance] setCurrentUser:user];
     User *currentUser = [[SHApi sharedInstance] currentUser];
     
-    [[SHApi sharedInstance] updateUser:_onboardingStep5.user success:^(User *user)
+    [[SHApi sharedInstance] updateUser:currentUser success:^(User *user)
      {
          dispatch_async(dispatch_get_main_queue(), ^{
              [blockView5 hideLoading];
@@ -315,6 +340,7 @@
 {
     if(sender == _onboardingStep2)
     {
+        if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
         [self animateBacktStep:self.onboardingStep2 destination:self.onboardingStep1];
         
     }

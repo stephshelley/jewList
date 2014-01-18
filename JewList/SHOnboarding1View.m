@@ -37,36 +37,22 @@
 {
     self.backgroundColor = DEFAULT_BACKGROUND_COLOR;
     
-    UIView *progressBar = [[UIView alloc] initWithFrame:CGRectMake(0, IS_IOS7 ? 20 : 0, self.frame.size.width, 5)];
-    progressBar.backgroundColor = [UIColor JLGreen];
-    UIView *progressMade = [[UIView alloc] initWithFrame:CGRectMake(0, 0, progressBar.frame.size.width/4, progressBar.frame.size.height)];
-    progressMade.backgroundColor = [UIColor JLDarkGreen];
-    [progressBar addSubview:progressMade];
-    UILabel *progressLabel = [[UILabel alloc] initWithFrame:progressBar.frame];
-    progressLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
-    progressLabel.backgroundColor = [UIColor clearColor];
-    progressLabel.textAlignment = NSTextAlignmentCenter;
-    progressLabel.textColor = [UIColor whiteColor];
-    progressLabel.text = @"Step 1/3";
-    progressLabel.centerY = floorf(progressBar.height/2);
-    //[progressBar addSubview:progressLabel];
-    [self addSubview:progressBar];
-    
-    UIView *userTopView = [[UIView alloc] initWithFrame:CGRectMake(0, progressBar.frame.origin.y + progressBar.frame.size.height, self.width, 73)];
-    userTopView.backgroundColor = [UIColor JLGrey];
+    UIView *userTopView = [[UIView alloc] initWithFrame:CGRectMake(10, 20, self.width, 85)];
+    userTopView.backgroundColor = [UIColor clearColor];
     [self addSubview:userTopView];
     
     CGFloat userPicHeight = 50;
-    self.userImageView = [[NINetworkImageView alloc] initWithFrame:CGRectMake(10, userTopView.frame.size.height/2 - userPicHeight/2, userPicHeight, userPicHeight)];
-    _userImageView.backgroundColor = [UIColor whiteColor];
-    [_userImageView setPathToNetworkImage:_user.fbImageUrl forDisplaySize:_userImageView.size contentMode:UIViewContentModeScaleAspectFill];
+    self.userImageView = [[NINetworkImageView alloc] initWithFrame:CGRectMake(5, 0, userPicHeight, userPicHeight)];
+    _userImageView.centerY = floorf(userTopView.height/2);
+    _userImageView.backgroundColor = [UIColor clearColor];
+    [_userImageView setUserImagePathToNetworkImage:_user.fbImageUrl forDisplaySize:_userImageView.size contentMode:UIViewContentModeScaleAspectFill];
     [userTopView addSubview:_userImageView];
     
-    UIFont *hiLabelFont = [UIFont fontWithName:DEFAULT_FONT size:17.0f];
-    self.hiLabel = [[UILabel alloc] initWithFrame:CGRectMake(_userImageView.right + 10, _userImageView.top - 2, self.width - 10 - (_userImageView.right + 10), hiLabelFont.lineHeight)];
+    UIFont *hiLabelFont = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:19.0f];
+    self.hiLabel = [[UILabel alloc] initWithFrame:CGRectMake(_userImageView.right + 10, _userImageView.top - 2, self.width - 20 - (_userImageView.right + 10), hiLabelFont.lineHeight)];
     _hiLabel.textAlignment = NSTextAlignmentLeft;
     _hiLabel.font = hiLabelFont;
-    _hiLabel.textColor = [UIColor whiteColor];
+    _hiLabel.textColor = DEFAULT_BLUE_COLOR;
     _hiLabel.backgroundColor = [UIColor clearColor];
     _hiLabel.text = [NSString stringWithFormat:@"Hi %@!",_user.firstName];
     [userTopView addSubview:_hiLabel];
@@ -74,89 +60,84 @@
     self.letsGoLabel = [[UILabel alloc] initWithFrame:CGRectMake(_hiLabel.left, _hiLabel.bottom, _hiLabel.width, 8 + _userImageView.bottom - _hiLabel.bottom)];
     _letsGoLabel.textAlignment = NSTextAlignmentLeft;
     _letsGoLabel.font = [UIFont fontWithName:DEFAULT_FONT size:14.0f];
-    _letsGoLabel.textColor = [UIColor whiteColor];
+    _letsGoLabel.textColor = [UIColor blackColor];
     _letsGoLabel.backgroundColor = [UIColor clearColor];
     _letsGoLabel.numberOfLines = 2;
-    _letsGoLabel.text = @"Let's just make sure you are ok with the info we got on you";
+    _letsGoLabel.text = @"First make sure you are OK with the info we have for you";
     [userTopView addSubview:_letsGoLabel];
     
-    UIView *nameBackground = [[UIView alloc] initWithFrame:CGRectMake(0.0, userTopView.bottom, self.width, 40)];
-    nameBackground.backgroundColor = [UIColor JLGrey];
+    UIView *nameBackground = [[UIView alloc] initWithFrame:CGRectMake(0.0, userTopView.bottom + 5, self.width, 70)];
+    nameBackground.backgroundColor = [UIColor clearColor];
     [self addSubview:nameBackground];
     
-    self.nameTextField = [[SHTextFieldOnBoarding alloc] initWithFrame:CGRectMake(10, 0, nameBackground.width - 20, nameBackground.height)];
+    UIView *sepView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, nameBackground.width, 1)];
+    sepView.bottom = nameBackground.top;
+    sepView.backgroundColor = UIColorFromRGB(0xcccccc);
+    [self addSubview:sepView];
+    
+    self.nameTextField = [[SHTextFieldOnBoarding alloc] initWithFrame:CGRectMake(10, 0, nameBackground.width - 20, 32)];
     _nameTextField.placeholder = @"Your Name";
     _nameTextField.keyboardType = UIKeyboardTypeEmailAddress;
     _nameTextField.returnKeyType = UIReturnKeyNext;
     _nameTextField.delegate = self;
     _nameTextField.textAlignment = NSTextAlignmentLeft;
-    _nameTextField.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:IsIpad ? 21.0 : 18];
+    _nameTextField.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:20];
+    _nameTextField.centerY = floorf(nameBackground.height/2);
     _nameTextField.textColor = DEFAULT_BLUE_COLOR;
     _nameTextField.backgroundColor = [UIColor clearColor];
     [nameBackground addSubview:_nameTextField];
     
-    
-    UILabel *nameIndicator = [[UILabel alloc] initWithFrame:CGRectMake(0, nameBackground.bottom, self.width, 20)];
-    nameIndicator.backgroundColor = [UIColor JLGrey];
-    nameIndicator.textColor = [UIColor whiteColor];
-    nameIndicator.textAlignment = NSTextAlignmentLeft;
-    nameIndicator.font = [UIFont fontWithName:DEFAULT_FONT size:12.0f];
-    //nameIndicator.text = @"  Your name";
-    //nameIndicator.hidden = YES;
-    [self addSubview:nameIndicator];
-     
+    UIView *sepView2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, nameBackground.width, 1)];
+    sepView2.bottom = nameBackground.height;
+    sepView2.backgroundColor = UIColorFromRGB(0xcccccc);
+    [nameBackground addSubview:sepView2];
 
-    UIView *homeBackground = [[UIView alloc] initWithFrame:CGRectMake(0.0, nameIndicator.bottom, self.width, nameBackground.height)];
+    /*
+    UIView *homeBackground = [[UIView alloc] initWithFrame:CGRectMake(0.0, nameBackground.bottom, self.width, nameBackground.height)];
     homeBackground.backgroundColor = [UIColor clearColor];
     [self addSubview:homeBackground];
     
-    self.homeTownTextField = [[SHTextFieldOnBoarding alloc] initWithFrame:CGRectMake(10, 0, homeBackground.size.width - 20, homeBackground.size.height)];
+    self.homeTownTextField = [[SHTextFieldOnBoarding alloc] initWithFrame:CGRectMake(10, 0, homeBackground.size.width - 20, _nameTextField.height)];
     _homeTownTextField.placeholder = @"Home Town";
     _homeTownTextField.keyboardType = UIKeyboardTypeDefault;
     _homeTownTextField.returnKeyType = UIReturnKeyNext;
     _homeTownTextField.delegate = self;
-    _homeTownTextField.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:IsIpad ? 21.0 : 18];
+    _homeTownTextField.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:_nameTextField.font.pointSize];
     _homeTownTextField.textAlignment = NSTextAlignmentLeft;
     _homeTownTextField.textColor = DEFAULT_BLUE_COLOR;
+    _homeTownTextField.centerY = floorf(homeBackground.height/2);
     _homeTownTextField.backgroundColor = [UIColor clearColor];
     [homeBackground addSubview:_homeTownTextField];
     
+    UIView *sepView3 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, homeBackground.width, 1)];
+    sepView3.bottom = homeBackground.height;
+    sepView3.backgroundColor = UIColorFromRGB(0xcccccc);
+    [homeBackground addSubview:sepView3];
+     */
     
-    UILabel *homeIndicator = [[UILabel alloc] initWithFrame:CGRectMake(0, homeBackground.bottom, self.width, 20)];
-    homeIndicator.backgroundColor = [UIColor clearColor];
-    homeIndicator.textColor = [UIColor whiteColor];
-    homeIndicator.textAlignment = NSTextAlignmentLeft;
-    homeIndicator.font = [UIFont fontWithName:DEFAULT_FONT size:12.0f];
-    //homeIndicator.text = @"  Your hometown";
-    //homeIndicator.hidden = YES;
-    [self addSubview:homeIndicator];
-
-    UIView *emailBackground = [[UIView alloc] initWithFrame:CGRectMake(0.0, homeIndicator.bottom, self.width, homeBackground.height)];
+    UIView *emailBackground = [[UIView alloc] initWithFrame:CGRectMake(0.0, nameBackground.bottom, self.width, nameBackground.height)];
     emailBackground.backgroundColor = [UIColor clearColor];
     [self addSubview:emailBackground];
     
-    self.emailTextField = [[SHTextFieldOnBoarding alloc] initWithFrame:CGRectMake(10, 0, emailBackground.size.width - 20, emailBackground.size.height)];
+    self.emailTextField = [[SHTextFieldOnBoarding alloc] initWithFrame:CGRectMake(10, 0, emailBackground.size.width - 20, _nameTextField.height)];
     _emailTextField.placeholder = @"Your email";
     _emailTextField.keyboardType = UIKeyboardTypeEmailAddress;
     _emailTextField.returnKeyType = UIReturnKeyNext;
     _emailTextField.delegate = self;
-    _emailTextField.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:IsIpad ? 21.0 : 18];
+    _emailTextField.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:_nameTextField.font.pointSize];
     _emailTextField.textAlignment = NSTextAlignmentLeft;
     _emailTextField.textColor = DEFAULT_BLUE_COLOR;
+    _emailTextField.centerY = floorf(emailBackground.height/2);
     _emailTextField.backgroundColor = [UIColor clearColor];
     _emailTextField.text = _user.email;
     [emailBackground addSubview:_emailTextField];
     
     
-    UILabel *emailIndicator = [[UILabel alloc] initWithFrame:CGRectMake(0, emailBackground.bottom, self.width, 20)];
-    emailIndicator.backgroundColor = [UIColor clearColor];
-    emailIndicator.textColor = [UIColor whiteColor];
-    emailIndicator.textAlignment = NSTextAlignmentLeft;
-    emailIndicator.font = [UIFont fontWithName:DEFAULT_FONT size:12.0f];
-    //homeIndicator.text = @"  Your hometown";
-    //homeIndicator.hidden = YES;
-    [self addSubview:emailIndicator];
-    
+    UIView *sepView4 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, emailBackground.width, 1)];
+    sepView4.bottom = emailBackground.height;
+    sepView4.backgroundColor = UIColorFromRGB(0xcccccc);
+    [emailBackground addSubview:sepView4];
+
     
     CGFloat buttonHeight = 63;
     self.nextStepButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.width, buttonHeight)];
@@ -168,63 +149,37 @@
     _nextStepButton.titleLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_nextStepButton];
     
-    UIView *genderBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, emailIndicator.bottom, self.width, _nextStepButton.top - emailIndicator.bottom)];
-    genderBackgroundView.backgroundColor = [UIColor JLGrey];
+    UIView *genderBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, emailBackground.bottom, self.width, _nextStepButton.top - emailBackground.bottom)];
+    genderBackgroundView.backgroundColor = [UIColor clearColor];
     [self addSubview:genderBackgroundView];
     
-    buttonHeight = 120;
+    buttonHeight = 110;
     self.femaleButton = [[SHToggleButton alloc] initWithFrame:CGRectMake(self.width/2 - (buttonHeight*2 +2)/2, genderBackgroundView.height/2 - buttonHeight/2, buttonHeight, buttonHeight)];
-    [_femaleButton setColorOff:[UIColor grayColor]];
-    [_femaleButton setColorOn:DEFAULT_BLUE_COLOR];
     [_femaleButton setTitle:@"Female" forState:UIControlStateNormal];
     [_femaleButton setTitle:@"Female" forState:UIControlStateHighlighted];
-    [_femaleButton setTitleEdgeInsets:UIEdgeInsetsMake(100, 0, 0, 0)];
     _femaleButton.tag = TAG_FEMALE_BUTTON;
     _femaleButton.top = 30;
-    _femaleButton.onImage = @"girlfinal";
-    _femaleButton.offImage = @"girlfinal";
+    _femaleButton.onImage = @"party_s";
+    _femaleButton.offImage = @"party_d";
     _femaleButton.right = floor(genderBackgroundView.width/2);
+    _femaleButton.centerY = floorf(genderBackgroundView.height/2);
     [_femaleButton toggle:NO]; // OFF
-    //[_femaleButton setBackgroundImage:[UIImage imageNamed:@"girlfinal"] forState:UIControlStateNormal];
-    //[_femaleButton setBackgroundImage:[UIImage imageNamed:@"girlfinal"] forState:UIControlStateHighlighted];
     [_femaleButton addTarget:self action:@selector(genderTogglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [genderBackgroundView addSubview:_femaleButton];
     
-    /*
-    UIImageView *femaleImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 90, 90)];
-    femaleImage.image = [UIImage imageNamed:@"girlfinal"];
-    femaleImage.centerX = floorf(_femaleButton.width/2);
-    femaleImage.centerY = floorf(_femaleButton.height/2) - 10;
-    femaleImage.userInteractionEnabled = NO;
-    [_femaleButton addSubview:femaleImage];
-     */
      
     self.maleButton = [[SHToggleButton alloc] initWithFrame:CGRectMake(_femaleButton.right +2, _femaleButton.top, _femaleButton.width, _femaleButton.height)];
-    [_maleButton setColorOff:[UIColor grayColor]];
-    [_maleButton setColorOn:DEFAULT_BLUE_COLOR];
-    _maleButton.backgroundColor = DEFAULT_BLUE_COLOR;
     [_maleButton setTitle:@"Male" forState:UIControlStateNormal];
     [_maleButton setTitle:@"Male" forState:UIControlStateHighlighted];
-    [_maleButton setTitleEdgeInsets:UIEdgeInsetsMake(100, 0, 0, 0)];
     _maleButton.tag = TAG_MALE_BUTTON;
     _maleButton.top = _femaleButton.top;
     _maleButton.left = _femaleButton.right+1;
-    _maleButton.onImage = @"boyfinal";
-    _maleButton.offImage = @"boyfinal";
-
+    _maleButton.onImage = @"study_s";
+    _maleButton.offImage = @"study_d";
     [_maleButton toggle:NO]; // OFF
-    //[_maleButton setBackgroundImage:[UIImage imageNamed:@"boyfinal"] forState:UIControlStateNormal];
-    //[_maleButton setBackgroundImage:[UIImage imageNamed:@"boyfinal"] forState:UIControlStateHighlighted];
     [_maleButton addTarget:self action:@selector(genderTogglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [genderBackgroundView addSubview:_maleButton];
 
-    
-    UIImageView *boyImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 90, 90)];
-    boyImage.image = [UIImage imageNamed:@"boyfinal"];
-    boyImage.centerX = floorf(_maleButton.width/2);
-    boyImage.centerY = floorf(_maleButton.height/2) - 10;
-    boyImage.userInteractionEnabled = NO;
-    [_maleButton addSubview:boyImage];
     
     _nameTextField.text = [NSString stringWithFormat:@"%@ %@",_user.firstName,_user.lastName];
     _homeTownTextField.text = SAFE_VAL(_user.fbHometownName);
@@ -294,7 +249,7 @@
     {
         if([textField isEqual:_nameTextField])
         {
-            [_homeTownTextField becomeFirstResponder];
+            [_emailTextField becomeFirstResponder];
             
         }
         else if([textField isEqual:_homeTownTextField])
