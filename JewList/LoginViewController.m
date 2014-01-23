@@ -255,7 +255,7 @@
     __weak __block LoginViewController *weakSelf = self;
     
     User *user = _onboardingStep5.user;
-    user.dbId = @"6";
+    user.fbToken = [[STFacebookManager sharedInstance] fbToken];
     [[SHApi sharedInstance] setCurrentUser:user];
     User *currentUser = [[SHApi sharedInstance] currentUser];
     

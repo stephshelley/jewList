@@ -280,7 +280,7 @@ static NSString *kCurrentUserPath = @"current_user";
         [params setObject:user.dietText forKey:@"diet_text"];
 
     if(user.religious != nil)
-        [params setObject:[user.religious stringValue] forKey:@"religious"];
+        [params setObject:[NSString stringWithFormat:@"%d",[user.religious intValue]] forKey:@"religious"];
 
     if(user.religiousText != nil)
         [params setObject:user.religiousText forKey:@"religious_text"];
