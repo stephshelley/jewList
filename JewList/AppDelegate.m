@@ -18,7 +18,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     User *currentUser = [[SHApi sharedInstance] currentUser];
-    if(!currentUser && currentUser.didFinishSignup)
+    if(currentUser != nil)
     {
         [self initLogedIn];
     }

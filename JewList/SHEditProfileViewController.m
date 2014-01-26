@@ -56,12 +56,61 @@
     [super viewDidLoad];
  
     self.title = @"Edit Profile";
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = DEFAULT_BLUE_COLOR;
+    if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    self.navigationController.navigationBarHidden = YES;
+    self.navigationItem.hidesBackButton = YES;
     
+    UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, self.view.width, 44)];
+    topView.backgroundColor = DEFAULT_BLUE_COLOR;
+    [self.view addSubview:topView];
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 160, 24)];
+    titleLabel.text = self.title;
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:titleLabel.height-2];
+    titleLabel.textColor = [UIColor whiteColor];
+    titleLabel.centerX = floorf(topView.width/2);
+    titleLabel.centerY = floorf(topView.height/2);
+    [topView addSubview:titleLabel];
+    
+    UIButton *profileButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
+    [profileButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [profileButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [profileButton setTitle:@"Save" forState:UIControlStateNormal];
+    [profileButton setTitle:@"Save" forState:UIControlStateHighlighted];
+    profileButton.titleLabel.textAlignment = NSTextAlignmentRight;
+    profileButton.titleLabel.backgroundColor = [UIColor clearColor];
+    profileButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
+    profileButton.backgroundColor = [UIColor clearColor];
+    [profileButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 50, 0, 0)];
+    profileButton.centerY = titleLabel.centerY;
+    profileButton.right = topView.width - 10;
+    [profileButton addTarget:self action:@selector(saveProfile) forControlEvents:UIControlEventTouchUpInside];
+    [topView addSubview:profileButton];
+    
+    UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 40)];
+    [cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
+    [cancelButton setTitle:@"Cancel" forState:UIControlStateHighlighted];
+    cancelButton.titleLabel.textAlignment = NSTextAlignmentLeft;
+    cancelButton.titleLabel.backgroundColor = [UIColor clearColor];
+    cancelButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
+    cancelButton.backgroundColor = [UIColor clearColor];
+    [cancelButton setTitleEdgeInsets:UIEdgeInsetsMake(0,0, 0, 0)];
+    cancelButton.centerY = titleLabel.centerY;
+    cancelButton.left = 0;
+    [cancelButton addTarget:self action:@selector(closeVC) forControlEvents:UIControlEventTouchUpInside];
+    [topView addSubview:cancelButton];
+    
+    /*
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(closeVC)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(saveProfile)];
+     */
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height - 44 - (IS_IOS7 ? 20 : 0)) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, topView.bottom, self.view.width, self.view.height - 44 - (IS_IOS7 ? 20 : 0)) style:UITableViewStylePlain];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.separatorColor = [UIColor clearColor];
     _tableView.backgroundColor = [UIColor clearColor];

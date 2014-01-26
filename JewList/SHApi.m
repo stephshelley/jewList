@@ -350,25 +350,16 @@ static NSString *kCurrentUserPath = @"current_user";
                                             method:@"PUT"
                                       noAuthNeeded:NO
                                            success:^(id result) {
-                                               if([result isKindOfClass:[NSDictionary class]] && [result objectForKey:@"member"])
+                                               if([result isKindOfClass:[NSDictionary class]])
                                                {
-                                                   NSArray *results = [result objectForKey:@"member"];
+                                                   User *user = [[User alloc] initWithDictionary:result];                                                   
+                                                   success(user);
                                                    
-                                                   for(NSDictionary *dict in results)
-                                                   {
-                                                       User *user = [[User alloc] initWithDictionary:dict];
-                                                       success(user);
-                                                       
-                                                   }
-                                                   
-                                                   success(nil);
-                                                   
-                                                   
-                                                   
-                                               } else {
+                                               } else
+                                               {
                                                    if([result objectForKey:@"error"])
                                                    {
-                                                       //[UIHelpers handleApiError:[result objectForKey:@"error"]];
+                                                       [SHUIHelpers handleApiError:[result objectForKey:@"error"]];
                                                    }
                                                    
                                                    failure(nil);
@@ -604,7 +595,10 @@ static NSString *kCurrentUserPath = @"current_user";
                                                if([result isKindOfClass:[NSDictionary class]] && [result objectForKey:@"token"])
                                                {
                                                    
-                                                   SHAccessToken *token = [[SHAccessToken alloc] initWithAccessToken:[result objectForKey:@"token"]];
+                                                   SHAccessToken *token = [[SHAccessToken alloc] init];
+                                                   token.authToken = [result objectForKey:@"token"];
+                                                   
+                                                   //SHAccessToken *token = [[SHAccessToken alloc] initWithAccessToken:[result objectForKey:@"token"]];
                                                    [self setShAccessToken:token];
                                                    
                                                    User *user = nil;

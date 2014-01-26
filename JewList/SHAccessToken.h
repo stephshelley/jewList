@@ -11,8 +11,8 @@
 
 @interface SHAccessToken : Jastor <NSCoding>
 
-@property (nonatomic, readonly, strong) NSString *authToken;
-@property (nonatomic, readonly, strong) NSString *refreshToken;
+@property (nonatomic, strong) NSString *authToken;
+@property (nonatomic, strong) NSString *refreshToken;
 @property (nonatomic, readonly, strong) NSDate *expiresAt;
 @property (nonatomic, readonly) BOOL doesExpire;
 @property (nonatomic, readonly) BOOL hasExpired;

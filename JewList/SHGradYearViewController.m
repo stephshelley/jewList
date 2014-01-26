@@ -38,17 +38,39 @@
 - (void)loadView
 {
     [super loadView];
-    self.view.backgroundColor = [UIColor blackColor];
-    self.title = @"Graduation Year";
+    self.view.backgroundColor = DEFAULT_BLUE_COLOR;
+    if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    self.navigationController.navigationBarHidden = YES;
+    self.navigationItem.hidesBackButton = YES;
     
-    self.yearTopView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 50)];
-    _yearTopView.backgroundColor = [UIColor JLGrey];
+    UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, self.view.width, 44)];
+    topView.backgroundColor = DEFAULT_BLUE_COLOR;
+    [self.view addSubview:topView];
+    
+    UIView *leftButtonView = [SHUIHelpers getCustomBarButtonView:CGRectMake(0, 0, 44, 44)
+                                                     buttonImage:@"iphone_navbar_button_back"
+                                                   selectedImage:@"iphone_navbar_button_back"
+                                                           title:@""
+                                                     andSelector:@selector(popVC)
+                                                          sender:self
+                                                      titleColor:[UIColor clearColor]];
+    
+    leftButtonView.centerY = floorf(topView.height/2);
+    leftButtonView.left = 0;
+    [topView addSubview:leftButtonView];
+    
+    self.yearTopView = [[UIView alloc] initWithFrame:CGRectMake(0, topView.bottom, self.view.width, 50)];
+    _yearTopView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_yearTopView];
+    
+    UIView *whiteBgView = [[UIView alloc] initWithFrame:CGRectMake(0, _yearTopView.bottom, self.view.width, self.view.height - _yearTopView.bottom)];
+    whiteBgView.backgroundColor = DEFAULT_BACKGROUND_COLOR;
+    [self.view addSubview:whiteBgView];
 
     self.chooseYearLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _yearTopView.width, _yearTopView.height)];
     _chooseYearLabel.textAlignment = NSTextAlignmentCenter;
     _chooseYearLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
-    _chooseYearLabel.textColor = [UIColor whiteColor];
+    _chooseYearLabel.textColor = DEFAULT_BLUE_COLOR;
     _chooseYearLabel.backgroundColor = [UIColor clearColor];
     _chooseYearLabel.text = @"What year are you graduating?";
     [_yearTopView addSubview:_chooseYearLabel];
@@ -143,15 +165,16 @@
 }
 
 #pragma mark - UIPickerViewDataSource
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-	NSString *returnStr = @"";
-	
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, pickerView.frame.size.width, 44)];
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor blackColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont fontWithName:@"HelveticaNeue" size:18];
     NSNumber *number = [_yearsArray objectAtIndex:row];
-    returnStr = [number stringValue];
-    
-	return returnStr;
-    
+    label.text = [number stringValue];
+    return label;
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
