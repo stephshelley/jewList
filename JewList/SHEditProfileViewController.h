@@ -13,6 +13,7 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *items;
 @property (nonatomic, strong) User *currentUser;
+@property (nonatomic, strong) UIActivityIndicatorView *activityView;
 
 - (id)initWithUser:(User *)currentUser;
 

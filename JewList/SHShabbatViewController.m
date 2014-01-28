@@ -42,21 +42,21 @@
 
 - (UIView *)toggleView
 {
-    CGFloat buttonHeight = 60;
+    CGFloat buttonHeight = 80;
     
-    UIView *buttonsBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width,80)];
+    UIView *buttonsBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, self.headerTopView.bottom + 10, self.view.width,buttonHeight)];
     buttonsBackgroundView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:buttonsBackgroundView];
     
-    self.mildJew = [[SHToggleButton alloc] initWithFrame:CGRectMake(self.view.width/2 - (buttonHeight*2 +2)/2,0, buttonHeight + 20, buttonHeight)];
-    [_mildJew setColorOff:[UIColor grayColor]];
-    [_mildJew setColorOn:DEFAULT_BLUE_COLOR];
+    self.mildJew = [[SHToggleButton alloc] initWithFrame:CGRectMake(self.view.width/2 - (buttonHeight*2 +2)/2,0, buttonHeight, buttonHeight)];
     [_mildJew setTitle:@"Mild" forState:UIControlStateNormal];
     [_mildJew setTitle:@"Mild" forState:UIControlStateHighlighted];
-    [_mildJew setTitleEdgeInsets:UIEdgeInsetsMake(90, 0, 0, 0)];
+    [_mildJew setTitleEdgeInsets:UIEdgeInsetsMake(65, 0, 0, 0)];
+    _mildJew.buttonImage.frame = CGRectMake(0, 0, 70, 70);
+    _mildJew.buttonImage.centerX = floorf(_mildJew.width/2);
     _mildJew.tag = MILD_BUTTON;
     _mildJew.centerX = floor(buttonsBackgroundView.width/2);
-    _mildJew.top = 0;
+    _mildJew.centerY = floorf(buttonsBackgroundView.height/2);
     _mildJew.onImage = @"mild_s";
     _mildJew.offImage = @"mild_d";
     _mildJew.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:14];
@@ -64,25 +64,17 @@
     [_mildJew toggle:[self.currentUser.religious intValue] == 1];
     [_mildJew addTarget:self action:@selector(togglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [buttonsBackgroundView addSubview:_mildJew];
+
     
-    /*
-    UIImageView *mildImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-    mildImage.image = [UIImage imageNamed:@"girlfinal"];
-    mildImage.centerX = floorf(_mildJew.width/2);
-    mildImage.centerY = floorf(_mildJew.height/2);
-    mildImage.userInteractionEnabled = NO;
-    [_mildJew addSubview:mildImage];
-     */
-    
-    self.uberJew = [[SHToggleButton alloc] initWithFrame:CGRectMake(0,0, buttonHeight + 20, buttonHeight)];
-    [_uberJew setColorOff:[UIColor grayColor]];
-    [_uberJew setColorOn:DEFAULT_BLUE_COLOR];
+    self.uberJew = [[SHToggleButton alloc] initWithFrame:CGRectMake(0,0, buttonHeight, buttonHeight)];
     [_uberJew setTitle:@"Uber" forState:UIControlStateNormal];
     [_uberJew setTitle:@"Uber" forState:UIControlStateHighlighted];
-    [_uberJew setTitleEdgeInsets:UIEdgeInsetsMake(90, 0, 0, 0)];
+    [_uberJew setTitleEdgeInsets:UIEdgeInsetsMake(65, 0, 0, 0)];
+    _uberJew.buttonImage.frame = CGRectMake(0, 0, 70, 70);
+    _uberJew.buttonImage.centerX = floorf(_uberJew.width/2);
     _uberJew.tag = UBER_BUTTON;
     _uberJew.right = _mildJew.left - 20;
-    _uberJew.top = 0;
+    _uberJew.top = _mildJew.top;
     _uberJew.onImage = @"uber_s";
     _uberJew.offImage = @"uber_d";
     _uberJew.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:14];
@@ -90,40 +82,25 @@
     [_uberJew toggle:[self.currentUser.religious intValue] == 0];
     [_uberJew addTarget:self action:@selector(togglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [buttonsBackgroundView addSubview:_uberJew];
-    
-    /*
-    UIImageView *uberImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-    uberImage.image = [UIImage imageNamed:@"girlfinal"];
-    uberImage.centerX = floorf(_uberJew.width/2);
-    uberImage.centerY = floorf(_uberJew.height/2);
-    uberImage.userInteractionEnabled = NO;
-    [_uberJew addSubview:uberImage];
-     */
-    
-    self.mehJew = [[SHToggleButton alloc] initWithFrame:CGRectMake(0,0, buttonHeight + 20, buttonHeight)];
-    [_mehJew setColorOff:[UIColor grayColor]];
-    [_mehJew setColorOn:DEFAULT_BLUE_COLOR];
+
+    self.mehJew = [[SHToggleButton alloc] initWithFrame:CGRectMake(0,0, buttonHeight, buttonHeight)];
     _mehJew.backgroundColor = DEFAULT_BLUE_COLOR;
     [_mehJew setTitle:@"Meh" forState:UIControlStateNormal];
     [_mehJew setTitle:@"Meh" forState:UIControlStateHighlighted];
-    [_mehJew setTitleEdgeInsets:UIEdgeInsetsMake(90, 0, 0, 0)];
+    [_mehJew setTitleEdgeInsets:UIEdgeInsetsMake(65, 0, 0, 0)];
+    _mehJew.buttonImage.frame = CGRectMake(0, 0, 70, 70);
+    _mehJew.buttonImage.centerX = floorf(_mehJew.width/2);
     _mehJew.tag = MEH_BUTTON;
     _mehJew.onImage = @"meh_s";
     _mehJew.offImage = @"meh_d";
     _mehJew.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:14];
     _mehJew.titleLabel.adjustsFontSizeToFitWidth = YES;
-    _mehJew.top = _uberJew.top;
+    _mehJew.top = _mildJew.top;
     _mehJew.left = _mildJew.right + 20;
     [_mehJew toggle:[self.currentUser.religious intValue] == 2];
     [_mehJew addTarget:self action:@selector(togglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [buttonsBackgroundView addSubview:_mehJew];
-    
-    UIImageView *mehImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-    mehImage.image = [UIImage imageNamed:@"boyfinal"];
-    mehImage.centerX = floorf(_mehJew.width/2);
-    mehImage.centerY = floorf(_mehJew.height/2);
-    mehImage.userInteractionEnabled = NO;
-    [_mehJew addSubview:mehImage];
+
     
     return buttonsBackgroundView;
     

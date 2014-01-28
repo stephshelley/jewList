@@ -334,6 +334,12 @@ static NSString *kCurrentUserPath = @"current_user";
         
     }
     
+    if(user.didFinishSignup)
+    {
+        [params setObject:@"1" forKey:@"did_finish_signup"];
+
+    }
+    
     return params;
     
 }

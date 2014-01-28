@@ -88,6 +88,10 @@
         [_agesArray addObject:age];
     }
     
+    if([_user.age intValue] == 0)
+        _user.age = @16;
+
+    
     [self loadPicker];
     
 }

@@ -256,6 +256,7 @@
     
     User *user = _onboardingStep5.user;
     user.fbToken = [[STFacebookManager sharedInstance] fbToken];
+    user.didFinishSignup = YES;
     [[SHApi sharedInstance] setCurrentUser:user];
     User *currentUser = [[SHApi sharedInstance] currentUser];
     

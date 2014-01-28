@@ -30,6 +30,7 @@
 #import "SHLocationCell.h"
 #import "SHAgeViewController.h"
 #import "SHAgeCell.h"
+#import "STFacebookManager.h"
 
 @interface SHEditProfileViewController ()
 
@@ -104,11 +105,10 @@
     cancelButton.left = 0;
     [cancelButton addTarget:self action:@selector(closeVC) forControlEvents:UIControlEventTouchUpInside];
     [topView addSubview:cancelButton];
-    
-    /*
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(closeVC)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(saveProfile)];
-     */
+ 
+    UIView *whiteBgView = [[UIView alloc] initWithFrame:CGRectMake(0, topView.bottom, self.view.width, self.view.height - topView.height)];
+    whiteBgView.backgroundColor = DEFAULT_BACKGROUND_COLOR;
+    [self.view addSubview:whiteBgView];
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, topView.bottom, self.view.width, self.view.height - 44 - (IS_IOS7 ? 20 : 0)) style:UITableViewStylePlain];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -143,8 +143,56 @@
 
 - (void)saveProfile
 {
-    [[SHApi sharedInstance] setCurrentUser:_currentUser];
-    [self closeVC];
+    __weak __block SHEditProfileViewController *weakSelf = self;
+    
+    [[SHApi sharedInstance] updateUser:_currentUser success:^(User *user)
+     {
+         dispatch_async(dispatch_get_main_queue(), ^{
+             user.fbToken = [[STFacebookManager sharedInstance] fbToken];
+             [[SHApi sharedInstance] setCurrentUser:user];
+             [weakSelf hideLoading];
+             [self closeVC];
+
+             
+         });
+         
+         
+     }failure:^(NSError *error)
+     {
+         dispatch_async(dispatch_get_main_queue(), ^{
+             [weakSelf hideLoading];
+             [SHUIHelpers alertErrorWithMessage:@"Something went wrong :("];
+             
+         });
+         
+         
+     }];
+    
+    
+    
+}
+
+- (void)showLoading
+{
+    if(nil == _activityView)
+    {
+        _activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        _activityView.center = self.view.center;
+        [self.view addSubview:_activityView];
+        [_activityView startAnimating];
+        _tableView.hidden = YES;
+        _activityView.hidesWhenStopped = YES;
+    }
+    
+}
+
+- (void)hideLoading
+{
+    [_activityView stopAnimating];
+    [_activityView removeFromSuperview];
+    _activityView = nil;
+    _tableView.hidden = YES;
+    
     
 }
 

@@ -42,21 +42,19 @@
 
 - (UIView *)toggleView
 {
-    CGFloat buttonHeight = 60;
+    CGFloat buttonHeight = 110;
     
-    UIView *buttonsBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width,80)];
+    UIView *buttonsBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, self.headerTopView.bottom + 10, self.view.width,buttonHeight)];
     buttonsBackgroundView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:buttonsBackgroundView];
     
     self.nonKosherButton = [[SHToggleButton alloc] initWithFrame:CGRectMake(self.view.width/2 - (buttonHeight*2 +2)/2,0, buttonHeight + 20, buttonHeight)];
-    [_nonKosherButton setColorOff:[UIColor grayColor]];
-    [_nonKosherButton setColorOn:DEFAULT_BLUE_COLOR];
     [_nonKosherButton setTitle:@"Non Kosher" forState:UIControlStateNormal];
     [_nonKosherButton setTitle:@"Non Kosher" forState:UIControlStateHighlighted];
     [_nonKosherButton setTitleEdgeInsets:UIEdgeInsetsMake(90, 0, 0, 0)];
     _nonKosherButton.tag = NON_KOSHER_BUTTON;
-    _nonKosherButton.right = floor(buttonsBackgroundView.width/2) - 10;
-    _nonKosherButton.top = 0;
+    _nonKosherButton.right = floor(buttonsBackgroundView.width/2);
+    _nonKosherButton.centerY = floorf(buttonsBackgroundView.height/2);
     _nonKosherButton.onImage = @"nonkosher_s";
     _nonKosherButton.offImage = @"nonkosher_d";
     _nonKosherButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:14];
@@ -66,8 +64,6 @@
     [buttonsBackgroundView addSubview:_nonKosherButton];
    
     self.kosherButton = [[SHToggleButton alloc] initWithFrame:CGRectMake(_nonKosherButton.right +2, _nonKosherButton.top, _nonKosherButton.width, _nonKosherButton.height)];
-    [_kosherButton setColorOff:[UIColor grayColor]];
-    [_kosherButton setColorOn:DEFAULT_BLUE_COLOR];
     _kosherButton.backgroundColor = DEFAULT_BLUE_COLOR;
     [_kosherButton setTitle:@"Kosher" forState:UIControlStateNormal];
     [_kosherButton setTitle:@"Kosher" forState:UIControlStateHighlighted];
@@ -78,19 +74,11 @@
     _kosherButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:14];
     _kosherButton.titleLabel.adjustsFontSizeToFitWidth = YES;
     _kosherButton.top = _nonKosherButton.top;
-    _kosherButton.left = _nonKosherButton.right + 20;
+    _kosherButton.left = _nonKosherButton.right+1;
     [_kosherButton toggle:[self.currentUser.diet intValue] == 0];
     [_kosherButton addTarget:self action:@selector(togglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [buttonsBackgroundView addSubview:_kosherButton];
-    
-    
-    UIImageView *boyImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-    boyImage.image = [UIImage imageNamed:@"boyfinal"];
-    boyImage.centerX = floorf(_kosherButton.width/2);
-    boyImage.centerY = floorf(_kosherButton.height/2);
-    boyImage.userInteractionEnabled = NO;
-    [_kosherButton addSubview:boyImage];
-    
+
     return buttonsBackgroundView;
     
 }

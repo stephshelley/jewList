@@ -155,12 +155,14 @@
     
     buttonHeight = 110;
     self.femaleButton = [[SHToggleButton alloc] initWithFrame:CGRectMake(self.width/2 - (buttonHeight*2 +2)/2, genderBackgroundView.height/2 - buttonHeight/2, buttonHeight, buttonHeight)];
-    [_femaleButton setTitle:@"Female" forState:UIControlStateNormal];
-    [_femaleButton setTitle:@"Female" forState:UIControlStateHighlighted];
+    //[_femaleButton setTitle:@"Female" forState:UIControlStateNormal];
+    //[_femaleButton setTitle:@"Female" forState:UIControlStateHighlighted];
     _femaleButton.tag = TAG_FEMALE_BUTTON;
+    _femaleButton.colorOn = [UIColor clearColor];
+    _femaleButton.colorOff = [UIColor clearColor];
     _femaleButton.top = 30;
-    _femaleButton.onImage = @"party_s";
-    _femaleButton.offImage = @"party_d";
+    _femaleButton.onImage = @"female_s";
+    _femaleButton.offImage = @"female_d";
     _femaleButton.right = floor(genderBackgroundView.width/2);
     _femaleButton.centerY = floorf(genderBackgroundView.height/2);
     [_femaleButton toggle:NO]; // OFF
@@ -169,13 +171,15 @@
     
      
     self.maleButton = [[SHToggleButton alloc] initWithFrame:CGRectMake(_femaleButton.right +2, _femaleButton.top, _femaleButton.width, _femaleButton.height)];
-    [_maleButton setTitle:@"Male" forState:UIControlStateNormal];
-    [_maleButton setTitle:@"Male" forState:UIControlStateHighlighted];
+    //[_maleButton setTitle:@"Male" forState:UIControlStateNormal];
+    //[_maleButton setTitle:@"Male" forState:UIControlStateHighlighted];
     _maleButton.tag = TAG_MALE_BUTTON;
+    _maleButton.colorOn = [UIColor clearColor];
+    _maleButton.colorOff = [UIColor clearColor];
     _maleButton.top = _femaleButton.top;
     _maleButton.left = _femaleButton.right+1;
-    _maleButton.onImage = @"study_s";
-    _maleButton.offImage = @"study_d";
+    _maleButton.onImage = @"male_s";
+    _maleButton.offImage = @"male_d";
     [_maleButton toggle:NO]; // OFF
     [_maleButton addTarget:self action:@selector(genderTogglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [genderBackgroundView addSubview:_maleButton];

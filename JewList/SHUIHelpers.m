@@ -64,7 +64,7 @@
 {
     if(!message) return;
     
-    [self alertWithTitle:@"Error"
+    [self alertWithTitle:@"Oy! Error"
                         message:message
               cancelButtonTitle:@"OK"];
 }

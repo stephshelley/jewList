@@ -31,60 +31,92 @@
     
 }
 
+- (void)popVC
+{
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
 - (void)loadView
 {
     [super loadView];
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = DEFAULT_BLUE_COLOR;
+    if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    self.navigationController.navigationBarHidden = YES;
+    self.navigationItem.hidesBackButton = YES;
     
+    UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, self.view.width, 44)];
+    topView.backgroundColor = DEFAULT_BLUE_COLOR;
+    [self.view addSubview:topView];
+    
+    UIView *leftButtonView = [SHUIHelpers getCustomBarButtonView:CGRectMake(0, 0, 44, 44)
+                                                     buttonImage:@"iphone_navbar_button_back"
+                                                   selectedImage:@"iphone_navbar_button_back"
+                                                           title:@""
+                                                     andSelector:@selector(popVC)
+                                                          sender:self
+                                                      titleColor:[UIColor clearColor]];
+    
+    leftButtonView.centerY = floorf(topView.height/2);
+    leftButtonView.left = 0;
+    [topView addSubview:leftButtonView];
     CGFloat buttonHeight = 120;
+    
+    UIView *whiteBgView = [[UIView alloc] initWithFrame:CGRectMake(0, topView.bottom, self.view.width, self.view.height-topView.height)];
+    whiteBgView.backgroundColor = DEFAULT_BACKGROUND_COLOR;
+    [self.view addSubview:whiteBgView];
 
-    UIView *genderBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width,120)];
-    genderBackgroundView.backgroundColor = [UIColor JLGrey];
+    UIView *headerTopView = [[UIView alloc] initWithFrame:CGRectMake(0, topView.bottom, self.view.width, 50)];
+    headerTopView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:headerTopView];
+    
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, headerTopView.width - 20, headerTopView.height)];
+    headerLabel.textAlignment = NSTextAlignmentCenter;
+    headerLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
+    headerLabel.textColor = DEFAULT_BLUE_COLOR;
+    headerLabel.adjustsFontSizeToFitWidth = YES;
+    headerLabel.text = @"Are you male or female?";
+    headerLabel.backgroundColor = [UIColor clearColor];
+    headerLabel.centerX = floorf(headerTopView.width/2);
+    [headerTopView addSubview:headerLabel];
+    
+    UIView *genderBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 200)];
+    genderBackgroundView.backgroundColor = [UIColor clearColor];
     genderBackgroundView.center = self.view.center;
     [self.view addSubview:genderBackgroundView];
     
-    self.femaleButton = [[SHToggleButton alloc] initWithFrame:CGRectMake(self.view.width/2 - (buttonHeight*2 +2)/2,0, buttonHeight, buttonHeight)];
-    [_femaleButton setColorOff:[UIColor grayColor]];
-    [_femaleButton setColorOn:DEFAULT_BLUE_COLOR];
-    [_femaleButton setTitle:@"Female" forState:UIControlStateNormal];
-    [_femaleButton setTitle:@"Female" forState:UIControlStateHighlighted];
-    [_femaleButton setTitleEdgeInsets:UIEdgeInsetsMake(100, 0, 0, 0)];
+    buttonHeight = 110;
+    self.femaleButton = [[SHToggleButton alloc] initWithFrame:CGRectMake(0, 0, buttonHeight, buttonHeight)];
+    //[_femaleButton setTitle:@"Female" forState:UIControlStateNormal];
+    //[_femaleButton setTitle:@"Female" forState:UIControlStateHighlighted];
+    _femaleButton.colorOn = [UIColor clearColor];
+    _femaleButton.colorOff = [UIColor clearColor];
     _femaleButton.tag = TAG_FEMALE_BUTTON;
     _femaleButton.top = 30;
+    _femaleButton.onImage = @"female_s";
+    _femaleButton.offImage = @"female_d";
     _femaleButton.right = floor(genderBackgroundView.width/2);
     _femaleButton.centerY = floorf(genderBackgroundView.height/2);
-    [_femaleButton toggle:[_currentUser.gender intValue] == 1]; // OFF
+    [_femaleButton toggle:NO]; // OFF
     [_femaleButton addTarget:self action:@selector(genderTogglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [genderBackgroundView addSubview:_femaleButton];
     
-    UIImageView *femaleImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 90, 90)];
-    femaleImage.image = [UIImage imageNamed:@"girlfinal"];
-    femaleImage.centerX = floorf(_femaleButton.width/2);
-    femaleImage.centerY = floorf(_femaleButton.height/2) - 10;
-    femaleImage.userInteractionEnabled = NO;
-    [_femaleButton addSubview:femaleImage];
     
     self.maleButton = [[SHToggleButton alloc] initWithFrame:CGRectMake(_femaleButton.right +2, _femaleButton.top, _femaleButton.width, _femaleButton.height)];
-    [_maleButton setColorOff:[UIColor grayColor]];
-    [_maleButton setColorOn:DEFAULT_BLUE_COLOR];
-    _maleButton.backgroundColor = DEFAULT_BLUE_COLOR;
-    [_maleButton setTitle:@"Male" forState:UIControlStateNormal];
-    [_maleButton setTitle:@"Male" forState:UIControlStateHighlighted];
-    [_maleButton setTitleEdgeInsets:UIEdgeInsetsMake(100, 0, 0, 0)];
+    //[_maleButton setTitle:@"Male" forState:UIControlStateNormal];
+    //[_maleButton setTitle:@"Male" forState:UIControlStateHighlighted];
+    _maleButton.colorOn = [UIColor clearColor];
+    _maleButton.colorOff = [UIColor clearColor];
     _maleButton.tag = TAG_MALE_BUTTON;
     _maleButton.top = _femaleButton.top;
     _maleButton.left = _femaleButton.right+1;
-    [_maleButton toggle:[_currentUser.gender intValue] == 0]; // OFF
+    _maleButton.onImage = @"male_s";
+    _maleButton.offImage = @"male_d";
+    [_maleButton toggle:NO]; // OFF
     [_maleButton addTarget:self action:@selector(genderTogglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [genderBackgroundView addSubview:_maleButton];
     
-    
-    UIImageView *boyImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 90, 90)];
-    boyImage.image = [UIImage imageNamed:@"boyfinal"];
-    boyImage.centerX = floorf(_maleButton.width/2);
-    boyImage.centerY = floorf(_maleButton.height/2) - 10;
-    boyImage.userInteractionEnabled = NO;
-    [_maleButton addSubview:boyImage];
+    [self setGender];
     
 }
 

@@ -42,39 +42,26 @@
 
 - (UIView *)toggleView
 {
-    CGFloat buttonHeight = 60;
+    CGFloat buttonHeight = 110;
     
-    UIView *buttonsBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width,80)];
+    UIView *buttonsBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, self.headerTopView.bottom + 10, self.view.width,buttonHeight)];
     buttonsBackgroundView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:buttonsBackgroundView];
     
     self.playButton = [[SHToggleButton alloc] initWithFrame:CGRectMake(self.view.width/2 - (buttonHeight*2 +2)/2,0, buttonHeight, buttonHeight)];
-    [_playButton setColorOff:[UIColor grayColor]];
-    [_playButton setColorOn:DEFAULT_BLUE_COLOR];
     [_playButton setTitle:@"Party" forState:UIControlStateNormal];
     [_playButton setTitle:@"Party" forState:UIControlStateHighlighted];
     [_playButton setTitleEdgeInsets:UIEdgeInsetsMake(90, 0, 0, 0)];
     _playButton.tag = PLAY_BUTTON;
-    _playButton.right = floor(buttonsBackgroundView.width/2) - 10;
-    _playButton.top = 0;
+    _playButton.right = floor(buttonsBackgroundView.width/2);
+    _playButton.centerY = floorf(buttonsBackgroundView.height/2);
     _playButton.onImage = @"party_s";
     _playButton.offImage = @"party_d";
     [_playButton toggle:[self.currentUser.personality intValue] == 1];
     [_playButton addTarget:self action:@selector(togglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [buttonsBackgroundView addSubview:_playButton];
     
-    /*
-    UIImageView *femaleImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-    femaleImage.image = [UIImage imageNamed:@"party_d"];
-    femaleImage.centerX = floorf(_playButton.width/2);
-    femaleImage.centerY = floorf(_playButton.height/2);
-    femaleImage.userInteractionEnabled = NO;
-    [_playButton addSubview:femaleImage];
-     */
-    
-    self.workButton = [[SHToggleButton alloc] initWithFrame:CGRectMake(_playButton.right +2, _playButton.top, _playButton.width, _playButton.height)];
-    [_workButton setColorOff:[UIColor grayColor]];
-    [_workButton setColorOn:DEFAULT_BLUE_COLOR];
+    self.workButton = [[SHToggleButton alloc] initWithFrame:CGRectMake(0, 0, buttonHeight, buttonHeight)];
     _workButton.backgroundColor = DEFAULT_BLUE_COLOR;
     [_workButton setTitle:@"Work" forState:UIControlStateNormal];
     [_workButton setTitle:@"Work" forState:UIControlStateHighlighted];
@@ -83,20 +70,12 @@
     _workButton.onImage = @"study_s";
     _workButton.offImage = @"study_d";
     _workButton.top = _playButton.top;
-    _workButton.left = _playButton.right + 20;
+    _workButton.left = _playButton.right+1;
     [_workButton toggle:[self.currentUser.personality intValue] == 0];
     [_workButton addTarget:self action:@selector(togglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [buttonsBackgroundView addSubview:_workButton];
-    
-    /*
-    UIImageView *boyImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-    boyImage.image = [UIImage imageNamed:@"study_d"];
-    boyImage.centerX = floorf(_workButton.width/2);
-    boyImage.centerY = floorf(_workButton.height/2);
-    boyImage.userInteractionEnabled = NO;
-    [_workButton addSubview:boyImage];
-     */
 
+    
     return buttonsBackgroundView;
     
 }
