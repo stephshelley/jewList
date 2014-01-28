@@ -55,6 +55,7 @@
     newUser.religiousText = [_religiousText copyWithZone:zone];
     newUser.roommatePrefs = [_roommatePrefs copyWithZone:zone];
     newUser.school = [_school copyWithZone:zone];
+    newUser.fb = [_fb copyWithZone:zone];
     newUser.aboutMe = [_aboutMe copyWithZone:zone];
     newUser.didFinishSignup = _didFinishSignup;
     newUser.college = [_college copy];
@@ -65,10 +66,20 @@
 
 - (NSString *)fbImageUrlForSize:(CGSize)size
 {
-    if(nil == _fbId) return nil;
+    if(nil == _fb) return nil;
     
     NSInteger scale = [UIScreen mainScreen].scale;
-    NSString *url = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?width=%d&height=%d", self.fbId,(int)size.width*scale,(int)size.height*scale];
+    NSString *url = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?width=%d&height=%d", self.fb,(int)size.width*scale,(int)size.height*scale];
+    return url;
+    
+}
+
+- (NSString *)fbCoverUrlForSize:(CGSize)size
+{
+    if(nil == _fb) return nil;
+    
+    NSInteger scale = [UIScreen mainScreen].scale;
+    NSString *url = [NSString stringWithFormat:@"https://graph.facebook.com/%@?fields=cover", self.fb];
     return url;
     
 }

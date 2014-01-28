@@ -29,7 +29,7 @@
     {
         User *currentUser = [[SHApi sharedInstance] currentUser];
 
-        self.user = currentUser;
+        self.user = user;
         //user;
         _previousMessage = nil;
         
@@ -98,7 +98,7 @@
     [topView addSubview:profileButton];
     
     
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, topView.bottom, self.view.width, self.view.height - topView.height - 44)];
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, topView.bottom, self.view.width, self.view.height - topView.height - 20)];
     _scrollView.backgroundColor = [UIColor clearColor];
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.showsVerticalScrollIndicator = NO;
@@ -116,6 +116,8 @@
     _initialBackdropOriginY = _backdropView.top;
     [self.view addSubview:_backdropView];
     [self.view sendSubviewToBack:_backdropView];
+
+    
     
     UIView *overlay = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _backdropView.width, _backdropView.height)];
     overlay.backgroundColor = [UIColor blackColor];
@@ -154,7 +156,7 @@
     [_backdropView addSubview:_detailLabel];
 
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, _backdropView.bottom, self.view.width, self.view.height)];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, _backdropView.bottom - 65, self.view.width, self.view.height)];
     _tableView.backgroundColor = [UIColor whiteColor];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.delegate = self;
@@ -249,7 +251,7 @@
     User *currentUser = [[SHApi sharedInstance] currentUser];
     __weak __typeof(&*self)weakSelf = self;
 
-    [[SHApi sharedInstance] getCoverUrl:currentUser.fbId success:^(NSString *url)
+    [[SHApi sharedInstance] getCoverUrl:_user.fb success:^(NSString *url)
      {
          dispatch_async(dispatch_get_main_queue(), ^{
              [weakSelf.backdropView setPathToNetworkImage:url forDisplaySize:weakSelf.backdropView.size contentMode:UIViewContentModeScaleAspectFill];

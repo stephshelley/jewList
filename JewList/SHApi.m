@@ -574,7 +574,7 @@ static NSString *kCurrentUserPath = @"current_user";
                                                
                                                if([result objectForKey:@"error"])
                                                {
-                                                   //[UIHelpers handleApiError:[result objectForKey:@"error"]];
+                                                   [SHUIHelpers handleApiError:[result objectForKey:@"error"]];
                                                    failure(nil);
                                                }else{
                                                    success();

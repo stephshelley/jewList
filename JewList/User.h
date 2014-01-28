@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSString *kosher;
 @property (nonatomic, strong) NSString *shabat;
 
+@property (nonatomic, strong) NSString *fb;
 @property (nonatomic, strong) NSString *fbId;
 @property (nonatomic, strong) NSString *fbToken;
 @property (nonatomic, strong) NSString *fbImageUrl;
@@ -33,7 +34,6 @@
 @property (nonatomic, strong) NSString *cleaningText;
 @property (nonatomic, strong) NSNumber *diet;
 @property (nonatomic, strong) NSString *dietText;
-@property (nonatomic, strong) NSString *fb;
 @property (nonatomic, strong) NSString *aboutMe;
 @property (nonatomic, strong) NSString *firstName;
 @property (nonatomic, strong) NSString *lastName;
@@ -55,5 +55,6 @@
 @property (nonatomic, strong) NSDictionary *fbUsername;
 
 - (NSString *)fbImageUrlForSize:(CGSize)size;
+- (NSString *)fbCoverUrlForSize:(CGSize)size;
 
 @end
