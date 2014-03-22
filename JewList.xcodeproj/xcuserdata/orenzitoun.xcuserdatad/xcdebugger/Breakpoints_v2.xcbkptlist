@@ -41,13 +41,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JewList/SHApi.m"
-            timestampString = "412581784.555721"
+            filePath = "JewList/SHMemberResultsJsonResponse.m"
+            timestampString = "417217860.315396"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "601"
-            endingLineNumber = "601"
-            landmarkName = "-loginWithFBToken:fbId:success:failure:"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "-process:responseObject:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,28 +58,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JewList/SHApi.m"
-            timestampString = "412581784.555721"
+            timestampString = "417217919.32067"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "772"
-            endingLineNumber = "772"
-            landmarkName = "-standardRequestWithPath:params:method:noAuthNeeded:success:failure:"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "-setStAccessToken:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JewList/SHEditProfileViewController.m"
-            timestampString = "412581285.019511"
+            filePath = "JewList/SHApi.m"
+            timestampString = "417222404.217215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
-            landmarkName = "-saveProfile"
+            startingLineNumber = "855"
+            endingLineNumber = "855"
+            landmarkName = "-standardRequestWithPath:params:method:noAuthNeeded:success:failure:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

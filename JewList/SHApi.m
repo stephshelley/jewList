@@ -309,9 +309,29 @@ static NSString *kCurrentUserPath = @"current_user";
     
     if(user.school)
     {
-        [params setObject:user.school forKey:@"school"];
-    }else{
-        [params setObject:@"" forKey:@"school"];
+        if(user.college.name)
+        {
+            [params setObject:user.college.name forKey:@"college_name"];
+   
+        }
+        else
+        {
+            [params setObject:user.school forKey:@"school"];
+            
+        }
+    }
+    else
+    {
+        if(user.college.name)
+        {
+            [params setObject:user.college.name forKey:@"college_name"];
+            
+        }
+        else
+        {
+            [params setObject:@"" forKey:@"school"];
+            
+        }
         
     }
     
@@ -342,6 +362,41 @@ static NSString *kCurrentUserPath = @"current_user";
     
     return params;
     
+}
+
+- (void)deleteAccount
+{
+    [self deleteUser:nil failure:nil];
+    [self logout];
+    
+}
+
+- (id)deleteUser:(void (^)(void))success
+         failure:(void (^)(NSError * error))failure
+{
+    return [self standardDictionaryRequestWithPath:@"member"
+                                            params:nil
+                                            method:@"DELETE"
+                                      noAuthNeeded:NO
+                                           success:^(id result) {
+                                               if([result isKindOfClass:[NSDictionary class]])
+                                               {
+                                                   if(success)
+                                                       success();
+                                                   
+                                               } else
+                                               {
+                                                   if([result objectForKey:@"error"])
+                                                   {
+                                                       [SHUIHelpers handleApiError:[result objectForKey:@"error"]];
+                                                   }
+                                                   
+                                                   if(failure)
+                                                       failure(nil);
+                                               }
+                                               
+                                           }
+                                           failure:failure];
 }
 
 - (id)updateUser:(User *)user
@@ -605,7 +660,7 @@ static NSString *kCurrentUserPath = @"current_user";
                                                    token.authToken = [result objectForKey:@"token"];
                                                    
                                                    //SHAccessToken *token = [[SHAccessToken alloc] initWithAccessToken:[result objectForKey:@"token"]];
-                                                   [self setShAccessToken:token];
+                                                   [self setStAccessToken:token];
                                                    
                                                    User *user = nil;
                                                    if([result objectForKey:@"member"])
@@ -812,7 +867,18 @@ static NSString *kCurrentUserPath = @"current_user";
              BD_LOG(@"response string = %@",requestOperation.responseString);
              BD_LOG(@"response data size = %db",[requestOperation.responseData length]);
 
-             if (success) success([self jsonToDictionary:requestOperation.responseData]);
+             if([requestOperation.responseData length] > 0)
+             {
+                 if (success)
+                     success([self jsonToDictionary:requestOperation.responseData]);
+
+             }
+             else
+             {
+                 if (success)
+                     success(nil);
+   
+             }
 
          }
                   

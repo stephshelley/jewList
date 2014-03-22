@@ -72,23 +72,9 @@
     _collegeLabel.backgroundColor = [UIColor clearColor];
     _collegeLabel.text = @"What college are you going to?";
     [_collegeTopView addSubview:_collegeLabel];
-    
-    /*
-    CGFloat buttonHeight = 63;
-    self.nextStepButton = [[UIButton alloc] initWithFrame:CGRectMake(0, self.height-buttonHeight, self.width, buttonHeight)];
-    _nextStepButton.backgroundColor = DEFAULT_BLUE_COLOR;
-    [_nextStepButton setTitle:@"Yep, that's my school!" forState:UIControlStateNormal];
-    [_nextStepButton setTitle:@"Yep, that's my school!" forState:UIControlStateHighlighted];
-    _nextStepButton.bottom = self.height + 40;
-    _nextStepButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:24];
-    _nextStepButton.titleLabel.textColor = [UIColor whiteColor];
-    _nextStepButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-    _nextStepButton.centerX = _collegeTopView.centerX;
-    [self addSubview:_nextStepButton];
-    */
-    
+
     [self loadTable];
-    //[self loadColleges];
+
 }
 
 - (void)loadColleges
@@ -166,7 +152,7 @@
     [topView addSubview:self.searchBar];
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, topView.bottom, width,self.height - topView.bottom) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, topView.bottom, width,self.height - topView.bottom - 20) style:UITableViewStylePlain];
     self.tableView.tableFooterView = [[UIView alloc] init];
     
     if(!IsIpad)

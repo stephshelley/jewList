@@ -23,6 +23,8 @@
 #import "SHDietViewController.h"
 #import "SHDietCell.h"
 #import "SHShabatCell.h"
+#import "SHLogoutCellTableViewCell.h"
+#import "SHLogoutCellTableViewCell.h"
 #import "SHShabbatViewController.h"
 #import "SHWhatIWantInARoomateViewController.h"
 #import "SHRoomatePrefCell.h"
@@ -31,6 +33,7 @@
 #import "SHAgeViewController.h"
 #import "SHAgeCell.h"
 #import "STFacebookManager.h"
+#import "SHDeleteAccountCell.h"
 
 @interface SHEditProfileViewController ()
 
@@ -76,7 +79,10 @@
     titleLabel.centerY = floorf(topView.height/2);
     [topView addSubview:titleLabel];
     
-    UIButton *profileButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
+    UIButton *profileButton = [SHUIHelpers getNavBarButton:CGRectMake(0, 0, 60, 24) title:@"Save" selector:@selector(saveProfile) sender:self];
+
+    /*
+    //UIButton *profileButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
     [profileButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [profileButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
     [profileButton setTitle:@"Save" forState:UIControlStateNormal];
@@ -86,12 +92,17 @@
     profileButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
     profileButton.backgroundColor = [UIColor clearColor];
     [profileButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 50, 0, 0)];
+    [profileButton addTarget:self action:@selector(saveProfile) forControlEvents:UIControlEventTouchUpInside];
+     */
+    
     profileButton.centerY = titleLabel.centerY;
     profileButton.right = topView.width - 10;
-    [profileButton addTarget:self action:@selector(saveProfile) forControlEvents:UIControlEventTouchUpInside];
     [topView addSubview:profileButton];
     
-    UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 40)];
+    UIButton *cancelButton = [SHUIHelpers getNavBarButton:CGRectMake(0, 0, 60, 24) title:@"Cancel" selector:@selector(closeVC) sender:self];
+
+    /*
+    //UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 40)];
     [cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
     [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
@@ -101,9 +112,11 @@
     cancelButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
     cancelButton.backgroundColor = [UIColor clearColor];
     [cancelButton setTitleEdgeInsets:UIEdgeInsetsMake(0,0, 0, 0)];
-    cancelButton.centerY = titleLabel.centerY;
-    cancelButton.left = 0;
     [cancelButton addTarget:self action:@selector(closeVC) forControlEvents:UIControlEventTouchUpInside];
+     */
+    
+    cancelButton.centerY = titleLabel.centerY;
+    cancelButton.left = 10;
     [topView addSubview:cancelButton];
  
     UIView *whiteBgView = [[UIView alloc] initWithFrame:CGRectMake(0, topView.bottom, self.view.width, self.view.height - topView.height)];
@@ -128,6 +141,9 @@
     [_tableView registerClass:[SHRoomatePrefCell class] forCellReuseIdentifier:NSStringFromClass([SHRoomatePrefCell class])];
     [_tableView registerClass:[SHLocationCell class] forCellReuseIdentifier:NSStringFromClass([SHLocationCell class])];
     [_tableView registerClass:[SHAgeCell class] forCellReuseIdentifier:NSStringFromClass([SHAgeCell class])];
+    [_tableView registerClass:[SHLogoutCellTableViewCell class] forCellReuseIdentifier:NSStringFromClass([SHLogoutCellTableViewCell class])];
+    [_tableView registerClass:[SHDeleteAccountCell class] forCellReuseIdentifier:NSStringFromClass([SHDeleteAccountCell class])];
+
 
     [self.view addSubview:_tableView];
     
@@ -167,8 +183,6 @@
          
          
      }];
-    
-    
     
 }
 
@@ -220,7 +234,7 @@
     }
     else if(section == 2)
     {
-        count = 5;
+        count = 7;
     }
     
     return count;
@@ -263,7 +277,19 @@
     }
     else if(section == 2)
     {
-        cellHeight = [SHWorkPartyCell rowHeight];
+        if(row <= 4)
+        {
+            cellHeight = [SHWorkPartyCell rowHeight];
+            
+        }
+        else if(row == 5)
+        {
+            cellHeight = [SHLogoutCellTableViewCell rowHeight];
+        }
+        else if(row == 6)
+        {
+            cellHeight = [SHDeleteAccountCell rowHeight];
+        }
         
     }
     
@@ -376,6 +402,16 @@
                 SHShabatCell *gradCell = (SHShabatCell *)cell;
                 gradCell.user = _currentUser;
 
+                break;
+            }
+            case 5:
+            {
+                cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHLogoutCellTableViewCell class])];
+                break;
+            }
+            case 6:
+            {
+                cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHDeleteAccountCell class])];
                 break;
             }
             default:

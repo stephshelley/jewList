@@ -202,6 +202,11 @@
 		3A964897186FD4B60026A559 /* SHTextCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A964896186FD4B60026A559 /* SHTextCellItem.m */; };
 		3A96489B186FD4D70026A559 /* SHUserProfileTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A96489A186FD4D70026A559 /* SHUserProfileTextCell.m */; };
 		3AAB1229185E448A00F592DD /* STOnboarding4View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB1228185E448A00F592DD /* STOnboarding4View.m */; };
+		3AC4B5D718DE22DA001E9CA0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AC4B5D618DE22DA001E9CA0 /* Images.xcassets */; };
+		3AC4B5DA18DE326F001E9CA0 /* SHLogoutCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC4B5D918DE326F001E9CA0 /* SHLogoutCellTableViewCell.m */; };
+		3AC4B5E018DE3727001E9CA0 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC4B5DF18DE3727001E9CA0 /* TTTAttributedLabel.m */; };
+		3AC4B5E218DE3AA3001E9CA0 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC4B5E118DE3AA3001E9CA0 /* CoreText.framework */; };
+		3AC4B5E518DE4BA0001E9CA0 /* SHDeleteAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC4B5E418DE4BA0001E9CA0 /* SHDeleteAccountCell.m */; };
 		3ADF2A60188392B000415A09 /* kosher_d@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADF2A52188392B000415A09 /* kosher_d@2x.png */; };
 		3ADF2A61188392B000415A09 /* kosher_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADF2A53188392B000415A09 /* kosher_s@2x.png */; };
 		3ADF2A62188392B000415A09 /* meh_d@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADF2A54188392B000415A09 /* meh_d@2x.png */; };
@@ -652,6 +657,14 @@
 		3AAB1227185E448A00F592DD /* STOnboarding4View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboarding4View.h; sourceTree = "<group>"; };
 		3AAB1228185E448A00F592DD /* STOnboarding4View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOnboarding4View.m; sourceTree = "<group>"; };
 		3AAB122A185E545B00F592DD /* SHOnboardingDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHOnboardingDelegate.h; sourceTree = "<group>"; };
+		3AC4B5D618DE22DA001E9CA0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3AC4B5D818DE326F001E9CA0 /* SHLogoutCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHLogoutCellTableViewCell.h; sourceTree = "<group>"; };
+		3AC4B5D918DE326F001E9CA0 /* SHLogoutCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHLogoutCellTableViewCell.m; sourceTree = "<group>"; };
+		3AC4B5DE18DE3727001E9CA0 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
+		3AC4B5DF18DE3727001E9CA0 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
+		3AC4B5E118DE3AA3001E9CA0 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		3AC4B5E318DE4BA0001E9CA0 /* SHDeleteAccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDeleteAccountCell.h; sourceTree = "<group>"; };
+		3AC4B5E418DE4BA0001E9CA0 /* SHDeleteAccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDeleteAccountCell.m; sourceTree = "<group>"; };
 		3ADF2A52188392B000415A09 /* kosher_d@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kosher_d@2x.png"; sourceTree = "<group>"; };
 		3ADF2A53188392B000415A09 /* kosher_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kosher_s@2x.png"; sourceTree = "<group>"; };
 		3ADF2A54188392B000415A09 /* meh_d@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "meh_d@2x.png"; sourceTree = "<group>"; };
@@ -724,6 +737,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AC4B5E218DE3AA3001E9CA0 /* CoreText.framework in Frameworks */,
 				3A0CCC33179A50CD0000AA8C /* AddressBook.framework in Frameworks */,
 				3A0CCC31179A50C00000AA8C /* AdSupport.framework in Frameworks */,
 				3A0CCC2D179A50990000AA8C /* Security.framework in Frameworks */,
@@ -769,6 +783,7 @@
 		3A0ACC36179A3F3C0083B80B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3AC4B5E118DE3AA3001E9CA0 /* CoreText.framework */,
 				3A0CCC34179A51170000AA8C /* CoreTelephony.framework */,
 				3A0CCC32179A50CD0000AA8C /* AddressBook.framework */,
 				3A0CCC30179A50C00000AA8C /* AdSupport.framework */,
@@ -811,6 +826,7 @@
 				3A0ACC5D179A3FF90083B80B /* Utils */,
 				3A0ACC46179A3F3C0083B80B /* AppDelegate.h */,
 				3A0ACC47179A3F3C0083B80B /* AppDelegate.m */,
+				3AC4B5D618DE22DA001E9CA0 /* Images.xcassets */,
 				3A0ACC3E179A3F3C0083B80B /* Supporting Files */,
 			);
 			path = JewList;
@@ -833,6 +849,8 @@
 		3A0ACC5D179A3FF90083B80B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3AC4B5DE18DE3727001E9CA0 /* TTTAttributedLabel.h */,
+				3AC4B5DF18DE3727001E9CA0 /* TTTAttributedLabel.m */,
 				3ADFA918179B4DCB00B66F78 /* UIView+FindUIViewController.h */,
 				3ADFA919179B4DCB00B66F78 /* UIView+FindUIViewController.m */,
 				3ADFA8EB179A69E000B66F78 /* STFacebookManager.h */,
@@ -1550,6 +1568,10 @@
 				3A306F131867CE1E0008755F /* SHRoomatePrefCell.m */,
 				3A964899186FD4D70026A559 /* SHUserProfileTextCell.h */,
 				3A96489A186FD4D70026A559 /* SHUserProfileTextCell.m */,
+				3AC4B5D818DE326F001E9CA0 /* SHLogoutCellTableViewCell.h */,
+				3AC4B5D918DE326F001E9CA0 /* SHLogoutCellTableViewCell.m */,
+				3AC4B5E318DE4BA0001E9CA0 /* SHDeleteAccountCell.h */,
+				3AC4B5E418DE4BA0001E9CA0 /* SHDeleteAccountCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -1612,6 +1634,7 @@
 			files = (
 				3A0ACC42179A3F3C0083B80B /* InfoPlist.strings in Resources */,
 				3AE7221F188B044B00C5B37F /* clean_d@2x.png in Resources */,
+				3AC4B5D718DE22DA001E9CA0 /* Images.xcassets in Resources */,
 				3A0ACC4A179A3F3C0083B80B /* Default.png in Resources */,
 				3ADF2A65188392B000415A09 /* mild_s@2x.png in Resources */,
 				3A0ACC4C179A3F3C0083B80B /* Default@2x.png in Resources */,
@@ -1689,6 +1712,7 @@
 				3A0ACDB3179A42D00083B80B /* NIFoundationMethods.m in Sources */,
 				3A0ACDB4179A42D00083B80B /* NIImageUtilities.m in Sources */,
 				3A96489B186FD4D70026A559 /* SHUserProfileTextCell.m in Sources */,
+				3AC4B5E018DE3727001E9CA0 /* TTTAttributedLabel.m in Sources */,
 				3A0ACDB5179A42D00083B80B /* NIInMemoryCache.m in Sources */,
 				3A0ACDB6179A42D00083B80B /* NIInvocationMethods.m in Sources */,
 				3A0ACDB7179A42D00083B80B /* NINavigationAppearance.m in Sources */,
@@ -1696,6 +1720,7 @@
 				3A0ACDB8179A42D00083B80B /* NINetworkActivity.m in Sources */,
 				3A0ACDB9179A42D00083B80B /* NINonEmptyCollectionTesting.m in Sources */,
 				3A0ACDBA179A42D00083B80B /* NINonRetainingCollections.m in Sources */,
+				3AC4B5DA18DE326F001E9CA0 /* SHLogoutCellTableViewCell.m in Sources */,
 				3A306EEA1867AFD70008755F /* SHHighSchoolInfoCell.m in Sources */,
 				3A0ACDBB179A42D00083B80B /* NIOperations.m in Sources */,
 				3A0ACDBC179A42D00083B80B /* NIPaths.m in Sources */,
@@ -1757,6 +1782,7 @@
 				3A0CCBD3179A4F1B0000AA8C /* FBDialogsData.m in Sources */,
 				3A0CCBD4179A4F1B0000AA8C /* FBDialogsParams.m in Sources */,
 				3A0CCBD5179A4F1B0000AA8C /* FBError.m in Sources */,
+				3AC4B5E518DE4BA0001E9CA0 /* SHDeleteAccountCell.m in Sources */,
 				3A0CCBD6179A4F1B0000AA8C /* FBErrorUtility.m in Sources */,
 				3A5C34AE18676D4D0092F08A /* TTURLCache.m in Sources */,
 				3A0CCBD7179A4F1B0000AA8C /* FBFetchedAppSettings.m in Sources */,
@@ -1923,6 +1949,8 @@
 		3A0ACC5B179A3F3C0083B80B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1933,7 +1961,7 @@
 				GCC_PREFIX_HEADER = "JewList/JewList-Prefix.pch";
 				INFOPLIST_FILE = "JewList/JewList-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7A4C5B98-0CC7-4BD0-8441-5F083F00413B";
@@ -1947,6 +1975,8 @@
 		3A0ACC5C179A3F3C0083B80B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1957,7 +1987,7 @@
 				GCC_PREFIX_HEADER = "JewList/JewList-Prefix.pch";
 				INFOPLIST_FILE = "JewList/JewList-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "79E32281-7592-4192-B4EF-2BFB97522A25";

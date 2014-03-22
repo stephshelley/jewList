@@ -8,13 +8,14 @@
 
 #import "NINetworkImageView.h"
 #import "SHUserCellItem.h"
+#import "TTTAttributedLabel.h"
 
 @class User;
 
 @interface UserResultCell : UITableViewCell
 
 @property (nonatomic, strong) NINetworkImageView *userImageView;
-@property (nonatomic, strong) UILabel *nameLabel;
+@property (nonatomic, strong) TTTAttributedLabel *nameLabel;
 @property (nonatomic, strong) UILabel *accesoryLabel;
 @property (nonatomic, strong) UIImageView *arrow;
 

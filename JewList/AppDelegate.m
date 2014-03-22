@@ -16,7 +16,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
+    [self registerNotifications];
+    
     User *currentUser = [[SHApi sharedInstance] currentUser];
     if(currentUser != nil)
     {
@@ -28,8 +29,12 @@
         
     }
     
-    self.window.tintColor = UIColorFromRGB(0x54add5);
-    if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    if(IS_IOS7)
+    {
+        self.window.tintColor = UIColorFromRGB(0x54add5);
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+        
+    }
 
     
     if (!IsIpad && [[UINavigationBar class] respondsToSelector:@selector(appearance)])
@@ -39,21 +44,28 @@
          [NSDictionary dictionaryWithObjectsAndKeys:
           [UIColor whiteColor],
           UITextAttributeTextColor,
-          [UIFont fontWithName:DEFAULT_FONT size:20.0],
+          [UIFont fontWithName:DEFAULT_FONT_BOLD size:16.0],
           UITextAttributeFont,
           nil]];
         
-        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+        if(IS_IOS7)
+            [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 
 	}
     
-    
     [self.window makeKeyAndVisible];
     return YES;
+    
+}
+
+- (void)registerNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(initLogedOut) name:kUserLogedOutNotification object:nil];
 }
 
 - (void)initLogedOut
 {
+    if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     LoginViewController *loginVC = [[LoginViewController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:loginVC];
     self.window.rootViewController = navController;
@@ -62,6 +74,7 @@
 
 - (void)initLogedIn
 {
+    if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     ResultsViewController *resultsVC = [[ResultsViewController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:resultsVC];
     self.window.rootViewController = navController;

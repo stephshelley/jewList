@@ -41,8 +41,11 @@
     titleLabel.centerY = floorf(topView.height/2);
     [topView addSubview:titleLabel];
     
-    UIButton *profileButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
-    [profileButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    
+    UIButton *profileButton = [SHUIHelpers getNavBarButton:CGRectMake(0, 0, 60, 24) title:@"Profile" selector:@selector(openProfile) sender:self];
+    //[[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
+    /*[profileButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [profileButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
     [profileButton setTitle:@"Profile" forState:UIControlStateNormal];
     [profileButton setTitle:@"Profile" forState:UIControlStateHighlighted];
@@ -51,9 +54,10 @@
     profileButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
     profileButton.backgroundColor = [UIColor clearColor];
     [profileButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 50, 0, 0)];
+    [profileButton addTarget:self action:@selector(openProfile) forControlEvents:UIControlEventTouchUpInside];
+     */
     profileButton.centerY = titleLabel.centerY;
     profileButton.right = topView.width - 10;
-    [profileButton addTarget:self action:@selector(openProfile) forControlEvents:UIControlEventTouchUpInside];
     [topView addSubview:profileButton];
     
    // self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Profile" style:UIBarButtonItemStylePlain target:self action:@selector(openProfile)];

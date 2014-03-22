@@ -81,7 +81,9 @@
     titleLabel.centerY = floorf(topView.height/2);
     [topView addSubview:titleLabel];
     
-    UIButton *profileButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
+    UIButton *profileButton = [SHUIHelpers getNavBarButton:CGRectMake(0, 0, 60, 24) title:@"Send" selector:@selector(sendMessage) sender:self];
+    //IButton *profileButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
+    /*
     [profileButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [profileButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
     [profileButton setTitle:@"Send" forState:UIControlStateNormal];
@@ -91,12 +93,16 @@
     profileButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
     profileButton.backgroundColor = [UIColor clearColor];
     [profileButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 50, 0, 0)];
+     [profileButton addTarget:self action:@selector(sendMessage) forControlEvents:UIControlEventTouchUpInside];
+     */
     profileButton.centerY = titleLabel.centerY;
     profileButton.right = topView.width - 10;
-    [profileButton addTarget:self action:@selector(sendMessage) forControlEvents:UIControlEventTouchUpInside];
     [topView addSubview:profileButton];
     
-    UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 40)];
+    //UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 40)];
+    UIButton *cancelButton = [SHUIHelpers getNavBarButton:CGRectMake(0, 0, 60, 24) title:@"Cancel" selector:@selector(closeVC) sender:self];
+
+    /*
     [cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
     [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
@@ -106,9 +112,11 @@
     cancelButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
     cancelButton.backgroundColor = [UIColor clearColor];
     [cancelButton setTitleEdgeInsets:UIEdgeInsetsMake(0,0, 0, 0)];
-    cancelButton.centerY = titleLabel.centerY;
-    cancelButton.left = 0;
     [cancelButton addTarget:self action:@selector(closeVC) forControlEvents:UIControlEventTouchUpInside];
+     */
+    
+    cancelButton.centerY = titleLabel.centerY;
+    cancelButton.left = 10;
     [topView addSubview:cancelButton];
     
     //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStylePlain target:self action:@selector(sendMessage)];

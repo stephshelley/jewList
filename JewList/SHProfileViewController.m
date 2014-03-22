@@ -81,6 +81,9 @@
     titleLabel.centerY = floorf(topView.height/2);
     [topView addSubview:titleLabel];
     
+    UIButton *profileButton = [SHUIHelpers getNavBarButton:CGRectMake(0, 0, 60, 24) title:@"Contact" selector:@selector(contactUser) sender:self];
+
+    /*
     UIButton *profileButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 120, 50)];
     [profileButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [profileButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
@@ -92,9 +95,10 @@
     profileButton.titleLabel.adjustsFontSizeToFitWidth = YES;
     profileButton.backgroundColor = [UIColor clearColor];
     [profileButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 50, 0, 0)];
+     [profileButton addTarget:self action:@selector(contactUser) forControlEvents:UIControlEventTouchUpInside];
+     */
     profileButton.centerY = titleLabel.centerY;
     profileButton.right = topView.width - 10;
-    [profileButton addTarget:self action:@selector(contactUser) forControlEvents:UIControlEventTouchUpInside];
     [topView addSubview:profileButton];
     
     
@@ -124,7 +128,7 @@
     overlay.alpha = 0.4;
     [_backdropView addSubview:overlay];
     
-    self.userImageView = [[NINetworkImageView alloc] initWithFrame:CGRectMake(0, 0, 70, 70)];
+    self.userImageView = [[NINetworkImageView alloc] initWithFrame:CGRectMake(0, 0, 90, 90)];
     _userImageView.centerX = floorf(_backdropView.width/2);
     _userImageView.centerY = floorf(_backdropView.height/2);
     _userImageView.backgroundColor = [UIColor clearColor];

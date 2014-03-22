@@ -35,6 +35,29 @@
     
 }
 
++ (UIButton *)getNavBarButton:(CGRect)frame title:(NSString *)title selector:(SEL)selector sender:(id)sender
+{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
+    button.contentMode = UIViewContentModeCenter;
+    [button setBackgroundColor:UIColorFromRGB(0x53b5f1)];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [button setTitleEdgeInsets:UIEdgeInsetsMake(0, 2, 0, 2)];
+    button.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:13];
+    button.titleLabel.adjustsFontSizeToFitWidth = YES;
+    button.layer.borderColor = [UIColor whiteColor].CGColor;
+    button.layer.borderWidth = 1.0f;
+    button.layer.cornerRadius = 3.0f;
+    button.clipsToBounds = YES;
+    [button setTitle:title forState:UIControlStateNormal];
+    [button setTitle:title forState:UIControlStateHighlighted];
+    [button addTarget:sender action:selector forControlEvents:UIControlEventTouchUpInside];
+
+    return button;
+    
+}
+
 + (UIView*)getCustomBarButtonView:(CGRect)frame buttonImage:(NSString*)buttonImage selectedImage:(NSString*)selectedImage title:(NSString*)title andSelector:(SEL)selector sender:(id)sender titleColor:(UIColor*)color
 {
     

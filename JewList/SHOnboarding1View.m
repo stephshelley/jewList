@@ -41,11 +41,11 @@
     userTopView.backgroundColor = [UIColor clearColor];
     [self addSubview:userTopView];
     
-    CGFloat userPicHeight = 50;
-    self.userImageView = [[NINetworkImageView alloc] initWithFrame:CGRectMake(5, 0, userPicHeight, userPicHeight)];
+    CGFloat userPicHeight = 70;
+    self.userImageView = [[NINetworkImageView alloc] initWithFrame:CGRectMake(0, 0, userPicHeight, userPicHeight)];
     _userImageView.centerY = floorf(userTopView.height/2);
     _userImageView.backgroundColor = [UIColor clearColor];
-    [_userImageView setUserImagePathToNetworkImage:_user.fbImageUrl forDisplaySize:_userImageView.size contentMode:UIViewContentModeScaleAspectFill];
+    [_userImageView setUserImagePathToNetworkImage:[_user fbImageUrlForSize:_userImageView.size] forDisplaySize:_userImageView.size contentMode:UIViewContentModeScaleAspectFill];
     [userTopView addSubview:_userImageView];
     
     UIFont *hiLabelFont = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:19.0f];
@@ -92,29 +92,6 @@
     sepView2.backgroundColor = UIColorFromRGB(0xcccccc);
     [nameBackground addSubview:sepView2];
 
-    /*
-    UIView *homeBackground = [[UIView alloc] initWithFrame:CGRectMake(0.0, nameBackground.bottom, self.width, nameBackground.height)];
-    homeBackground.backgroundColor = [UIColor clearColor];
-    [self addSubview:homeBackground];
-    
-    self.homeTownTextField = [[SHTextFieldOnBoarding alloc] initWithFrame:CGRectMake(10, 0, homeBackground.size.width - 20, _nameTextField.height)];
-    _homeTownTextField.placeholder = @"Home Town";
-    _homeTownTextField.keyboardType = UIKeyboardTypeDefault;
-    _homeTownTextField.returnKeyType = UIReturnKeyNext;
-    _homeTownTextField.delegate = self;
-    _homeTownTextField.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:_nameTextField.font.pointSize];
-    _homeTownTextField.textAlignment = NSTextAlignmentLeft;
-    _homeTownTextField.textColor = DEFAULT_BLUE_COLOR;
-    _homeTownTextField.centerY = floorf(homeBackground.height/2);
-    _homeTownTextField.backgroundColor = [UIColor clearColor];
-    [homeBackground addSubview:_homeTownTextField];
-    
-    UIView *sepView3 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, homeBackground.width, 1)];
-    sepView3.bottom = homeBackground.height;
-    sepView3.backgroundColor = UIColorFromRGB(0xcccccc);
-    [homeBackground addSubview:sepView3];
-     */
-    
     UIView *emailBackground = [[UIView alloc] initWithFrame:CGRectMake(0.0, nameBackground.bottom, self.width, nameBackground.height)];
     emailBackground.backgroundColor = [UIColor clearColor];
     [self addSubview:emailBackground];
@@ -142,7 +119,7 @@
     CGFloat buttonHeight = 63;
     self.nextStepButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.width, buttonHeight)];
     _nextStepButton.backgroundColor = DEFAULT_BLUE_COLOR;
-    _nextStepButton.bottom = self.height + 44;
+    _nextStepButton.bottom = self.height;
     [_nextStepButton setTitle:@"That's me!" forState:UIControlStateNormal];
     _nextStepButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:24];
     _nextStepButton.titleLabel.textColor = [UIColor whiteColor];
@@ -153,7 +130,7 @@
     genderBackgroundView.backgroundColor = [UIColor clearColor];
     [self addSubview:genderBackgroundView];
     
-    buttonHeight = 110;
+    buttonHeight = 140;
     self.femaleButton = [[SHToggleButton alloc] initWithFrame:CGRectMake(self.width/2 - (buttonHeight*2 +2)/2, genderBackgroundView.height/2 - buttonHeight/2, buttonHeight, buttonHeight)];
     //[_femaleButton setTitle:@"Female" forState:UIControlStateNormal];
     //[_femaleButton setTitle:@"Female" forState:UIControlStateHighlighted];

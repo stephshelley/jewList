@@ -45,6 +45,11 @@
       success:(void (^)(User *user))success
       failure:(void (^)(NSError * error))failure;
 
+- (void)deleteAccount;
+
+- (id)deleteUser:(void (^)(void))success
+         failure:(void (^)(NSError * error))failure;
+
 - (id)updateUser:(User *)user
          success:(void (^)(User *user))success
          failure:(void (^)(NSError * error))failure;

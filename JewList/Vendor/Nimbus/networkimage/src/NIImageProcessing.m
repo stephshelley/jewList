@@ -309,7 +309,7 @@
                 CGFloat factor = IS_RETINA ? 1 : 2;
                 
                 
-                addRoundedStrokeToPath(dstBmp, scaledBlitRect, dstBlitRect.size.width/factor, dstBlitRect.size.height/factor);
+                //addRoundedStrokeToPath(dstBmp, scaledBlitRect, dstBlitRect.size.width/factor, dstBlitRect.size.height/factor);
                 
                 CGFloat radius = 8.0;
                 scaledBlitRect.size.width-=radius;

@@ -23,7 +23,7 @@
     self.view.backgroundColor = DEFAULT_BACKGROUND_COLOR;
     self.navigationController.navigationBarHidden = YES;
     
-    self.loginView = [[SHLoginOnboardingView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height-20)];
+    self.loginView = [[SHLoginOnboardingView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
     [_loginView.fbConnectButton addTarget:self action:@selector(fbConnectButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_loginView];
     
@@ -33,6 +33,9 @@
 
 - (void)fbConnectButtonPressed
 {
+    //[self continueToStep1];
+    //return;
+    
     [[STFacebookManager sharedInstance] connectWithSuccess:^(NSDictionary *response, User *user)
      {
          if([response isKindOfClass:[NSDictionary class]] && [response objectForKey:@"id"] && [response objectForKey:@"token"])
@@ -110,7 +113,7 @@
     if(nil == _onboardingStep1)
     {
         User *currentUser = [[SHApi sharedInstance] currentUser];
-        _onboardingStep1 = [[SHOnboarding1View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height - 20) andUser:currentUser];
+        _onboardingStep1 = [[SHOnboarding1View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height) andUser:currentUser];
         [_onboardingStep1.nextStepButton addTarget:self action:@selector(continueToStep2) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_onboardingStep1];
         
@@ -141,7 +144,7 @@
     if(nil == _onboardingStep3)
     {
         User *currentUser = [[SHApi sharedInstance] currentUser];
-        _onboardingStep3 = [[SHOnboarding3View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height - 20) andUser:currentUser];
+        _onboardingStep3 = [[SHOnboarding3View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height) andUser:currentUser];
         [_onboardingStep3.nextStepButton addTarget:self action:@selector(continueToStep4) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_onboardingStep3];
         
@@ -159,7 +162,7 @@
     if(nil == _onboardingStep4)
     {
         User *currentUser = [[SHApi sharedInstance] currentUser];
-        _onboardingStep4 = [[STOnboarding4View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height - 20) andUser:currentUser];
+        _onboardingStep4 = [[STOnboarding4View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height) andUser:currentUser];
         _onboardingStep4.delegate = self;
         [_onboardingStep4.nextStepButton addTarget:self action:@selector(continueToStep4) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_onboardingStep4];
@@ -177,7 +180,7 @@
     if(nil == _onboardingStep5)
     {
         User *currentUser = [[SHApi sharedInstance] currentUser];
-        _onboardingStep5 = [[STOnboarding5View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height - 20) andUser:currentUser];
+        _onboardingStep5 = [[STOnboarding5View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height) andUser:currentUser];
         _onboardingStep5.delegate = self;
         [_onboardingStep5.nextStepButton addTarget:self action:@selector(continueToStep5) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_onboardingStep5];

@@ -77,7 +77,7 @@
     _nextStepButton.backgroundColor = DEFAULT_BLUE_COLOR;
     [_nextStepButton setTitle:@"Next" forState:UIControlStateNormal];
     [_nextStepButton setTitle:@"Next" forState:UIControlStateHighlighted];
-    _nextStepButton.bottom = self.height + 40;
+    _nextStepButton.bottom = self.height;
     _nextStepButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:24];
     _nextStepButton.titleLabel.textColor = [UIColor whiteColor];
     _nextStepButton.titleLabel.textAlignment = NSTextAlignmentCenter;

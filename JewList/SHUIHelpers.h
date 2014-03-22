@@ -15,5 +15,5 @@
 + (void)alertErrorWithMessage:(NSString *)message;
 + (void)handleApiError:(NSDictionary *)errorDict;
 + (CGFloat)getTextHeight:(NSString*)text font:(UIFont*)font withCapHeight:(CGFloat)capHeight width:(CGFloat)width;
-
++ (UIButton *)getNavBarButton:(CGRect)frame title:(NSString *)title selector:(SEL)selector sender:(id)sender;
 @end
