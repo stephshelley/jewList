@@ -16,6 +16,17 @@
 
 @implementation ResultsViewController
 
+- (id)init
+{
+    self = [super init];
+    if(self)
+    {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshScreen) name:kRefreshResultsScreenNotification object:nil];
+    }
+    
+    return self;
+    
+}
 
 - (void)loadView
 {
@@ -74,6 +85,11 @@
     [self showLoading];
     [self.dataSource loadModel];
 
+}
+
+- (void)refreshScreen
+{
+    [self.dataSource reloadModel];
 }
 
 - (void)viewDidLoad

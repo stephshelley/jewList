@@ -32,6 +32,9 @@
     [super load:cachePolicy more:more];
     _moreIsLoading = more;
     
+    if(!more)
+        _page = 1;
+    
     NSString *endpoint = [NSString stringWithFormat:@"member/school=%@",_college.dbId];
  
     NSString* url = [[SHApi sharedInstance] apiSecureURLForPath:endpoint

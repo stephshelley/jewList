@@ -63,6 +63,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define kUserNewSessionLogin        @"UserNewSessionLogin"
 #define kLogUserOutNotification     @"LogUserOutNotification"
 #define kFBSessionStateChangedNotification         @"FBSessionStateChangedNotification"
+#define kRefreshResultsScreenNotification             @"RefreshResultsScreenNotification"
 
 
 #define kOptimumPickerHeight 216

@@ -167,6 +167,7 @@
              user.fbToken = [[STFacebookManager sharedInstance] fbToken];
              [[SHApi sharedInstance] setCurrentUser:user];
              [weakSelf hideLoading];
+             [[NSNotificationCenter defaultCenter] postNotificationName:kRefreshResultsScreenNotification object:nil userInfo:nil];
              [self closeVC];
 
              
