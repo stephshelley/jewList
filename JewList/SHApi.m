@@ -309,9 +309,9 @@ static NSString *kCurrentUserPath = @"current_user";
     
     if(user.school)
     {
-        if(user.college.name)
+        if(user.college.collegeName)
         {
-            [params setObject:user.college.name forKey:@"college_name"];
+            [params setObject:user.college.collegeName forKey:@"college_name"];
    
         }
         else
@@ -322,9 +322,9 @@ static NSString *kCurrentUserPath = @"current_user";
     }
     else
     {
-        if(user.college.name)
+        if(user.college.collegeName)
         {
-            [params setObject:user.college.name forKey:@"college_name"];
+            [params setObject:user.college.collegeName forKey:@"college_name"];
             
         }
         else
@@ -340,8 +340,8 @@ static NSString *kCurrentUserPath = @"current_user";
         if(user.college.dbId)
             [params setObject:user.college.dbId forKey:@"college_id"];
         
-        if(user.college.name)
-            [params setObject:user.college.name forKey:@"college_name"];
+        if(user.college.collegeName)
+            [params setObject:user.college.collegeName forKey:@"college_name"];
         
     }
     

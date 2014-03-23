@@ -87,7 +87,10 @@
                   
               }failure:^(NSError *error)
               {
-                  
+                  dispatch_async(dispatch_get_main_queue(), ^{
+                      [SHUIHelpers alertErrorWithMessage:@"An error occurred"];
+                      
+                  });
               }];
               
              

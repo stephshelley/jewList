@@ -152,16 +152,16 @@
         gradYear = @"";
     }
     
-    if((_user.school != nil && _user.school.length > 0) || (_user.college.name != nil && _user.college.name.length > 0))
+    if((_user.college.collegeName != nil && _user.college.collegeName.length > 0))
     {
         if(gradYear.length > 0)
         {
-            _accesoryLabel.text = [NSString stringWithFormat:@"%@, %@",_user.school,gradYear];
+            _accesoryLabel.text = [NSString stringWithFormat:@"%@, %@",_user.college.collegeName,gradYear];
             
         }
         else
         {
-            _accesoryLabel.text = _user.school;
+            _accesoryLabel.text = _user.college.collegeName;
             
         }
         

@@ -31,7 +31,7 @@
 {
     College *newCollege = [[College alloc] init];
     newCollege.dbId = [self.dbId copyWithZone:zone];
-    newCollege.name = [_name copyWithZone:zone];
+    newCollege.collegeName = [_collegeName copyWithZone:zone];
     return newCollege;
     
 }

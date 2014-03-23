@@ -319,7 +319,7 @@
 
     if(item && [item isKindOfClass:[College class]])
     {
-        cell.nameLabel.text = item.name;
+        cell.nameLabel.text = item.collegeName;
         
     }
     
@@ -343,13 +343,13 @@
         
     }
     
-    if(item && [item isKindOfClass:[College class]] && item.name.length > 0)
+    if(item && [item isKindOfClass:[College class]] && item.collegeName.length > 0)
     {
         User *currentUser = [[SHApi sharedInstance] currentUser];
-        currentUser.fbCollegeName = item.name;
+        currentUser.fbCollegeName = item.collegeName;
         [[SHApi sharedInstance] cacheCurrentUserDetails];
         
-        _searchBar.text = item.name;
+        _searchBar.text = item.collegeName;
         
     }
     
