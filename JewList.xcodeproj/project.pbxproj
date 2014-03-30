@@ -151,6 +151,9 @@
 		3A0CCC4F179A53C40000AA8C /* NSURL+NXOAuth2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CCC4A179A53C40000AA8C /* NSURL+NXOAuth2.m */; };
 		3A0CCC55179A54E20000AA8C /* SHLoginPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CCC54179A54E20000AA8C /* SHLoginPassword.m */; };
 		3A0CCC58179A632B0000AA8C /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CCC57179A632B0000AA8C /* UIViewAdditions.m */; };
+		3A29A4A818E8B5780071873F /* joomieLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A29A4A618E8B5780071873F /* joomieLogo.png */; };
+		3A29A4A918E8B5780071873F /* joomieLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A29A4A718E8B5780071873F /* joomieLogo@2x.png */; };
+		3A29A4AC18E8BC7A0071873F /* SHEditProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A29A4AB18E8BC7A0071873F /* SHEditProfileHeaderView.m */; };
 		3A306ED1186793480008755F /* SHEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306ED0186793480008755F /* SHEditProfileViewController.m */; };
 		3A306ED7186793BA0008755F /* SHGraduationYearCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306ED6186793BA0008755F /* SHGraduationYearCell.m */; };
 		3A306EDA186795460008755F /* SHPersonalInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306ED9186795460008755F /* SHPersonalInfoCell.m */; };
@@ -559,6 +562,10 @@
 		3A0CCC54179A54E20000AA8C /* SHLoginPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHLoginPassword.m; sourceTree = "<group>"; };
 		3A0CCC56179A632B0000AA8C /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
 		3A0CCC57179A632B0000AA8C /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
+		3A29A4A618E8B5780071873F /* joomieLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joomieLogo.png; sourceTree = "<group>"; };
+		3A29A4A718E8B5780071873F /* joomieLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "joomieLogo@2x.png"; sourceTree = "<group>"; };
+		3A29A4AA18E8BC7A0071873F /* SHEditProfileHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHEditProfileHeaderView.h; sourceTree = "<group>"; };
+		3A29A4AB18E8BC7A0071873F /* SHEditProfileHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHEditProfileHeaderView.m; sourceTree = "<group>"; };
 		3A306ECF186793480008755F /* SHEditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHEditProfileViewController.h; sourceTree = "<group>"; };
 		3A306ED0186793480008755F /* SHEditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHEditProfileViewController.m; sourceTree = "<group>"; };
 		3A306ED5186793BA0008755F /* SHGraduationYearCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHGraduationYearCell.h; sourceTree = "<group>"; };
@@ -1453,6 +1460,19 @@
 		3ADF2A51188392A100415A09 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				3A964891186FCB270026A559 /* mosaic_empty_user.png */,
+				3A964892186FCB270026A559 /* mosaic_empty_user@2x.png */,
+				3ADFA92E179B745100B66F78 /* muchsmaller.png */,
+				3ADFA92F179B745100B66F78 /* muchsmaller@2x.png */,
+				3ADFA923179B5B2400B66F78 /* iphone_navbar_button_back.png */,
+				3ADFA924179B5B2400B66F78 /* iphone_navbar_button_back@2x.png */,
+				3ADFA91B179B551E00B66F78 /* navbar_bkg_black.png */,
+				3ADFA91C179B551E00B66F78 /* navbar_bkg_black@2x.png */,
+				3ADFA91D179B551E00B66F78 /* navbar_bkg.png */,
+				3ADFA91E179B551E00B66F78 /* navbar_bkg@2x.png */,
+				3ADFA907179A96EE00B66F78 /* empty_pixel.png */,
+				3ADFA8FC179A91B400B66F78 /* add_friends_input2.png */,
+				3ADFA8FD179A91B400B66F78 /* add_friends_input2@2x.png */,
 				3A4A9800189774610092942B /* female_d@2x.png */,
 				3A4A9801189774610092942B /* female_s@2x.png */,
 				3A4A98041897746A0092942B /* male_d@2x.png */,
@@ -1505,6 +1525,8 @@
 				F8A02846179B4FA600253FFA /* UIView+FindAndResignFirstResponder.h */,
 				F8A02847179B4FA600253FFA /* UIView+FindAndResignFirstResponder.m */,
 				3AAB122A185E545B00F592DD /* SHOnboardingDelegate.h */,
+				3A29A4AA18E8BC7A0071873F /* SHEditProfileHeaderView.h */,
+				3A29A4AB18E8BC7A0071873F /* SHEditProfileHeaderView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1512,20 +1534,9 @@
 		3ADFA8FB179A91AC00B66F78 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3A29A4A618E8B5780071873F /* joomieLogo.png */,
+				3A29A4A718E8B5780071873F /* joomieLogo@2x.png */,
 				3ADF2A51188392A100415A09 /* Profile */,
-				3A964891186FCB270026A559 /* mosaic_empty_user.png */,
-				3A964892186FCB270026A559 /* mosaic_empty_user@2x.png */,
-				3ADFA92E179B745100B66F78 /* muchsmaller.png */,
-				3ADFA92F179B745100B66F78 /* muchsmaller@2x.png */,
-				3ADFA923179B5B2400B66F78 /* iphone_navbar_button_back.png */,
-				3ADFA924179B5B2400B66F78 /* iphone_navbar_button_back@2x.png */,
-				3ADFA91B179B551E00B66F78 /* navbar_bkg_black.png */,
-				3ADFA91C179B551E00B66F78 /* navbar_bkg_black@2x.png */,
-				3ADFA91D179B551E00B66F78 /* navbar_bkg.png */,
-				3ADFA91E179B551E00B66F78 /* navbar_bkg@2x.png */,
-				3ADFA907179A96EE00B66F78 /* empty_pixel.png */,
-				3ADFA8FC179A91B400B66F78 /* add_friends_input2.png */,
-				3ADFA8FD179A91B400B66F78 /* add_friends_input2@2x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1647,7 +1658,9 @@
 				3A4A98071897746A0092942B /* male_s@2x.png in Resources */,
 				3A964894186FCB270026A559 /* mosaic_empty_user@2x.png in Resources */,
 				3ADF2A61188392B000415A09 /* kosher_s@2x.png in Resources */,
+				3A29A4A818E8B5780071873F /* joomieLogo.png in Resources */,
 				3A0CCBC8179A4F1B0000AA8C /* FacebookSDKResources.bundle in Resources */,
+				3A29A4A918E8B5780071873F /* joomieLogo@2x.png in Resources */,
 				3A0CCBF8179A4F1B0000AA8C /* FBUserSettingsViewResources.bundle in Resources */,
 				3ADF2A6B188392B000415A09 /* study_s@2x.png in Resources */,
 				3AE72223188B045800C5B37F /* messy_d@2x.png in Resources */,
@@ -1700,6 +1713,7 @@
 				3A964890186FB7260026A559 /* SHAgeCell.m in Sources */,
 				3AAB1229185E448A00F592DD /* STOnboarding4View.m in Sources */,
 				3A0ACDA1179A42D00083B80B /* NSObject+SBJSON.m in Sources */,
+				3A29A4AC18E8BC7A0071873F /* SHEditProfileHeaderView.m in Sources */,
 				3A0ACDA2179A42D00083B80B /* NSString+SBJSON.m in Sources */,
 				3A96488D186FB5F90026A559 /* SHAgeViewController.m in Sources */,
 				3A0ACDAC179A42D00083B80B /* NIActions.m in Sources */,

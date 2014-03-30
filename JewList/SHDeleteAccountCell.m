@@ -22,6 +22,9 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
 
+        self.backgroundColor = [UIColor clearColor];
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+
         self.deleteButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 15, 280, [SHDeleteAccountCell rowHeight] - 20)];
         [_deleteButton setBackgroundColor:UIColorFromRGB(0xfc0d1b)];
         [_deleteButton setTitle:@"Delete account" forState:UIControlStateNormal];

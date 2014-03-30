@@ -23,6 +23,9 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
 
+        self.backgroundColor = [UIColor clearColor];
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+
         self.logoutButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 15, 280, [SHLogoutCellTableViewCell rowHeight] - 20)];
         [_logoutButton setBackgroundColor:DEFAULT_BLUE_COLOR];
         [_logoutButton setTitle:@"Log out" forState:UIControlStateNormal];

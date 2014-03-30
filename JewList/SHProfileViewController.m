@@ -161,7 +161,7 @@
 
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, _backdropView.bottom - 65, self.view.width, self.view.height)];
-    _tableView.backgroundColor = [UIColor whiteColor];
+    _tableView.backgroundColor = DEFAULT_BACKGROUND_COLOR;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.delegate = self;
     _tableView.scrollEnabled = NO;
@@ -204,6 +204,7 @@
         SHTextCellItem *item = [[SHTextCellItem alloc] init];
         item.title = @"Work/Party";
         item.text = _user.roommatePrefs;
+        item.type = [_user.personality intValue]  == 0 ? @"Work" : @"Play";
         [_items addObject:item];
         
     }
@@ -213,6 +214,8 @@
         SHTextCellItem *item = [[SHTextCellItem alloc] init];
         item.title = @"Clean/Messy";
         item.text = _user.cleaningText;
+        item.type = [_user.cleaning intValue]  == 0 ? @"Clean" : @"Messy";
+
         [_items addObject:item];
         
     }
@@ -222,6 +225,8 @@
         SHTextCellItem *item = [[SHTextCellItem alloc] init];
         item.title = @"Diet";
         item.text = _user.dietText;
+        item.type = [_user.diet intValue]  == 0 ? @"Non Kosher" : @"Kosher";
+
         [_items addObject:item];
         
     }
@@ -231,6 +236,18 @@
         SHTextCellItem *item = [[SHTextCellItem alloc] init];
         item.title = @"How jew are you?";
         item.text = _user.religiousText;
+        
+        if([_user.religious intValue]  == 0)
+        {
+            item.type = @"Uber";
+        }else if([_user.religious intValue]  == 1)
+        {
+            item.type = @"Mild";
+        }else if([_user.religious intValue]  == 2)
+        {
+            item.type = @"Meh";
+        }
+        
         [_items addObject:item];
         
     }
@@ -252,7 +269,7 @@
 
 - (void)loadCover
 {
-    User *currentUser = [[SHApi sharedInstance] currentUser];
+    //User *currentUser = [[SHApi sharedInstance] currentUser];
     __weak __typeof(&*self)weakSelf = self;
 
     [[SHApi sharedInstance] getCoverUrl:_user.fb success:^(NSString *url)

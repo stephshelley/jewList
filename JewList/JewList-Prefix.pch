@@ -49,7 +49,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define DEFAULT_FONT @"HelveticaNeue-Light"
 
 #define DEFAULT_LIGHT_GRAY_COLOR [UIColor colorWithRed:0.705 green:0.705 blue:0.705 alpha:1]
-#define DEFAULT_DARK_GRAY_COLOR [UIColor colorWithRed:0.2353 green:0.2392 blue:0.2392 alpha:1]
+#define DEFAULT_DARK_GRAY_COLOR UIColorFromRGB(0x706f6d)
 
 #define DEFAULT_DARK_COLOR UIColorFromRGB(0x282d2e)
 

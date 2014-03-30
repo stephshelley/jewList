@@ -34,6 +34,7 @@
 #import "SHAgeCell.h"
 #import "STFacebookManager.h"
 #import "SHDeleteAccountCell.h"
+#import "SHEditProfileHeaderView.h"
 
 @interface SHEditProfileViewController ()
 
@@ -81,40 +82,12 @@
     
     UIButton *profileButton = [SHUIHelpers getNavBarButton:CGRectMake(0, 0, 60, 24) title:@"Save" selector:@selector(saveProfile) sender:self];
 
-    /*
-    //UIButton *profileButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
-    [profileButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [profileButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-    [profileButton setTitle:@"Save" forState:UIControlStateNormal];
-    [profileButton setTitle:@"Save" forState:UIControlStateHighlighted];
-    profileButton.titleLabel.textAlignment = NSTextAlignmentRight;
-    profileButton.titleLabel.backgroundColor = [UIColor clearColor];
-    profileButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
-    profileButton.backgroundColor = [UIColor clearColor];
-    [profileButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 50, 0, 0)];
-    [profileButton addTarget:self action:@selector(saveProfile) forControlEvents:UIControlEventTouchUpInside];
-     */
-    
     profileButton.centerY = titleLabel.centerY;
     profileButton.right = topView.width - 10;
     [topView addSubview:profileButton];
     
     UIButton *cancelButton = [SHUIHelpers getNavBarButton:CGRectMake(0, 0, 60, 24) title:@"Cancel" selector:@selector(closeVC) sender:self];
 
-    /*
-    //UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 40)];
-    [cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-    [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
-    [cancelButton setTitle:@"Cancel" forState:UIControlStateHighlighted];
-    cancelButton.titleLabel.textAlignment = NSTextAlignmentLeft;
-    cancelButton.titleLabel.backgroundColor = [UIColor clearColor];
-    cancelButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
-    cancelButton.backgroundColor = [UIColor clearColor];
-    [cancelButton setTitleEdgeInsets:UIEdgeInsetsMake(0,0, 0, 0)];
-    [cancelButton addTarget:self action:@selector(closeVC) forControlEvents:UIControlEventTouchUpInside];
-     */
-    
     cancelButton.centerY = titleLabel.centerY;
     cancelButton.left = 10;
     [topView addSubview:cancelButton];
@@ -170,9 +143,7 @@
              [[NSNotificationCenter defaultCenter] postNotificationName:kRefreshResultsScreenNotification object:nil userInfo:nil];
              [self closeVC];
 
-             
          });
-         
          
      }failure:^(NSError *error)
      {
@@ -181,7 +152,6 @@
              [SHUIHelpers alertErrorWithMessage:@"Something went wrong :("];
              
          });
-         
          
      }];
     
@@ -219,8 +189,10 @@
 
 #pragma mark - UITableView Delegate -
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 3;
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -241,7 +213,8 @@
     return count;
     
 }
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     NSString *title = nil;
     if(section == 0)
@@ -256,10 +229,11 @@
         title = @"Lifestyle";
     }
     
-    return title;
+    SHEditProfileHeaderView *header = [[SHEditProfileHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+    header.titleLabel.text = title;
+    return header;
     
 }
-
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

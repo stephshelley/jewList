@@ -27,7 +27,7 @@
 {
     self.backgroundColor = [UIColor clearColor];
     
-    self.logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"muchsmaller"]];
+    self.logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"joomieLogo"]];
     _logoImageView.backgroundColor = [UIColor clearColor];
     _logoImageView.centerX = floor(self.width/2);
     _logoImageView.top = 50 + (IS_IOS7 ? 20 : 0);
@@ -39,7 +39,7 @@
     _fbConnectButton.bottom = self.height;
     [_fbConnectButton setTitle:@"Facebook connect to get started" forState:UIControlStateNormal];
     [_fbConnectButton setTitle:@"Facebook connect to get started" forState:UIControlStateHighlighted];
-    _fbConnectButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
+    _fbConnectButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:18];
     _fbConnectButton.titleLabel.adjustsFontSizeToFitWidth = YES;
     [self addSubview:_fbConnectButton];
 

@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-#define kCellTextFontSize 14
+#define kCellTextFontSize 16
 
 @interface SHTextCellItem : NSObject
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *text;
+@property (nonatomic, strong) NSString *type;
 
 - (CGFloat)getCellHeight;
 

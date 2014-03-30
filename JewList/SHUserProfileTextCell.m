@@ -17,31 +17,48 @@
     if (self) {
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.backgroundColor = [UIColor clearColor];
+        
+        UIView *whiteBG = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+        whiteBG.backgroundColor = [UIColor whiteColor];
+        [self.contentView addSubview:whiteBG];
+        
         self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 16)];
-        _titleLabel.textColor = DEFAULT_BLUE_COLOR;
+        _titleLabel.textColor = DEFAULT_LIGHT_GRAY_COLOR;
         _titleLabel.textAlignment = NSTextAlignmentLeft;
-        _titleLabel.top = 8;
-        _titleLabel.left = 20;
-        _titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:_titleLabel.height-3];
+        _titleLabel.top = 2;
+        _titleLabel.left = 10;
+        _titleLabel.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:_titleLabel.height-3];
         [self.contentView addSubview:_titleLabel];
         
+        
+        self.titleTypeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 16)];
+        _titleTypeLabel.textColor = DEFAULT_BLUE_COLOR;
+        _titleTypeLabel.textAlignment = NSTextAlignmentRight;
+        _titleTypeLabel.top = 2;
+        _titleTypeLabel.right = 310;
+        _titleTypeLabel.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:_titleTypeLabel.height-3];
+        [self.contentView addSubview:_titleTypeLabel];
+        
+        /*
         UIView *sep = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 280, 1)];
-        sep.backgroundColor = UIColorFromRGB(0xebebec);
+        sep.backgroundColor = UIColorFromRGB(0xcccccc);
         sep.top = _titleLabel.bottom + 3;
         sep.centerX = 160;
         [self.contentView addSubview:sep];
+         */
         
-        CGFloat textviewTop = sep.bottom + 10;
+        CGFloat textviewTop = whiteBG.bottom + 10;
 
-        self.textView = [[UITextView alloc] initWithFrame:CGRectMake(0, textviewTop, 280, 30)];
+        self.textView = [[UITextView alloc] initWithFrame:CGRectMake(0, textviewTop, 300, 30)];
         _textView.contentInset = UIEdgeInsetsMake(-8,(IS_IOS7 ? 0 : -8),0,0);
         _textView.textAlignment = NSTextAlignmentLeft;
         _textView.backgroundColor = [UIColor clearColor];
         _textView.userInteractionEnabled = NO;
         _textView.editable = NO;
-        _textView.textColor = [UIColor blackColor];
-        _textView.font = [UIFont fontWithName:DEFAULT_FONT size:kCellTextFontSize];
-        _textView.centerX = 160;
+        _textView.textColor = DEFAULT_DARK_GRAY_COLOR;
+        _textView.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:kCellTextFontSize];
+        _textView.left = 5;
         _textView.clipsToBounds = YES;
         [self.contentView addSubview:_textView];
         
@@ -55,6 +72,7 @@
 {
     _item = item;
     _titleLabel.text = _item.title;
+    _titleTypeLabel.text = _item.type;
     _textView.text = _item.text;
     _textView.height = [SHUIHelpers getTextHeight:_textView.text font:[UIFont fontWithName:DEFAULT_FONT size:kCellTextFontSize] withCapHeight:1000 width:_textView.width];
 }
