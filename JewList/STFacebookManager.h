@@ -4,11 +4,11 @@
 //  Created by Oren Zitoun on 2/21/13.
 //
 
-#import "Facebook.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @class User;
 
-@interface STFacebookManager : NSObject <FBSessionDelegate,UIAlertViewDelegate>
+@interface STFacebookManager : NSObject <UIAlertViewDelegate>
 
 + (STFacebookManager *)sharedInstance;
 
@@ -17,7 +17,7 @@
 
 @property (nonatomic, strong) NSString *fbToken;
 
-@property (nonatomic, strong) Facebook *facebook;
+//@property (nonatomic, strong) Facebook *facebook;
 @property (nonatomic, strong) FBRequestConnection *meRequest;
 
 

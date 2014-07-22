@@ -33,6 +33,7 @@
     _logoImageView.top = 50 + (IS_IOS7 ? 20 : 0);
     [self addSubview:_logoImageView];
 
+    /*
     CGFloat buttonHeight = 100;
     self.fbConnectButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, buttonHeight)];
     _fbConnectButton.backgroundColor = DEFAULT_BLUE_COLOR;
@@ -42,6 +43,15 @@
     _fbConnectButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:18];
     _fbConnectButton.titleLabel.adjustsFontSizeToFitWidth = YES;
     [self addSubview:_fbConnectButton];
+     */
+
+    self.loginView =
+    [[FBLoginView alloc] initWithReadPermissions:
+     @[@"user_hometown", @"email", @"user_location",@"user_education_history"]];
+    _loginView.bottom = self.height - 20;
+    _loginView.centerX = floorf(self.width/2);
+    [self addSubview:_loginView];
+    
 
 }
 

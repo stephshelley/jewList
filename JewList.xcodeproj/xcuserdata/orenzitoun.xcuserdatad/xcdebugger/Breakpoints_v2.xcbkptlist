@@ -73,13 +73,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JewList/SHApi.m"
-            timestampString = "417222404.217215"
+            filePath = "JewList/AppDelegate.m"
+            timestampString = "427693020.371678"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "855"
-            endingLineNumber = "855"
-            landmarkName = "-standardRequestWithPath:params:method:noAuthNeeded:success:failure:"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "-application:openURL:sourceApplication:annotation:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -90,13 +90,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JewList/LoginViewController.m"
-            timestampString = "427689933.395791"
+            timestampString = "427694502.7165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "-fbConnectButtonPressed"
+            startingLineNumber = "432"
+            endingLineNumber = "432"
+            landmarkName = "-loginViewFetchedUserInfo:user:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__53-[LoginViewController loginViewFetchedUserInfo:user:]_block_invoke305"
+                  moduleName = "JewList"
+                  urlString = "file:///Users/orenzitoun/Documents/Joomie/JewList/LoginViewController.m"
+                  timestampString = "427694503.113292"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "432"
+                  endingLineNumber = "432"
+                  offsetFromSymbolStart = "82">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__53-[LoginViewController loginViewFetchedUserInfo:user:]_block_invoke_2306"
+                  moduleName = "JewList"
+                  urlString = "file:///Users/orenzitoun/Documents/Joomie/JewList/LoginViewController.m"
+                  timestampString = "427694503.113533"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "432"
+                  endingLineNumber = "432"
+                  offsetFromSymbolStart = "26">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -105,13 +135,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JewList/STFacebookManager.m"
-            timestampString = "427690789.535566"
+            filePath = "JewList/SHApi.m"
+            timestampString = "427694424.509228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
-            landmarkName = "-populateUserDetails"
+            startingLineNumber = "648"
+            endingLineNumber = "648"
+            landmarkName = "-loginWithFBToken:fbId:success:failure:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

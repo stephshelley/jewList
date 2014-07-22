@@ -24,6 +24,7 @@
 
          //Initialize Facebook
         
+        /*
         self.facebook = [[Facebook alloc] initWithAppId:kFacebook_App_Id andDelegate:self];
         
         // Check and retrieve authorization information
@@ -32,6 +33,7 @@
             self.facebook.accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
             self.facebook.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
         }
+         */
          
         
 	}
@@ -67,17 +69,20 @@
 - (BOOL)isConnected
 {
     BOOL isConnected = NO;
+    /*
 
     if(self.facebook && [self.facebook.accessToken length] > 0)
     {
         isConnected = YES;
     }
     
+     */
     return isConnected;
 }
 
 - (void)logout
 {
+    /*
     [_facebook logout];
     _facebook.accessToken = nil;
     _facebook.expirationDate = nil;
@@ -88,6 +93,7 @@
     [defaults removeObjectForKey:@"FBAccessTokenKey"];
     [defaults removeObjectForKey:@"FBExpirationDateKey"];
     [defaults synchronize];
+     */
 }
 
 - (void)connectWithSuccess:(void (^)(NSDictionary *dict, User *user))success
@@ -112,7 +118,7 @@
     // Any time the session is closed, we want to display the login controller (the user
     // cannot use the application unless they are logged in to Facebook). When the session
     // is opened successfully, hide the login controller and show the main UI.
-    
+    /*
     
     switch (state) {
         case FBSessionStateOpen:
@@ -171,7 +177,7 @@
     [[NSNotificationCenter defaultCenter]
      postNotificationName:kFBSessionStateChangedNotification
      object:session];
-    
+    */
 
     
 }
@@ -300,7 +306,7 @@ defaultAudience:(FBSessionDefaultAudience)defaultAudience
 #pragma mark FBSessionDelegate
 - (void)fbDidLogin
 {
-    [self storeAuthData:self.facebook.accessToken expiresAt:self.facebook.expirationDate];
+  //  [self storeAuthData:self.facebook.accessToken expiresAt:self.facebook.expirationDate];
 
 }
 - (void)fbDidNotLogin:(BOOL)cancelled

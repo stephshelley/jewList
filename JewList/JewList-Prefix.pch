@@ -16,6 +16,7 @@
     #import "NimbusCore.h"
     #import "UIViewAdditions.h"
     #import "SHUIHelpers.h"
+    #import <FacebookSDK/FacebookSDK.h>
 
 #endif
 

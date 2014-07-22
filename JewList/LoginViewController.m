@@ -12,6 +12,14 @@
 #import "STFacebookManager.h"
 #import "SHProfileViewController.h"
 #import "ResultsViewController.h"
+#import <FacebookSDK/FacebookSDK.h>
+
+@interface LoginViewController() <FBLoginViewDelegate>
+{
+    BOOL _didBeginToLogin;
+    
+}
+@end
 
 @implementation LoginViewController
 
@@ -24,7 +32,8 @@
     self.navigationController.navigationBarHidden = YES;
     
     self.loginView = [[SHLoginOnboardingView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
-    [_loginView.fbConnectButton addTarget:self action:@selector(fbConnectButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    _loginView.loginView.delegate = self;
+    //[_loginView.fbConnectButton addTarget:self action:@selector(fbConnectButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_loginView];
     
     self.title = @"Shalom!";
@@ -38,64 +47,6 @@
     
     [[STFacebookManager sharedInstance] connectWithSuccess:^(NSDictionary *response, User *user)
      {
-         if([response isKindOfClass:[NSDictionary class]] && [response objectForKey:@"id"] && [response objectForKey:@"token"])
-         {
-             NSString *token = [response objectForKey:@"token"];
-             NSString *fbId = [response objectForKey:@"id"];
-             //[self processLoginResponse:[response objectForKey:@"id"] withToken:[response objectForKey:@"token"]];
-
-             
-             [[SHApi sharedInstance] loginWithFBToken:token fbId:fbId success:^(void)
-              {
-                  //[self processLoginResponse:[response objectForKey:@"id"] withToken:[response objectForKey:@"token"]];
-                  User *currentUser = [[SHApi sharedInstance] currentUser];
-                  
-                  if(currentUser.firstName == nil)
-                  {
-                      currentUser.firstName = user.firstName;
-                  }
-                  
-                  if(currentUser.lastName == nil)
-                  {
-                      currentUser.lastName = user.lastName;
-                  }
-                  
-                  if(currentUser.gender == nil)
-                  {
-                      currentUser.gender = user.gender;
-                  }
-                  
-                  if(currentUser.email == nil || currentUser.email.length == 0)
-                  {
-                      currentUser.email = user.email;
-                  }
-                  
-                  if(currentUser.fbImageUrl == nil)
-                  {
-                      currentUser.fbImageUrl = user.fbImageUrl;
-                  }
-
-                  
-                  [[SHApi sharedInstance] setCurrentUser:currentUser];
-                  
-                  
-                  dispatch_async(dispatch_get_main_queue(), ^{
-                      [self continueToStep1];
-                      
-                  });
-
-                  
-              }failure:^(NSError *error)
-              {
-                  dispatch_async(dispatch_get_main_queue(), ^{
-                      [SHUIHelpers alertErrorWithMessage:@"An error occurred"];
-                      
-                  });
-              }];
-              
-             
-             
-         }
      } failure:^(NSError *error)
      {
          BD_LOG(@"Facebook login Failed | error = %@",[error userInfo]);
@@ -358,6 +309,134 @@
     }else if(sender == _onboardingStep5)
     {
         [self animateBacktStep:self.onboardingStep5 destination:self.onboardingStep4];
+        
+    }
+    
+}
+
+#pragma mark FBLoginViewDelegate
+- (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
+                            user:(id<FBGraphUser>)user
+{
+    NSString * accessToken = [[[FBSession activeSession] accessTokenData] accessToken];
+
+    User *currentUser = [[User alloc] init];
+    currentUser.fbId = [user objectForKey:@"id"];
+    currentUser.fbToken = accessToken;
+    currentUser.firstName = [user objectForKey:@"first_name"];
+    currentUser.lastName = [user objectForKey:@"last_name"];
+    currentUser.gender = [user objectForKey:@"gender"];
+    currentUser.email = [user objectForKey:@"email"];
+    currentUser.fbMeResult = (NSDictionary *)user;
+    currentUser.fbUsername = [user objectForKey:@"username"];
+    currentUser.fbImageUrl = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture",currentUser.fbId];
+    
+    NSDictionary *response = @{@"id" : [user objectForKey:@"id"] , @"token" : accessToken};
+    BD_LOG(@"FB response = %@",response);
+    
+    if([user objectForKey:@"hometown"] && [[user objectForKey:@"hometown"] objectForKey:@"id"])
+    {
+        currentUser.fbHometownId = SAFE_VAL([[user objectForKey:@"hometown"] objectForKey:@"id"]);
+        currentUser.fbHometownName = SAFE_VAL([[user objectForKey:@"hometown"] objectForKey:@"name"]);
+        
+    }
+    
+    if([user objectForKey:@"location"] && [[user objectForKey:@"location"] objectForKey:@"id"])
+    {
+        currentUser.fbLocationId = SAFE_VAL([[user objectForKey:@"location"] objectForKey:@"id"]);
+        currentUser.fbLocationName = SAFE_VAL([[user objectForKey:@"location"] objectForKey:@"name"]);
+        
+    }
+    
+    if([user objectForKey:@"education"])
+    {
+        NSArray *schools = [user objectForKey:@"education"];
+        
+        int lastYear = 0;
+        
+        for(NSDictionary *school in schools)
+        {
+            if([school objectForKey:@"type"] &&
+               ([[school objectForKey:@"type"] isEqualToString:@"Graduate School"] || [[school objectForKey:@"type"] isEqualToString:@"College"]))
+            {
+                if([school objectForKey:@"year"])
+                {
+                    int currentYear = [[[school objectForKey:@"year"] objectForKey:@"name"] intValue];
+                    if(currentYear > lastYear)
+                    {
+                        lastYear = currentYear;
+                        if([[school objectForKey:@"school"] objectForKey:@"name"])
+                        {
+                            currentUser.fbCollegeName = [[school objectForKey:@"school"] objectForKey:@"name"];
+                            
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+    
+    if(_didBeginToLogin) return;
+    
+    
+    if([response isKindOfClass:[NSDictionary class]] && [response objectForKey:@"id"] && [response objectForKey:@"token"])
+    {
+        NSString *token = [response objectForKey:@"token"];
+        NSString *fbId = [response objectForKey:@"id"];
+
+        _didBeginToLogin = YES;
+        [[SHApi sharedInstance] loginWithFBToken:token fbId:fbId success:^(void)
+         {
+             User *user = [[SHApi sharedInstance] currentUser];
+             
+             if(user.firstName == nil)
+             {
+                 user.firstName = currentUser.firstName;
+             }
+             
+             if(user.lastName == nil)
+             {
+                 user.lastName = currentUser.lastName;
+             }
+             
+             if(user.gender == nil)
+             {
+                 user.gender = currentUser.gender;
+             }
+             
+             if(user.email == nil || user.email.length == 0)
+             {
+                 user.email = currentUser.email;
+             }
+             
+             if(user.fbImageUrl == nil)
+             {
+                 user.fbImageUrl = currentUser.fbImageUrl;
+             }
+             
+             
+             [[SHApi sharedInstance] setCurrentUser:currentUser];
+             
+             
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 [self continueToStep1];
+                 _didBeginToLogin = NO;
+
+                 
+             });
+             
+             
+         }failure:^(NSError *error)
+         {
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 [SHUIHelpers alertErrorWithMessage:@"An error occurred"];
+                 _didBeginToLogin = NO;
+
+             });
+         }];
+        
+        
         
     }
     

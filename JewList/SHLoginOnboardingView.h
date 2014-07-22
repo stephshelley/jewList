@@ -15,5 +15,6 @@
 
 @property (nonatomic, strong) UILabel *fbConnectLabel;
 @property (nonatomic, strong) UIButton *fbConnectButton;
+@property (nonatomic, strong) FBLoginView *loginView;
 
 @end
