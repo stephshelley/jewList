@@ -23,7 +23,7 @@
 #define kSCHMOOZ_URL [NSString stringWithFormat:@"http://%@/", kSCHMOOZ_HOST]
 #define kSCHMOOZ_API_ACTION_BASE_URL [NSString stringWithFormat:@"%@%@", kSCHMOOZ_URL, @"api/%@"]
 
-#define kFacebook_App_Id @"556021887795026"
+#define kFacebook_App_Id @"1478022182439433"
 
 #define GetAppDelegate ((BidAppDelegate *)[[UIApplication sharedApplication] delegate])
 #define SAFE_VAL(s) s == nil ? @"" : s

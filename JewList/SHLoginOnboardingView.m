@@ -37,8 +37,8 @@
     self.fbConnectButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, buttonHeight)];
     _fbConnectButton.backgroundColor = DEFAULT_BLUE_COLOR;
     _fbConnectButton.bottom = self.height;
-    [_fbConnectButton setTitle:@"Facebook connect to get started" forState:UIControlStateNormal];
-    [_fbConnectButton setTitle:@"Facebook connect to get started" forState:UIControlStateHighlighted];
+    [_fbConnectButton setTitle:@"Connect to Facebook" forState:UIControlStateNormal];
+    [_fbConnectButton setTitle:@"Connect to Facebook" forState:UIControlStateHighlighted];
     _fbConnectButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT_REGULAR size:18];
     _fbConnectButton.titleLabel.adjustsFontSizeToFitWidth = YES;
     [self addSubview:_fbConnectButton];
