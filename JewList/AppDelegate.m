@@ -10,11 +10,14 @@
 #import "SHApi.h"
 #import "LoginViewController.h"
 #import "ResultsViewController.h"
+#import <Crashlytics/Crashlytics.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Crashlytics startWithAPIKey:@"31dfbac86c4d492f43c608f6b495f594a67cee2e"];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self registerNotifications];
     

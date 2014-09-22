@@ -120,6 +120,7 @@
 		3A306F171867CE520008755F /* SHWhatIWantInARoomateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F161867CE520008755F /* SHWhatIWantInARoomateViewController.m */; };
 		3A306F1A1867D0380008755F /* SHLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F191867D0380008755F /* SHLocationCell.m */; };
 		3A306F1D1867D08E0008755F /* SHCampusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F1C1867D08E0008755F /* SHCampusViewController.m */; };
+		3A3C017D19CFB42D005E8996 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3C017C19CFB42D005E8996 /* Crashlytics.framework */; };
 		3A4A9802189774610092942B /* female_d@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4A9800189774610092942B /* female_d@2x.png */; };
 		3A4A9803189774610092942B /* female_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4A9801189774610092942B /* female_s@2x.png */; };
 		3A4A98061897746A0092942B /* male_d@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4A98041897746A0092942B /* male_d@2x.png */; };
@@ -419,6 +420,7 @@
 		3A306F191867D0380008755F /* SHLocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHLocationCell.m; sourceTree = "<group>"; };
 		3A306F1B1867D08E0008755F /* SHCampusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHCampusViewController.h; sourceTree = "<group>"; };
 		3A306F1C1867D08E0008755F /* SHCampusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHCampusViewController.m; sourceTree = "<group>"; };
+		3A3C017C19CFB42D005E8996 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		3A4A9800189774610092942B /* female_d@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "female_d@2x.png"; sourceTree = "<group>"; };
 		3A4A9801189774610092942B /* female_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "female_s@2x.png"; sourceTree = "<group>"; };
 		3A4A98041897746A0092942B /* male_d@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "male_d@2x.png"; sourceTree = "<group>"; };
@@ -558,6 +560,7 @@
 				3A0CCC23179A50330000AA8C /* CoreLocation.framework in Frameworks */,
 				3A0CCC21179A50100000AA8C /* Accounts.framework in Frameworks */,
 				3A0CCC1F179A500C0000AA8C /* Social.framework in Frameworks */,
+				3A3C017D19CFB42D005E8996 /* Crashlytics.framework in Frameworks */,
 				3A0CCC1D179A4FBA0000AA8C /* libsqlite3.dylib in Frameworks */,
 				3A0ACD21179A42730083B80B /* SystemConfiguration.framework in Frameworks */,
 				3A0ACD1F179A426D0083B80B /* MobileCoreServices.framework in Frameworks */,
@@ -595,6 +598,7 @@
 		3A0ACC36179A3F3C0083B80B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A3C017C19CFB42D005E8996 /* Crashlytics.framework */,
 				3A9BE807197E108D00B15C93 /* FacebookSDK.framework */,
 				3AC4B5E118DE3AA3001E9CA0 /* CoreText.framework */,
 				3A0CCC34179A51170000AA8C /* CoreTelephony.framework */,
@@ -1208,6 +1212,7 @@
 				3A0ACC30179A3F3C0083B80B /* Sources */,
 				3A0ACC31179A3F3C0083B80B /* Frameworks */,
 				3A0ACC32179A3F3C0083B80B /* Resources */,
+				3A3C017B19CFB407005E8996 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1304,6 +1309,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A3C017B19CFB407005E8996 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 31dfbac86c4d492f43c608f6b495f594a67cee2e 22d9c641590c78ba1d7c2b7a138c0b0b145c5709c584aff41e9ece6eb90cc2d3";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3A0ACC30179A3F3C0083B80B /* Sources */ = {
@@ -1517,12 +1538,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
 					/Users/orenzitoun/Documents/FacebookSDK,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JewList/JewList-Prefix.pch";
@@ -1531,8 +1553,8 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "bc6c5608-8121-48cf-b786-e166f84d10cc";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "bc6c5608-8121-48cf-b786-e166f84d10cc";
+				PROVISIONING_PROFILE = "e7801063-87e5-4c03-b6e7-c5ce67666e8f";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "e7801063-87e5-4c03-b6e7-c5ce67666e8f";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -1544,12 +1566,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
 					/Users/orenzitoun/Documents/FacebookSDK,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JewList/JewList-Prefix.pch";
@@ -1558,9 +1581,10 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4b0611cc-4c60-4ba2-bdd7-29bc93b54844";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4b0611cc-4c60-4ba2-bdd7-29bc93b54844";
+				PROVISIONING_PROFILE = "e7801063-87e5-4c03-b6e7-c5ce67666e8f";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "e7801063-87e5-4c03-b6e7-c5ce67666e8f";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
