@@ -59,12 +59,14 @@
     leftButtonView.left = -2;
     [_yearTopView addSubview:leftButtonView];
     
-    self.chooseYearLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _yearTopView.width, _yearTopView.height)];
+    self.chooseYearLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _yearTopView.width - 50, _yearTopView.height)];
     _chooseYearLabel.textAlignment = NSTextAlignmentCenter;
     _chooseYearLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
     _chooseYearLabel.textColor = [UIColor whiteColor];
     _chooseYearLabel.backgroundColor = [UIColor clearColor];
-    _chooseYearLabel.text = @"What year are you graduating?";
+    _chooseYearLabel.text = @"What year are you graduating college?";
+    _chooseYearLabel.centerX = floorf(_yearTopView.width/2) + 10;
+    _chooseYearLabel.adjustsFontSizeToFitWidth = YES;
     [_yearTopView addSubview:_chooseYearLabel];
     
     UIView *bgColor = [[UIView alloc] initWithFrame:CGRectMake(0, _yearTopView.bottom, self.width, self.height - _yearTopView.bottom)];

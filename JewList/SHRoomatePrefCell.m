@@ -26,7 +26,7 @@
 {
     [super setUser:user];
     
-    self.titleLabel.text = @"What i want in a roomate";
+    self.titleLabel.text = @"What are you looking for in a roommate?";
     self.textView.text = self.user.roommatePrefs;
     
 }

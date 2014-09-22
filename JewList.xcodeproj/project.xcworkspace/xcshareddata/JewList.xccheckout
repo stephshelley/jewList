@@ -10,22 +10,26 @@
 	<string>JewList</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>6C6837D23F5D7375B262B9C15595FCF948B67973</key>
+		<string>https://github.com/stephshelley/jewList.git</string>
 		<key>88D11541-B229-4FF3-A197-5328778345F6</key>
 		<string>https://github.com/stephshelley/jewList.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>JewList.xcodeproj/project.xcworkspace</string>
+	<string>JewList.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>88D11541-B229-4FF3-A197-5328778345F6</key>
+		<key>6C6837D23F5D7375B262B9C15595FCF948B67973</key>
 		<string>../..</string>
+		<key>88D11541-B229-4FF3-A197-5328778345F6</key>
+		<string>../../../JewsList</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/stephshelley/jewList.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>88D11541-B229-4FF3-A197-5328778345F6</string>
+	<string>6C6837D23F5D7375B262B9C15595FCF948B67973</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>88D11541-B229-4FF3-A197-5328778345F6</string>
 			<key>IDESourceControlWCCName</key>
 			<string>JewsList</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6C6837D23F5D7375B262B9C15595FCF948B67973</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Joomie</string>
 		</dict>
 	</array>
 </dict>

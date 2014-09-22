@@ -662,7 +662,7 @@ static NSString *kCurrentUserPath = @"current_user";
                                                    //SHAccessToken *token = [[SHAccessToken alloc] initWithAccessToken:[result objectForKey:@"token"]];
                                                    [self setStAccessToken:token];
                                                    
-                                                   User *user = nil;
+                                                   User *user = [[SHApi sharedInstance] currentUser];
                                                    if([result objectForKey:@"member"])
                                                    {
                                                        user = [[User alloc] initWithDictionary:[result objectForKey:@"member"]];

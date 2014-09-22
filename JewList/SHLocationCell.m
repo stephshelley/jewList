@@ -26,7 +26,8 @@
 {
     [super setUser:user];
     
-    self.titleLabel.text = @"Location";
+    self.titleLabel.text = @"Where you looking to live?";
+    self.titleLabel.adjustsFontSizeToFitWidth = YES;
     self.accesoryLabel.text = ([self.user.campus intValue] == 0) ? @"On campus" : @"Off campus";
     
 }

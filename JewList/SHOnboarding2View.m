@@ -260,8 +260,10 @@
         isFiltering = NO;
         [self.tableView reloadData];
         
-    }else{
-        //[self processNewCharsInTextView];
+    }
+    else
+    {
+        [self processNewCharsInTextView];
         
     }
     

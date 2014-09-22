@@ -46,7 +46,7 @@
       failure:(void (^)(NSError * error))failure;
 
 - (void)deleteAccount;
-
+- (void)setStAccessToken:(SHAccessToken *)shAccessToken;
 - (id)deleteUser:(void (^)(void))success
          failure:(void (^)(NSError * error))failure;
 

@@ -26,7 +26,9 @@
 {
     [super setUser:user];
     
-    self.titleLabel.text = @"Work/Party";
+    self.titleLabel.text = @"Do you spend more time working or playing?";
+    self.titleLabel.numberOfLines = 2;
+    self.titleLabel.height = 40;
     self.textView.text = self.user.personalityText;
     self.accesoryLabel.text = [self.user.personality intValue] == 0 ? @"Work" : @"Party";
     

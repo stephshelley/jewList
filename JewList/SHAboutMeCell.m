@@ -26,7 +26,7 @@
 {
     [super setUser:user];
     
-    self.titleLabel.text = @"About me";
+    self.titleLabel.text = @"About Me";
     self.textView.text = self.user.aboutMe;
     
 }

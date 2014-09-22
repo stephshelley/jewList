@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JewList/AppDelegate.m"
-            timestampString = "427693020.371678"
+            timestampString = "433038240.104918"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "-application:openURL:sourceApplication:annotation:"
             landmarkType = "5">
          </BreakpointContent>
@@ -89,59 +89,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JewList/LoginViewController.m"
-            timestampString = "427694502.7165"
+            filePath = "JewList/SHOnboarding2View.m"
+            timestampString = "433036880.234617"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "432"
-            endingLineNumber = "432"
-            landmarkName = "-loginViewFetchedUserInfo:user:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__53-[LoginViewController loginViewFetchedUserInfo:user:]_block_invoke305"
-                  moduleName = "JewList"
-                  urlString = "file:///Users/orenzitoun/Documents/Joomie/JewList/LoginViewController.m"
-                  timestampString = "427694503.113292"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "432"
-                  endingLineNumber = "432"
-                  offsetFromSymbolStart = "82">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__53-[LoginViewController loginViewFetchedUserInfo:user:]_block_invoke_2306"
-                  moduleName = "JewList"
-                  urlString = "file:///Users/orenzitoun/Documents/Joomie/JewList/LoginViewController.m"
-                  timestampString = "427694503.113533"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "432"
-                  endingLineNumber = "432"
-                  offsetFromSymbolStart = "26">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JewList/SHApi.m"
-            timestampString = "427694424.509228"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "648"
-            endingLineNumber = "648"
-            landmarkName = "-loginWithFBToken:fbId:success:failure:"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "-loadColleges"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

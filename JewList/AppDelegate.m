@@ -29,12 +29,8 @@
         
     }
     
-    if(IS_IOS7)
-    {
-        self.window.tintColor = UIColorFromRGB(0x54add5);
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-        
-    }
+    self.window.tintColor = UIColorFromRGB(0x54add5);
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 
     
     if (!IsIpad && [[UINavigationBar class] respondsToSelector:@selector(appearance)])
@@ -48,8 +44,7 @@
           UITextAttributeFont,
           nil]];
         
-        if(IS_IOS7)
-            [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 
 	}
     

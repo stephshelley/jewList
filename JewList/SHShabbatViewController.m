@@ -49,8 +49,8 @@
     [self.view addSubview:buttonsBackgroundView];
     
     self.mildJew = [[SHToggleButton alloc] initWithFrame:CGRectMake(self.view.width/2 - (buttonHeight*2 +2)/2,0, buttonHeight, buttonHeight)];
-    [_mildJew setTitle:@"Mild" forState:UIControlStateNormal];
-    [_mildJew setTitle:@"Mild" forState:UIControlStateHighlighted];
+    [_mildJew setTitle:@"Sometimes" forState:UIControlStateNormal];
+    [_mildJew setTitle:@"Sometimes" forState:UIControlStateHighlighted];
     [_mildJew setTitleEdgeInsets:UIEdgeInsetsMake(65, 0, 0, 0)];
     _mildJew.buttonImage.frame = CGRectMake(0, 0, 70, 70);
     _mildJew.buttonImage.centerX = floorf(_mildJew.width/2);
@@ -67,8 +67,8 @@
 
     
     self.uberJew = [[SHToggleButton alloc] initWithFrame:CGRectMake(0,0, buttonHeight, buttonHeight)];
-    [_uberJew setTitle:@"Uber" forState:UIControlStateNormal];
-    [_uberJew setTitle:@"Uber" forState:UIControlStateHighlighted];
+    [_uberJew setTitle:@"Super" forState:UIControlStateNormal];
+    [_uberJew setTitle:@"Super" forState:UIControlStateHighlighted];
     [_uberJew setTitleEdgeInsets:UIEdgeInsetsMake(65, 0, 0, 0)];
     _uberJew.buttonImage.frame = CGRectMake(0, 0, 70, 70);
     _uberJew.buttonImage.centerX = floorf(_uberJew.width/2);
@@ -85,8 +85,8 @@
 
     self.mehJew = [[SHToggleButton alloc] initWithFrame:CGRectMake(0,0, buttonHeight, buttonHeight)];
     _mehJew.backgroundColor = DEFAULT_BLUE_COLOR;
-    [_mehJew setTitle:@"Meh" forState:UIControlStateNormal];
-    [_mehJew setTitle:@"Meh" forState:UIControlStateHighlighted];
+    [_mehJew setTitle:@"Seldom" forState:UIControlStateNormal];
+    [_mehJew setTitle:@"Seldom" forState:UIControlStateHighlighted];
     [_mehJew setTitleEdgeInsets:UIEdgeInsetsMake(65, 0, 0, 0)];
     _mehJew.buttonImage.frame = CGRectMake(0, 0, 70, 70);
     _mehJew.buttonImage.centerX = floorf(_mehJew.width/2);

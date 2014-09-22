@@ -20,7 +20,7 @@
     
     self.textView.text = self.currentUser.roommatePrefs;
     self.textView.delegate = self;
-    self.headerLabel.text = @"What i want in a roomate";
+    self.headerLabel.text = @"What are you looking for in a roommate?";
     
 }
 

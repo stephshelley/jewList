@@ -26,7 +26,7 @@
 {
     [super setUser:user];
     
-    self.titleLabel.text = @"High school engagement";
+    self.titleLabel.text = @"What were you involved with in High School?";
     self.textView.text = self.user.hsEngagement;
     
 }

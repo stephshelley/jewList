@@ -63,7 +63,7 @@
     _letsGoLabel.textColor = [UIColor blackColor];
     _letsGoLabel.backgroundColor = [UIColor clearColor];
     _letsGoLabel.numberOfLines = 2;
-    _letsGoLabel.text = @"First make sure you are OK with the info we have for you";
+    _letsGoLabel.text = @"First, make sure that you are OK with the info we have for you.";
     [userTopView addSubview:_letsGoLabel];
     
     UIView *nameBackground = [[UIView alloc] initWithFrame:CGRectMake(0.0, userTopView.bottom + 5, self.width, 70)];
@@ -120,7 +120,7 @@
     self.nextStepButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.width, buttonHeight)];
     _nextStepButton.backgroundColor = DEFAULT_BLUE_COLOR;
     _nextStepButton.bottom = self.height;
-    [_nextStepButton setTitle:@"That's me!" forState:UIControlStateNormal];
+    [_nextStepButton setTitle:@"That’s Me!" forState:UIControlStateNormal];
     _nextStepButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:24];
     _nextStepButton.titleLabel.textColor = [UIColor whiteColor];
     _nextStepButton.titleLabel.textAlignment = NSTextAlignmentCenter;

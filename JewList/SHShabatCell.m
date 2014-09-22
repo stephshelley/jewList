@@ -26,23 +26,23 @@
 {
     [super setUser:user];
     
-    self.titleLabel.text = @"How jew are you?";
+    self.titleLabel.text = @"How do you Jew?";
     self.textView.text = self.user.religiousText;
     
     switch ([self.user.religious intValue]) {
         case 0:
         {
-            self.accesoryLabel.text = @"Uber Jew";
+            self.accesoryLabel.text = @"Super";
             break;
         }
         case 1:
         {
-            self.accesoryLabel.text = @"Mild Jew";
+            self.accesoryLabel.text = @"Sometimes";
             break;
         }
         case 2:
         {
-            self.accesoryLabel.text = @"Meh Jew";
+            self.accesoryLabel.text = @"Seldom";
             break;
         }
         default:

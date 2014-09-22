@@ -377,6 +377,8 @@
         }
     }
     
+    //[[SHApi sharedInstance] setCurrentUser:currentUser];
+
     if(_didBeginToLogin) return;
     
     
@@ -386,10 +388,12 @@
         NSString *fbId = [response objectForKey:@"id"];
 
         _didBeginToLogin = YES;
+
         [[SHApi sharedInstance] loginWithFBToken:token fbId:fbId success:^(void)
          {
              User *user = [[SHApi sharedInstance] currentUser];
              
+             user.fb = [fbId copy];
              if(user.firstName == nil)
              {
                  user.firstName = currentUser.firstName;
@@ -416,7 +420,7 @@
              }
              
              
-             [[SHApi sharedInstance] setCurrentUser:currentUser];
+             [[SHApi sharedInstance] setCurrentUser:user];
              
              
              dispatch_async(dispatch_get_main_queue(), ^{

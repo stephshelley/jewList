@@ -25,7 +25,7 @@
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.backgroundColor = [UIColor clearColor];
 
-        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 16)];
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 280, 16)];
         _titleLabel.textColor = DEFAULT_DARK_GRAY_COLOR;
         _titleLabel.textAlignment = NSTextAlignmentLeft;
         _titleLabel.top = 5;

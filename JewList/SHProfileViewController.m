@@ -193,7 +193,7 @@
     if(_user.hsEngagement != nil && _user.hsEngagement.length > 0)
     {
         SHTextCellItem *item = [[SHTextCellItem alloc] init];
-        item.title = @"High school engagement";
+        item.title = @"What were you involved with in High School?";
         item.text = _user.hsEngagement;
         [_items addObject:item];
         
@@ -202,7 +202,7 @@
     if(_user.personalityText != nil && _user.personalityText.length > 0)
     {
         SHTextCellItem *item = [[SHTextCellItem alloc] init];
-        item.title = @"Work/Party";
+        item.title = @"Do you spend more time working or playing?";
         item.text = _user.roommatePrefs;
         item.type = [_user.personality intValue]  == 0 ? @"Work" : @"Play";
         [_items addObject:item];
@@ -212,7 +212,7 @@
     if(_user.cleaningText != nil && _user.cleaningText.length > 0)
     {
         SHTextCellItem *item = [[SHTextCellItem alloc] init];
-        item.title = @"Clean/Messy";
+        item.title = @"Are You clean or messy?";
         item.text = _user.cleaningText;
         item.type = [_user.cleaning intValue]  == 0 ? @"Clean" : @"Messy";
 
@@ -223,7 +223,7 @@
     if(_user.dietText != nil && _user.dietText.length > 0)
     {
         SHTextCellItem *item = [[SHTextCellItem alloc] init];
-        item.title = @"Diet";
+        item.title = @"Do you keep kosher?";
         item.text = _user.dietText;
         item.type = [_user.diet intValue]  == 0 ? @"Non Kosher" : @"Kosher";
 
@@ -234,18 +234,18 @@
     if(_user.religiousText != nil && _user.religiousText.length > 0)
     {
         SHTextCellItem *item = [[SHTextCellItem alloc] init];
-        item.title = @"How jew are you?";
+        item.title = @"How do you Jew?";
         item.text = _user.religiousText;
         
         if([_user.religious intValue]  == 0)
         {
-            item.type = @"Uber";
+            item.type = @"Super";
         }else if([_user.religious intValue]  == 1)
         {
-            item.type = @"Mild";
+            item.type = @"Sometimes";
         }else if([_user.religious intValue]  == 2)
         {
-            item.type = @"Meh";
+            item.type = @"Seldom";
         }
         
         [_items addObject:item];
@@ -255,7 +255,7 @@
     if(_user.roommatePrefs != nil && _user.roommatePrefs.length > 0)
     {
         SHTextCellItem *item = [[SHTextCellItem alloc] init];
-        item.title = @"What i want in a roomate";
+        item.title = @"What are you looking for in a roommate?";
         item.text = _user.roommatePrefs;
         [_items addObject:item];
         

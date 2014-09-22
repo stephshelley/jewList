@@ -26,7 +26,7 @@
 {
     [super setUser:user];
     
-    self.titleLabel.text = @"Clean/Messy";
+    self.titleLabel.text = @"Are You clean or messy?";
     self.textView.text = self.user.cleaningText;
     self.accesoryLabel.text = [self.user.cleaning intValue] == 0 ? @"Clean" : @"Messy";
     

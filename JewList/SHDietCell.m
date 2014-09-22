@@ -26,7 +26,7 @@
 {
     [super setUser:user];
     
-    self.titleLabel.text = @"Diet";
+    self.titleLabel.text = @"Do you keep kosher?";
     self.textView.text = self.user.dietText;
     self.accesoryLabel.text = [self.user.diet intValue] == 0 ? @"Kosher" : @"Non Kosher";
     
