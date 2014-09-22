@@ -23,9 +23,7 @@
     if (error) {
         return error;
     }
-	
-	NSDictionary *root = self.rootObject;
-	
+		
     NSArray *entries = self.rootObject;//[root objectForKey:@"members"];
     
     if (entries && [entries isKindOfClass:[NSArray class]] && [entries count] > 0) {

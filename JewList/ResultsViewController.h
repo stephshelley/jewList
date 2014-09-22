@@ -15,7 +15,7 @@
 @property (nonatomic, strong) SHMemberResultsDataSource *dataSource;
 
 @property (nonatomic, strong) UIActivityIndicatorView *activityView;
-@property (nonatomic, strong) UILabel *somePotentialResultsLabel;
+@property (nonatomic, strong) UILabel *emptyResultsLabel;
 @property (nonatomic, strong) UIView *topResultsBgView;
 
 

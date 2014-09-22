@@ -156,7 +156,16 @@
     _detailLabel.adjustsFontSizeToFitWidth = YES;
     _detailLabel.backgroundColor = [UIColor clearColor];
     _detailLabel.textAlignment = NSTextAlignmentCenter;
-    _detailLabel.text = [NSString stringWithFormat:@"%@, %d, Class of %d",[self getGenderSign],[_user.age integerValue] ,[_user.gradYear integerValue]];
+    if(_user.age != nil && [_user.age integerValue] > 0)
+    {
+        _detailLabel.text = [NSString stringWithFormat:@"%@, %d, Class of %d",[self getGenderSign],[_user.age integerValue] ,[_user.gradYear integerValue]];
+        
+    }
+    else
+    {
+        _detailLabel.text = [NSString stringWithFormat:@"%@, Class of %d",[self getGenderSign],[_user.gradYear integerValue]];
+    
+    }
     [_backdropView addSubview:_detailLabel];
 
     

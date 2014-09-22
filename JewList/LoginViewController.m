@@ -315,6 +315,10 @@
 }
 
 #pragma mark FBLoginViewDelegate
+- (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView
+{
+    //[[SHApi sharedInstance] logout];
+}
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
                             user:(id<FBGraphUser>)user
 {

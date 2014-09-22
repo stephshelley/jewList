@@ -81,9 +81,22 @@
     self.tableView.dataSource = self;
     [self.tableView registerClass:[UserResultCell class] forCellReuseIdentifier:NSStringFromClass([UserResultCell class])];
     
+
     [self.view addSubview:self.tableView];
+    
+    self.emptyResultsLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.width - 60, 40)];
+    _emptyResultsLabel.backgroundColor = [UIColor clearColor];
+    _emptyResultsLabel.textAlignment = NSTextAlignmentCenter;
+    _emptyResultsLabel.text = @"No results available";
+    _emptyResultsLabel.centerY = (self.view.height/2);
+    _emptyResultsLabel.centerX = self.view.width/2;
+    _emptyResultsLabel.hidden = YES;
+    _emptyResultsLabel.textColor = DEFAULT_DARK_GRAY_COLOR;
+    [self.view addSubview:_emptyResultsLabel];
+    
     [self showLoading];
     [self.dataSource loadModel];
+    
 
 }
 
@@ -95,8 +108,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if(IS_IOS7) [self setNeedsStatusBarAppearanceUpdate];
-
+    [self setNeedsStatusBarAppearanceUpdate];
     
 }
 
@@ -155,6 +167,7 @@
 - (void)dataSourceLoaded:(id)dataSource
 {
     [self hideloading];
+    _emptyResultsLabel.hidden = _dataSource.items.count != 0;
     [_tableView reloadData];
     
 }

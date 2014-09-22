@@ -218,6 +218,12 @@ static NSString *kCurrentUserPath = @"current_user";
      }];
      */
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:@"FBAccessTokenKey"];
+    [defaults removeObjectForKey:@"FBExpirationDateKey"];
+    [defaults synchronize];
+    [FBSession.activeSession closeAndClearTokenInformation];
+
     [_shAccessToken removeFromDefaultKeychainWithServiceProviderName:kSCHMOOZ_HOST];
     [_shLoginPassword removeFromDefaultKeychainWithServiceProviderName:kSCHMOOZ_HOST];
     
@@ -229,10 +235,11 @@ static NSString *kCurrentUserPath = @"current_user";
     
     _shAccessToken = nil;
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [[NSNotificationCenter defaultCenter] postNotificationName:kUserLogedOutNotification object:nil];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
+        [[NSNotificationCenter defaultCenter] postNotificationName:kUserLogedOutNotification object:nil];
     });
+
         
 }
 

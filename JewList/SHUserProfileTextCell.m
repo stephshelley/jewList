@@ -23,7 +23,7 @@
         whiteBG.backgroundColor = [UIColor whiteColor];
         [self.contentView addSubview:whiteBG];
         
-        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 16)];
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 280, 16)];
         _titleLabel.textColor = DEFAULT_LIGHT_GRAY_COLOR;
         _titleLabel.textAlignment = NSTextAlignmentLeft;
         _titleLabel.top = 2;

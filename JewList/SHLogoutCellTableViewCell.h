@@ -11,6 +11,7 @@
 @interface SHLogoutCellTableViewCell : UITableViewCell
 
 @property (nonatomic ,strong) UIButton *logoutButton;
+//@property (nonatomic, strong) FBLoginView *loginView;
 
 + (CGFloat)rowHeight;
 

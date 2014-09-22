@@ -26,6 +26,16 @@
         self.backgroundColor = [UIColor clearColor];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
 
+        /*
+        self.loginView =
+        [[FBLoginView alloc] initWithReadPermissions:
+         @[@"user_hometown", @"email", @"user_location",@"user_education_history"]];
+        _loginView.bottom = self.height - 20;
+        _loginView.centerX = floorf(self.width/2);
+        //_loginView.centerX = 160;
+        [self.contentView addSubview:_loginView];
+        */
+        
         self.logoutButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 15, 280, [SHLogoutCellTableViewCell rowHeight] - 20)];
         [_logoutButton setBackgroundColor:DEFAULT_BLUE_COLOR];
         [_logoutButton setTitle:@"Log out" forState:UIControlStateNormal];
