@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JewList/LoginViewController.m"
-            timestampString = "439696435.542314"
+            timestampString = "439698140.430431"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "452"
-            endingLineNumber = "452"
+            startingLineNumber = "457"
+            endingLineNumber = "457"
             landmarkName = "-goToPreviousStep:"
             landmarkType = "5">
          </BreakpointContent>

@@ -1565,6 +1565,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
+				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -1578,8 +1579,8 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e7801063-87e5-4c03-b6e7-c5ce67666e8f";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "e7801063-87e5-4c03-b6e7-c5ce67666e8f";
+				PROVISIONING_PROFILE = "28cb2d8d-15e9-49a7-981e-e939f2762f27";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "28cb2d8d-15e9-49a7-981e-e939f2762f27";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -1593,6 +1594,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
+				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -1606,8 +1608,8 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e7801063-87e5-4c03-b6e7-c5ce67666e8f";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "e7801063-87e5-4c03-b6e7-c5ce67666e8f";
+				PROVISIONING_PROFILE = "768c53eb-d82e-4fe9-92e7-c4972da12be3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "768c53eb-d82e-4fe9-92e7-c4972da12be3";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = NO;
 				VALID_ARCHS = "armv7 armv7s";

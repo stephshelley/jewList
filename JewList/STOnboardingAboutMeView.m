@@ -10,6 +10,12 @@
 
 @implementation STOnboardingAboutMeView
 
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (id)initWithFrame:(CGRect)frame andUser:(User*)user
 {
     self = [super initWithFrame:frame];
@@ -18,6 +24,16 @@
         self.user = user;
         [self loadUI];
         
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(handleWillShowKeyboardNotification:)
+                                                     name:UIKeyboardWillShowNotification
+                                                   object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(handleWillHideKeyboardNotification:)
+                                                     name:UIKeyboardWillHideNotification
+                                                   object:nil];
+
     }
     
     return self;
@@ -122,5 +138,43 @@
     self.user.aboutMe = textView.text;
     
 }
+
+- (void)handleWillShowKeyboardNotification:(NSNotification *)notification
+{
+    CGRect keyboardRect = [[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    keyboardRect = [self convertRect:keyboardRect fromView:nil];
+    CGFloat keyboardHeight = keyboardRect.size.height;
+    
+    UIViewAnimationCurve curve = [[notification.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue];
+    double duration = [[notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    
+    [UIView animateWithDuration:duration
+                          delay:0.0
+                        options:(curve << 16)
+                     animations:^{
+                         
+                         _nextStepButton.bottom = self.height - keyboardHeight;
+                         
+                     }
+                     completion:nil];
+}
+
+- (void)handleWillHideKeyboardNotification:(NSNotification *)notification
+{
+    UIViewAnimationCurve curve = [[notification.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue];
+    double duration = [[notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    
+    [UIView animateWithDuration:duration
+                          delay:0.0
+                        options:(curve << 16)
+                     animations:^{
+                         _nextStepButton.bottom = self.height;
+                         
+                         
+                     }
+                     completion:nil];
+    
+}
+
 
 @end

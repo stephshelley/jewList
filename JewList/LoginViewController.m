@@ -272,18 +272,21 @@
 
 - (void)continueToAboutMe
 {
+    [_cleanMessyView.textView resignFirstResponder];
     [self animateToNextStep:self.cleanMessyView destination:self.aboutMeView];
     
 }
 
 - (void)continueToLocation
 {
+    [_workPlayView.textView resignFirstResponder];
     [self animateToNextStep:self.workPlayView destination:self.campusView];
     
 }
 
 - (void)continueToHowJew
 {
+    [_campusView.textView resignFirstResponder];
     [self animateToNextStep:self.campusView destination:self.howJewView];
     
 }
@@ -296,12 +299,14 @@
 
 - (void)continueToCleanMessy
 {
+    [_howJewView.textView resignFirstResponder];
     [self animateToNextStep:self.howJewView destination:self.cleanMessyView];
 
 }
 
 - (void)continueToWorkPlay
 {
+    [_kosherView.textView resignFirstResponder];
     [self animateToNextStep:self.kosherView destination:self.workPlayView];
 
 }

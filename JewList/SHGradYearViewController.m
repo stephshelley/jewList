@@ -72,7 +72,7 @@
     _chooseYearLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
     _chooseYearLabel.textColor = DEFAULT_BLUE_COLOR;
     _chooseYearLabel.backgroundColor = [UIColor clearColor];
-    _chooseYearLabel.text = @"What year are you graduating?";
+    _chooseYearLabel.text = @"What year are you graduating college?";
     [_yearTopView addSubview:_chooseYearLabel];
     
     self.yearsArray = [NSMutableArray arrayWithArray:@[@2015,@2016,@2017,@2018,@2019,@2020,@2021,@2022,@2023,@2024,@2025,@2026,@2027,@2028,@2029,@2030]];
