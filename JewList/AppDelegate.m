@@ -22,7 +22,7 @@
     [self registerNotifications];
     
     User *currentUser = [[SHApi sharedInstance] currentUser];
-    if(currentUser != nil)
+    if(NO && currentUser != nil)
     {
         [self initLogedIn];
     }

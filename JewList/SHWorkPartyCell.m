@@ -30,6 +30,7 @@
     self.titleLabel.numberOfLines = 2;
     self.titleLabel.height = 40;
     self.textView.text = self.user.personalityText;
+    self.textView.top = self.titleLabel.bottom + 7;
     self.accesoryLabel.text = [self.user.personality intValue] == 0 ? @"Work" : @"Party";
     
 }

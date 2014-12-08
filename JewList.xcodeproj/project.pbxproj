@@ -138,6 +138,13 @@
 		3A5C34B118676E3D0092F08A /* STBaseDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C34B018676E3D0092F08A /* STBaseDataSource.m */; };
 		3A5C34B418676E540092F08A /* SHMemberResultsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C34B318676E540092F08A /* SHMemberResultsDataSource.m */; };
 		3A5C34B818676F8E0092F08A /* SHUserCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C34B718676F8E0092F08A /* SHUserCellItem.m */; };
+		3A94C4E61A34F2E70079A886 /* STOnboardingKosherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94C4E51A34F2E70079A886 /* STOnboardingKosherView.m */; };
+		3A94C4E91A34F9000079A886 /* STOnboardingWorkPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94C4E81A34F9000079A886 /* STOnboardingWorkPlayView.m */; };
+		3A94C4EC1A34FB440079A886 /* STOnboardingCleanMessyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94C4EB1A34FB440079A886 /* STOnboardingCleanMessyView.m */; };
+		3A94C4EF1A34FCED0079A886 /* STOnboardingHowJewAreYouView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94C4EE1A34FCED0079A886 /* STOnboardingHowJewAreYouView.m */; };
+		3A94C4F21A34FEC10079A886 /* STOnboardingCampusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94C4F11A34FEC10079A886 /* STOnboardingCampusView.m */; };
+		3A94C4F51A3533330079A886 /* STOnboardingAboutMeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94C4F41A3533330079A886 /* STOnboardingAboutMeView.m */; };
+		3A94C4F81A3539320079A886 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94C4F71A3539320079A886 /* UIPlaceHolderTextView.m */; };
 		3A964887186F9FE60026A559 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A964886186F9FE60026A559 /* MessageViewController.m */; };
 		3A96488A186FB2DB0026A559 /* STOnboarding5View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A964889186FB2DB0026A559 /* STOnboarding5View.m */; };
 		3A96488D186FB5F90026A559 /* SHAgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A96488C186FB5F90026A559 /* SHAgeViewController.m */; };
@@ -452,6 +459,20 @@
 		3A5C34B318676E540092F08A /* SHMemberResultsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHMemberResultsDataSource.m; sourceTree = "<group>"; };
 		3A5C34B618676F8E0092F08A /* SHUserCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHUserCellItem.h; sourceTree = "<group>"; };
 		3A5C34B718676F8E0092F08A /* SHUserCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHUserCellItem.m; sourceTree = "<group>"; };
+		3A94C4E41A34F2E70079A886 /* STOnboardingKosherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboardingKosherView.h; sourceTree = "<group>"; };
+		3A94C4E51A34F2E70079A886 /* STOnboardingKosherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOnboardingKosherView.m; sourceTree = "<group>"; };
+		3A94C4E71A34F9000079A886 /* STOnboardingWorkPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboardingWorkPlayView.h; sourceTree = "<group>"; };
+		3A94C4E81A34F9000079A886 /* STOnboardingWorkPlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOnboardingWorkPlayView.m; sourceTree = "<group>"; };
+		3A94C4EA1A34FB440079A886 /* STOnboardingCleanMessyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboardingCleanMessyView.h; sourceTree = "<group>"; };
+		3A94C4EB1A34FB440079A886 /* STOnboardingCleanMessyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOnboardingCleanMessyView.m; sourceTree = "<group>"; };
+		3A94C4ED1A34FCED0079A886 /* STOnboardingHowJewAreYouView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboardingHowJewAreYouView.h; sourceTree = "<group>"; };
+		3A94C4EE1A34FCED0079A886 /* STOnboardingHowJewAreYouView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOnboardingHowJewAreYouView.m; sourceTree = "<group>"; };
+		3A94C4F01A34FEC10079A886 /* STOnboardingCampusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboardingCampusView.h; sourceTree = "<group>"; };
+		3A94C4F11A34FEC10079A886 /* STOnboardingCampusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOnboardingCampusView.m; sourceTree = "<group>"; };
+		3A94C4F31A3533330079A886 /* STOnboardingAboutMeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboardingAboutMeView.h; sourceTree = "<group>"; };
+		3A94C4F41A3533330079A886 /* STOnboardingAboutMeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOnboardingAboutMeView.m; sourceTree = "<group>"; };
+		3A94C4F61A3539320079A886 /* UIPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPlaceHolderTextView.h; sourceTree = "<group>"; };
+		3A94C4F71A3539320079A886 /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPlaceHolderTextView.m; sourceTree = "<group>"; };
 		3A964885186F9FE60026A559 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		3A964886186F9FE60026A559 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		3A964888186FB2DB0026A559 /* STOnboarding5View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboarding5View.h; sourceTree = "<group>"; };
@@ -686,6 +707,8 @@
 				D02FD2FD179B278000D876D8 /* JLColors.m */,
 				3ADFA927179B5B5A00B66F78 /* SHUIHelpers.h */,
 				3ADFA928179B5B5A00B66F78 /* SHUIHelpers.m */,
+				3A94C4F61A3539320079A886 /* UIPlaceHolderTextView.h */,
+				3A94C4F71A3539320079A886 /* UIPlaceHolderTextView.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1142,6 +1165,18 @@
 				3AAB122A185E545B00F592DD /* SHOnboardingDelegate.h */,
 				3A29A4AA18E8BC7A0071873F /* SHEditProfileHeaderView.h */,
 				3A29A4AB18E8BC7A0071873F /* SHEditProfileHeaderView.m */,
+				3A94C4E41A34F2E70079A886 /* STOnboardingKosherView.h */,
+				3A94C4E51A34F2E70079A886 /* STOnboardingKosherView.m */,
+				3A94C4E71A34F9000079A886 /* STOnboardingWorkPlayView.h */,
+				3A94C4E81A34F9000079A886 /* STOnboardingWorkPlayView.m */,
+				3A94C4EA1A34FB440079A886 /* STOnboardingCleanMessyView.h */,
+				3A94C4EB1A34FB440079A886 /* STOnboardingCleanMessyView.m */,
+				3A94C4ED1A34FCED0079A886 /* STOnboardingHowJewAreYouView.h */,
+				3A94C4EE1A34FCED0079A886 /* STOnboardingHowJewAreYouView.m */,
+				3A94C4F01A34FEC10079A886 /* STOnboardingCampusView.h */,
+				3A94C4F11A34FEC10079A886 /* STOnboardingCampusView.m */,
+				3A94C4F31A3533330079A886 /* STOnboardingAboutMeView.h */,
+				3A94C4F41A3533330079A886 /* STOnboardingAboutMeView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1212,7 +1247,6 @@
 				3A0ACC30179A3F3C0083B80B /* Sources */,
 				3A0ACC31179A3F3C0083B80B /* Frameworks */,
 				3A0ACC32179A3F3C0083B80B /* Resources */,
-				3A3C017B19CFB407005E8996 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1310,22 +1344,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		3A3C017B19CFB407005E8996 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run 31dfbac86c4d492f43c608f6b495f594a67cee2e 22d9c641590c78ba1d7c2b7a138c0b0b145c5709c584aff41e9ece6eb90cc2d3";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		3A0ACC30179A3F3C0083B80B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1335,6 +1353,7 @@
 				3A306EE018679C3C0008755F /* SHGradYearViewController.m in Sources */,
 				3A0ACC44179A3F3C0083B80B /* main.m in Sources */,
 				3A0ACC48179A3F3C0083B80B /* AppDelegate.m in Sources */,
+				3A94C4EC1A34FB440079A886 /* STOnboardingCleanMessyView.m in Sources */,
 				3A0ACD9F179A42D00083B80B /* Jastor.m in Sources */,
 				3A0ACDA0179A42D00083B80B /* JastorRuntimeHelper.m in Sources */,
 				3A964890186FB7260026A559 /* SHAgeCell.m in Sources */,
@@ -1347,6 +1366,7 @@
 				3A0ACDAD179A42D00083B80B /* NIButtonUtilities.m in Sources */,
 				3A0ACDAE179A42D00083B80B /* NICommonMetrics.m in Sources */,
 				3A0ACDAF179A42D00083B80B /* NIDataStructures.m in Sources */,
+				3A94C4F81A3539320079A886 /* UIPlaceHolderTextView.m in Sources */,
 				3A0ACDB0179A42D00083B80B /* NIDebuggingTools.m in Sources */,
 				3A0ACDB1179A42D00083B80B /* NIDeviceOrientation.m in Sources */,
 				3A0ACDB2179A42D00083B80B /* NIError.m in Sources */,
@@ -1365,6 +1385,7 @@
 				3A306EEA1867AFD70008755F /* SHHighSchoolInfoCell.m in Sources */,
 				3A0ACDBB179A42D00083B80B /* NIOperations.m in Sources */,
 				3A0ACDBC179A42D00083B80B /* NIPaths.m in Sources */,
+				3A94C4E91A34F9000079A886 /* STOnboardingWorkPlayView.m in Sources */,
 				3A0ACDBD179A42D00083B80B /* NIRuntimeClassModifications.m in Sources */,
 				3A0ACDBE179A42D00083B80B /* NISDKAvailability.m in Sources */,
 				3A0ACDBF179A42D00083B80B /* NISnapshotRotation.m in Sources */,
@@ -1402,6 +1423,7 @@
 				3A0CC856179A4D880000AA8C /* User.m in Sources */,
 				3A0CC859179A4DAF0000AA8C /* LoginViewController.m in Sources */,
 				3A0CC85C179A4DBC0000AA8C /* SettingsViewController.m in Sources */,
+				3A94C4EF1A34FCED0079A886 /* STOnboardingHowJewAreYouView.m in Sources */,
 				3A306EFC1867C16E0008755F /* SHTextAndOptionCell.m in Sources */,
 				3A306F1A1867D0380008755F /* SHLocationCell.m in Sources */,
 				3A306F1D1867D08E0008755F /* SHCampusViewController.m in Sources */,
@@ -1413,6 +1435,7 @@
 				3A306ED7186793BA0008755F /* SHGraduationYearCell.m in Sources */,
 				3A964887186F9FE60026A559 /* MessageViewController.m in Sources */,
 				3A306EF01867B3570008755F /* SHTextEditViewController.m in Sources */,
+				3A94C4F21A34FEC10079A886 /* STOnboardingCampusView.m in Sources */,
 				3A306ED1186793480008755F /* SHEditProfileViewController.m in Sources */,
 				3A5C349818676ABA0092F08A /* LGURLJSONResponse.m in Sources */,
 				3A306F081867C72D0008755F /* SHDietCell.m in Sources */,
@@ -1431,6 +1454,8 @@
 				3A5C34AA18676D2C0092F08A /* NSObjectAdditions.m in Sources */,
 				3A0CCC4E179A53C40000AA8C /* NSString+NXOAuth2.m in Sources */,
 				3A306EF91867BB0D0008755F /* SHWorkPartyViewController.m in Sources */,
+				3A94C4F51A3533330079A886 /* STOnboardingAboutMeView.m in Sources */,
+				3A94C4E61A34F2E70079A886 /* STOnboardingKosherView.m in Sources */,
 				3A0CCC4F179A53C40000AA8C /* NSURL+NXOAuth2.m in Sources */,
 				3A5C34B418676E540092F08A /* SHMemberResultsDataSource.m in Sources */,
 				3A0CCC55179A54E20000AA8C /* SHLoginPassword.m in Sources */,
@@ -1538,8 +1563,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -1549,7 +1574,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JewList/JewList-Prefix.pch";
 				INFOPLIST_FILE = "JewList/JewList-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1566,8 +1591,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -1577,7 +1602,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JewList/JewList-Prefix.pch";
 				INFOPLIST_FILE = "JewList/JewList-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
