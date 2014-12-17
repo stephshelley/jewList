@@ -35,6 +35,7 @@
 @property (nonatomic, strong) UIButton *nextStepButton;
 @property (nonatomic, strong) id fetchCollegesRequest;
 @property (nonatomic, assign) id<SHOnboardingDelegate> delegate;
+@property (nonatomic, assign) BOOL shouldPopAfterSelection;
 
 - (id)initWithFrame:(CGRect)frame andUser:(User*)user;
 - (void)loadTable;

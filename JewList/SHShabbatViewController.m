@@ -57,8 +57,8 @@
     _mildJew.tag = MILD_BUTTON;
     _mildJew.centerX = floor(buttonsBackgroundView.width/2);
     _mildJew.centerY = floorf(buttonsBackgroundView.height/2);
-    _mildJew.onImage = @"mild_s";
-    _mildJew.offImage = @"mild_d";
+    _mildJew.onImage = @"sometimes_s";
+    _mildJew.offImage = @"sometimes_d";
     _mildJew.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:14];
     _mildJew.titleLabel.adjustsFontSizeToFitWidth = YES;
     [_mildJew toggle:[self.currentUser.religious intValue] == 1];
@@ -75,8 +75,8 @@
     _uberJew.tag = UBER_BUTTON;
     _uberJew.right = _mildJew.left - 20;
     _uberJew.top = _mildJew.top;
-    _uberJew.onImage = @"uber_s";
-    _uberJew.offImage = @"uber_d";
+    _uberJew.onImage = @"superjew_s";
+    _uberJew.offImage = @"superjew_d";
     _uberJew.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:14];
     _uberJew.titleLabel.adjustsFontSizeToFitWidth = YES;
     [_uberJew toggle:[self.currentUser.religious intValue] == 0];
@@ -91,8 +91,8 @@
     _mehJew.buttonImage.frame = CGRectMake(0, 0, 70, 70);
     _mehJew.buttonImage.centerX = floorf(_mehJew.width/2);
     _mehJew.tag = MEH_BUTTON;
-    _mehJew.onImage = @"meh_s";
-    _mehJew.offImage = @"meh_d";
+    _mehJew.onImage = @"mild_s";
+    _mehJew.offImage = @"mild_d";
     _mehJew.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:14];
     _mehJew.titleLabel.adjustsFontSizeToFitWidth = YES;
     _mehJew.top = _mildJew.top;

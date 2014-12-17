@@ -35,9 +35,12 @@
 #import "STFacebookManager.h"
 #import "SHDeleteAccountCell.h"
 #import "SHEditProfileHeaderView.h"
+#import "SHSchoolCell.h"
+#import "SHEditSchoolViewController.h"
 
 @interface SHEditProfileViewController ()
 
+@property (nonatomic ,strong) NSString *originalCollegeId;
 @end
 
 @implementation SHEditProfileViewController
@@ -48,6 +51,7 @@
     if(self)
     {
         _currentUser = currentUser;
+        self.originalCollegeId = _currentUser.college.dbId;
         
     }
     
@@ -109,6 +113,7 @@
     [_tableView registerClass:[SHHighSchoolInfoCell class] forCellReuseIdentifier:NSStringFromClass([SHHighSchoolInfoCell class])];
     [_tableView registerClass:[SHWorkPartyCell class] forCellReuseIdentifier:NSStringFromClass([SHWorkPartyCell class])];
     [_tableView registerClass:[SHCleanMessyCell class] forCellReuseIdentifier:NSStringFromClass([SHCleanMessyCell class])];
+    [_tableView registerClass:[SHSchoolCell class] forCellReuseIdentifier:NSStringFromClass([SHSchoolCell class])];
     [_tableView registerClass:[SHDietCell class] forCellReuseIdentifier:NSStringFromClass([SHDietCell class])];
     [_tableView registerClass:[SHShabatCell class] forCellReuseIdentifier:NSStringFromClass([SHShabatCell class])];
     [_tableView registerClass:[SHRoomatePrefCell class] forCellReuseIdentifier:NSStringFromClass([SHRoomatePrefCell class])];
@@ -116,7 +121,6 @@
     [_tableView registerClass:[SHAgeCell class] forCellReuseIdentifier:NSStringFromClass([SHAgeCell class])];
     [_tableView registerClass:[SHLogoutCellTableViewCell class] forCellReuseIdentifier:NSStringFromClass([SHLogoutCellTableViewCell class])];
     [_tableView registerClass:[SHDeleteAccountCell class] forCellReuseIdentifier:NSStringFromClass([SHDeleteAccountCell class])];
-
 
     [self.view addSubview:_tableView];
     
@@ -132,11 +136,12 @@
 
 - (void)saveProfile
 {
-    __weak __block SHEditProfileViewController *weakSelf = self;
+    __block SHEditProfileViewController *weakSelf = self;
     
     [[SHApi sharedInstance] updateUser:_currentUser success:^(User *user)
      {
          dispatch_async(dispatch_get_main_queue(), ^{
+
              user.fbToken = [[STFacebookManager sharedInstance] fbToken];
              [[SHApi sharedInstance] setCurrentUser:user];
              [weakSelf hideLoading];
@@ -207,7 +212,7 @@
     }
     else if(section == 2)
     {
-        count = 7;
+        count = 6;
     }
     
     return count;
@@ -243,7 +248,7 @@
     
     if(section == 0)
     {
-        cellHeight = (row == 0 || row == 1 || row == 2) ? [SHPersonalInfoCell rowHeight] : [SHTextItemCell rowHeight];
+        cellHeight = (row <= 3) ? [SHPersonalInfoCell rowHeight] : [SHTextItemCell rowHeight];
         
     }else if(section == 1)
     {
@@ -252,16 +257,16 @@
     }
     else if(section == 2)
     {
-        if(row <= 4)
+        if(row <= 3)
         {
             cellHeight = [SHWorkPartyCell rowHeight];
             
         }
-        else if(row == 5)
+        else if(row == 4)
         {
             cellHeight = [SHLogoutCellTableViewCell rowHeight];
         }
-        else if(row == 6)
+        else if(row == 5)
         {
             cellHeight = [SHDeleteAccountCell rowHeight];
         }
@@ -282,33 +287,43 @@
         switch (row) {
             case 0:
             {
+                cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHSchoolCell class])];
+                SHSchoolCell *schoolCell = (SHSchoolCell *)cell;
+                schoolCell.user = _currentUser;
+                
+                break;
+            }
+            case 1:
+            {
                 cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHGraduationYearCell class])];
                 SHGraduationYearCell *gradCell = (SHGraduationYearCell *)cell;
                 gradCell.user = _currentUser;
                 
                 break;
             }
-            case 1:
+            case 2:
             {
                 cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHAgeCell class])];
                 SHAgeCell *genderCell = (SHAgeCell *)cell;
                 genderCell.user = _currentUser;
                 break;
             }
-            case 2:
+            case 3:
             {
                 cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHGenderCell class])];
                 SHGenderCell *genderCell = (SHGenderCell *)cell;
                 genderCell.user = _currentUser;
                 break;
             }
-            case 3:
+                /*
+            case 4:
             {
                 cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHHighSchoolInfoCell class])];
                 SHHighSchoolInfoCell *genderCell = (SHHighSchoolInfoCell *)cell;
                 genderCell.user = _currentUser;
                 break;
             }
+                 */
             case 4:
             {
                 cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHAboutMeCell class])];
@@ -339,6 +354,7 @@
     else if(section == 2)
     {
         switch (row) {
+                /*
             case 0:
             {
                 cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHRoomatePrefCell class])];
@@ -347,7 +363,8 @@
                 
                 break;
             }
-            case 1:
+                 */
+            case 0:
             {
                 cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHWorkPartyCell class])];
                 SHWorkPartyCell *gradCell = (SHWorkPartyCell *)cell;
@@ -355,7 +372,7 @@
                 
                 break;
             }
-            case 2:
+            case 1:
             {
                 cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHCleanMessyCell class])];
                 SHCleanMessyCell *gradCell = (SHCleanMessyCell *)cell;
@@ -363,7 +380,7 @@
 
                 break;
             }
-            case 3:
+            case 2:
             {
 
                 cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHDietCell class])];
@@ -371,7 +388,7 @@
                 gradCell.user = _currentUser;
                 break;
             }
-            case 4:
+            case 3:
             {
                 cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHShabatCell class])];
                 SHShabatCell *gradCell = (SHShabatCell *)cell;
@@ -379,12 +396,12 @@
 
                 break;
             }
-            case 5:
+            case 4:
             {
                 cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHLogoutCellTableViewCell class])];
                 break;
             }
-            case 6:
+            case 5:
             {
                 cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHDeleteAccountCell class])];
                 break;
@@ -408,29 +425,38 @@
         switch (row) {
             case 0:
             {
-                SHGradYearViewController *vc = [[SHGradYearViewController alloc] initWithUser:_currentUser];
+                SHEditSchoolViewController *vc = [[SHEditSchoolViewController alloc] initWithUser:_currentUser];
                 [self.navigationController  pushViewController:vc animated:YES];
                 
                 break;
             }
             case 1:
             {
-                SHAgeViewController *vc = [[SHAgeViewController alloc] initWithUser:_currentUser];
+                SHGradYearViewController *vc = [[SHGradYearViewController alloc] initWithUser:_currentUser];
                 [self.navigationController  pushViewController:vc animated:YES];
+                
                 break;
             }
             case 2:
             {
-                SHGenderViewController *vc = [[SHGenderViewController alloc] initWithUser:_currentUser];
+                SHAgeViewController *vc = [[SHAgeViewController alloc] initWithUser:_currentUser];
                 [self.navigationController  pushViewController:vc animated:YES];
                 break;
             }
             case 3:
             {
+                SHGenderViewController *vc = [[SHGenderViewController alloc] initWithUser:_currentUser];
+                [self.navigationController  pushViewController:vc animated:YES];
+                break;
+            }
+                /*
+            case 4:
+            {
                 SHHSEngadmentViewController *vc = [[SHHSEngadmentViewController alloc] initWithUser:_currentUser];
                 [self.navigationController  pushViewController:vc animated:YES];
                 break;
             }
+                 */
             case 4:
             {
                 SHAboutMeViewController *vc = [[SHAboutMeViewController alloc] initWithUser:_currentUser];
@@ -459,6 +485,7 @@
     }else if(section == 2)
     {
         switch (row) {
+                /*
             case 0:
             {
                 SHWhatIWantInARoomateViewController *vc = [[SHWhatIWantInARoomateViewController alloc] initWithUser:_currentUser];
@@ -466,26 +493,27 @@
                 
                 break;
             }
-            case 1:
+                 */
+            case 0:
             {
                 SHWorkPartyViewController *vc = [[SHWorkPartyViewController alloc] initWithUser:_currentUser];
                 [self.navigationController  pushViewController:vc animated:YES];
                 
                 break;
             }
-            case 2:
+            case 1:
             {
                 SHCleanMessyViewController *vc = [[SHCleanMessyViewController alloc] initWithUser:_currentUser];
                 [self.navigationController  pushViewController:vc animated:YES];
                 break;
             }
-            case 3:
+            case 2:
             {
                 SHDietViewController *vc = [[SHDietViewController alloc] initWithUser:_currentUser];
                 [self.navigationController  pushViewController:vc animated:YES];
                 break;
             }
-            case 4:
+            case 3:
             {
                 SHShabbatViewController *vc = [[SHShabbatViewController alloc] initWithUser:_currentUser];
                 [self.navigationController  pushViewController:vc animated:YES];

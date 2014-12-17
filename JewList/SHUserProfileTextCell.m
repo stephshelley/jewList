@@ -19,9 +19,9 @@
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.backgroundColor = [UIColor clearColor];
         
-        UIView *whiteBG = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
-        whiteBG.backgroundColor = [UIColor whiteColor];
-        [self.contentView addSubview:whiteBG];
+        self.whiteBG = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+        _whiteBG.backgroundColor = [UIColor whiteColor];
+        [self.contentView addSubview:_whiteBG];
         
         self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 280, 16)];
         _titleLabel.textColor = DEFAULT_LIGHT_GRAY_COLOR;
@@ -48,7 +48,7 @@
         [self.contentView addSubview:sep];
          */
         
-        CGFloat textviewTop = whiteBG.bottom + 10;
+        CGFloat textviewTop = _whiteBG.bottom + 10;
 
         self.textView = [[UITextView alloc] initWithFrame:CGRectMake(0, textviewTop, 300, 30)];
         _textView.contentInset = UIEdgeInsetsMake(-8,(IS_IOS7 ? 0 : -8),0,0);
@@ -65,6 +65,18 @@
     }
     
     return self;
+    
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    CGFloat width = CGRectGetWidth(self.bounds);
+    _whiteBG.width = width;
+    _titleTypeLabel.right = width - 10;
+    _textView.width = width - 20;
+    _textView.left = 5;
+
     
 }
 

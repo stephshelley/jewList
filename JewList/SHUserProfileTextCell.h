@@ -14,5 +14,6 @@
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *titleTypeLabel;
 @property (nonatomic, strong) UITextView *textView;
+@property (nonatomic, strong) UIView *whiteBG;
 
 @end

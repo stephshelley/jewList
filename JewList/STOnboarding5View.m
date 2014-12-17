@@ -141,16 +141,12 @@
     CGRect resultFrame;
     
     CGFloat height = size.height;
-    CGFloat width = size.width;
+    CGFloat width = self.frame.size.width;
     
     if (size.height < kOptimumPickerHeight)
         // if in landscape, the picker height can be sized too small, so use a optimum height
         height = kOptimumPickerHeight;
-    
-    if (size.width > kOptimumPickerWidth)
-        // keep the width an optimum size as well
-        width = kOptimumPickerWidth;
-    
+        
     resultFrame = CGRectMake(0.0, -1.0, width, height);
     
     return resultFrame;

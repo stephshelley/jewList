@@ -14,6 +14,7 @@
 @property (nonatomic, strong) UITextView *textView;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *accesoryLabel;
+@property (nonatomic, strong) UIView *sepView;
 
 + (CGFloat)rowHeight;
 

@@ -52,14 +52,24 @@
         _textView.clipsToBounds = YES;
         [self.contentView addSubview:_textView];
         
-        UIView *sep = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)];
-        sep.backgroundColor = UIColorFromRGB(0xcccccc);
-        sep.bottom = [SHTextAndOptionCell rowHeight];
-        [self.contentView addSubview:sep];
+        self.sepView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)];
+        _sepView.backgroundColor = UIColorFromRGB(0xcccccc);
+        _sepView.bottom = [SHTextAndOptionCell rowHeight];
+        [self.contentView addSubview:_sepView];
         
     }
     
     return self;
+    
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    CGFloat cellWidth = self.bounds.size.width;
+    _sepView.width = cellWidth;
+    _accesoryLabel.right = cellWidth - 10;
     
 }
 

@@ -53,14 +53,23 @@
         _accesoryLabel.textAlignment = NSTextAlignmentLeft;
         [self.contentView addSubview:_accesoryLabel];
         
-        UIView *sep = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)];
-        sep.backgroundColor = UIColorFromRGB(0xcccccc);
-        sep.bottom = [UserResultCell rowHeight];
-        [self.contentView addSubview:sep];
+        self.sepView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)];
+        _sepView.backgroundColor = UIColorFromRGB(0xcccccc);
+        _sepView.bottom = [UserResultCell rowHeight];
+        [self.contentView addSubview:_sepView];
         
     }
     
     return self;
+    
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    CGFloat cellWidth = self.bounds.size.width;
+    _sepView.width = cellWidth;
     
 }
 

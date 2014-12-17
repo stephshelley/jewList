@@ -139,8 +139,8 @@
     _mildJew.tag = MILD_BUTTON;
     _mildJew.centerX = floor(buttonsBackgroundView.width/2);
     _mildJew.centerY = floorf(buttonsBackgroundView.height/2);
-    _mildJew.onImage = @"mild_s";
-    _mildJew.offImage = @"mild_d";
+    _mildJew.onImage = @"sometimes_s";
+    _mildJew.offImage = @"sometimes_d";
     _mildJew.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:14];
     _mildJew.titleLabel.adjustsFontSizeToFitWidth = YES;
     [_mildJew toggle:[self.user.religious intValue] == 1];
@@ -157,8 +157,8 @@
     _uberJew.tag = UBER_BUTTON;
     _uberJew.right = _mildJew.left - 20;
     _uberJew.top = _mildJew.top;
-    _uberJew.onImage = @"uber_s";
-    _uberJew.offImage = @"uber_d";
+    _uberJew.onImage = @"superjew_s";
+    _uberJew.offImage = @"superjew_d";
     _uberJew.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:14];
     _uberJew.titleLabel.adjustsFontSizeToFitWidth = YES;
     [_uberJew toggle:[self.user.religious intValue] == 0];

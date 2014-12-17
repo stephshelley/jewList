@@ -14,6 +14,7 @@
 #import "JLColors.h"
 #import <QuartzCore/QuartzCore.h>
 #import "SHUIHelpers.h"
+#import "UIView+FindUIViewController.h"
 
 @implementation SHOnboarding2View
 
@@ -38,7 +39,14 @@
 - (void)popScreen
 {
     if(_delegate && [_delegate respondsToSelector:@selector(goToPreviousStep:)])
+    {
         [_delegate goToPreviousStep:self];
+    }
+    else
+    {
+        UIViewController *firstAvailableViewController = [self firstAvailableUIViewController];
+        [firstAvailableViewController.navigationController popViewControllerAnimated:YES];
+    }
     
     [_searchBar resignFirstResponder];
 
@@ -152,7 +160,7 @@
     [topView addSubview:self.searchBar];
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, topView.bottom, width,self.height - topView.bottom - 20) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, topView.bottom, width,self.height - topView.bottom) style:UITableViewStylePlain];
     self.tableView.tableFooterView = [[UIView alloc] init];
     
     if(!IsIpad)
@@ -165,10 +173,7 @@
     self.tableView.backgroundColor = DEFAULT_BACKGROUND_COLOR;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
-    if(IS_IOS6)
-        [self.tableView registerClass:[SHCollegeCell class] forCellReuseIdentifier:NSStringFromClass([SHCollegeCell class])];
-    
+    [self.tableView registerClass:[SHCollegeCell class] forCellReuseIdentifier:NSStringFromClass([SHCollegeCell class])];
     [self addSubview:self.tableView];
     
 }
@@ -353,12 +358,27 @@
         
         _searchBar.text = item.collegeName;
         
+        if(_shouldPopAfterSelection)
+        {
+            _user.college.collegeName = item.collegeName;
+            _user.college.dbId = item.dbId;
+            
+        }
+        
     }
     
     _user.college = item;
     
     if(_delegate && [_delegate respondsToSelector:@selector(continueToNextStep:)])
+    {
         [_delegate continueToNextStep:self];
+    }
+    else if(_shouldPopAfterSelection)
+    {
+        UIViewController *firstAvailableViewController = [self firstAvailableUIViewController];
+        [firstAvailableViewController.navigationController popViewControllerAnimated:YES];
+    
+    }
 
 }
 

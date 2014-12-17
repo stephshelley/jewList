@@ -56,6 +56,13 @@
     
 }
 
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    _logoutButton.centerX = CGRectGetMidX(self.bounds);
+
+}
+
 - (void)logoutButtonPressed
 {
     [[SHApi sharedInstance] logout];

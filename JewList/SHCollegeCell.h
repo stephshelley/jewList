@@ -13,5 +13,6 @@
 + (float)rowHeight;
 
 @property (nonatomic, strong) UILabel *nameLabel;
+@property (nonatomic, strong) UIView *sepView;
 
 @end

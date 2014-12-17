@@ -31,8 +31,16 @@
     self.titleLabel.height = 40;
     self.textView.text = self.user.personalityText;
     self.textView.top = self.titleLabel.bottom + 7;
+    self.textView.height = [SHTextAndOptionCell rowHeight] - self.titleLabel.bottom - 13;
     self.accesoryLabel.text = [self.user.personality intValue] == 0 ? @"Work" : @"Party";
     
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    self.textView.height = [SHTextAndOptionCell rowHeight] - self.titleLabel.bottom - 13;
+
 }
 
 @end

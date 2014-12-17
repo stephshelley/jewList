@@ -44,6 +44,13 @@
     
 }
 
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    _deleteButton.centerX = CGRectGetMidX(self.bounds);
+    
+}
+
 - (void)deletesButtonPressed
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete Account" message:@"Are you sure you want to delete your joomie account?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"YES", nil];

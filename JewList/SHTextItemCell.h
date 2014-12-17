@@ -13,6 +13,7 @@
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) UITextView *textView;
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIView *sepView;
 
 + (CGFloat)rowHeight;
 

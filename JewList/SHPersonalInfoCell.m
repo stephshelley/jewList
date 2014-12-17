@@ -40,15 +40,25 @@
         _accesoryLabel.textAlignment = NSTextAlignmentRight;
         [self.contentView addSubview:_accesoryLabel];
         
-        UIView *sep = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)];
-        sep.backgroundColor = UIColorFromRGB(0xcccccc);
-        sep.bottom = [SHPersonalInfoCell rowHeight];
-        [self.contentView addSubview:sep];
+        self.sepView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)];
+        _sepView.backgroundColor = UIColorFromRGB(0xcccccc);
+        _sepView.bottom = [SHPersonalInfoCell rowHeight];
+        [self.contentView addSubview:_sepView];
         
     }
     
     return self;
     
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    CGFloat cellWidth = self.bounds.size.width;
+    _sepView.width = cellWidth;
+    _accesoryLabel.right = cellWidth - 10;
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

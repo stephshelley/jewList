@@ -52,26 +52,10 @@
     titleLabel.centerY = floorf(topView.height/2);
     [topView addSubview:titleLabel];
     
-    
-    
     UIButton *profileButton = [SHUIHelpers getNavBarButton:CGRectMake(0, 0, 60, 24) title:@"Profile" selector:@selector(openProfile) sender:self];
-    //[[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
-    /*[profileButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [profileButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-    [profileButton setTitle:@"Profile" forState:UIControlStateNormal];
-    [profileButton setTitle:@"Profile" forState:UIControlStateHighlighted];
-    profileButton.titleLabel.textAlignment = NSTextAlignmentRight;
-    profileButton.titleLabel.backgroundColor = [UIColor clearColor];
-    profileButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
-    profileButton.backgroundColor = [UIColor clearColor];
-    [profileButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 50, 0, 0)];
-    [profileButton addTarget:self action:@selector(openProfile) forControlEvents:UIControlEventTouchUpInside];
-     */
     profileButton.centerY = titleLabel.centerY;
     profileButton.right = topView.width - 10;
     [topView addSubview:profileButton];
-    
-   // self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Profile" style:UIBarButtonItemStylePlain target:self action:@selector(openProfile)];
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, topView.bottom, self.view.width, self.view.height - topView.height - (IS_IOS7 ? 20 : 0)) style:UITableViewStylePlain];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -80,8 +64,6 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerClass:[UserResultCell class] forCellReuseIdentifier:NSStringFromClass([UserResultCell class])];
-    
-
     [self.view addSubview:self.tableView];
     
     self.emptyResultsLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.width - 60, 40)];
@@ -102,7 +84,11 @@
 
 - (void)refreshScreen
 {
+    User *currentUser = [[SHApi sharedInstance] currentUser];
+    _dataSource.college = currentUser.college;
+    _dataSource.model.college = currentUser.college;
     [self.dataSource reloadModel];
+    
 }
 
 - (void)viewDidLoad

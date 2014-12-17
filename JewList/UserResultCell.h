@@ -21,6 +21,7 @@
 
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) SHUserCellItem *item;
+@property (nonatomic, strong) UIView *sepView;
 
 + (float)rowHeight;
 

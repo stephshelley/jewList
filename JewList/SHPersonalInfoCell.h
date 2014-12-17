@@ -14,6 +14,7 @@
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) UILabel *accesoryLabel;
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIView *sepView;
 
 + (CGFloat)rowHeight;
 
