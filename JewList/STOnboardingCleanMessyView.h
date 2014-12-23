@@ -17,6 +17,7 @@
 @property (nonatomic, strong) UILabel *headerLabel;
 @property (nonatomic, strong) UIPlaceHolderTextView *textView;
 @property (nonatomic, strong) User *user;
+@property (nonatomic, strong) SHToggleButton *cleanFreakButton;
 @property (nonatomic, strong) SHToggleButton *cleanButton;
 @property (nonatomic, strong) SHToggleButton *messyButton;
 @property (nonatomic, strong) UIButton *nextStepButton;

@@ -161,7 +161,7 @@
     _uberJew.offImage = @"superjew_d";
     _uberJew.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:14];
     _uberJew.titleLabel.adjustsFontSizeToFitWidth = YES;
-    [_uberJew toggle:[self.user.religious intValue] == 0];
+    [_uberJew toggle:[self.user.religious intValue] == 2];
     [_uberJew addTarget:self action:@selector(togglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [buttonsBackgroundView addSubview:_uberJew];
     
@@ -173,13 +173,13 @@
     _mehJew.buttonImage.frame = CGRectMake(0, 0, 70, 70);
     _mehJew.buttonImage.centerX = floorf(_mehJew.width/2);
     _mehJew.tag = MEH_BUTTON;
-    _mehJew.onImage = @"meh_s";
-    _mehJew.offImage = @"meh_d";
+    _mehJew.onImage = @"mild_s";
+    _mehJew.offImage = @"mild_d";
     _mehJew.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:14];
     _mehJew.titleLabel.adjustsFontSizeToFitWidth = YES;
     _mehJew.top = _mildJew.top;
     _mehJew.left = _mildJew.right + 20;
-    [_mehJew toggle:[self.user.religious intValue] == 2];
+    [_mehJew toggle:[self.user.religious intValue] == 0];
     [_mehJew addTarget:self action:@selector(togglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [buttonsBackgroundView addSubview:_mehJew];
     
@@ -200,7 +200,7 @@
         _mehJew.titleLabel.textColor = [UIColor darkGrayColor];
         _mildJew.titleLabel.textColor = [UIColor darkGrayColor];
         _uberJew.titleLabel.textColor = [UIColor whiteColor];
-        self.user.religious = @0;
+        self.user.religious = @2;
         
     }
     else if(senderButton.tag == MILD_BUTTON && [senderButton isOn])
@@ -219,7 +219,7 @@
         _mildJew.titleLabel.textColor = [UIColor darkGrayColor];
         _uberJew.titleLabel.textColor = [UIColor darkGrayColor];
         _mehJew.titleLabel.textColor = [UIColor whiteColor];
-        self.user.religious = @2;
+        self.user.religious = @0;
         
     }
     

@@ -204,7 +204,7 @@
     _fetchCollegesRequest = nil;
     
     [self showLoading];
-    __weak __block SHOnboarding2View *weakSelf = self;
+    __block SHOnboarding2View *weakSelf = self;
 
     self.fetchCollegesRequest = [[SHApi sharedInstance] getSchoolsForSearchTerm:[_searchBar.text lowercaseString]
                                                                         success:^(NSArray * colleges)

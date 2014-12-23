@@ -28,7 +28,27 @@
     
     self.titleLabel.text = @"Are You clean or messy?";
     self.textView.text = self.user.cleaningText;
-    self.accesoryLabel.text = [self.user.cleaning intValue] == 0 ? @"Clean" : @"Messy";
+    
+    switch ([self.user.cleaning intValue]) {
+        case 0:
+        {
+            self.accesoryLabel.text = @"Messy";
+            break;
+        }
+        case 1:
+        {
+            self.accesoryLabel.text = @"Organized";
+            break;
+        }
+        case 2:
+        {
+            self.accesoryLabel.text = @"Clean Freak";
+            break;
+        }
+            
+        default:
+            break;
+    }
     
 }
 

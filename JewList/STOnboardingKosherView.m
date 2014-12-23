@@ -134,7 +134,7 @@
     [_nonKosherButton setTitle:@"Non Kosher" forState:UIControlStateHighlighted];
     [_nonKosherButton setTitleEdgeInsets:UIEdgeInsetsMake(90, 0, 0, 0)];
     _nonKosherButton.tag = NON_KOSHER_BUTTON;
-    _nonKosherButton.right = floor(buttonsBackgroundView.width/2) - 2;
+    _nonKosherButton.right = floor(buttonsBackgroundView.width/2) - 4;
     _nonKosherButton.centerY = floorf(buttonsBackgroundView.height/2);
     _nonKosherButton.onImage = @"nonkosher_s";
     _nonKosherButton.offImage = @"nonkosher_d";
@@ -144,7 +144,7 @@
     [_nonKosherButton addTarget:self action:@selector(togglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [buttonsBackgroundView addSubview:_nonKosherButton];
     
-    self.kosherButton = [[SHToggleButton alloc] initWithFrame:CGRectMake(_nonKosherButton.right +4, _nonKosherButton.top, _nonKosherButton.width, _nonKosherButton.height)];
+    self.kosherButton = [[SHToggleButton alloc] initWithFrame:CGRectMake(_nonKosherButton.right + 8, _nonKosherButton.top, _nonKosherButton.width, _nonKosherButton.height)];
     _kosherButton.backgroundColor = DEFAULT_BLUE_COLOR;
     [_kosherButton setTitle:@"Kosher" forState:UIControlStateNormal];
     [_kosherButton setTitle:@"Kosher" forState:UIControlStateHighlighted];

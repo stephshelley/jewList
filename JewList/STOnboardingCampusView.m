@@ -116,7 +116,7 @@
     _offCampusButton.offImage = @"offcampus_d";
     _offCampusButton.right = floor(buttonsBackgroundView.width/2);
     _offCampusButton.centerY = floorf(buttonsBackgroundView.height/2);
-    [_offCampusButton toggle:NO]; // OFF
+    [_offCampusButton toggle:[_user.campus intValue] == 0]; // OFF
     [_offCampusButton addTarget:self action:@selector(genderTogglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [buttonsBackgroundView addSubview:_offCampusButton];
     
@@ -129,7 +129,7 @@
     _onCampusButton.left = _offCampusButton.right+1;
     _onCampusButton.onImage = @"oncampus_s";
     _onCampusButton.offImage = @"oncampus_d";
-    [_onCampusButton toggle:NO]; // OFF
+    [_onCampusButton toggle:[_user.campus intValue] == 1]; // OFF
     [_onCampusButton addTarget:self action:@selector(genderTogglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [buttonsBackgroundView addSubview:_onCampusButton];
     

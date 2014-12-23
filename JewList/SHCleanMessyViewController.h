@@ -11,8 +11,8 @@
 
 @interface SHCleanMessyViewController : SHTextEditViewController <UITextViewDelegate>
 
+@property (nonatomic, strong) SHToggleButton *cleanFreakButton;
 @property (nonatomic, strong) SHToggleButton *cleanButton;
 @property (nonatomic, strong) SHToggleButton *messyButton;
-
 
 @end
