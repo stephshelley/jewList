@@ -94,6 +94,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _pullToRefreshManager = [[MNMPullToRefreshManager alloc] initWithPullToRefreshViewHeight:60.0f
+                                                                                   tableView:_tableView
+                                                                                  withClient:self];
+
+    
     [self setNeedsStatusBarAppearanceUpdate];
     
 }
@@ -153,6 +159,8 @@
 - (void)dataSourceLoaded:(id)dataSource
 {
     [self hideloading];
+    [_pullToRefreshManager tableViewReloadFinishedAnimated:YES];
+
     _emptyResultsLabel.hidden = _dataSource.items.count != 0;
     [_tableView reloadData];
     
@@ -200,5 +208,23 @@
 }
 
 
+#pragma mark -
+#pragma mark MNMBottomPullToRefreshManagerClient
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    [_pullToRefreshManager tableViewScrolled];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    
+    [_pullToRefreshManager tableViewReleased];
+}
+
+- (void)pullToRefreshTriggered:(MNMPullToRefreshManager *)manager {
+    
+    [self refreshScreen];
+    
+}
 
 @end

@@ -8,6 +8,7 @@
 
 #import "SHLogoutCellTableViewCell.h"
 #import "SHApi.h"
+#import "UIAlertView+Blocks.h"
 
 @implementation SHLogoutCellTableViewCell
 
@@ -65,7 +66,14 @@
 
 - (void)logoutButtonPressed
 {
-    [[SHApi sharedInstance] logout];
+    [UIAlertView showWithTitle:NSLocalizedString(@"Log Out", nil) message:NSLocalizedString(@"Are you sure you want to log out?", @"") cancelButtonTitle:NSLocalizedString(@"No", nil) otherButtonTitles:@[NSLocalizedString(@"Yes", nil)] tapBlock:^(UIAlertView *alertView, NSInteger buttonIndex)
+     {
+         if (buttonIndex == 1)
+         {
+             [[SHApi sharedInstance] logout];
+
+         }
+     }];
     
 }
 

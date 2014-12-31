@@ -92,6 +92,9 @@
 		3A0CCC4F179A53C40000AA8C /* NSURL+NXOAuth2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CCC4A179A53C40000AA8C /* NSURL+NXOAuth2.m */; };
 		3A0CCC55179A54E20000AA8C /* SHLoginPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CCC54179A54E20000AA8C /* SHLoginPassword.m */; };
 		3A0CCC58179A632B0000AA8C /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CCC57179A632B0000AA8C /* UIViewAdditions.m */; };
+		3A1E16F41A5378E9002645CE /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E16F31A5378E9002645CE /* UIAlertView+Blocks.m */; };
+		3A1E16F91A537EEA002645CE /* MNMPullToRefreshManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E16F61A537EEA002645CE /* MNMPullToRefreshManager.m */; };
+		3A1E16FA1A537EEA002645CE /* MNMPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E16F81A537EEA002645CE /* MNMPullToRefreshView.m */; };
 		3A29A4A818E8B5780071873F /* joomieLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A29A4A618E8B5780071873F /* joomieLogo.png */; };
 		3A29A4A918E8B5780071873F /* joomieLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A29A4A718E8B5780071873F /* joomieLogo@2x.png */; };
 		3A29A4AC18E8BC7A0071873F /* SHEditProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A29A4AB18E8BC7A0071873F /* SHEditProfileHeaderView.m */; };
@@ -409,6 +412,12 @@
 		3A0CCC54179A54E20000AA8C /* SHLoginPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHLoginPassword.m; sourceTree = "<group>"; };
 		3A0CCC56179A632B0000AA8C /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
 		3A0CCC57179A632B0000AA8C /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
+		3A1E16F21A5378E9002645CE /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
+		3A1E16F31A5378E9002645CE /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
+		3A1E16F51A537EEA002645CE /* MNMPullToRefreshManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMPullToRefreshManager.h; sourceTree = "<group>"; };
+		3A1E16F61A537EEA002645CE /* MNMPullToRefreshManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMPullToRefreshManager.m; sourceTree = "<group>"; };
+		3A1E16F71A537EEA002645CE /* MNMPullToRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMPullToRefreshView.h; sourceTree = "<group>"; };
+		3A1E16F81A537EEA002645CE /* MNMPullToRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMPullToRefreshView.m; sourceTree = "<group>"; };
 		3A29A4A618E8B5780071873F /* joomieLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joomieLogo.png; sourceTree = "<group>"; };
 		3A29A4A718E8B5780071873F /* joomieLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "joomieLogo@2x.png"; sourceTree = "<group>"; };
 		3A29A4AA18E8BC7A0071873F /* SHEditProfileHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHEditProfileHeaderView.h; sourceTree = "<group>"; };
@@ -762,6 +771,12 @@
 		3A0ACC5D179A3FF90083B80B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3A1E16F51A537EEA002645CE /* MNMPullToRefreshManager.h */,
+				3A1E16F61A537EEA002645CE /* MNMPullToRefreshManager.m */,
+				3A1E16F71A537EEA002645CE /* MNMPullToRefreshView.h */,
+				3A1E16F81A537EEA002645CE /* MNMPullToRefreshView.m */,
+				3A1E16F21A5378E9002645CE /* UIAlertView+Blocks.h */,
+				3A1E16F31A5378E9002645CE /* UIAlertView+Blocks.m */,
 				3AC4B5DE18DE3727001E9CA0 /* TTTAttributedLabel.h */,
 				3AC4B5DF18DE3727001E9CA0 /* TTTAttributedLabel.m */,
 				3ADFA918179B4DCB00B66F78 /* UIView+FindUIViewController.h */,
@@ -1576,8 +1591,11 @@
 				3A306F1D1867D08E0008755F /* SHCampusViewController.m in Sources */,
 				3A5C34B118676E3D0092F08A /* STBaseDataSource.m in Sources */,
 				3A306EED1867B0410008755F /* SHAboutMeCell.m in Sources */,
+				3A1E16F41A5378E9002645CE /* UIAlertView+Blocks.m in Sources */,
 				3AC4B5E518DE4BA0001E9CA0 /* SHDeleteAccountCell.m in Sources */,
 				3A5C34AE18676D4D0092F08A /* TTURLCache.m in Sources */,
+				3A1E16FA1A537EEA002645CE /* MNMPullToRefreshView.m in Sources */,
+				3A1E16F91A537EEA002645CE /* MNMPullToRefreshManager.m in Sources */,
 				3A5C34A118676BA40092F08A /* STBaseDataModel.m in Sources */,
 				3A306ED7186793BA0008755F /* SHGraduationYearCell.m in Sources */,
 				3A964887186F9FE60026A559 /* MessageViewController.m in Sources */,
