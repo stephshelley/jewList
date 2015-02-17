@@ -1,0 +1,19 @@
+dependencies: \
+  /Users/orenzitoun/Documents/Joomie/JewList/SHMembersResultsModel.m \
+  /Users/orenzitoun/Documents/Joomie/JewList/SHMembersResultsModel.h \
+  /Users/orenzitoun/Documents/Joomie/JewList/STBaseDataModel.h \
+  /Users/orenzitoun/Documents/Joomie/JewList/STRequestModel.h \
+  /Users/orenzitoun/Documents/Joomie/JewList/LGJSONRequestOperation.h \
+  /Users/orenzitoun/Documents/Joomie/JewList/Vendor/AFNetworking/AFJSONRequestOperation.h \
+  /Users/orenzitoun/Documents/Joomie/JewList/Vendor/AFNetworking/AFHTTPRequestOperation.h \
+  /Users/orenzitoun/Documents/Joomie/JewList/Vendor/AFNetworking/AFURLConnectionOperation.h \
+  /Users/orenzitoun/Documents/Joomie/JewList/LGURLJSONResponse.h \
+  /Users/orenzitoun/Documents/Joomie/JewList/LGURLResponse.h \
+  /Users/orenzitoun/Documents/Joomie/JewList/TTURLCache.h \
+  /Users/orenzitoun/Documents/Joomie/JewList/College.h \
+  /Users/orenzitoun/Documents/Joomie/JewList/Vendor/Jastor/Jastor.h \
+  /Users/orenzitoun/Documents/Joomie/JewList/SHApi.h \
+  /Users/orenzitoun/Documents/Joomie/JewList/SHAccessToken.h \
+  /Users/orenzitoun/Documents/Joomie/JewList/Vendor/AFNetworking/AFNetworkActivityIndicatorManager.h \
+  /Users/orenzitoun/Documents/Joomie/JewList/SHLoginPassword.h \
+  /Users/orenzitoun/Documents/Joomie/JewList/SHMemberResultsJsonResponse.h

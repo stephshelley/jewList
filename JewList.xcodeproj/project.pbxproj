@@ -203,6 +203,10 @@
 		3ADC70A51A412A2100189CFE /* cleanfreak_d@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADC70A31A412A2100189CFE /* cleanfreak_d@2x.png */; };
 		3ADC70A71A412AE000189CFE /* sometimes_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADC70A61A412AE000189CFE /* sometimes_s@2x.png */; };
 		3ADC70A91A412AE500189CFE /* sometimes_d@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADC70A81A412AE500189CFE /* sometimes_d@2x.png */; };
+		3ADDF7E01A92FEC7003F1673 /* libAdIdAccess.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADDF7DE1A92FEC7003F1673 /* libAdIdAccess.a */; };
+		3ADDF7E11A92FEC7003F1673 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADDF7DF1A92FEC7003F1673 /* libGoogleAnalyticsServices.a */; };
+		3ADDF7E31A92FEE2003F1673 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADDF7E21A92FEE2003F1673 /* CoreData.framework */; };
+		3ADDF7E41A92FEF0003F1673 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0CCC2A179A508F0000AA8C /* libz.dylib */; };
 		3ADF2A60188392B000415A09 /* kosher_d@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADF2A52188392B000415A09 /* kosher_d@2x.png */; };
 		3ADF2A61188392B000415A09 /* kosher_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADF2A53188392B000415A09 /* kosher_s@2x.png */; };
 		3ADF2A62188392B000415A09 /* meh_d@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADF2A54188392B000415A09 /* meh_d@2x.png */; };
@@ -586,6 +590,19 @@
 		3ADC70A31A412A2100189CFE /* cleanfreak_d@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cleanfreak_d@2x.png"; sourceTree = "<group>"; };
 		3ADC70A61A412AE000189CFE /* sometimes_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sometimes_s@2x.png"; sourceTree = "<group>"; };
 		3ADC70A81A412AE500189CFE /* sometimes_d@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sometimes_d@2x.png"; sourceTree = "<group>"; };
+		3ADDF7D41A92FEC7003F1673 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		3ADDF7D51A92FEC7003F1673 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		3ADDF7D61A92FEC7003F1673 /* GAIEcommerceFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
+		3ADDF7D71A92FEC7003F1673 /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		3ADDF7D81A92FEC7003F1673 /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		3ADDF7D91A92FEC7003F1673 /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		3ADDF7DA1A92FEC7003F1673 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		3ADDF7DB1A92FEC7003F1673 /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		3ADDF7DC1A92FEC7003F1673 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		3ADDF7DD1A92FEC7003F1673 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		3ADDF7DE1A92FEC7003F1673 /* libAdIdAccess.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdIdAccess.a; sourceTree = "<group>"; };
+		3ADDF7DF1A92FEC7003F1673 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		3ADDF7E21A92FEE2003F1673 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3ADF2A52188392B000415A09 /* kosher_d@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kosher_d@2x.png"; sourceTree = "<group>"; };
 		3ADF2A53188392B000415A09 /* kosher_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kosher_s@2x.png"; sourceTree = "<group>"; };
 		3ADF2A54188392B000415A09 /* meh_d@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "meh_d@2x.png"; sourceTree = "<group>"; };
@@ -654,9 +671,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ADDF7E41A92FEF0003F1673 /* libz.dylib in Frameworks */,
+				3ADDF7E31A92FEE2003F1673 /* CoreData.framework in Frameworks */,
+				3ADDF7E01A92FEC7003F1673 /* libAdIdAccess.a in Frameworks */,
+				3A0CCC31179A50C00000AA8C /* AdSupport.framework in Frameworks */,
 				3AC4B5E218DE3AA3001E9CA0 /* CoreText.framework in Frameworks */,
 				3A0CCC33179A50CD0000AA8C /* AddressBook.framework in Frameworks */,
-				3A0CCC31179A50C00000AA8C /* AdSupport.framework in Frameworks */,
 				3A0CCC2D179A50990000AA8C /* Security.framework in Frameworks */,
 				3A0CCC29179A50850000AA8C /* Twitter.framework in Frameworks */,
 				3A0CCC27179A50750000AA8C /* MapKit.framework in Frameworks */,
@@ -664,6 +684,7 @@
 				3A0CCC23179A50330000AA8C /* CoreLocation.framework in Frameworks */,
 				3A0CCC21179A50100000AA8C /* Accounts.framework in Frameworks */,
 				3A0CCC1F179A500C0000AA8C /* Social.framework in Frameworks */,
+				3ADDF7E11A92FEC7003F1673 /* libGoogleAnalyticsServices.a in Frameworks */,
 				3A3C017D19CFB42D005E8996 /* Crashlytics.framework in Frameworks */,
 				3A0CCC1D179A4FBA0000AA8C /* libsqlite3.dylib in Frameworks */,
 				3A0ACD21179A42730083B80B /* SystemConfiguration.framework in Frameworks */,
@@ -702,6 +723,7 @@
 		3A0ACC36179A3F3C0083B80B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3ADDF7E21A92FEE2003F1673 /* CoreData.framework */,
 				3A3C017C19CFB42D005E8996 /* Crashlytics.framework */,
 				3A9BE807197E108D00B15C93 /* FacebookSDK.framework */,
 				3AC4B5E118DE3AA3001E9CA0 /* CoreText.framework */,
@@ -824,6 +846,7 @@
 		3A0ACD22179A42D00083B80B /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				3ADDF7D31A92FEC7003F1673 /* Google Analytics */,
 				3A0CC836179A474B0000AA8C /* AFNetworking */,
 				3A0ACD37179A42D00083B80B /* Jastor */,
 				3A0ACD3C179A42D00083B80B /* JSON */,
@@ -1187,6 +1210,25 @@
 			name = "Cell items";
 			sourceTree = "<group>";
 		};
+		3ADDF7D31A92FEC7003F1673 /* Google Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				3ADDF7D41A92FEC7003F1673 /* GAI.h */,
+				3ADDF7D51A92FEC7003F1673 /* GAIDictionaryBuilder.h */,
+				3ADDF7D61A92FEC7003F1673 /* GAIEcommerceFields.h */,
+				3ADDF7D71A92FEC7003F1673 /* GAIEcommerceProduct.h */,
+				3ADDF7D81A92FEC7003F1673 /* GAIEcommerceProductAction.h */,
+				3ADDF7D91A92FEC7003F1673 /* GAIEcommercePromotion.h */,
+				3ADDF7DA1A92FEC7003F1673 /* GAIFields.h */,
+				3ADDF7DB1A92FEC7003F1673 /* GAILogger.h */,
+				3ADDF7DC1A92FEC7003F1673 /* GAITrackedViewController.h */,
+				3ADDF7DD1A92FEC7003F1673 /* GAITracker.h */,
+				3ADDF7DE1A92FEC7003F1673 /* libAdIdAccess.a */,
+				3ADDF7DF1A92FEC7003F1673 /* libGoogleAnalyticsServices.a */,
+			);
+			path = "Google Analytics";
+			sourceTree = "<group>";
+		};
 		3ADF2A51188392A100415A09 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -1394,7 +1436,7 @@
 				ORGANIZATIONNAME = "Oren Zitoun";
 				TargetAttributes = {
 					3A0ACC33179A3F3C0083B80B = {
-						DevelopmentTeam = JR9E9LAGPW;
+						DevelopmentTeam = XW37JN8FNK;
 					};
 				};
 			};
@@ -1728,8 +1770,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1741,11 +1783,16 @@
 				GCC_PREFIX_HEADER = "JewList/JewList-Prefix.pch";
 				INFOPLIST_FILE = "JewList/JewList-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/JewList/Vendor/Google",
+					Analytics,
+				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "28cb2d8d-15e9-49a7-981e-e939f2762f27";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "28cb2d8d-15e9-49a7-981e-e939f2762f27";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7ff6f68a-3c6f-4b49-a3b4-cf4947e0e78d";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -1756,8 +1803,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Oren Zitoun (W8G7N9Z9YV)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1769,11 +1816,16 @@
 				GCC_PREFIX_HEADER = "JewList/JewList-Prefix.pch";
 				INFOPLIST_FILE = "JewList/JewList-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/JewList/Vendor/Google",
+					Analytics,
+				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "768c53eb-d82e-4fe9-92e7-c4972da12be3";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "768c53eb-d82e-4fe9-92e7-c4972da12be3";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "50f43cba-bd3c-4097-a55e-1f414c3aa6e0";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = NO;
 				VALID_ARCHS = "armv7 armv7s";

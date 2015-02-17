@@ -11,12 +11,25 @@
 #import "LoginViewController.h"
 #import "ResultsViewController.h"
 #import <Crashlytics/Crashlytics.h>
+#import "GAI.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [Crashlytics startWithAPIKey:@"31dfbac86c4d492f43c608f6b495f594a67cee2e"];
+    
+    // Optional: automatically send uncaught exceptions to Google Analytics.
+    // [GAI sharedInstance].trackUncaughtExceptions = YES;
+    
+    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+    [GAI sharedInstance].dispatchInterval = 20;
+    
+    // Optional: set Logger to VERBOSE for debug information.
+    // [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelInfo];
+    
+    // Initialize tracker. Replace with your tracking ID.
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-59561571-1"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self registerNotifications];
@@ -52,6 +65,7 @@
 	}
     
     [self.window makeKeyAndVisible];
+    
     return YES;
     
 }

@@ -1,0 +1,1 @@
+/Users/orenzitoun/Documents/Joomie/Build/Intermediates/ArchiveIntermediates/JewList/InstallationBuildProductsLocation/Applications/JewList.app
