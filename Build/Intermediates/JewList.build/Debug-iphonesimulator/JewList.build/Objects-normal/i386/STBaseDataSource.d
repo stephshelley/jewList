@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/orenzitoun/Documents/Joomie/JewList/STBaseDataSource.m \
-  /Users/orenzitoun/Documents/Joomie/JewList/STBaseDataSource.h \
-  /Users/orenzitoun/Documents/Joomie/JewList/STBaseDataModel.h
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/STBaseDataSource.m \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/STBaseDataSource.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/STBaseDataModel.h

@@ -141,6 +141,9 @@
 		3A5C34B118676E3D0092F08A /* STBaseDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C34B018676E3D0092F08A /* STBaseDataSource.m */; };
 		3A5C34B418676E540092F08A /* SHMemberResultsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C34B318676E540092F08A /* SHMemberResultsDataSource.m */; };
 		3A5C34B818676F8E0092F08A /* SHUserCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C34B718676F8E0092F08A /* SHUserCellItem.m */; };
+		3A80E0C91BDF0DFA00C65B41 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A80E0C81BDF0DFA00C65B41 /* FBSDKLoginKit.framework */; };
+		3A80E0CB1BDF0E5400C65B41 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A80E0CA1BDF0E5400C65B41 /* FBSDKCoreKit.framework */; };
+		3A80E0CE1BDF117A00C65B41 /* STFacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA8EC179A69E000B66F78 /* STFacebookManager.m */; };
 		3A94C4E61A34F2E70079A886 /* STOnboardingKosherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94C4E51A34F2E70079A886 /* STOnboardingKosherView.m */; };
 		3A94C4E91A34F9000079A886 /* STOnboardingWorkPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94C4E81A34F9000079A886 /* STOnboardingWorkPlayView.m */; };
 		3A94C4EC1A34FB440079A886 /* STOnboardingCleanMessyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94C4EB1A34FB440079A886 /* STOnboardingCleanMessyView.m */; };
@@ -156,7 +159,6 @@
 		3A964894186FCB270026A559 /* mosaic_empty_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A964892186FCB270026A559 /* mosaic_empty_user@2x.png */; };
 		3A964897186FD4B60026A559 /* SHTextCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A964896186FD4B60026A559 /* SHTextCellItem.m */; };
 		3A96489B186FD4D70026A559 /* SHUserProfileTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A96489A186FD4D70026A559 /* SHUserProfileTextCell.m */; };
-		3A9BE808197E108D00B15C93 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9BE807197E108D00B15C93 /* FacebookSDK.framework */; };
 		3AAB1229185E448A00F592DD /* STOnboarding4View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB1228185E448A00F592DD /* STOnboarding4View.m */; };
 		3AC4B5D718DE22DA001E9CA0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AC4B5D618DE22DA001E9CA0 /* Images.xcassets */; };
 		3AC4B5DA18DE326F001E9CA0 /* SHLogoutCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC4B5D918DE326F001E9CA0 /* SHLogoutCellTableViewCell.m */; };
@@ -219,7 +221,6 @@
 		3ADF2A69188392B000415A09 /* party_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADF2A5B188392B000415A09 /* party_s@2x.png */; };
 		3ADF2A6A188392B000415A09 /* study_d@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADF2A5C188392B000415A09 /* study_d@2x.png */; };
 		3ADF2A6B188392B000415A09 /* study_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADF2A5D188392B000415A09 /* study_s@2x.png */; };
-		3ADFA8ED179A69E000B66F78 /* STFacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA8EC179A69E000B66F78 /* STFacebookManager.m */; };
 		3ADFA8F1179A71DC00B66F78 /* SHOnboarding1View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA8F0179A71DC00B66F78 /* SHOnboarding1View.m */; };
 		3ADFA8F4179A727B00B66F78 /* SHTextFieldOnBoarding.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA8F3179A727B00B66F78 /* SHTextFieldOnBoarding.m */; };
 		3ADFA8F7179A74F700B66F78 /* SHLoginOnboardingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA8F6179A74F700B66F78 /* SHLoginOnboardingView.m */; };
@@ -508,6 +509,9 @@
 		3A5C34B318676E540092F08A /* SHMemberResultsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHMemberResultsDataSource.m; sourceTree = "<group>"; };
 		3A5C34B618676F8E0092F08A /* SHUserCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHUserCellItem.h; sourceTree = "<group>"; };
 		3A5C34B718676F8E0092F08A /* SHUserCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHUserCellItem.m; sourceTree = "<group>"; };
+		3A80E0C81BDF0DFA00C65B41 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = JewList/Vendor/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		3A80E0CA1BDF0E5400C65B41 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = JewList/Vendor/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		3A80E0CF1BDF122500C65B41 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		3A94C4E41A34F2E70079A886 /* STOnboardingKosherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboardingKosherView.h; sourceTree = "<group>"; };
 		3A94C4E51A34F2E70079A886 /* STOnboardingKosherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOnboardingKosherView.m; sourceTree = "<group>"; };
 		3A94C4E71A34F9000079A886 /* STOnboardingWorkPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboardingWorkPlayView.h; sourceTree = "<group>"; };
@@ -536,7 +540,6 @@
 		3A964896186FD4B60026A559 /* SHTextCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTextCellItem.m; sourceTree = "<group>"; };
 		3A964899186FD4D70026A559 /* SHUserProfileTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHUserProfileTextCell.h; sourceTree = "<group>"; };
 		3A96489A186FD4D70026A559 /* SHUserProfileTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHUserProfileTextCell.m; sourceTree = "<group>"; };
-		3A9BE807197E108D00B15C93 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		3AAB1227185E448A00F592DD /* STOnboarding4View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboarding4View.h; sourceTree = "<group>"; };
 		3AAB1228185E448A00F592DD /* STOnboarding4View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOnboarding4View.m; sourceTree = "<group>"; };
 		3AAB122A185E545B00F592DD /* SHOnboardingDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHOnboardingDelegate.h; sourceTree = "<group>"; };
@@ -671,10 +674,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A0CCC31179A50C00000AA8C /* AdSupport.framework in Frameworks */,
 				3ADDF7E41A92FEF0003F1673 /* libz.dylib in Frameworks */,
 				3ADDF7E31A92FEE2003F1673 /* CoreData.framework in Frameworks */,
 				3ADDF7E01A92FEC7003F1673 /* libAdIdAccess.a in Frameworks */,
-				3A0CCC31179A50C00000AA8C /* AdSupport.framework in Frameworks */,
 				3AC4B5E218DE3AA3001E9CA0 /* CoreText.framework in Frameworks */,
 				3A0CCC33179A50CD0000AA8C /* AddressBook.framework in Frameworks */,
 				3A0CCC2D179A50990000AA8C /* Security.framework in Frameworks */,
@@ -687,16 +690,17 @@
 				3ADDF7E11A92FEC7003F1673 /* libGoogleAnalyticsServices.a in Frameworks */,
 				3A3C017D19CFB42D005E8996 /* Crashlytics.framework in Frameworks */,
 				3A0CCC1D179A4FBA0000AA8C /* libsqlite3.dylib in Frameworks */,
+				3A80E0CB1BDF0E5400C65B41 /* FBSDKCoreKit.framework in Frameworks */,
 				3A0ACD21179A42730083B80B /* SystemConfiguration.framework in Frameworks */,
 				3A0ACD1F179A426D0083B80B /* MobileCoreServices.framework in Frameworks */,
 				3A0ACD1B179A42600083B80B /* AVFoundation.framework in Frameworks */,
 				3A0ACD19179A425A0083B80B /* QuartzCore.framework in Frameworks */,
+				3A80E0C91BDF0DFA00C65B41 /* FBSDKLoginKit.framework in Frameworks */,
 				3A0ACD17179A42530083B80B /* StoreKit.framework in Frameworks */,
 				3A0ACD15179A424D0083B80B /* CFNetwork.framework in Frameworks */,
 				3A0ACC38179A3F3C0083B80B /* UIKit.framework in Frameworks */,
 				3A0ACC3A179A3F3C0083B80B /* Foundation.framework in Frameworks */,
 				3A0ACC3C179A3F3C0083B80B /* CoreGraphics.framework in Frameworks */,
-				3A9BE808197E108D00B15C93 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -723,9 +727,11 @@
 		3A0ACC36179A3F3C0083B80B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A80E0CF1BDF122500C65B41 /* iAd.framework */,
+				3A80E0CA1BDF0E5400C65B41 /* FBSDKCoreKit.framework */,
+				3A80E0C81BDF0DFA00C65B41 /* FBSDKLoginKit.framework */,
 				3ADDF7E21A92FEE2003F1673 /* CoreData.framework */,
 				3A3C017C19CFB42D005E8996 /* Crashlytics.framework */,
-				3A9BE807197E108D00B15C93 /* FacebookSDK.framework */,
 				3AC4B5E118DE3AA3001E9CA0 /* CoreText.framework */,
 				3A0CCC34179A51170000AA8C /* CoreTelephony.framework */,
 				3A0CCC32179A50CD0000AA8C /* AddressBook.framework */,
@@ -1582,6 +1588,7 @@
 				3A0ACDB7179A42D00083B80B /* NINavigationAppearance.m in Sources */,
 				3A306F021867C4C30008755F /* SHCleanMessyViewController.m in Sources */,
 				3A0ACDB8179A42D00083B80B /* NINetworkActivity.m in Sources */,
+				3A80E0CE1BDF117A00C65B41 /* STFacebookManager.m in Sources */,
 				3A0ACDB9179A42D00083B80B /* NINonEmptyCollectionTesting.m in Sources */,
 				3A0ACDBA179A42D00083B80B /* NINonRetainingCollections.m in Sources */,
 				3AC4B5DA18DE326F001E9CA0 /* SHLogoutCellTableViewCell.m in Sources */,
@@ -1667,7 +1674,6 @@
 				3A5C34B418676E540092F08A /* SHMemberResultsDataSource.m in Sources */,
 				3A0CCC55179A54E20000AA8C /* SHLoginPassword.m in Sources */,
 				3A0CCC58179A632B0000AA8C /* UIViewAdditions.m in Sources */,
-				3ADFA8ED179A69E000B66F78 /* STFacebookManager.m in Sources */,
 				3A306EF61867B78E0008755F /* SHAboutMeViewController.m in Sources */,
 				3ADFA8F1179A71DC00B66F78 /* SHOnboarding1View.m in Sources */,
 				3ADFA8F4179A727B00B66F78 /* SHTextFieldOnBoarding.m in Sources */,
@@ -1778,15 +1784,18 @@
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
 					/Users/orenzitoun/Documents/FacebookSDK,
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/JewList/Vendor/Google_Analytics",
+					Analytics,
+					"$(PROJECT_DIR)/JewList/Vendor",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JewList/JewList-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/JewList/Vendor/Google_Analytics";
 				INFOPLIST_FILE = "JewList/JewList-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/JewList/Vendor/Google",
-					Analytics,
+					"$(PROJECT_DIR)/JewList/Vendor/Google_Analytics",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
@@ -1811,15 +1820,18 @@
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
 					/Users/orenzitoun/Documents/FacebookSDK,
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/JewList/Vendor/Google_Analytics",
+					Analytics,
+					"$(PROJECT_DIR)/JewList/Vendor",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JewList/JewList-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/JewList/Vendor/Google_Analytics";
 				INFOPLIST_FILE = "JewList/JewList-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/JewList/Vendor/Google",
-					Analytics,
+					"$(PROJECT_DIR)/JewList/Vendor/Google_Analytics",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";

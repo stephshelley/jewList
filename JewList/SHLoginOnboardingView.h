@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface SHLoginOnboardingView : UIView
 
@@ -15,6 +17,6 @@
 
 @property (nonatomic, strong) UILabel *fbConnectLabel;
 @property (nonatomic, strong) UIButton *fbConnectButton;
-@property (nonatomic, strong) FBLoginView *loginView;
+@property (nonatomic, strong) FBSDKLoginButton *loginButton;
 
 @end

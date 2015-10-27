@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/orenzitoun/Documents/Joomie/JewList/UIView+FindAndResignFirstResponder.m \
-  /Users/orenzitoun/Documents/Joomie/JewList/UIView+FindAndResignFirstResponder.h
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/UIView+FindAndResignFirstResponder.m \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/UIView+FindAndResignFirstResponder.h

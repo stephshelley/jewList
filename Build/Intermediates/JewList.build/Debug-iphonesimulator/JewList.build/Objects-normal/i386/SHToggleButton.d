@@ -1,2 +1,3 @@
-dependencies: /Users/orenzitoun/Documents/Joomie/JewList/SHToggleButton.m \
-  /Users/orenzitoun/Documents/Joomie/JewList/SHToggleButton.h
+dependencies: \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/SHToggleButton.m \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/SHToggleButton.h

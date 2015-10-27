@@ -8,6 +8,9 @@
 #import "User.h"
 #import "SHApi.h"
 
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
 @implementation STFacebookManager
 
 + (STFacebookManager *)sharedInstance {
@@ -50,7 +53,7 @@
 
 - (void)cancel
 {
-    [_meRequest cancel];
+    //[_meRequest cancel];
     [self releaseCallbacks];
 }
 
@@ -83,12 +86,6 @@
 - (void)logout
 {
     /*
-    [_facebook logout];
-    _facebook.accessToken = nil;
-    _facebook.expirationDate = nil;
-    
-    [FBSession.activeSession closeAndClearTokenInformation];
-    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults removeObjectForKey:@"FBAccessTokenKey"];
     [defaults removeObjectForKey:@"FBExpirationDateKey"];
@@ -105,10 +102,11 @@
    	_success = [success copy];
 	_failure = [failure copy];
 
-    [self openSessionWithAllowLoginUI:YES];
+    //[self openSessionWithAllowLoginUI:YES];
 
 }
 
+/*
 
 - (void)sessionStateChanged:(FBSession *)session
                       state:(FBSessionState)state
@@ -118,7 +116,6 @@
     // Any time the session is closed, we want to display the login controller (the user
     // cannot use the application unless they are logged in to Facebook). When the session
     // is opened successfully, hide the login controller and show the main UI.
-    /*
     
     switch (state) {
         case FBSessionStateOpen:
@@ -177,10 +174,10 @@
     [[NSNotificationCenter defaultCenter]
      postNotificationName:kFBSessionStateChangedNotification
      object:session];
-    */
-
-    
 }
+ */
+
+/*
 
 - (void)populateUserDetails {
 
@@ -263,7 +260,8 @@
          }];
     }
 }
-
+*/
+/*
 - (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI {
     
     NSArray *writepermissions = [[NSArray alloc] initWithObjects:
@@ -271,11 +269,6 @@
                                  @"user_location",
                                  @"user_hometown",
                                  nil];
-    
-    /*
-    + (BOOL)openActiveSessionWithPublishPermissions:(NSArray*)publishPermissions
-defaultAudience:(FBSessionDefaultAudience)defaultAudience
-     */
 
     return [FBSession openActiveSessionWithPublishPermissions:writepermissions
                                               defaultAudience:FBSessionDefaultAudienceEveryone
@@ -284,6 +277,8 @@ defaultAudience:(FBSessionDefaultAudience)defaultAudience
                                              [self sessionStateChanged:session state:state error:error];
                                          }];
 }
+ */
+
 
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
@@ -292,8 +287,9 @@ defaultAudience:(FBSessionDefaultAudience)defaultAudience
     // FBSample logic
     // We need to handle URLs by passing them to FBSession in order for SSO authentication
     // to work.
-    return [FBSession.activeSession handleOpenURL:url];
+    //return [FBSession.activeSession handleOpenURL:url];
 }
+
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -301,6 +297,35 @@ defaultAudience:(FBSessionDefaultAudience)defaultAudience
     {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root"]];
     }
+}
+
+- (void)setFacebookToken:(FBSDKAccessToken *)facebookToken
+              completion:(void (^)(NSDictionary *result))completionBlock
+{
+    _facebookToken = facebookToken;
+
+    NSDictionary* parameters = @{@"fields" : @"id,name,email,hometown,education,location"};
+    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:parameters];
+
+    [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+        // Since we're only requesting /me, we make a simplifying assumption that any error
+        // means the token is bad.
+        if (error) {
+            [[[UIAlertView alloc] initWithTitle:nil
+                                        message:@"The user token is no longer valid."
+                                       delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil] show];
+
+        }
+        else
+        {
+            if (completionBlock)
+            {
+                completionBlock((NSDictionary *)result);
+            }
+        }
+    }];
 }
 
 #pragma mark FBSessionDelegate
@@ -333,6 +358,7 @@ defaultAudience:(FBSessionDefaultAudience)defaultAudience
     
 }
 
+/*
 - (NSString *)FBErrorCodeDescription:(FBErrorCode) code {
     switch(code){
         case FBErrorInvalid :{
@@ -360,5 +386,6 @@ defaultAudience:(FBSessionDefaultAudience)defaultAudience
             return @"[Unknown]";
     }
 }
+ */
 
 @end

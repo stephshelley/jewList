@@ -4,7 +4,6 @@
 //  Created by Oren Zitoun on 2/21/13.
 //
 
-#import <FacebookSDK/FacebookSDK.h>
 
 @class User;
 
@@ -17,10 +16,11 @@
 
 @property (nonatomic, strong) NSString *fbToken;
 
-//@property (nonatomic, strong) Facebook *facebook;
-@property (nonatomic, strong) FBRequestConnection *meRequest;
+@property (nonatomic, strong) FBSDKAccessToken *facebookToken;
+//@property (nonatomic, strong) FBRequestConnection *meRequest;
 
-
+- (void)setFacebookToken:(FBSDKAccessToken *)facebookToken
+              completion:(void (^)(NSDictionary *result))completionBlock;
 
 - (BOOL)isConnected;
 - (void)logout;

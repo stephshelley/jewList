@@ -16,6 +16,7 @@
 #import "NSURL+NXOAuth2.h"
 #import "SHAccessToken.h"
 #import "College.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface SHApi (Private)
 
@@ -222,7 +223,7 @@ static NSString *kCurrentUserPath = @"current_user";
     [defaults removeObjectForKey:@"FBAccessTokenKey"];
     [defaults removeObjectForKey:@"FBExpirationDateKey"];
     [defaults synchronize];
-    [FBSession.activeSession closeAndClearTokenInformation];
+    //[FBSession.activeSession closeAndClearTokenInformation];
 
     [_shAccessToken removeFromDefaultKeychainWithServiceProviderName:kSCHMOOZ_HOST];
     [_shLoginPassword removeFromDefaultKeychainWithServiceProviderName:kSCHMOOZ_HOST];
@@ -643,7 +644,13 @@ static NSString *kCurrentUserPath = @"current_user";
                                                }
                                                
                                            }
-                                           failure:failure];
+                                           failure:^(NSError *error)
+            {
+                if (failure)
+                {
+                    failure(error);
+                }
+            }];
     
 }
 
@@ -771,53 +778,50 @@ static NSString *kCurrentUserPath = @"current_user";
 }
 
 
-- (id)getCoverUrl:(NSString *)fbId
-          success:(void (^)(NSString *url))success
-          failure:(void (^)(NSError *error))failure
+- (void)getCoverUrl:(NSString *)fbId
+            success:(void (^)(NSString *url))success
+            failure:(void (^)(NSError *error))failure
 {
-    if(nil == fbId)
+    if(fbId.length == 0)
     {
         failure(nil);
-        return nil;
+        return;
     }
     
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@?fields=cover",fbId]];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:60.0];
-    [[AFNetworkActivityIndicatorManager sharedManager] incrementActivityCount];
-
-    AFURLConnectionOperation *_requestOperation = [[AFURLConnectionOperation alloc] initWithRequest:request];
-    __unsafe_unretained __block AFURLConnectionOperation *requestOperation = _requestOperation;
     
-    [requestOperation setCompletionBlock:^
-     {
-         [[AFNetworkActivityIndicatorManager sharedManager] decrementActivityCount];
-         
-         if(requestOperation.error)
-         {
-             NSError *error = requestOperation.error;
-             BD_LOG(@"errors = %@",[[error userInfo] objectForKey:@"errors"]);
-             
-             if (failure && ([requestOperation.error code] != NSURLErrorCancelled)) failure(error);
-         }else{
-             
-             BD_LOG(@"response string = %@",requestOperation.responseString);
-             BD_LOG(@"response data size = %db",[requestOperation.responseData length]);
-             
-             NSDictionary *response = [self jsonToDictionary:requestOperation.responseData];
-             if([response isKindOfClass:[NSDictionary class]] && [response objectForKey:@"cover"])
-             {
-                 NSDictionary *coverDict = [response objectForKey:@"cover"];
-                 NSString *coverUrl = [coverDict objectForKey:@"source"];
-                 if (success) success(coverUrl);
-             }
-             
-             
-         }
-         
-     }];
-    
-    [requestOperation start];
-    return request;
+    NSDictionary *params = @{@"fields" : @"id,cover"};
+    NSString *path = [NSString stringWithFormat:@"%@",fbId];
+    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
+                                  initWithGraphPath:path
+                                  parameters:params
+                                  HTTPMethod:@"GET"];
+    [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
+                                          id result,
+                                          NSError *error) {
+        if(error)
+        {
+            BD_LOG(@"errors = %@",[[error userInfo] objectForKey:@"errors"]);
+            
+            if (failure && ([error code] != NSURLErrorCancelled))
+            {
+                failure(error);
+            }
+        }else{
+            
+            BD_LOG(@"response string = %@",result);
+            
+            NSDictionary *response = (NSDictionary *)result;
+            if([response isKindOfClass:[NSDictionary class]] && [response objectForKey:@"cover"])
+            {
+                NSDictionary *coverDict = [response objectForKey:@"cover"];
+                NSString *coverUrl = [coverDict objectForKey:@"source"];
+                if (success)
+                {
+                    success(coverUrl);
+                }
+            }
+        }
+    }];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////

@@ -84,8 +84,8 @@
           success:(void (^)(void))success
           failure:(void (^)(NSError * error))failure;
 
-- (id)getCoverUrl:(NSString *)fbId
-          success:(void (^)(NSString *url))success
-          failure:(void (^)(NSError *error))failure;
+- (void)getCoverUrl:(NSString *)fbId
+            success:(void (^)(NSString *url))success
+            failure:(void (^)(NSError *error))failure;
 
 @end

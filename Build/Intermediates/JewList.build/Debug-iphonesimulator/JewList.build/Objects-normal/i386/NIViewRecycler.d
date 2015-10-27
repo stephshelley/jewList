@@ -1,2 +1,2 @@
 dependencies: \
-  /Users/orenzitoun/Documents/Joomie/JewList/Vendor/Nimbus/core/src/NIViewRecycler.m
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/Vendor/Nimbus/core/src/NIViewRecycler.m

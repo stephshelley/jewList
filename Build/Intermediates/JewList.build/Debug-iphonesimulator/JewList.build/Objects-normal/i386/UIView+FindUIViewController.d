@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/orenzitoun/Documents/Joomie/JewList/UIView+FindUIViewController.m \
-  /Users/orenzitoun/Documents/Joomie/JewList/UIView+FindUIViewController.h
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/UIView+FindUIViewController.m \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/UIView+FindUIViewController.h

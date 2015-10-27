@@ -1,3 +1,4 @@
-dependencies: /Users/orenzitoun/Documents/Joomie/JewList/College.m \
-  /Users/orenzitoun/Documents/Joomie/JewList/College.h \
-  /Users/orenzitoun/Documents/Joomie/JewList/Vendor/Jastor/Jastor.h
+dependencies: \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/College.m \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/College.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/Vendor/Jastor/Jastor.h

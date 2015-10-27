@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/orenzitoun/Documents/Joomie/JewList/MNMPullToRefreshManager.m \
-  /Users/orenzitoun/Documents/Joomie/JewList/MNMPullToRefreshManager.h \
-  /Users/orenzitoun/Documents/Joomie/JewList/MNMPullToRefreshView.h
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/MNMPullToRefreshManager.m \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/MNMPullToRefreshManager.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/MNMPullToRefreshView.h

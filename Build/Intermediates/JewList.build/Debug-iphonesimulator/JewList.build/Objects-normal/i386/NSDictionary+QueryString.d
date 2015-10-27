@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/orenzitoun/Documents/Joomie/JewList/NSDictionary+QueryString.m \
-  /Users/orenzitoun/Documents/Joomie/JewList/NSDictionary+QueryString.h
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/NSDictionary+QueryString.m \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/NSDictionary+QueryString.h

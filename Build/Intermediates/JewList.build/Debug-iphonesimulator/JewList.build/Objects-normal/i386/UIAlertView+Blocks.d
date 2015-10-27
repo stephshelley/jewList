@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/orenzitoun/Documents/Joomie/JewList/UIAlertView+Blocks.m \
-  /Users/orenzitoun/Documents/Joomie/JewList/UIAlertView+Blocks.h
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/UIAlertView+Blocks.m \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/UIAlertView+Blocks.h
