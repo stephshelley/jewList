@@ -13,12 +13,14 @@
 #import <Crashlytics/Crashlytics.h>
 #import "GAI.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [Crashlytics startWithAPIKey:@"31dfbac86c4d492f43c608f6b495f594a67cee2e"];
+    [Fabric with:@[[Crashlytics class]]];
     
     // Optional: automatically send uncaught exceptions to Google Analytics.
     // [GAI sharedInstance].trackUncaughtExceptions = YES;

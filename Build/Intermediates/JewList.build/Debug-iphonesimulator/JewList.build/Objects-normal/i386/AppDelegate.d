@@ -49,7 +49,15 @@ dependencies: \
   /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/ResultsViewController.h \
   /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/MNMPullToRefreshManager.h \
   /Users/orenzitoun/Documents/Github/Joomie/jewList/Crashlytics.framework/Headers/Crashlytics.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/Crashlytics.framework/Headers/CLSAttributes.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/Crashlytics.framework/Headers/CLSLogging.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/Crashlytics.framework/Headers/CLSReport.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/Crashlytics.framework/Headers/CLSStackFrame.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/Crashlytics.framework/Headers/Answers.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/Crashlytics.framework/Headers/ANSCompatibility.h \
   /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/Vendor/Google_Analytics/GAI.h \
   /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/Vendor/Google_Analytics/GAILogger.h \
   /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/Vendor/Google_Analytics/GAITracker.h \
-  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/Vendor/Google_Analytics/GAITrackedViewController.h
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/Vendor/Google_Analytics/GAITrackedViewController.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/Fabric.framework/Headers/Fabric.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/Fabric.framework/Headers/FABAttributes.h

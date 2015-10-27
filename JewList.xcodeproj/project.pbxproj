@@ -144,6 +144,8 @@
 		3A80E0C91BDF0DFA00C65B41 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A80E0C81BDF0DFA00C65B41 /* FBSDKLoginKit.framework */; };
 		3A80E0CB1BDF0E5400C65B41 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A80E0CA1BDF0E5400C65B41 /* FBSDKCoreKit.framework */; };
 		3A80E0CE1BDF117A00C65B41 /* STFacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA8EC179A69E000B66F78 /* STFacebookManager.m */; };
+		3A80E0DA1BDF35EA00C65B41 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A80E0D81BDF356600C65B41 /* Fabric.framework */; };
+		3A80E0DC1BDF366400C65B41 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A80E0DB1BDF366400C65B41 /* libc++.tbd */; };
 		3A94C4E61A34F2E70079A886 /* STOnboardingKosherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94C4E51A34F2E70079A886 /* STOnboardingKosherView.m */; };
 		3A94C4E91A34F9000079A886 /* STOnboardingWorkPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94C4E81A34F9000079A886 /* STOnboardingWorkPlayView.m */; };
 		3A94C4EC1A34FB440079A886 /* STOnboardingCleanMessyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94C4EB1A34FB440079A886 /* STOnboardingCleanMessyView.m */; };
@@ -512,6 +514,8 @@
 		3A80E0C81BDF0DFA00C65B41 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = JewList/Vendor/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		3A80E0CA1BDF0E5400C65B41 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = JewList/Vendor/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		3A80E0CF1BDF122500C65B41 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		3A80E0D81BDF356600C65B41 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		3A80E0DB1BDF366400C65B41 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		3A94C4E41A34F2E70079A886 /* STOnboardingKosherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboardingKosherView.h; sourceTree = "<group>"; };
 		3A94C4E51A34F2E70079A886 /* STOnboardingKosherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOnboardingKosherView.m; sourceTree = "<group>"; };
 		3A94C4E71A34F9000079A886 /* STOnboardingWorkPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboardingWorkPlayView.h; sourceTree = "<group>"; };
@@ -674,6 +678,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A80E0DC1BDF366400C65B41 /* libc++.tbd in Frameworks */,
 				3A0CCC31179A50C00000AA8C /* AdSupport.framework in Frameworks */,
 				3ADDF7E41A92FEF0003F1673 /* libz.dylib in Frameworks */,
 				3ADDF7E31A92FEE2003F1673 /* CoreData.framework in Frameworks */,
@@ -682,6 +687,7 @@
 				3A0CCC33179A50CD0000AA8C /* AddressBook.framework in Frameworks */,
 				3A0CCC2D179A50990000AA8C /* Security.framework in Frameworks */,
 				3A0CCC29179A50850000AA8C /* Twitter.framework in Frameworks */,
+				3A80E0DA1BDF35EA00C65B41 /* Fabric.framework in Frameworks */,
 				3A0CCC27179A50750000AA8C /* MapKit.framework in Frameworks */,
 				3A0CCC25179A50510000AA8C /* MessageUI.framework in Frameworks */,
 				3A0CCC23179A50330000AA8C /* CoreLocation.framework in Frameworks */,
@@ -727,6 +733,8 @@
 		3A0ACC36179A3F3C0083B80B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A80E0DB1BDF366400C65B41 /* libc++.tbd */,
+				3A80E0D81BDF356600C65B41 /* Fabric.framework */,
 				3A80E0CF1BDF122500C65B41 /* iAd.framework */,
 				3A80E0CA1BDF0E5400C65B41 /* FBSDKCoreKit.framework */,
 				3A80E0C81BDF0DFA00C65B41 /* FBSDKLoginKit.framework */,
@@ -1422,6 +1430,7 @@
 				3A0ACC30179A3F3C0083B80B /* Sources */,
 				3A0ACC31179A3F3C0083B80B /* Frameworks */,
 				3A0ACC32179A3F3C0083B80B /* Resources */,
+				3A80E0D71BDF355500C65B41 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1552,6 +1561,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A80E0D71BDF355500C65B41 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run d4021e75ef33bc436cd021c9ac12ba90d9bcfcff e0311a1d33a53f78ff735264aa276b1547dad0c6837159fdb52b9094e70cd49d";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3A0ACC30179A3F3C0083B80B /* Sources */ = {
