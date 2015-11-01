@@ -1,2 +1,2 @@
 dependencies: \
-  /Users/orenzitoun/Documents/Joomie/JewList/UIViewAdditions.m
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/UIViewAdditions.m

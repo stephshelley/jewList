@@ -1,2 +1,3 @@
-dependencies: /Users/orenzitoun/Documents/Joomie/JewList/RuntimeHelper.m \
-  /Users/orenzitoun/Documents/Joomie/JewList/RuntimeHelper.h
+dependencies: \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/RuntimeHelper.m \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/RuntimeHelper.h

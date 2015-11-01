@@ -1,1 +1,2 @@
-dependencies: /Users/orenzitoun/Documents/Joomie/JewList/SHUIHelpers.m
+dependencies: \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/SHUIHelpers.m

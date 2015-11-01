@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/orenzitoun/Documents/Joomie/JewList/SHEditProfileHeaderView.m \
-  /Users/orenzitoun/Documents/Joomie/JewList/SHEditProfileHeaderView.h
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/SHEditProfileHeaderView.m \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/SHEditProfileHeaderView.h

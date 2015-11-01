@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>application-identifier</key>
-	<string>JR9E9LAGPW.com.bbyo.schmooz.www</string>
+	<string>XW37JN8FNK.com.joomie.joomie</string>
 	<key>com.apple.developer.team-identifier</key>
-	<string>JR9E9LAGPW</string>
+	<string>XW37JN8FNK</string>
 	<key>get-task-allow</key>
 	<true/>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>JR9E9LAGPW.com.bbyo.schmooz.www</string>
+		<string>XW37JN8FNK.com.joomie.joomie</string>
 	</array>
 </dict>
 </plist>

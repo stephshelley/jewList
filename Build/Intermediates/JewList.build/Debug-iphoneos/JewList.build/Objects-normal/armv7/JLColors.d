@@ -1,2 +1,3 @@
-dependencies: /Users/orenzitoun/Documents/Joomie/JewList/JLColors.m \
-  /Users/orenzitoun/Documents/Joomie/JewList/JLColors.h
+dependencies: \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/JLColors.m \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/JLColors.h

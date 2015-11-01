@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/orenzitoun/Documents/Joomie/JewList/STBaseDataModel.m \
-  /Users/orenzitoun/Documents/Joomie/JewList/NSObjectAdditions.h \
-  /Users/orenzitoun/Documents/Joomie/JewList/STBaseDataModel.h
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/STBaseDataModel.m \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/NSObjectAdditions.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/STBaseDataModel.h

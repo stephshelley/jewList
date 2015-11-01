@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/orenzitoun/Documents/Joomie/JewList/Vendor/Nimbus/core/src/NIOperations.m \
-  /Users/orenzitoun/Documents/Joomie/JewList/Vendor/Nimbus/core/src/NIOperations+Subclassing.h
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/Vendor/Nimbus/core/src/NIOperations.m \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/Vendor/Nimbus/core/src/NIOperations+Subclassing.h

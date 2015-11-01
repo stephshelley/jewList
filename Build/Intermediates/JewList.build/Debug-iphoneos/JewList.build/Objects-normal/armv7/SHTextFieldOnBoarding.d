@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/orenzitoun/Documents/Joomie/JewList/SHTextFieldOnBoarding.m \
-  /Users/orenzitoun/Documents/Joomie/JewList/SHTextFieldOnBoarding.h
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/SHTextFieldOnBoarding.m \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/SHTextFieldOnBoarding.h

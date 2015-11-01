@@ -1,3 +1,4 @@
-dependencies: /Users/orenzitoun/Documents/Joomie/JewList/SBJsonWriter.m \
-  /Users/orenzitoun/Documents/Joomie/JewList/SBJsonWriter.h \
-  /Users/orenzitoun/Documents/Joomie/JewList/SBJsonBase.h
+dependencies: \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/SBJsonWriter.m \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/SBJsonWriter.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/SBJsonBase.h

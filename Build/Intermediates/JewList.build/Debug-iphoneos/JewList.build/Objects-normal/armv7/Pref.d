@@ -1,3 +1,4 @@
-dependencies: /Users/orenzitoun/Documents/Joomie/JewList/Pref.m \
-  /Users/orenzitoun/Documents/Joomie/JewList/Pref.h \
-  /Users/orenzitoun/Documents/Joomie/JewList/Vendor/Jastor/Jastor.h
+dependencies: \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/Pref.m \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/Pref.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/Vendor/Jastor/Jastor.h
