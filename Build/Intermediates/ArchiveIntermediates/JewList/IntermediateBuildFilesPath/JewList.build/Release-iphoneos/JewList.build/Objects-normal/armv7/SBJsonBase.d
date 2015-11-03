@@ -1,2 +1,3 @@
-dependencies: /Users/orenzitoun/Documents/Joomie/JewList/SBJsonBase.m \
-  /Users/orenzitoun/Documents/Joomie/JewList/SBJsonBase.h
+dependencies: \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/SBJsonBase.m \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/SBJsonBase.h

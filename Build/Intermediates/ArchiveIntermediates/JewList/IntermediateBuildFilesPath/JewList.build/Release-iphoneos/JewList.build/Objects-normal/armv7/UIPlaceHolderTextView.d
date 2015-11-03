@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/orenzitoun/Documents/Joomie/JewList/UIPlaceHolderTextView.m \
-  /Users/orenzitoun/Documents/Joomie/JewList/UIPlaceHolderTextView.h
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/UIPlaceHolderTextView.m \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/UIPlaceHolderTextView.h
