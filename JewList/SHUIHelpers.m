@@ -16,16 +16,8 @@
     CGSize detailTextSize = CGSizeZero;
     if(text)
     {
-        if(IS_IOS7)
-        {
-            CGRect textRect = [text boundingRectWithSize:CGSizeMake(width,capHeight) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : font} context:nil];
-            detailTextSize = textRect.size;
-            
-        }else{
-            detailTextSize = [text sizeWithFont:font constrainedToSize:CGSizeMake(width,capHeight) lineBreakMode:NSLineBreakByWordWrapping];
-            
-        }
-        
+        CGRect textRect = [text boundingRectWithSize:CGSizeMake(width,capHeight) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : font} context:nil];
+        detailTextSize = textRect.size;
     }
     
     if(detailTextSize.height == 0) return 0;

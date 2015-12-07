@@ -1,0 +1,30 @@
+dependencies: \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/ResultsViewController.m \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/ResultsViewController.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/SHMemberResultsDataSource.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/STBaseDataSource.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/STBaseDataModel.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/SHMembersResultsModel.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/STRequestModel.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/LGJSONRequestOperation.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/Vendor/AFNetworking/AFJSONRequestOperation.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/Vendor/AFNetworking/AFHTTPRequestOperation.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/Vendor/AFNetworking/AFURLConnectionOperation.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/LGURLJSONResponse.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/LGURLResponse.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/TTURLCache.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/College.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/Vendor/Jastor/Jastor.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/MNMPullToRefreshManager.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/UserResultCell.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/Vendor/Nimbus/networkimage/src/NINetworkImageView.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/SHUserCellItem.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/User.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/TTTAttributedLabel.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/SHApi.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/SHAccessToken.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/Vendor/AFNetworking/AFNetworkActivityIndicatorManager.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/SHLoginPassword.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/SHProfileViewController.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/MessageViewController.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/SHEditProfileViewController.h

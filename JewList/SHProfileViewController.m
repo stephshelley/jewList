@@ -27,7 +27,7 @@
     self = [super init];
     if(self)
     {
-        User *currentUser = [[SHApi sharedInstance] currentUser];
+        //User *currentUser = [[SHApi sharedInstance] currentUser];
 
         self.user = user;
         //user;
@@ -47,13 +47,9 @@
     self.view.backgroundColor = DEFAULT_BACKGROUND_COLOR;
 
     UIView *statusBarView = nil;
-    if(IS_IOS7)
-    {
-        statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 20)];
-        statusBarView.backgroundColor = DEFAULT_BLUE_COLOR;
-        [self.view addSubview:statusBarView];
-    }
-    
+    statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 20)];
+    statusBarView.backgroundColor = DEFAULT_BLUE_COLOR;
+    [self.view addSubview:statusBarView];
     UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, self.view.width, 44)];
     topView.backgroundColor = DEFAULT_BLUE_COLOR;
     [self.view addSubview:topView];
@@ -112,8 +108,7 @@
     _scrollView.delegate = self;
     _scrollView.contentSize = CGSizeMake(_scrollView.width, 1000);
     [self.view addSubview:_scrollView];
-    if(IS_IOS7)
-        [self.view insertSubview:_scrollView belowSubview:statusBarView];
+    [self.view insertSubview:_scrollView belowSubview:statusBarView];
     
     self.backdropView = [[NINetworkImageView alloc] initWithFrame:CGRectMake(0, topView.bottom - 20, _scrollView.width, (IsIpad ? 350 : 240))];
     _backdropView.backgroundColor = [UIColor clearColor];
@@ -212,17 +207,16 @@
     {
         SHTextCellItem *item = [[SHTextCellItem alloc] init];
         item.title = @"Do you spend more time working or playing?";
-        item.text = _user.roommatePrefs;
         item.type = [_user.personality intValue]  == 0 ? @"Work" : @"Play";
         [_items addObject:item];
         
     }
     
-    if(_user.cleaningText != nil && _user.cleaningText.length > 0)
+    if(_user.cleaning != nil && _user.cleaning.length > 0)
     {
         SHTextCellItem *item = [[SHTextCellItem alloc] init];
         item.title = @"Are You clean or messy?";
-        item.text = _user.cleaningText;
+        item.text = _user.cleaning;
         item.type = [_user.cleaning intValue]  == 0 ? @"Clean" : @"Messy";
 
         [_items addObject:item];
@@ -260,16 +254,7 @@
         [_items addObject:item];
         
     }
-    
-    if(_user.roommatePrefs != nil && _user.roommatePrefs.length > 0)
-    {
-        SHTextCellItem *item = [[SHTextCellItem alloc] init];
-        item.title = @"What are you looking for in a roommate?";
-        item.text = _user.roommatePrefs;
-        [_items addObject:item];
-        
-    }
-    
+
     [self refreshTableHeight];
     [_tableView reloadData];
     

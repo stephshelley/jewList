@@ -42,7 +42,6 @@
 {
     [super loadView];
     self.view.backgroundColor = DEFAULT_BLUE_COLOR;
-    if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     self.navigationController.navigationBarHidden = YES;
     self.navigationItem.hidesBackButton = YES;
     

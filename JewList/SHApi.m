@@ -255,7 +255,7 @@ static NSString *kCurrentUserPath = @"current_user";
         [params setObject:user.lastName forKey:@"last_name"];
 
     if(user.gender != nil)
-        [params setObject:[user.gender stringValue] forKey:@"gender"];
+        [params setObject:user.gender forKey:@"gender"];
 
     if(user.age != nil && [user.age integerValue] != 0)
         [params setObject:[user.age stringValue] forKey:@"age"];
@@ -270,16 +270,13 @@ static NSString *kCurrentUserPath = @"current_user";
         [params setObject:[user.personality stringValue] forKey:@"personality"];
 
     if(user.campus != nil)
-        [params setObject:[user.campus stringValue] forKey:@"campus"];
+        [params setObject:user.campus forKey:@"campus"];
     
     if(user.social != nil)
         [params setObject:[user.social stringValue] forKey:@"social"];
     
-    if(user.cleaningText != nil)
-        [params setObject:user.cleaningText forKey:@"cleaning_text"];
-
     if(user.cleaning != nil)
-        [params setObject:[user.cleaning stringValue] forKey:@"cleaning"];
+        [params setObject:user.cleaning forKey:@"cleaning"];
 
     if(user.diet != nil)
         [params setObject:[user.diet stringValue] forKey:@"diet"];
@@ -298,14 +295,6 @@ static NSString *kCurrentUserPath = @"current_user";
 
     if(user.fbToken != nil)
         [params setObject:user.fbToken forKey:@"fb_token"];
-
-    if(user.roommatePrefs != nil)
-    {
-        [params setObject:user.roommatePrefs forKey:@"roommate_prefs"];
-    }else{
-        [params setObject:@"" forKey:@"roommate_prefs"];
-        
-    }
 
     if(user.hsEngagement)
     {

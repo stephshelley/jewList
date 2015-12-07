@@ -59,12 +59,9 @@
     self.navigationController.navigationBarHidden = YES;
 
     UIView *statusBarView = nil;
-    if(IS_IOS7)
-    {
-        statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 20)];
-        statusBarView.backgroundColor = DEFAULT_BLUE_COLOR;
-        [self.view addSubview:statusBarView];
-    }
+    statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 20)];
+    statusBarView.backgroundColor = DEFAULT_BLUE_COLOR;
+    [self.view addSubview:statusBarView];
     
     UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, self.view.width, 44)];
     topView.backgroundColor = DEFAULT_BLUE_COLOR;
@@ -123,7 +120,7 @@
     //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(closeVC)];
 
     self.textView = [[UITextView alloc] initWithFrame:CGRectMake(0, topView.bottom + 20, 300, 200)];
-    _textView.contentInset = UIEdgeInsetsMake(-8,(IS_IOS7 ? 0 : -8),0,0);
+    _textView.contentInset = UIEdgeInsetsMake(-8,0,0,0);
     _textView.textAlignment = NSTextAlignmentLeft;
     _textView.backgroundColor = [UIColor clearColor];
     _textView.userInteractionEnabled = YES;

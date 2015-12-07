@@ -28,7 +28,7 @@
     buttonsView.top = self.headerTopView.bottom + 10;
     self.textView.top = buttonsView.bottom + 10;
     
-    self.textView.text = self.currentUser.cleaningText;
+    self.textView.text = self.currentUser.cleaning;
     self.textView.height = 100;
     self.textView.delegate = self;
     self.headerLabel.text = @"Are you more a clean or messy person?";
@@ -37,7 +37,7 @@
 
 - (void)textViewDidChange:(UITextView *)textView
 {
-    self.currentUser.cleaningText = textView.text;
+    self.currentUser.cleaning = textView.text;
     
 }
 

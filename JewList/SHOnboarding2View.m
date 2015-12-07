@@ -55,7 +55,7 @@
 - (void)loadUI
 {
     self.backgroundColor = DEFAULT_BLUE_COLOR;
-    if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 
     self.collegeTopView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, self.width, 50)];
     _collegeTopView.backgroundColor = [UIColor clearColor];
@@ -300,14 +300,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     SHCollegeCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHCollegeCell class])];
-    
-    if(!IS_IOS6)
-    {
-        if(nil == cell)
-        {
-            cell = [[SHCollegeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([SHCollegeCell class])];
-        }
-    }
     
     College *item = nil;
     

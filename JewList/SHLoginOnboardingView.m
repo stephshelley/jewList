@@ -30,7 +30,7 @@
     self.logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"joomieLogo"]];
     _logoImageView.backgroundColor = [UIColor clearColor];
     _logoImageView.centerX = floor(self.width/2);
-    _logoImageView.top = 50 + (IS_IOS7 ? 20 : 0);
+    _logoImageView.top = 70;
     [self addSubview:_logoImageView];
 
     self.loginButton = [[FBSDKLoginButton alloc] init];

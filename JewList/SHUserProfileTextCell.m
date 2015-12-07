@@ -51,7 +51,7 @@
         CGFloat textviewTop = _whiteBG.bottom + 10;
 
         self.textView = [[UITextView alloc] initWithFrame:CGRectMake(0, textviewTop, 300, 30)];
-        _textView.contentInset = UIEdgeInsetsMake(-8,(IS_IOS7 ? 0 : -8),0,0);
+        _textView.contentInset = UIEdgeInsetsMake(-8,0,0,0);
         _textView.textAlignment = NSTextAlignmentLeft;
         _textView.backgroundColor = [UIColor clearColor];
         _textView.userInteractionEnabled = NO;

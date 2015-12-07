@@ -35,7 +35,7 @@
 {
     self.backgroundColor = DEFAULT_BACKGROUND_COLOR;
     
-    UIView *progressBar = [[UIView alloc] initWithFrame:CGRectMake(0, IS_IOS7 ? 20 : 0, self.frame.size.width, 5)];
+    UIView *progressBar = [[UIView alloc] initWithFrame:CGRectMake(0, 20, self.frame.size.width, 5)];
     progressBar.backgroundColor = [UIColor JLGreen];
     UIView *progressMade = [[UIView alloc] initWithFrame:CGRectMake(0, 0, progressBar.width , progressBar.height)];
     progressMade.backgroundColor = [UIColor JLDarkGreen];
@@ -154,16 +154,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UserResultCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UserResultCell class])];
-    
-    if(!IS_IOS6)
-    {
-        if(nil == cell)
-        {
-            cell = [[UserResultCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([UserResultCell class])];
-        }
-        
-    }
-    
     SHUserCellItem *item = [_dataSource.items objectAtIndex:indexPath.row];
     cell.user = item.user;
     

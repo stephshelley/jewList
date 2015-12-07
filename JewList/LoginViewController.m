@@ -18,9 +18,13 @@
 #import "STOnboardingHowJewAreYouView.h"
 #import "STOnboardingCampusView.h"
 #import "STOnboardingAboutMeView.h"
+#import "AppDelegate.h"
+#import "WelcomeViewController.h"
 
 @interface LoginViewController() <FBSDKLoginButtonDelegate>
 {
+    __weak IBOutlet UIImageView *logoImageView;
+    __weak IBOutlet FBSDKLoginButton *fbLoginButton;
     BOOL _didBeginToLogin;
     
 }
@@ -36,36 +40,10 @@
 
 @implementation LoginViewController
 
-
-- (void)loadView
-{
-    [super loadView];
-
-    self.view.backgroundColor = DEFAULT_BACKGROUND_COLOR;
-    self.navigationController.navigationBarHidden = YES;
-    
-    self.loginView = [[SHLoginOnboardingView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
-    self.loginView.loginButton.delegate = self;
-    //[_loginView.fbConnectButton addTarget:self action:@selector(fbConnectButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_loginView];
-    
-    self.title = @"Shalom!";
-    
-}
-
-- (void)fbConnectButtonPressed
-{
-    //[self continueToStep1];
-    //return;
-    
-    /*
-    [[STFacebookManager sharedInstance] connectWithSuccess:^(NSDictionary *response, User *user)
-     {
-     } failure:^(NSError *error)
-     {
-         BD_LOG(@"Facebook login Failed | error = %@",[error userInfo]);
-     }];
-     */
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.title = @"Login";
+    [self continueToStep1];
 }
 
 - (void)processLoginResponse:(NSString *)uid withToken:(NSString *)token
@@ -77,7 +55,7 @@
 
 - (STOnboardingAboutMeView *)aboutMeView
 {
-    if(nil == _aboutMeView)
+    if(!_aboutMeView)
     {
         User *currentUser = [[SHApi sharedInstance] currentUser];
         _aboutMeView = [[STOnboardingAboutMeView alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height) andUser:currentUser];
@@ -193,7 +171,7 @@
     if(nil == _onboardingStep2)
     {
         User *currentUser = [[SHApi sharedInstance] currentUser];
-        _onboardingStep2 = [[SHOnboarding2View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height + (IS_IOS7 ? 20 : 0)) andUser:currentUser];
+        _onboardingStep2 = [[SHOnboarding2View alloc] initWithFrame:CGRectMake(0, _loginView.top, _loginView.width, _loginView.height + 20) andUser:currentUser];
         _onboardingStep2.delegate = self;
         [_onboardingStep2.nextStepButton addTarget:self action:@selector(continueToStep3) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_onboardingStep2];
@@ -258,17 +236,10 @@
 
 - (void)continueToStep1
 {
-    /*
-    User *currentUser = [[SHApi sharedInstance] currentUser];
-    currentUser.shabat = @"Meh";
-    currentUser.kosher = @"Yep";
-    SHProfileViewController *userVC = [[SHProfileViewController alloc] initWithUser:currentUser];
-    [self.navigationController pushViewController:userVC animated:YES];
-    
-    return ;
-*/
-    
-    [self animateToNextStep:_loginView destination:self.onboardingStep1];
+    WelcomeViewController *welcomeViewController = [GetAppDelegate.storyboard instantiateViewControllerWithIdentifier:@"WelcomeViewController"];
+    welcomeViewController.user = [[SHApi sharedInstance] currentUser];
+    self.navigationController.navigationBar.topItem.title = @"";
+    [self.navigationController pushViewController:welcomeViewController animated:YES];
 }
 
 - (void)continueToAboutMe
@@ -402,7 +373,6 @@
 {
     ResultsViewController *vc = [[ResultsViewController alloc] init];
     [self.navigationController pushViewController:vc animated:NO];
-    
 }
 
 - (void)animateToNextStep:(UIView*)originView destination:(UIView*)destinationView
@@ -457,9 +427,7 @@
 {
     if(sender == _onboardingStep2)
     {
-        if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
         [self animateBacktStep:self.onboardingStep2 destination:self.onboardingStep1];
-        
     }
     else if(sender == _onboardingStep4)
     {
@@ -468,9 +436,7 @@
     }else if(sender == _onboardingStep5)
     {
         [self animateBacktStep:self.onboardingStep5 destination:self.onboardingStep4];
-        
     }
-    
     else if(sender == _kosherView)
     {
         [self animateBacktStep:self.kosherView destination:self.onboardingStep5];
@@ -494,9 +460,7 @@
     }else if(sender == _onboardingStep5)
     {
         [self animateBacktStep:self.onboardingStep5 destination:self.onboardingStep4];
-        
     }
-    
 }
 
 #pragma mark FBLoginViewDelegate
@@ -506,64 +470,11 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
                 error:(NSError *)error
 {
     NSString *accessToken = result.token.tokenString;
-    [[STFacebookManager sharedInstance] setFacebookToken:result.token completion:^(NSDictionary *user)
+    [[STFacebookManager sharedInstance] setFacebookToken:result.token completion:^(NSDictionary *fbUser)
      {
-         User *currentUser = [[User alloc] init];
-         currentUser.fbId = [user objectForKey:@"id"];
-         currentUser.fbToken = accessToken;
-         currentUser.firstName = [user objectForKey:@"first_name"];
-         currentUser.lastName = [user objectForKey:@"last_name"];
-         currentUser.gender = [user objectForKey:@"gender"];
-         currentUser.email = [user objectForKey:@"email"];
-         currentUser.fbMeResult = (NSDictionary *)user;
-         currentUser.fbUsername = [user objectForKey:@"username"];
-         currentUser.fbImageUrl = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture",currentUser.fbId];
- 
-         NSDictionary *response = @{@"id" : [user objectForKey:@"id"] , @"token" : accessToken};
+         NSDictionary *response = @{@"id" : [fbUser objectForKey:@"id"] , @"token" : accessToken};
          BD_LOG(@"FB response = %@",response);
 
-         if([user objectForKey:@"hometown"] && [[user objectForKey:@"hometown"] objectForKey:@"id"])
-         {
-             currentUser.fbHometownId = SAFE_VAL([[user objectForKey:@"hometown"] objectForKey:@"id"]);
-             currentUser.fbHometownName = SAFE_VAL([[user objectForKey:@"hometown"] objectForKey:@"name"]);
-             
-         }
-         
-         if([user objectForKey:@"location"] && [[user objectForKey:@"location"] objectForKey:@"id"])
-         {
-             currentUser.fbLocationId = SAFE_VAL([[user objectForKey:@"location"] objectForKey:@"id"]);
-             currentUser.fbLocationName = SAFE_VAL([[user objectForKey:@"location"] objectForKey:@"name"]);
-             
-         }
-         
-         if([user objectForKey:@"education"])
-         {
-             NSArray *schools = [user objectForKey:@"education"];
-             
-             int lastYear = 0;
-             
-             for(NSDictionary *school in schools)
-             {
-                 if([school objectForKey:@"type"] &&
-                    ([[school objectForKey:@"type"] isEqualToString:@"Graduate School"] || [[school objectForKey:@"type"] isEqualToString:@"College"]))
-                 {
-                     if([school objectForKey:@"year"])
-                     {
-                         int currentYear = [[[school objectForKey:@"year"] objectForKey:@"name"] intValue];
-                         if(currentYear > lastYear)
-                         {
-                             lastYear = currentYear;
-                             if([[school objectForKey:@"school"] objectForKey:@"name"])
-                             {
-                                 currentUser.fbCollegeName = [[school objectForKey:@"school"] objectForKey:@"name"];
-                                 
-                             }
-                         }
-                     }
-                 }
-                 
-             }
-         }
 
          if(_didBeginToLogin) return;
          
@@ -576,36 +487,85 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
              
              [[SHApi sharedInstance] loginWithFBToken:token fbId:fbId success:^(void)
               {
-                  User *user = [[SHApi sharedInstance] currentUser];
+                  User *currentUser = [[SHApi sharedInstance] currentUser];
                   
-                  user.fb = [fbId copy];
-                  if(user.firstName == nil)
+                  currentUser.fbId = [fbUser objectForKey:@"id"];
+                  currentUser.fbToken = accessToken;
+                  currentUser.fbMeResult = (NSDictionary *)fbUser;
+                  currentUser.fbUsername = [fbUser objectForKey:@"username"];
+                  
+                  
+                  if([fbUser objectForKey:@"hometown"] && [[fbUser objectForKey:@"hometown"] objectForKey:@"id"])
                   {
-                      user.firstName = currentUser.firstName;
+                      currentUser.fbHometownId = SAFE_VAL([[fbUser objectForKey:@"hometown"] objectForKey:@"id"]);
+                      currentUser.fbHometownName = SAFE_VAL([[fbUser objectForKey:@"hometown"] objectForKey:@"name"]);
+                      
                   }
                   
-                  if(user.lastName == nil)
+                  if([fbUser objectForKey:@"location"] && [[fbUser objectForKey:@"location"] objectForKey:@"id"])
                   {
-                      user.lastName = currentUser.lastName;
+                      currentUser.fbLocationId = SAFE_VAL([[fbUser objectForKey:@"location"] objectForKey:@"id"]);
+                      currentUser.fbLocationName = SAFE_VAL([[fbUser objectForKey:@"location"] objectForKey:@"name"]);
+                      
                   }
                   
-                  if(user.gender == nil)
+                  if([fbUser objectForKey:@"education"])
                   {
-                      user.gender = currentUser.gender;
+                      NSArray *schools = [fbUser objectForKey:@"education"];
+                      
+                      int lastYear = 0;
+                      
+                      for(NSDictionary *school in schools)
+                      {
+                          if([school objectForKey:@"type"] &&
+                             ([[school objectForKey:@"type"] isEqualToString:@"Graduate School"] || [[school objectForKey:@"type"] isEqualToString:@"College"]))
+                          {
+                              if([school objectForKey:@"year"])
+                              {
+                                  int currentYear = [[[school objectForKey:@"year"] objectForKey:@"name"] intValue];
+                                  if(currentYear > lastYear)
+                                  {
+                                      lastYear = currentYear;
+                                      if([[school objectForKey:@"school"] objectForKey:@"name"])
+                                      {
+                                          currentUser.fbCollegeName = [[school objectForKey:@"school"] objectForKey:@"name"];
+                                          
+                                      }
+                                  }
+                              }
+                          }
+                          
+                      }
                   }
                   
-                  if(user.email == nil || user.email.length == 0)
+                  currentUser.fb = [fbId copy];
+                  if(!currentUser.firstName)
                   {
-                      user.email = currentUser.email;
+                      currentUser.firstName = [fbUser objectForKey:@"first_name"];
                   }
                   
-                  if(user.fbImageUrl == nil)
+                  if(!currentUser.lastName)
                   {
-                      user.fbImageUrl = currentUser.fbImageUrl;
+                      currentUser.lastName = [fbUser objectForKey:@"last_name"];
+                  }
+                  
+                  if(!currentUser.gender)
+                  {
+                      currentUser.gender = [fbUser objectForKey:@"gender"];
+                  }
+                  
+                  if(currentUser.email.length == 0)
+                  {
+                      currentUser.email = [fbUser objectForKey:@"email"];
+                  }
+                  
+                  if(!currentUser.fbImageUrl)
+                  {
+                      currentUser.fbImageUrl = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture",currentUser.fbId];
                   }
                   
                   
-                  [[SHApi sharedInstance] setCurrentUser:user];
+                  [[SHApi sharedInstance] setCurrentUser:currentUser];
                   
                   
                   dispatch_async(dispatch_get_main_queue(), ^{

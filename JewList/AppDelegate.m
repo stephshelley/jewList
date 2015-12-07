@@ -35,12 +35,14 @@
     [[GAI sharedInstance] trackerWithTrackingId:@"UA-59561571-1"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     [self registerNotifications];
     
     User *currentUser = [[SHApi sharedInstance] currentUser];
     if(currentUser != nil)
     {
-        [self initLogedIn];
+        [self initLogedOut];
+///        [self initLogedIn];
     }
     else
     {
@@ -49,31 +51,20 @@
     }
     
     self.window.tintColor = UIColorFromRGB(0x54add5);
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-
-    
-    if (!IsIpad && [[UINavigationBar class] respondsToSelector:@selector(appearance)])
-    {
-        [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar_bkg"] forBarMetrics:UIBarMetricsDefault];
-        [[UINavigationBar appearance] setTitleTextAttributes:
-         [NSDictionary dictionaryWithObjectsAndKeys:
-          [UIColor whiteColor],
-          UITextAttributeTextColor,
-          [UIFont fontWithName:DEFAULT_FONT_BOLD size:16.0],
-          UITextAttributeFont,
-          nil]];
-        
-        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-
-	}
-    
-    [self.window makeKeyAndVisible];
+    [self setAppearance];
     
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
 
     return YES;
     
+}
+
+- (void)setAppearance {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x39a9ef)];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 }
 
 - (BOOL)application:(UIApplication *)application
@@ -95,20 +86,17 @@
 
 - (void)initLogedOut
 {
-    if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-    LoginViewController *loginVC = [[LoginViewController alloc] init];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:loginVC];
-    self.window.rootViewController = navController;
-
+    UINavigationController *nav = [self.storyboard instantiateViewControllerWithIdentifier:@"Login"];
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
 }
 
 - (void)initLogedIn
 {
-    if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     ResultsViewController *resultsVC = [[ResultsViewController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:resultsVC];
     self.window.rootViewController = navController;
-
+    [self.window makeKeyAndVisible];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

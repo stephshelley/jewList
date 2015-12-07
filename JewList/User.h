@@ -29,15 +29,20 @@
 @property (nonatomic, strong) NSString *fbCollegeName;
 
 @property (nonatomic, strong) NSNumber *age;
-@property (nonatomic, strong) NSNumber *campus;
-@property (nonatomic, strong) NSNumber *cleaning;
-@property (nonatomic, strong) NSString *cleaningText;
+@property (nonatomic, strong) NSString *campus;
+@property (nonatomic, strong) NSString *earlyBird;
+@property (nonatomic, strong) NSString *cleaning;
+@property (nonatomic, strong) NSString *fun;
 @property (nonatomic, strong) NSNumber *diet;
 @property (nonatomic, strong) NSString *dietText;
 @property (nonatomic, strong) NSString *aboutMe;
 @property (nonatomic, strong) NSString *firstName;
 @property (nonatomic, strong) NSString *lastName;
-@property (nonatomic, strong) NSNumber *gender;
+@property (nonatomic, strong) NSString *gender;
+@property (nonatomic, strong) NSString *music;
+@property (nonatomic, strong) NSString *duringTheDay;
+@property (nonatomic, strong) NSString *activities;
+@property (nonatomic, strong) NSString *contactFromJewishOrgs;
 @property (nonatomic, strong) NSNumber *gradYear;
 @property (nonatomic, strong) NSString *hsEngagement;
 @property (nonatomic, strong) NSNumber *personality;
@@ -45,7 +50,6 @@
 @property (nonatomic, strong) NSNumber *primaryId;
 @property (nonatomic, strong) NSNumber *religious;
 @property (nonatomic, strong) NSString *religiousText;
-@property (nonatomic, strong) NSString *roommatePrefs;
 @property (nonatomic, strong) NSString *school;
 @property (nonatomic, strong) NSNumber *social;
 @property (nonatomic, assign) BOOL didFinishSignup;

@@ -66,7 +66,7 @@
  
     self.title = @"Edit Profile";
     self.view.backgroundColor = DEFAULT_BLUE_COLOR;
-    if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     self.navigationController.navigationBarHidden = YES;
     self.navigationItem.hidesBackButton = YES;
     
@@ -100,7 +100,7 @@
     whiteBgView.backgroundColor = DEFAULT_BACKGROUND_COLOR;
     [self.view addSubview:whiteBgView];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, topView.bottom, self.view.width, self.view.height - 44 - (IS_IOS7 ? 20 : 0)) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, topView.bottom, self.view.width, self.view.height - 44 - 20) style:UITableViewStylePlain];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.separatorColor = [UIColor clearColor];
     _tableView.backgroundColor = [UIColor clearColor];

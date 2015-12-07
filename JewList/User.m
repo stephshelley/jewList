@@ -41,7 +41,6 @@
     newUser.fbImageUrl = [_fbImageUrl copyWithZone:zone];
     newUser.campus = [_campus copyWithZone:zone];
     newUser.cleaning = [_cleaning copyWithZone:zone];
-    newUser.cleaningText = [_cleaningText copyWithZone:zone];
     newUser.diet = [_diet copyWithZone:zone];
     newUser.dietText = [_dietText copyWithZone:zone];
     newUser.firstName = [_firstName copyWithZone:zone];
@@ -53,7 +52,6 @@
     newUser.personalityText = [_personalityText copyWithZone:zone];
     newUser.religious = [_religious copyWithZone:zone];
     newUser.religiousText = [_religiousText copyWithZone:zone];
-    newUser.roommatePrefs = [_roommatePrefs copyWithZone:zone];
     newUser.school = [_school copyWithZone:zone];
     newUser.fb = [_fb copyWithZone:zone];
     newUser.aboutMe = [_aboutMe copyWithZone:zone];

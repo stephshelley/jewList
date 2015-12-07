@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A0498971C14FE780083B4AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A0498961C14FE780083B4AF /* Main.storyboard */; };
+		3A04989B1C1506830083B4AF /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A04989A1C1506830083B4AF /* WelcomeViewController.m */; };
+		3A04989E1C151CED0083B4AF /* CollegeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A04989D1C151CED0083B4AF /* CollegeViewController.m */; };
+		3A0498A31C1520210083B4AF /* CollegeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0498A11C1520210083B4AF /* CollegeCell.m */; };
+		3A0498A41C1520210083B4AF /* CollegeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A0498A21C1520210083B4AF /* CollegeCell.xib */; };
+		3A0498A71C15297D0083B4AF /* GraduationYearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0498A61C15297D0083B4AF /* GraduationYearViewController.m */; };
+		3A0498AA1C152C270083B4AF /* AgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0498A91C152C270083B4AF /* AgeViewController.m */; };
+		3A0498AD1C155CD20083B4AF /* MultiSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0498AC1C155CD20083B4AF /* MultiSelectionViewController.m */; };
+		3A0498B11C155E440083B4AF /* MultiSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0498AF1C155E440083B4AF /* MultiSelectionCell.m */; };
+		3A0498B21C155E440083B4AF /* MultiSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A0498B01C155E440083B4AF /* MultiSelectionCell.xib */; };
+		3A0498B51C15637B0083B4AF /* MultiSelectionPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0498B41C15637B0083B4AF /* MultiSelectionPresenter.m */; };
+		3A0498B91C15658D0083B4AF /* MultiSelectionHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0498B81C15658D0083B4AF /* MultiSelectionHelpers.m */; };
 		3A0ACC38179A3F3C0083B80B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0ACC37179A3F3C0083B80B /* UIKit.framework */; };
 		3A0ACC3A179A3F3C0083B80B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0ACC39179A3F3C0083B80B /* Foundation.framework */; };
 		3A0ACC3C179A3F3C0083B80B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0ACC3B179A3F3C0083B80B /* CoreGraphics.framework */; };
@@ -258,6 +270,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A0498961C14FE780083B4AF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		3A0498991C1506830083B4AF /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		3A04989A1C1506830083B4AF /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		3A04989C1C151CED0083B4AF /* CollegeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollegeViewController.h; sourceTree = "<group>"; };
+		3A04989D1C151CED0083B4AF /* CollegeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollegeViewController.m; sourceTree = "<group>"; };
+		3A0498A01C1520210083B4AF /* CollegeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollegeCell.h; sourceTree = "<group>"; };
+		3A0498A11C1520210083B4AF /* CollegeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollegeCell.m; sourceTree = "<group>"; };
+		3A0498A21C1520210083B4AF /* CollegeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollegeCell.xib; sourceTree = "<group>"; };
+		3A0498A51C15297D0083B4AF /* GraduationYearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraduationYearViewController.h; sourceTree = "<group>"; };
+		3A0498A61C15297D0083B4AF /* GraduationYearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraduationYearViewController.m; sourceTree = "<group>"; };
+		3A0498A81C152C270083B4AF /* AgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgeViewController.h; sourceTree = "<group>"; };
+		3A0498A91C152C270083B4AF /* AgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgeViewController.m; sourceTree = "<group>"; };
+		3A0498AB1C155CD20083B4AF /* MultiSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiSelectionViewController.h; sourceTree = "<group>"; };
+		3A0498AC1C155CD20083B4AF /* MultiSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiSelectionViewController.m; sourceTree = "<group>"; };
+		3A0498AE1C155E440083B4AF /* MultiSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiSelectionCell.h; sourceTree = "<group>"; };
+		3A0498AF1C155E440083B4AF /* MultiSelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiSelectionCell.m; sourceTree = "<group>"; };
+		3A0498B01C155E440083B4AF /* MultiSelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiSelectionCell.xib; sourceTree = "<group>"; };
+		3A0498B31C15637B0083B4AF /* MultiSelectionPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiSelectionPresenter.h; sourceTree = "<group>"; };
+		3A0498B41C15637B0083B4AF /* MultiSelectionPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiSelectionPresenter.m; sourceTree = "<group>"; };
+		3A0498B61C1565550083B4AF /* MultiSelectionEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiSelectionEnum.h; sourceTree = "<group>"; };
+		3A0498B71C15658D0083B4AF /* MultiSelectionHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiSelectionHelpers.h; sourceTree = "<group>"; };
+		3A0498B81C15658D0083B4AF /* MultiSelectionHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiSelectionHelpers.m; sourceTree = "<group>"; };
 		3A0ACC34179A3F3C0083B80B /* JewList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JewList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A0ACC37179A3F3C0083B80B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3A0ACC39179A3F3C0083B80B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -713,6 +747,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A0498981C14FED10083B4AF /* Stroy Board VCs */ = {
+			isa = PBXGroup;
+			children = (
+				3A04989F1C15200C0083B4AF /* Cells */,
+				3A0498991C1506830083B4AF /* WelcomeViewController.h */,
+				3A04989A1C1506830083B4AF /* WelcomeViewController.m */,
+				3A04989C1C151CED0083B4AF /* CollegeViewController.h */,
+				3A04989D1C151CED0083B4AF /* CollegeViewController.m */,
+				3A0498A51C15297D0083B4AF /* GraduationYearViewController.h */,
+				3A0498A61C15297D0083B4AF /* GraduationYearViewController.m */,
+				3A0498A81C152C270083B4AF /* AgeViewController.h */,
+				3A0498A91C152C270083B4AF /* AgeViewController.m */,
+				3A0498AB1C155CD20083B4AF /* MultiSelectionViewController.h */,
+				3A0498AC1C155CD20083B4AF /* MultiSelectionViewController.m */,
+				3A0498B31C15637B0083B4AF /* MultiSelectionPresenter.h */,
+				3A0498B41C15637B0083B4AF /* MultiSelectionPresenter.m */,
+				3A0498B61C1565550083B4AF /* MultiSelectionEnum.h */,
+			);
+			name = "Stroy Board VCs";
+			sourceTree = "<group>";
+		};
+		3A04989F1C15200C0083B4AF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3A0498A01C1520210083B4AF /* CollegeCell.h */,
+				3A0498A11C1520210083B4AF /* CollegeCell.m */,
+				3A0498A21C1520210083B4AF /* CollegeCell.xib */,
+				3A0498AE1C155E440083B4AF /* MultiSelectionCell.h */,
+				3A0498AF1C155E440083B4AF /* MultiSelectionCell.m */,
+				3A0498B01C155E440083B4AF /* MultiSelectionCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		3A0ACC2B179A3F3C0083B80B = {
 			isa = PBXGroup;
 			children = (
@@ -786,6 +854,7 @@
 				3AC4B5D618DE22DA001E9CA0 /* Images.xcassets */,
 				3A0ACC3E179A3F3C0083B80B /* Supporting Files */,
 				3ADC705E1A41236500189CFE /* Launch Screen.xib */,
+				3A0498961C14FE780083B4AF /* Main.storyboard */,
 			);
 			path = JewList;
 			sourceTree = "<group>";
@@ -842,6 +911,7 @@
 		3A0ACD01179A413A0083B80B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3A0498981C14FED10083B4AF /* Stroy Board VCs */,
 				3A306EE41867AE550008755F /* Edit Profile */,
 				3A0CC857179A4DAF0000AA8C /* LoginViewController.h */,
 				3A0CC858179A4DAF0000AA8C /* LoginViewController.m */,
@@ -853,6 +923,8 @@
 				3ADFA913179B3DD500B66F78 /* SHProfileViewController.m */,
 				3A964885186F9FE60026A559 /* MessageViewController.h */,
 				3A964886186F9FE60026A559 /* MessageViewController.m */,
+				3A0498B71C15658D0083B4AF /* MultiSelectionHelpers.h */,
+				3A0498B81C15658D0083B4AF /* MultiSelectionHelpers.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -1483,6 +1555,7 @@
 				3AE7221F188B044B00C5B37F /* clean_d@2x.png in Resources */,
 				3AC4B5D718DE22DA001E9CA0 /* Images.xcassets in Resources */,
 				3A0ACC4A179A3F3C0083B80B /* Default.png in Resources */,
+				3A0498971C14FE780083B4AF /* Main.storyboard in Resources */,
 				3ADC709D1A412A0200189CFE /* cleanfreak_s@2x.png in Resources */,
 				3ADC70A41A412A2100189CFE /* organized_d@2x.png in Resources */,
 				3ADC70891A41299B00189CFE /* nonkosher_s@3x.png in Resources */,
@@ -1517,6 +1590,7 @@
 				3ADC70901A41299B00189CFE /* party_d@3x.png in Resources */,
 				3ADC70841A41299B00189CFE /* messy_d@3x.png in Resources */,
 				3ADF2A60188392B000415A09 /* kosher_d@2x.png in Resources */,
+				3A0498B21C155E440083B4AF /* MultiSelectionCell.xib in Resources */,
 				3ADC70821A41299B00189CFE /* male_d@3x.png in Resources */,
 				3A4A9802189774610092942B /* female_d@2x.png in Resources */,
 				3ADF2A6A188392B000415A09 /* study_d@2x.png in Resources */,
@@ -1531,6 +1605,7 @@
 				3ADC70961A41299B00189CFE /* superjew_d@3x.png in Resources */,
 				3ADF2A67188392B000415A09 /* nonkosher_s@2x.png in Resources */,
 				3ADC708E1A41299B00189CFE /* organized_d@3x.png in Resources */,
+				3A0498A41C1520210083B4AF /* CollegeCell.xib in Resources */,
 				3ADFA8FE179A91B400B66F78 /* add_friends_input2.png in Resources */,
 				3AE7222B188B048D00C5B37F /* oncampus_d@2x.png in Resources */,
 				3ADFA8FF179A91B400B66F78 /* add_friends_input2@2x.png in Resources */,
@@ -1588,11 +1663,14 @@
 				3A0ACC44179A3F3C0083B80B /* main.m in Sources */,
 				3A0ACC48179A3F3C0083B80B /* AppDelegate.m in Sources */,
 				3A94C4EC1A34FB440079A886 /* STOnboardingCleanMessyView.m in Sources */,
+				3A04989B1C1506830083B4AF /* WelcomeViewController.m in Sources */,
 				3A0ACD9F179A42D00083B80B /* Jastor.m in Sources */,
 				3A0ACDA0179A42D00083B80B /* JastorRuntimeHelper.m in Sources */,
+				3A0498B11C155E440083B4AF /* MultiSelectionCell.m in Sources */,
 				3A964890186FB7260026A559 /* SHAgeCell.m in Sources */,
 				3AAB1229185E448A00F592DD /* STOnboarding4View.m in Sources */,
 				3A0ACDA1179A42D00083B80B /* NSObject+SBJSON.m in Sources */,
+				3A0498A71C15297D0083B4AF /* GraduationYearViewController.m in Sources */,
 				3A29A4AC18E8BC7A0071873F /* SHEditProfileHeaderView.m in Sources */,
 				3A0ACDA2179A42D00083B80B /* NSString+SBJSON.m in Sources */,
 				3A96488D186FB5F90026A559 /* SHAgeViewController.m in Sources */,
@@ -1602,6 +1680,7 @@
 				3A0ACDAF179A42D00083B80B /* NIDataStructures.m in Sources */,
 				3A94C4F81A3539320079A886 /* UIPlaceHolderTextView.m in Sources */,
 				3A0ACDB0179A42D00083B80B /* NIDebuggingTools.m in Sources */,
+				3A0498AD1C155CD20083B4AF /* MultiSelectionViewController.m in Sources */,
 				3A0ACDB1179A42D00083B80B /* NIDeviceOrientation.m in Sources */,
 				3A0ACDB2179A42D00083B80B /* NIError.m in Sources */,
 				3A0ACDB3179A42D00083B80B /* NIFoundationMethods.m in Sources */,
@@ -1629,6 +1708,7 @@
 				3A0ACDC2179A42D00083B80B /* NSString+NimbusCore.m in Sources */,
 				3A0ACDC3179A42D00083B80B /* NIImageProcessing.m in Sources */,
 				3A0ACDC4179A42D00083B80B /* NINetworkImageView.m in Sources */,
+				3A04989E1C151CED0083B4AF /* CollegeViewController.m in Sources */,
 				3A0ACDC9179A42F50083B80B /* RuntimeHelper.m in Sources */,
 				3A0ACDCA179A42F50083B80B /* NSString+CamelCase.m in Sources */,
 				3A306F0B1867C7730008755F /* SHDietViewController.m in Sources */,
@@ -1640,6 +1720,7 @@
 				3A0ACDEC179A465C0083B80B /* JSONKit.m in Sources */,
 				3A306F051867C62C0008755F /* SHCleanMessyCell.m in Sources */,
 				3A0ACDED179A465C0083B80B /* SBJSON.m in Sources */,
+				3A0498B51C15637B0083B4AF /* MultiSelectionPresenter.m in Sources */,
 				3A0ACDEE179A465C0083B80B /* SBJsonBase.m in Sources */,
 				3A0ACDEF179A465C0083B80B /* SBJsonParser.m in Sources */,
 				3A0ACDF0179A465C0083B80B /* SBJsonWriter.m in Sources */,
@@ -1647,6 +1728,7 @@
 				3A0CC84B179A474B0000AA8C /* AFHTTPRequestOperation.m in Sources */,
 				3A0CC84C179A474B0000AA8C /* AFImageRequestOperation.m in Sources */,
 				3ADC705A1A411B5500189CFE /* SHSchoolCell.m in Sources */,
+				3A0498B91C15658D0083B4AF /* MultiSelectionHelpers.m in Sources */,
 				3A0CC84D179A474B0000AA8C /* AFJSONRequestOperation.m in Sources */,
 				3A306F141867CE1E0008755F /* SHRoomatePrefCell.m in Sources */,
 				3A0CC84E179A474B0000AA8C /* AFNetworkActivityIndicatorManager.m in Sources */,
@@ -1654,6 +1736,7 @@
 				3A306EDD186795E60008755F /* SHGenderCell.m in Sources */,
 				3A0CC850179A474B0000AA8C /* AFURLConnectionOperation.m in Sources */,
 				3A0CC851179A474B0000AA8C /* AFXMLRequestOperation.m in Sources */,
+				3A0498AA1C152C270083B4AF /* AgeViewController.m in Sources */,
 				3A306F111867CB160008755F /* SHShabbatViewController.m in Sources */,
 				3A0CC852179A474B0000AA8C /* UIImageView+AFNetworking.m in Sources */,
 				3A0CC856179A4D880000AA8C /* User.m in Sources */,
@@ -1694,6 +1777,7 @@
 				3A0CCC4E179A53C40000AA8C /* NSString+NXOAuth2.m in Sources */,
 				3A306EF91867BB0D0008755F /* SHWorkPartyViewController.m in Sources */,
 				3A94C4F51A3533330079A886 /* STOnboardingAboutMeView.m in Sources */,
+				3A0498A31C1520210083B4AF /* CollegeCell.m in Sources */,
 				3A94C4E61A34F2E70079A886 /* STOnboardingKosherView.m in Sources */,
 				3A0CCC4F179A53C40000AA8C /* NSURL+NXOAuth2.m in Sources */,
 				3A5C34B418676E540092F08A /* SHMemberResultsDataSource.m in Sources */,
@@ -1818,7 +1902,7 @@
 				GCC_PREFIX_HEADER = "JewList/JewList-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/JewList/Vendor/Google_Analytics";
 				INFOPLIST_FILE = "JewList/JewList-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/JewList/Vendor/Google_Analytics",
@@ -1855,7 +1939,7 @@
 				GCC_PREFIX_HEADER = "JewList/JewList-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/JewList/Vendor/Google_Analytics";
 				INFOPLIST_FILE = "JewList/JewList-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/JewList/Vendor/Google_Analytics",

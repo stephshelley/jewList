@@ -35,7 +35,7 @@
         
 
         self.textView = [[UITextView alloc] initWithFrame:CGRectMake(0, _titleLabel.bottom + 7, 300, [SHTextItemCell rowHeight] - _titleLabel.bottom - 14)];
-        _textView.contentInset = UIEdgeInsetsMake(-8,(IS_IOS7 ? 0 : -8),0,0);
+        _textView.contentInset = UIEdgeInsetsMake(-8,0,0,0);
         _textView.textAlignment = NSTextAlignmentLeft;
         _textView.backgroundColor = [UIColor clearColor];
         _textView.userInteractionEnabled = NO;

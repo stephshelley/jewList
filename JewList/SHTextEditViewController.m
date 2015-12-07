@@ -38,7 +38,7 @@
 {
     [super loadView];
     self.view.backgroundColor = DEFAULT_BLUE_COLOR;
-    if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     self.navigationController.navigationBarHidden = YES;
     self.navigationItem.hidesBackButton = YES;
     
@@ -76,7 +76,7 @@
     [_headerTopView addSubview:_headerLabel];
     
     self.textView = [[UITextView alloc] initWithFrame:CGRectMake(0, _headerTopView.bottom + 5, 300, 200)];
-    _textView.contentInset = UIEdgeInsetsMake(-8,(IS_IOS7 ? 0 : -8),0,0);
+    _textView.contentInset = UIEdgeInsetsMake(-8,0,0,0);
     _textView.textAlignment = NSTextAlignmentLeft;
     _textView.backgroundColor = [UIColor clearColor];
     _textView.userInteractionEnabled = YES;

@@ -27,7 +27,7 @@
     [super setUser:user];
     
     self.titleLabel.text = @"Are You clean or messy?";
-    self.textView.text = self.user.cleaningText;
+    self.textView.text = self.user.cleaning;
     
     switch ([self.user.cleaning intValue]) {
         case 0:

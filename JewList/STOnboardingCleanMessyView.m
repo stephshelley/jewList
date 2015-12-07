@@ -53,9 +53,7 @@
 
 - (void)loadUI
 {
-    self.backgroundColor = DEFAULT_BACKGROUND_COLOR;
-    if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    
+    self.backgroundColor = DEFAULT_BACKGROUND_COLOR;    
     self.headerTopView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, 70)];
     _headerTopView.backgroundColor = DEFAULT_BLUE_COLOR;
     [self addSubview:_headerTopView];
@@ -83,7 +81,7 @@
     [_headerTopView addSubview:_headerLabel];
     
     self.textView = [[UIPlaceHolderTextView alloc] initWithFrame:CGRectMake(0, _headerTopView.bottom + 5, 300, 200)];
-    _textView.contentInset = UIEdgeInsetsMake(-8,(IS_IOS7 ? 0 : -8),0,0);
+    _textView.contentInset = UIEdgeInsetsMake(-8,0,0,0);
     _textView.textAlignment = NSTextAlignmentLeft;
     _textView.backgroundColor = [UIColor clearColor];
     _textView.userInteractionEnabled = YES;
@@ -101,7 +99,7 @@
     buttonsView.top = self.headerTopView.bottom + 10;
     self.textView.top = buttonsView.bottom + 10;
     
-    self.textView.text = self.user.cleaningText;
+    self.textView.text = self.user.cleaning;
     self.textView.height = 100;
     self.textView.delegate = self;
     self.headerLabel.text = @"Are you more a clean or messy person?";
@@ -119,7 +117,7 @@
 
 - (void)textViewDidChange:(UITextView *)textView
 {
-    self.user.cleaningText = textView.text;
+    self.user.cleaning = textView.text;
     
 }
 

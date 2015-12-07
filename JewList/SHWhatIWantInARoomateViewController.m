@@ -18,7 +18,6 @@
 {
     [super loadView];
     
-    self.textView.text = self.currentUser.roommatePrefs;
     self.textView.delegate = self;
     self.headerLabel.text = @"What are you looking for in a roommate?";
     
@@ -26,7 +25,6 @@
 
 - (void)textViewDidChange:(UITextView *)textView
 {
-    self.currentUser.roommatePrefs = textView.text;
     
 }
 

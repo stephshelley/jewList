@@ -26,7 +26,7 @@
 
 #define kFacebook_App_Id @"1478022182439433"
 
-#define GetAppDelegate ((BidAppDelegate *)[[UIApplication sharedApplication] delegate])
+#define GetAppDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 #define SAFE_VAL(s) s == nil ? @"" : s
 
 #define IS_RETINA ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] && ([UIScreen mainScreen].scale == 2.0))
@@ -40,9 +40,6 @@ colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
-#define IS_IOS6  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)
-#define IS_IOS7  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
-#define IS_IPHONE5 (!IsIpad() && ([UIScreen mainScreen].applicationFrame.size.height > 480.0))
 #define IsIpad ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
 
 #define DEFAULT_FONT_REGULAR @"HelveticaNeue"

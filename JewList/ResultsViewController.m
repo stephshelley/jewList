@@ -32,7 +32,7 @@
 {
     [super loadView];
     self.view.backgroundColor = DEFAULT_BLUE_COLOR;
-    if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 
     self.title = @"Results";
     self.navigationController.navigationBarHidden = YES;
@@ -57,7 +57,7 @@
     profileButton.right = topView.width - 10;
     [topView addSubview:profileButton];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, topView.bottom, self.view.width, self.view.height - topView.height - (IS_IOS7 ? 20 : 0)) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, topView.bottom, self.view.width, self.view.height - topView.height - 20) style:UITableViewStylePlain];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.separatorColor = [UIColor clearColor];
     self.tableView.backgroundColor = DEFAULT_BACKGROUND_COLOR;

@@ -21,28 +21,19 @@
     {
         self.user = user;
         [self loadUI];
-        
     }
-    
     return self;
-    
 }
-
 
 - (void)popScreen
 {
     if(_delegate && [_delegate respondsToSelector:@selector(goToPreviousStep:)])
         [_delegate goToPreviousStep:self];
-    
-    
 }
 
 - (void)loadUI
 {
-
     self.backgroundColor = DEFAULT_BLUE_COLOR;
-    if(IS_IOS7) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-
     self.yearTopView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, self.width, 50)];
     _yearTopView.backgroundColor = [UIColor clearColor];
     [self addSubview:_yearTopView];

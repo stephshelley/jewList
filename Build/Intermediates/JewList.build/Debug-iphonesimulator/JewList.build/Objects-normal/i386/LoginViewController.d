@@ -58,4 +58,6 @@ dependencies: \
   /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/STOnboardingCleanMessyView.h \
   /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/STOnboardingHowJewAreYouView.h \
   /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/STOnboardingCampusView.h \
-  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/STOnboardingAboutMeView.h
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/STOnboardingAboutMeView.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/AppDelegate.h \
+  /Users/orenzitoun/Documents/Github/Joomie/jewList/JewList/WelcomeViewController.h
