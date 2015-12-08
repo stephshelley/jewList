@@ -149,4 +149,21 @@
     }
 }
 
++ (BOOL)supportsMultiSelectionForType:(MultiSelectionType)type {
+    
+    BOOL supportsMultiSelection = NO;
+    switch (type) {
+        case MultiSelectionTypeHighSchoolConnections:
+        case MultiSelectionTypeFun:
+        case MultiSelectionTypeMusic:
+        case MultiSelectionTypeDuringTheDay:
+        case MultiSelectionTypeActivities:
+            supportsMultiSelection = YES;
+            
+        default:
+            break;
+    }
+    return supportsMultiSelection;
+}
+
 @end

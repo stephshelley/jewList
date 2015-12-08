@@ -36,6 +36,7 @@
 @property (nonatomic, strong) NSNumber *diet;
 @property (nonatomic, strong) NSString *dietText;
 @property (nonatomic, strong) NSString *aboutMe;
+@property (nonatomic, strong) NSString *desiredMajor;
 @property (nonatomic, strong) NSString *firstName;
 @property (nonatomic, strong) NSString *lastName;
 @property (nonatomic, strong) NSString *gender;

@@ -10,11 +10,13 @@
 #import "MultiSelectionViewController.h"
 #import "MultiSelectionHelpers.h"
 #import "AppDelegate.h"
+#import "FreeTextPresenter.h"
 
 @interface MultiSelectionPresenter () <MultiSelectionViewControllerDelegate>
 
 @property (nonatomic) UIViewController *currentViewController;
 @property (nonatomic) User *user;
+@property (nonatomic) FreeTextPresenter *freeTextPresenter;
 
 @end
 
@@ -38,10 +40,15 @@
 
 - (void)mutliSelectionViewControllerDidSelect:(MultiSelectionViewController *)viewController value:(NSString *)value {
     [MultiSelectionHelpers setUserValue:value type:viewController.type user:self.user];
-    MultiSelectionViewController *multiVC = [GetAppDelegate.storyboard instantiateViewControllerWithIdentifier:@"MultiSelectionViewController"];
-    multiVC.type = viewController.type + 1;
-    multiVC.delegate = self;
-    [self.currentViewController.navigationController pushViewController:multiVC animated:YES];
+    if (viewController.type == MultiSelectionTypeWantContactFromJewishOrganizations) {
+        self.freeTextPresenter = [FreeTextPresenter presenterFromViewController:viewController user:self.user];
+        [self.freeTextPresenter present];
+    } else {
+        MultiSelectionViewController *multiVC = [GetAppDelegate.storyboard instantiateViewControllerWithIdentifier:@"MultiSelectionViewController"];
+        multiVC.type = viewController.type + 1;
+        multiVC.delegate = self;
+        [self.currentViewController.navigationController pushViewController:multiVC animated:YES];        
+    }
 }
 
 @end

@@ -96,4 +96,14 @@
     
 }
 
++ (CGFloat)textHeight:(NSString *)text widthCap:(CGFloat)maxWidth font:(UIFont *)font {
+    if (text.length == 0) return 0;
+    
+    CGRect textRect = [text boundingRectWithSize:CGSizeMake(maxWidth, CGFLOAT_MAX)
+                                         options:NSStringDrawingUsesLineFragmentOrigin
+                                      attributes:@{NSFontAttributeName : font}
+                                         context:nil];
+    return CGRectGetHeight(textRect);
+}
+
 @end

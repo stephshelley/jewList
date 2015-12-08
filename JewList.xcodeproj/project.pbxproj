@@ -19,6 +19,9 @@
 		3A0498B21C155E440083B4AF /* MultiSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A0498B01C155E440083B4AF /* MultiSelectionCell.xib */; };
 		3A0498B51C15637B0083B4AF /* MultiSelectionPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0498B41C15637B0083B4AF /* MultiSelectionPresenter.m */; };
 		3A0498B91C15658D0083B4AF /* MultiSelectionHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0498B81C15658D0083B4AF /* MultiSelectionHelpers.m */; };
+		3A0498BC1C16BEE20083B4AF /* FreeTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0498BB1C16BEE20083B4AF /* FreeTextViewController.m */; };
+		3A0498C01C16BFB50083B4AF /* FreeTextHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0498BF1C16BFB50083B4AF /* FreeTextHelpers.m */; };
+		3A0498C31C16C1100083B4AF /* FreeTextPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0498C21C16C1100083B4AF /* FreeTextPresenter.m */; };
 		3A0ACC38179A3F3C0083B80B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0ACC37179A3F3C0083B80B /* UIKit.framework */; };
 		3A0ACC3A179A3F3C0083B80B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0ACC39179A3F3C0083B80B /* Foundation.framework */; };
 		3A0ACC3C179A3F3C0083B80B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0ACC3B179A3F3C0083B80B /* CoreGraphics.framework */; };
@@ -292,6 +295,13 @@
 		3A0498B61C1565550083B4AF /* MultiSelectionEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiSelectionEnum.h; sourceTree = "<group>"; };
 		3A0498B71C15658D0083B4AF /* MultiSelectionHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiSelectionHelpers.h; sourceTree = "<group>"; };
 		3A0498B81C15658D0083B4AF /* MultiSelectionHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiSelectionHelpers.m; sourceTree = "<group>"; };
+		3A0498BA1C16BEE20083B4AF /* FreeTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeTextViewController.h; sourceTree = "<group>"; };
+		3A0498BB1C16BEE20083B4AF /* FreeTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeTextViewController.m; sourceTree = "<group>"; };
+		3A0498BD1C16BEF40083B4AF /* FreeTextEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreeTextEnum.h; sourceTree = "<group>"; };
+		3A0498BE1C16BFB50083B4AF /* FreeTextHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeTextHelpers.h; sourceTree = "<group>"; };
+		3A0498BF1C16BFB50083B4AF /* FreeTextHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeTextHelpers.m; sourceTree = "<group>"; };
+		3A0498C11C16C1100083B4AF /* FreeTextPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeTextPresenter.h; sourceTree = "<group>"; };
+		3A0498C21C16C1100083B4AF /* FreeTextPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeTextPresenter.m; sourceTree = "<group>"; };
 		3A0ACC34179A3F3C0083B80B /* JewList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JewList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A0ACC37179A3F3C0083B80B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3A0ACC39179A3F3C0083B80B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -764,6 +774,11 @@
 				3A0498B31C15637B0083B4AF /* MultiSelectionPresenter.h */,
 				3A0498B41C15637B0083B4AF /* MultiSelectionPresenter.m */,
 				3A0498B61C1565550083B4AF /* MultiSelectionEnum.h */,
+				3A0498BA1C16BEE20083B4AF /* FreeTextViewController.h */,
+				3A0498BB1C16BEE20083B4AF /* FreeTextViewController.m */,
+				3A0498BD1C16BEF40083B4AF /* FreeTextEnum.h */,
+				3A0498C11C16C1100083B4AF /* FreeTextPresenter.h */,
+				3A0498C21C16C1100083B4AF /* FreeTextPresenter.m */,
 			);
 			name = "Stroy Board VCs";
 			sourceTree = "<group>";
@@ -925,6 +940,8 @@
 				3A964886186F9FE60026A559 /* MessageViewController.m */,
 				3A0498B71C15658D0083B4AF /* MultiSelectionHelpers.h */,
 				3A0498B81C15658D0083B4AF /* MultiSelectionHelpers.m */,
+				3A0498BE1C16BFB50083B4AF /* FreeTextHelpers.h */,
+				3A0498BF1C16BFB50083B4AF /* FreeTextHelpers.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -1764,6 +1781,7 @@
 				3A5C34A718676BC20092F08A /* SHMembersResultsModel.m in Sources */,
 				3A5C349A18676ABA0092F08A /* LGJSONRequestOperation.m in Sources */,
 				3A306EFF1867C2170008755F /* SHWorkPartyCell.m in Sources */,
+				3A0498C01C16BFB50083B4AF /* FreeTextHelpers.m in Sources */,
 				3A306F171867CE520008755F /* SHWhatIWantInARoomateViewController.m in Sources */,
 				3A306F0E1867CA010008755F /* SHShabatCell.m in Sources */,
 				3A0CCC38179A53050000AA8C /* Pref.m in Sources */,
@@ -1779,6 +1797,7 @@
 				3A94C4F51A3533330079A886 /* STOnboardingAboutMeView.m in Sources */,
 				3A0498A31C1520210083B4AF /* CollegeCell.m in Sources */,
 				3A94C4E61A34F2E70079A886 /* STOnboardingKosherView.m in Sources */,
+				3A0498C31C16C1100083B4AF /* FreeTextPresenter.m in Sources */,
 				3A0CCC4F179A53C40000AA8C /* NSURL+NXOAuth2.m in Sources */,
 				3A5C34B418676E540092F08A /* SHMemberResultsDataSource.m in Sources */,
 				3A0CCC55179A54E20000AA8C /* SHLoginPassword.m in Sources */,
@@ -1799,6 +1818,7 @@
 				3ADFA911179B36E500B66F78 /* UserResultCell.m in Sources */,
 				3ADC705D1A411CD600189CFE /* SHEditSchoolViewController.m in Sources */,
 				3A306EE31867AC920008755F /* SHGenderViewController.m in Sources */,
+				3A0498BC1C16BEE20083B4AF /* FreeTextViewController.m in Sources */,
 				3ADFA914179B3DD500B66F78 /* SHProfileViewController.m in Sources */,
 				3A964897186FD4B60026A559 /* SHTextCellItem.m in Sources */,
 				F8F2F064179B37A10088BF2B /* SHToggleButton.m in Sources */,

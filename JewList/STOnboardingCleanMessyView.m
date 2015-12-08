@@ -198,7 +198,6 @@
         _cleanFreakButton.titleLabel.textColor = [UIColor darkGrayColor];
         _cleanButton.titleLabel.textColor = [UIColor darkGrayColor];
         _messyButton.titleLabel.textColor = [UIColor whiteColor];
-        self.user.cleaning = @0;
         
     }
     else if(senderButton.tag == CLEAN_BUTTON && [senderButton isOn])
@@ -208,7 +207,6 @@
         _cleanFreakButton.titleLabel.textColor = [UIColor darkGrayColor];
         _messyButton.titleLabel.textColor = [UIColor darkGrayColor];
         _cleanButton.titleLabel.textColor = [UIColor whiteColor];
-        self.user.cleaning = @1;
         
     }
     else if(senderButton.tag == CLEAN_FREAK_BUTTON && [senderButton isOn])
@@ -218,7 +216,6 @@
         _cleanFreakButton.titleLabel.textColor = [UIColor whiteColor];
         _messyButton.titleLabel.textColor = [UIColor darkGrayColor];
         _cleanButton.titleLabel.textColor = [UIColor darkGrayColor];
-        self.user.cleaning = @2;
         
     }
     
