@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="UserCoverCell" id="KGk-i7-Jjw" customClass="UserCoverCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="179.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c0I-HW-BpX" userLabel="User Cover Photo" customClass="NINetworkImageView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="179.5"/>
+                        <subviews>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Djd-GR-3gT" userLabel="Overlay View">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="179.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Djd-GR-3gT" secondAttribute="bottom" id="KGu-ZD-DCd"/>
+                            <constraint firstItem="Djd-GR-3gT" firstAttribute="top" secondItem="c0I-HW-BpX" secondAttribute="top" id="ccj-Ze-hqN"/>
+                            <constraint firstItem="Djd-GR-3gT" firstAttribute="leading" secondItem="c0I-HW-BpX" secondAttribute="leading" id="g5M-iu-3bO"/>
+                            <constraint firstAttribute="trailing" secondItem="Djd-GR-3gT" secondAttribute="trailing" id="sJA-xH-dOv"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ckx-fp-iEX" userLabel="User Name Label">
+                        <rect key="frame" x="8" y="28" width="304" height="23"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3eF-hU-hhb" userLabel="Avatar View" customClass="NINetworkImageView">
+                        <rect key="frame" x="125" y="61" width="70" height="70"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="bxL-Q0-2HG"/>
+                            <constraint firstAttribute="width" constant="70" id="sBP-jw-XOn"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrR-tl-ahe" userLabel="Info Label">
+                        <rect key="frame" x="8" y="141" width="304" height="23"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="c0I-HW-BpX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="0jY-Et-qcN"/>
+                    <constraint firstAttribute="trailing" secondItem="c0I-HW-BpX" secondAttribute="trailing" id="2AP-xq-1gq"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Ckx-fp-iEX" secondAttribute="trailing" id="5je-rR-0hb"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="TrR-tl-ahe" secondAttribute="trailing" id="AoN-fI-3yV"/>
+                    <constraint firstItem="3eF-hU-hhb" firstAttribute="top" secondItem="Ckx-fp-iEX" secondAttribute="bottom" constant="10" id="Cie-R8-zwR"/>
+                    <constraint firstItem="3eF-hU-hhb" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="OQs-5s-FGR"/>
+                    <constraint firstAttribute="bottom" secondItem="c0I-HW-BpX" secondAttribute="bottom" id="Q6u-gt-kgx"/>
+                    <constraint firstItem="c0I-HW-BpX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Zwi-AS-rRg"/>
+                    <constraint firstItem="Ckx-fp-iEX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="hul-ax-Nce"/>
+                    <constraint firstItem="Ckx-fp-iEX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="20" id="kUs-nk-Ppa"/>
+                    <constraint firstItem="TrR-tl-ahe" firstAttribute="top" secondItem="3eF-hU-hhb" secondAttribute="bottom" constant="10" id="ofx-iW-E3f"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="TrR-tl-ahe" secondAttribute="leading" id="pba-Yt-NQr"/>
+                    <constraint firstItem="3eF-hU-hhb" firstAttribute="top" secondItem="TrR-tl-ahe" secondAttribute="bottom" id="zB9-kP-yFD"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="zB9-kP-yFD"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="avatarView" destination="3eF-hU-hhb" id="rAW-WH-BqS"/>
+                <outlet property="infoLabel" destination="TrR-tl-ahe" id="f9o-f3-PzR"/>
+                <outlet property="userCoverPhoto" destination="c0I-HW-BpX" id="q8L-hm-vjE"/>
+                <outlet property="userNameLabel" destination="Ckx-fp-iEX" id="nQt-Lw-Sgo"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

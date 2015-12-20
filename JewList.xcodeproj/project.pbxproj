@@ -267,6 +267,12 @@
 		3AE7222A188B048D00C5B37F /* offcampus_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AE72226188B048D00C5B37F /* offcampus_s@2x.png */; };
 		3AE7222B188B048D00C5B37F /* oncampus_d@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AE72227188B048D00C5B37F /* oncampus_d@2x.png */; };
 		3AE7222C188B048D00C5B37F /* oncampus_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AE72228188B048D00C5B37F /* oncampus_s@2x.png */; };
+		3AFB7EC21C2679DD00DD4E7E /* UserResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB7EC11C2679DD00DD4E7E /* UserResultsViewController.m */; };
+		3AFB7EC61C267A4500DD4E7E /* UserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB7EC41C267A4500DD4E7E /* UserCell.m */; };
+		3AFB7EC71C267A4500DD4E7E /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AFB7EC51C267A4500DD4E7E /* UserCell.xib */; };
+		3AFB7ECA1C268A5000DD4E7E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB7EC91C268A5000DD4E7E /* ProfileViewController.m */; };
+		3AFB7ECE1C268F0300DD4E7E /* UserCoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB7ECC1C268F0300DD4E7E /* UserCoverCell.m */; };
+		3AFB7ECF1C268F0300DD4E7E /* UserCoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AFB7ECD1C268F0300DD4E7E /* UserCoverCell.xib */; };
 		D02FD2FE179B278000D876D8 /* JLColors.m in Sources */ = {isa = PBXBuildFile; fileRef = D02FD2FD179B278000D876D8 /* JLColors.m */; };
 		F8A02848179B4FA600253FFA /* UIView+FindAndResignFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A02847179B4FA600253FFA /* UIView+FindAndResignFirstResponder.m */; };
 		F8F2F064179B37A10088BF2B /* SHToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2F063179B37A10088BF2B /* SHToggleButton.m */; };
@@ -709,6 +715,16 @@
 		3AE72226188B048D00C5B37F /* offcampus_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "offcampus_s@2x.png"; sourceTree = "<group>"; };
 		3AE72227188B048D00C5B37F /* oncampus_d@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oncampus_d@2x.png"; sourceTree = "<group>"; };
 		3AE72228188B048D00C5B37F /* oncampus_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oncampus_s@2x.png"; sourceTree = "<group>"; };
+		3AFB7EC01C2679DD00DD4E7E /* UserResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserResultsViewController.h; sourceTree = "<group>"; };
+		3AFB7EC11C2679DD00DD4E7E /* UserResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserResultsViewController.m; sourceTree = "<group>"; };
+		3AFB7EC31C267A4500DD4E7E /* UserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCell.h; sourceTree = "<group>"; };
+		3AFB7EC41C267A4500DD4E7E /* UserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCell.m; sourceTree = "<group>"; };
+		3AFB7EC51C267A4500DD4E7E /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		3AFB7EC81C268A5000DD4E7E /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		3AFB7EC91C268A5000DD4E7E /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		3AFB7ECB1C268F0300DD4E7E /* UserCoverCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCoverCell.h; sourceTree = "<group>"; };
+		3AFB7ECC1C268F0300DD4E7E /* UserCoverCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCoverCell.m; sourceTree = "<group>"; };
+		3AFB7ECD1C268F0300DD4E7E /* UserCoverCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCoverCell.xib; sourceTree = "<group>"; };
 		D02FD2FC179B278000D876D8 /* JLColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLColors.h; sourceTree = "<group>"; };
 		D02FD2FD179B278000D876D8 /* JLColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLColors.m; sourceTree = "<group>"; };
 		F8A02846179B4FA600253FFA /* UIView+FindAndResignFirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FindAndResignFirstResponder.h"; sourceTree = "<group>"; };
@@ -779,6 +795,10 @@
 				3A0498BD1C16BEF40083B4AF /* FreeTextEnum.h */,
 				3A0498C11C16C1100083B4AF /* FreeTextPresenter.h */,
 				3A0498C21C16C1100083B4AF /* FreeTextPresenter.m */,
+				3AFB7EC01C2679DD00DD4E7E /* UserResultsViewController.h */,
+				3AFB7EC11C2679DD00DD4E7E /* UserResultsViewController.m */,
+				3AFB7EC81C268A5000DD4E7E /* ProfileViewController.h */,
+				3AFB7EC91C268A5000DD4E7E /* ProfileViewController.m */,
 			);
 			name = "Stroy Board VCs";
 			sourceTree = "<group>";
@@ -792,6 +812,12 @@
 				3A0498AE1C155E440083B4AF /* MultiSelectionCell.h */,
 				3A0498AF1C155E440083B4AF /* MultiSelectionCell.m */,
 				3A0498B01C155E440083B4AF /* MultiSelectionCell.xib */,
+				3AFB7EC31C267A4500DD4E7E /* UserCell.h */,
+				3AFB7EC41C267A4500DD4E7E /* UserCell.m */,
+				3AFB7EC51C267A4500DD4E7E /* UserCell.xib */,
+				3AFB7ECB1C268F0300DD4E7E /* UserCoverCell.h */,
+				3AFB7ECC1C268F0300DD4E7E /* UserCoverCell.m */,
+				3AFB7ECD1C268F0300DD4E7E /* UserCoverCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -1586,6 +1612,7 @@
 				3A0ACC4E179A3F3C0083B80B /* Default-568h@2x.png in Resources */,
 				3ADC70A01A412A1900189CFE /* messy_d@2x.png in Resources */,
 				3AE72220188B044B00C5B37F /* clean_s@2x.png in Resources */,
+				3AFB7EC71C267A4500DD4E7E /* UserCell.xib in Resources */,
 				3ADC70A51A412A2100189CFE /* cleanfreak_d@2x.png in Resources */,
 				3ADF2A68188392B000415A09 /* party_d@2x.png in Resources */,
 				3ADC708A1A41299B00189CFE /* offcampus_d@3x.png in Resources */,
@@ -1609,6 +1636,7 @@
 				3ADF2A60188392B000415A09 /* kosher_d@2x.png in Resources */,
 				3A0498B21C155E440083B4AF /* MultiSelectionCell.xib in Resources */,
 				3ADC70821A41299B00189CFE /* male_d@3x.png in Resources */,
+				3AFB7ECF1C268F0300DD4E7E /* UserCoverCell.xib in Resources */,
 				3A4A9802189774610092942B /* female_d@2x.png in Resources */,
 				3ADF2A6A188392B000415A09 /* study_d@2x.png in Resources */,
 				3AE7222C188B048D00C5B37F /* oncampus_s@2x.png in Resources */,
@@ -1706,6 +1734,7 @@
 				3AC4B5E018DE3727001E9CA0 /* TTTAttributedLabel.m in Sources */,
 				3A0ACDB5179A42D00083B80B /* NIInMemoryCache.m in Sources */,
 				3A0ACDB6179A42D00083B80B /* NIInvocationMethods.m in Sources */,
+				3AFB7EC61C267A4500DD4E7E /* UserCell.m in Sources */,
 				3A0ACDB7179A42D00083B80B /* NINavigationAppearance.m in Sources */,
 				3A306F021867C4C30008755F /* SHCleanMessyViewController.m in Sources */,
 				3A0ACDB8179A42D00083B80B /* NINetworkActivity.m in Sources */,
@@ -1748,6 +1777,7 @@
 				3A0498B91C15658D0083B4AF /* MultiSelectionHelpers.m in Sources */,
 				3A0CC84D179A474B0000AA8C /* AFJSONRequestOperation.m in Sources */,
 				3A306F141867CE1E0008755F /* SHRoomatePrefCell.m in Sources */,
+				3AFB7ECA1C268A5000DD4E7E /* ProfileViewController.m in Sources */,
 				3A0CC84E179A474B0000AA8C /* AFNetworkActivityIndicatorManager.m in Sources */,
 				3A0CC84F179A474B0000AA8C /* AFPropertyListRequestOperation.m in Sources */,
 				3A306EDD186795E60008755F /* SHGenderCell.m in Sources */,
@@ -1794,6 +1824,7 @@
 				3A5C34AA18676D2C0092F08A /* NSObjectAdditions.m in Sources */,
 				3A0CCC4E179A53C40000AA8C /* NSString+NXOAuth2.m in Sources */,
 				3A306EF91867BB0D0008755F /* SHWorkPartyViewController.m in Sources */,
+				3AFB7ECE1C268F0300DD4E7E /* UserCoverCell.m in Sources */,
 				3A94C4F51A3533330079A886 /* STOnboardingAboutMeView.m in Sources */,
 				3A0498A31C1520210083B4AF /* CollegeCell.m in Sources */,
 				3A94C4E61A34F2E70079A886 /* STOnboardingKosherView.m in Sources */,
@@ -1801,6 +1832,7 @@
 				3A0CCC4F179A53C40000AA8C /* NSURL+NXOAuth2.m in Sources */,
 				3A5C34B418676E540092F08A /* SHMemberResultsDataSource.m in Sources */,
 				3A0CCC55179A54E20000AA8C /* SHLoginPassword.m in Sources */,
+				3AFB7EC21C2679DD00DD4E7E /* UserResultsViewController.m in Sources */,
 				3A0CCC58179A632B0000AA8C /* UIViewAdditions.m in Sources */,
 				3A306EF61867B78E0008755F /* SHAboutMeViewController.m in Sources */,
 				3ADFA8F1179A71DC00B66F78 /* SHOnboarding1View.m in Sources */,

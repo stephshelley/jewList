@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "SHApi.h"
 #import "LoginViewController.h"
-#import "ResultsViewController.h"
+#import "UserResultsViewController.h"
 #import <Crashlytics/Crashlytics.h>
 #import "GAI.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
@@ -48,7 +48,7 @@
         [self initLogedOut];
         
     }
-     
+    
     self.window.tintColor = UIColorFromRGB(0x54add5);
     [self setAppearance];
     
@@ -92,7 +92,7 @@
 
 - (void)initLogedIn
 {
-    ResultsViewController *resultsVC = [[ResultsViewController alloc] init];
+    UserResultsViewController *resultsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"UserResultsViewController"];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:resultsVC];
     self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];

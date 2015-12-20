@@ -17,6 +17,5 @@
 
 - (id)initWithCollege:(College *)college;
 - (void)cancel;
-- (void)generateDemoItems;
 
 @end
