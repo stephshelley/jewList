@@ -48,7 +48,7 @@
         [self initLogedOut];
         
     }
-    
+     
     self.window.tintColor = UIColorFromRGB(0x54add5);
     [self setAppearance];
     
