@@ -9,9 +9,11 @@
 #import "GraduationYearViewController.h"
 #import "AgeViewController.h"
 #import "AppDelegate.h"
+#import "UIView+Common.h"
 
 @interface GraduationYearViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 @property (nonatomic) NSMutableArray *yearsArray;
 @end
@@ -22,7 +24,37 @@
     [super viewDidLoad];
 
     self.yearsArray = [NSMutableArray arrayWithArray:@[@2016,@2017,@2018,@2019,@2020,@2021,@2022,@2023,@2024,@2025,@2026,@2027,@2028,@2029,@2030]];
-    self.user.gradYear = [self.yearsArray firstObject];
+    NSUInteger index = 0;
+
+    for(NSInteger i = 2016; i < 2030; i++)
+    {
+        NSNumber *year = [NSNumber numberWithInteger:i];
+        [self.yearsArray addObject:year];
+        if (self.user.gradYear.integerValue == i) {
+            index = [self.yearsArray indexOfObject:year];
+        }
+    }
+    
+    if([self.user.gradYear intValue] == 0) {
+        self.user.gradYear = [self.yearsArray firstObject];;
+    } else {
+        [self.pickerView selectRow:index inComponent:0 animated:YES];
+    }
+    
+    if (self.saveOnBackButton) {
+        self.nextButton.constrainedHeight = @(0);
+        self.nextButton.hidden = YES;
+    }
+}
+
+- (void)didMoveToParentViewController:(UIViewController *)parent {
+    if (!parent && self.saveOnBackButton) {
+       
+        if ([self.delegate respondsToSelector:@selector(graduationYearViewControllerDidSelectYear:)]) {
+            NSNumber *number = [_yearsArray objectAtIndex:[self.pickerView selectedRowInComponent:0]];
+            [self.delegate graduationYearViewControllerDidSelectYear:number];
+        }
+    }
 }
 
 #pragma mark - UIPickerViewDelegate -

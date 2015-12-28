@@ -10,6 +10,88 @@
 
 @implementation SHUIHelpers
 
++ (UIAlertController *)actionSheetAlertContorllerWithTitle:(NSString *)title buttonTitles:(NSArray *)buttonTitles completion:(void (^)(NSString *buttonTitle))completion
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *cancel = [UIAlertAction
+                             actionWithTitle:@"Cancel"
+                             style:UIAlertActionStyleCancel
+                             handler:^(UIAlertAction * action)
+                             {
+                                 if (completion) {
+                                     completion(nil);
+                                 }
+                             }];
+    [alertController addAction:cancel];
+    
+    for (NSString *title in buttonTitles) {
+        UIAlertAction *action = [UIAlertAction
+                                 actionWithTitle:title
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+                                     if (completion) {
+                                         completion(action.title);
+                                     }
+                                 }];
+        [alertController addAction:action];
+    }
+    
+    return alertController;
+}
+
++ (UIAlertController *)alertControllerWithTitle:(NSString *)title message:(NSString *)message buttonTitles:(NSArray *)buttonTitles completion:(void (^)(NSString *buttonTitle))completion
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancel = [UIAlertAction
+                             actionWithTitle:@"Cancel"
+                             style:UIAlertActionStyleCancel
+                             handler:^(UIAlertAction * action)
+                             {
+                                 if (completion) {
+                                     completion(nil);
+                                 }
+                             }];
+    [alertController addAction:cancel];
+    
+    
+    for (NSString *title in buttonTitles) {
+        UIAlertAction *action = [UIAlertAction
+                                 actionWithTitle:title
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+                                     if (completion) {
+                                         completion(action.title);
+                                     }
+                                 }];
+        [alertController addAction:action];
+    }
+    return alertController;
+}
+
++ (UIAlertController *)alertControllerWithTitle:(NSString *)title message:(NSString *)message completion:(void (^)(void))completion
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *ok = [UIAlertAction
+                         actionWithTitle:@"OK"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             if (completion) {
+                                 completion();
+                             }
+                         }];
+    
+    [alertController addAction:ok];
+    return alertController;
+}
+
++ (UIAlertController *)errorAlertControllerWithMessage:(NSString *)message completion:(void (^)(void))completion
+{
+    return [[self class] alertControllerWithTitle:@"Error" message:message completion:completion];
+}
+
 + (CGFloat)getTextHeight:(NSString*)text font:(UIFont*)font withCapHeight:(CGFloat)capHeight width:(CGFloat)width
 {
     CGFloat height = 0;
@@ -72,7 +154,7 @@
 
 + (void)handleApiError:(NSDictionary *)errorDict
 {
-    [self alertErrorWithMessage:[NSString stringWithFormat:@"%@",[errorDict objectForKey:@"message"]]];
+    [self alertErrorWithMessage:[NSString stringWithFormat:@"%@",[errorDict objectForKey:@"Message"]]];
 }
 
 + (void)alertErrorWithMessage:(NSString *)message

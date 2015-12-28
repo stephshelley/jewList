@@ -222,17 +222,7 @@
         [_items addObject:item];
         
     }
-    
-    if(_user.dietText != nil && _user.dietText.length > 0)
-    {
-        SHTextCellItem *item = [[SHTextCellItem alloc] init];
-        item.title = @"Do you keep kosher?";
-        item.text = _user.dietText;
-        item.type = [_user.diet intValue]  == 0 ? @"Non Kosher" : @"Kosher";
 
-        [_items addObject:item];
-        
-    }
     
     if(_user.religiousText != nil && _user.religiousText.length > 0)
     {

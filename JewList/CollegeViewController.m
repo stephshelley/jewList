@@ -39,9 +39,6 @@
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
-- (IBAction)onNextButtonPressed:(id)sender {
-}
-
 - (void)reloadTable {
     [self.tableView reloadData];
 }
@@ -139,6 +136,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     College *item = nil;
     
     if(self.isFiltering) {
@@ -154,9 +152,18 @@
     
     if(item && [item isKindOfClass:[College class]] && item.collegeName.length > 0) {
         User *currentUser = [[SHApi sharedInstance] currentUser];
-        currentUser.fbCollegeName = item.collegeName;
-        [[SHApi sharedInstance] cacheCurrentUserDetails];
         _searchBar.text = item.collegeName;
+        
+        if (self.saveOnBackButton) {
+            if ([self.delegate respondsToSelector:@selector(collegeViewControllerDidSelectCollege:)]) {
+                [self.delegate collegeViewControllerDidSelectCollege:item];
+            }
+            [self.navigationController popViewControllerAnimated:YES];
+            return;
+        }
+        
+        currentUser.school = item.collegeName;
+        [[SHApi sharedInstance] cacheCurrentUserDetails];
         GraduationYearViewController *gradViewContorller = [GetAppDelegate.storyboard instantiateViewControllerWithIdentifier:@"GraduationYearViewController"];
         gradViewContorller.user = [[SHApi sharedInstance] currentUser];
         self.navigationController.navigationBar.topItem.title = @"";

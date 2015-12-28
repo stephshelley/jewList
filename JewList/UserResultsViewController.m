@@ -12,6 +12,7 @@
 #import "SHApi.h"
 #import "ProfileViewController.h"
 #import "AppDelegate.h"
+#import "SHEditProfileViewController.h"
 
 @interface UserResultsViewController () <STBaseDataSource, UITableViewDataSource, UITableViewDelegate>
 
@@ -36,6 +37,21 @@
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [self.activityIndicator startAnimating];
     [self.dataSource loadModel];
+    
+    UIBarButtonItem *profileButton = [[UIBarButtonItem alloc] initWithTitle:@"Edit Profile" style:UIBarButtonItemStylePlain target:self action:@selector(onProfileButton:)];
+    self.navigationItem.leftBarButtonItem = profileButton;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self refreshScreen];
+}
+
+- (void)onProfileButton:(id)sender {
+    [self performSegueWithIdentifier:@"showEditProfile" sender:self];
+    
+    //SHEditProfileViewController *editVC = [[SHEditProfileViewController alloc] initWithUser:[[SHApi sharedInstance] currentUser]];
+    //[self presentViewController:editVC animated:YES completion:nil];
 }
 
 - (SHMemberResultsDataSource *)dataSource {

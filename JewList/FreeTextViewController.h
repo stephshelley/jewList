@@ -10,16 +10,19 @@
 #import "FreeTextEnum.h"
 
 @class  User;
-@protocol FreeTextViewControllerDeleage;
+@protocol FreeTextViewControllerDelegate;
 
 @interface FreeTextViewController : UIViewController
 
 @property (nonatomic) FreeTextType type;
-@property (nonatomic) id<FreeTextViewControllerDeleage> delegate;
+@property (nonatomic) id<FreeTextViewControllerDelegate> delegate;
+
+@property (nonatomic) BOOL saveOnBackButton;
+@property (nonatomic) NSString *preloadText;
 
 @end
 
-@protocol FreeTextViewControllerDeleage <NSObject>
+@protocol FreeTextViewControllerDelegate <NSObject>
 
 - (void)freeTextControllerDidChooseText:(FreeTextViewController *)viewController text:(NSString *)text;
 

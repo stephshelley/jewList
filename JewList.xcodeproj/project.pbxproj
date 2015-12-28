@@ -130,8 +130,6 @@
 		3A306EFF1867C2170008755F /* SHWorkPartyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306EFE1867C2170008755F /* SHWorkPartyCell.m */; };
 		3A306F021867C4C30008755F /* SHCleanMessyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F011867C4C30008755F /* SHCleanMessyViewController.m */; };
 		3A306F051867C62C0008755F /* SHCleanMessyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F041867C62C0008755F /* SHCleanMessyCell.m */; };
-		3A306F081867C72D0008755F /* SHDietCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F071867C72D0008755F /* SHDietCell.m */; };
-		3A306F0B1867C7730008755F /* SHDietViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F0A1867C7730008755F /* SHDietViewController.m */; };
 		3A306F0E1867CA010008755F /* SHShabatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F0D1867CA010008755F /* SHShabatCell.m */; };
 		3A306F111867CB160008755F /* SHShabbatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F101867CB160008755F /* SHShabbatViewController.m */; };
 		3A306F141867CE1E0008755F /* SHRoomatePrefCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F131867CE1E0008755F /* SHRoomatePrefCell.m */; };
@@ -156,12 +154,15 @@
 		3A5C34B118676E3D0092F08A /* STBaseDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C34B018676E3D0092F08A /* STBaseDataSource.m */; };
 		3A5C34B418676E540092F08A /* SHMemberResultsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C34B318676E540092F08A /* SHMemberResultsDataSource.m */; };
 		3A5C34B818676F8E0092F08A /* SHUserCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C34B718676F8E0092F08A /* SHUserCellItem.m */; };
+		3A6E01611C2F8EAF0062FCBF /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6E01601C2F8EAF0062FCBF /* EditProfileViewController.m */; };
+		3A6E01641C3118BA0062FCBF /* DeleteAccountCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6E01631C3118BA0062FCBF /* DeleteAccountCellItem.m */; };
+		3A6E01681C31193C0062FCBF /* DeleteAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6E01661C31193C0062FCBF /* DeleteAccountCell.m */; };
+		3A6E01691C31193C0062FCBF /* DeleteAccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6E01671C31193C0062FCBF /* DeleteAccountCell.xib */; };
 		3A80E0C91BDF0DFA00C65B41 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A80E0C81BDF0DFA00C65B41 /* FBSDKLoginKit.framework */; };
 		3A80E0CB1BDF0E5400C65B41 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A80E0CA1BDF0E5400C65B41 /* FBSDKCoreKit.framework */; };
 		3A80E0CE1BDF117A00C65B41 /* STFacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA8EC179A69E000B66F78 /* STFacebookManager.m */; };
 		3A80E0DA1BDF35EA00C65B41 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A80E0D81BDF356600C65B41 /* Fabric.framework */; };
 		3A80E0DC1BDF366400C65B41 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A80E0DB1BDF366400C65B41 /* libc++.tbd */; };
-		3A94C4E61A34F2E70079A886 /* STOnboardingKosherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94C4E51A34F2E70079A886 /* STOnboardingKosherView.m */; };
 		3A94C4E91A34F9000079A886 /* STOnboardingWorkPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94C4E81A34F9000079A886 /* STOnboardingWorkPlayView.m */; };
 		3A94C4EC1A34FB440079A886 /* STOnboardingCleanMessyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94C4EB1A34FB440079A886 /* STOnboardingCleanMessyView.m */; };
 		3A94C4EF1A34FCED0079A886 /* STOnboardingHowJewAreYouView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94C4EE1A34FCED0079A886 /* STOnboardingHowJewAreYouView.m */; };
@@ -247,7 +248,6 @@
 		3ADFA903179A91EE00B66F78 /* SHCollegeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA902179A91EE00B66F78 /* SHCollegeCell.m */; };
 		3ADFA906179A92EA00B66F78 /* College.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA905179A92EA00B66F78 /* College.m */; };
 		3ADFA908179A96EE00B66F78 /* empty_pixel.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADFA907179A96EE00B66F78 /* empty_pixel.png */; };
-		3ADFA90B179B32EB00B66F78 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA90A179B32EB00B66F78 /* ResultsViewController.m */; };
 		3ADFA90E179B33DC00B66F78 /* SHOnboarding3View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA90D179B33DC00B66F78 /* SHOnboarding3View.m */; };
 		3ADFA911179B36E500B66F78 /* UserResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA910179B36E500B66F78 /* UserResultCell.m */; };
 		3ADFA914179B3DD500B66F78 /* SHProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA913179B3DD500B66F78 /* SHProfileViewController.m */; };
@@ -273,6 +273,10 @@
 		3AFB7ECA1C268A5000DD4E7E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB7EC91C268A5000DD4E7E /* ProfileViewController.m */; };
 		3AFB7ECE1C268F0300DD4E7E /* UserCoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB7ECC1C268F0300DD4E7E /* UserCoverCell.m */; };
 		3AFB7ECF1C268F0300DD4E7E /* UserCoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AFB7ECD1C268F0300DD4E7E /* UserCoverCell.xib */; };
+		3AFB7ED31C276CCE00DD4E7E /* ProfileDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB7ED11C276CCE00DD4E7E /* ProfileDetailCell.m */; };
+		3AFB7ED41C276CCE00DD4E7E /* ProfileDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AFB7ED21C276CCE00DD4E7E /* ProfileDetailCell.xib */; };
+		3AFB7ED71C276E6F00DD4E7E /* ProfileDetailCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB7ED61C276E6F00DD4E7E /* ProfileDetailCellItem.m */; };
+		3AFB7EDA1C27758600DD4E7E /* UIView+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB7ED91C27758600DD4E7E /* UIView+Common.m */; };
 		D02FD2FE179B278000D876D8 /* JLColors.m in Sources */ = {isa = PBXBuildFile; fileRef = D02FD2FD179B278000D876D8 /* JLColors.m */; };
 		F8A02848179B4FA600253FFA /* UIView+FindAndResignFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A02847179B4FA600253FFA /* UIView+FindAndResignFirstResponder.m */; };
 		F8F2F064179B37A10088BF2B /* SHToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2F063179B37A10088BF2B /* SHToggleButton.m */; };
@@ -513,10 +517,6 @@
 		3A306F011867C4C30008755F /* SHCleanMessyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHCleanMessyViewController.m; sourceTree = "<group>"; };
 		3A306F031867C62C0008755F /* SHCleanMessyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHCleanMessyCell.h; sourceTree = "<group>"; };
 		3A306F041867C62C0008755F /* SHCleanMessyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHCleanMessyCell.m; sourceTree = "<group>"; };
-		3A306F061867C72D0008755F /* SHDietCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDietCell.h; sourceTree = "<group>"; };
-		3A306F071867C72D0008755F /* SHDietCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDietCell.m; sourceTree = "<group>"; };
-		3A306F091867C7730008755F /* SHDietViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDietViewController.h; sourceTree = "<group>"; };
-		3A306F0A1867C7730008755F /* SHDietViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDietViewController.m; sourceTree = "<group>"; };
 		3A306F0C1867CA010008755F /* SHShabatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHShabatCell.h; sourceTree = "<group>"; };
 		3A306F0D1867CA010008755F /* SHShabatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHShabatCell.m; sourceTree = "<group>"; };
 		3A306F0F1867CB160008755F /* SHShabbatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHShabbatViewController.h; sourceTree = "<group>"; };
@@ -561,13 +561,18 @@
 		3A5C34B318676E540092F08A /* SHMemberResultsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHMemberResultsDataSource.m; sourceTree = "<group>"; };
 		3A5C34B618676F8E0092F08A /* SHUserCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHUserCellItem.h; sourceTree = "<group>"; };
 		3A5C34B718676F8E0092F08A /* SHUserCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHUserCellItem.m; sourceTree = "<group>"; };
+		3A6E015F1C2F8EAF0062FCBF /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
+		3A6E01601C2F8EAF0062FCBF /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
+		3A6E01621C3118BA0062FCBF /* DeleteAccountCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteAccountCellItem.h; sourceTree = "<group>"; };
+		3A6E01631C3118BA0062FCBF /* DeleteAccountCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteAccountCellItem.m; sourceTree = "<group>"; };
+		3A6E01651C31193C0062FCBF /* DeleteAccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteAccountCell.h; sourceTree = "<group>"; };
+		3A6E01661C31193C0062FCBF /* DeleteAccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteAccountCell.m; sourceTree = "<group>"; };
+		3A6E01671C31193C0062FCBF /* DeleteAccountCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeleteAccountCell.xib; sourceTree = "<group>"; };
 		3A80E0C81BDF0DFA00C65B41 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = JewList/Vendor/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		3A80E0CA1BDF0E5400C65B41 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = JewList/Vendor/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		3A80E0CF1BDF122500C65B41 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		3A80E0D81BDF356600C65B41 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		3A80E0DB1BDF366400C65B41 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		3A94C4E41A34F2E70079A886 /* STOnboardingKosherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboardingKosherView.h; sourceTree = "<group>"; };
-		3A94C4E51A34F2E70079A886 /* STOnboardingKosherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOnboardingKosherView.m; sourceTree = "<group>"; };
 		3A94C4E71A34F9000079A886 /* STOnboardingWorkPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboardingWorkPlayView.h; sourceTree = "<group>"; };
 		3A94C4E81A34F9000079A886 /* STOnboardingWorkPlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOnboardingWorkPlayView.m; sourceTree = "<group>"; };
 		3A94C4EA1A34FB440079A886 /* STOnboardingCleanMessyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboardingCleanMessyView.h; sourceTree = "<group>"; };
@@ -689,8 +694,6 @@
 		3ADFA904179A92EA00B66F78 /* College.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = College.h; sourceTree = "<group>"; };
 		3ADFA905179A92EA00B66F78 /* College.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = College.m; sourceTree = "<group>"; };
 		3ADFA907179A96EE00B66F78 /* empty_pixel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty_pixel.png; sourceTree = "<group>"; };
-		3ADFA909179B32EB00B66F78 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
-		3ADFA90A179B32EB00B66F78 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
 		3ADFA90C179B33DC00B66F78 /* SHOnboarding3View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHOnboarding3View.h; sourceTree = "<group>"; };
 		3ADFA90D179B33DC00B66F78 /* SHOnboarding3View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHOnboarding3View.m; sourceTree = "<group>"; };
 		3ADFA90F179B36E500B66F78 /* UserResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserResultCell.h; sourceTree = "<group>"; };
@@ -725,6 +728,13 @@
 		3AFB7ECB1C268F0300DD4E7E /* UserCoverCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCoverCell.h; sourceTree = "<group>"; };
 		3AFB7ECC1C268F0300DD4E7E /* UserCoverCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCoverCell.m; sourceTree = "<group>"; };
 		3AFB7ECD1C268F0300DD4E7E /* UserCoverCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCoverCell.xib; sourceTree = "<group>"; };
+		3AFB7ED01C276CCE00DD4E7E /* ProfileDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileDetailCell.h; sourceTree = "<group>"; };
+		3AFB7ED11C276CCE00DD4E7E /* ProfileDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileDetailCell.m; sourceTree = "<group>"; };
+		3AFB7ED21C276CCE00DD4E7E /* ProfileDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileDetailCell.xib; sourceTree = "<group>"; };
+		3AFB7ED51C276E6F00DD4E7E /* ProfileDetailCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileDetailCellItem.h; sourceTree = "<group>"; };
+		3AFB7ED61C276E6F00DD4E7E /* ProfileDetailCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileDetailCellItem.m; sourceTree = "<group>"; };
+		3AFB7ED81C27758600DD4E7E /* UIView+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Common.h"; sourceTree = "<group>"; };
+		3AFB7ED91C27758600DD4E7E /* UIView+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Common.m"; sourceTree = "<group>"; };
 		D02FD2FC179B278000D876D8 /* JLColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLColors.h; sourceTree = "<group>"; };
 		D02FD2FD179B278000D876D8 /* JLColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLColors.m; sourceTree = "<group>"; };
 		F8A02846179B4FA600253FFA /* UIView+FindAndResignFirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FindAndResignFirstResponder.h"; sourceTree = "<group>"; };
@@ -799,6 +809,8 @@
 				3AFB7EC11C2679DD00DD4E7E /* UserResultsViewController.m */,
 				3AFB7EC81C268A5000DD4E7E /* ProfileViewController.h */,
 				3AFB7EC91C268A5000DD4E7E /* ProfileViewController.m */,
+				3A6E015F1C2F8EAF0062FCBF /* EditProfileViewController.h */,
+				3A6E01601C2F8EAF0062FCBF /* EditProfileViewController.m */,
 			);
 			name = "Stroy Board VCs";
 			sourceTree = "<group>";
@@ -818,6 +830,16 @@
 				3AFB7ECB1C268F0300DD4E7E /* UserCoverCell.h */,
 				3AFB7ECC1C268F0300DD4E7E /* UserCoverCell.m */,
 				3AFB7ECD1C268F0300DD4E7E /* UserCoverCell.xib */,
+				3AFB7ED01C276CCE00DD4E7E /* ProfileDetailCell.h */,
+				3AFB7ED11C276CCE00DD4E7E /* ProfileDetailCell.m */,
+				3AFB7ED21C276CCE00DD4E7E /* ProfileDetailCell.xib */,
+				3AFB7ED51C276E6F00DD4E7E /* ProfileDetailCellItem.h */,
+				3AFB7ED61C276E6F00DD4E7E /* ProfileDetailCellItem.m */,
+				3A6E01621C3118BA0062FCBF /* DeleteAccountCellItem.h */,
+				3A6E01631C3118BA0062FCBF /* DeleteAccountCellItem.m */,
+				3A6E01651C31193C0062FCBF /* DeleteAccountCell.h */,
+				3A6E01661C31193C0062FCBF /* DeleteAccountCell.m */,
+				3A6E01671C31193C0062FCBF /* DeleteAccountCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -917,6 +939,8 @@
 		3A0ACC5D179A3FF90083B80B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3AFB7ED81C27758600DD4E7E /* UIView+Common.h */,
+				3AFB7ED91C27758600DD4E7E /* UIView+Common.m */,
 				3A1E16F51A537EEA002645CE /* MNMPullToRefreshManager.h */,
 				3A1E16F61A537EEA002645CE /* MNMPullToRefreshManager.m */,
 				3A1E16F71A537EEA002645CE /* MNMPullToRefreshView.h */,
@@ -958,8 +982,6 @@
 				3A0CC858179A4DAF0000AA8C /* LoginViewController.m */,
 				3A0CC85A179A4DBC0000AA8C /* SettingsViewController.h */,
 				3A0CC85B179A4DBC0000AA8C /* SettingsViewController.m */,
-				3ADFA909179B32EB00B66F78 /* ResultsViewController.h */,
-				3ADFA90A179B32EB00B66F78 /* ResultsViewController.m */,
 				3ADFA912179B3DD500B66F78 /* SHProfileViewController.h */,
 				3ADFA913179B3DD500B66F78 /* SHProfileViewController.m */,
 				3A964885186F9FE60026A559 /* MessageViewController.h */,
@@ -1239,8 +1261,6 @@
 				3A306EF81867BB0D0008755F /* SHWorkPartyViewController.m */,
 				3A306F001867C4C30008755F /* SHCleanMessyViewController.h */,
 				3A306F011867C4C30008755F /* SHCleanMessyViewController.m */,
-				3A306F091867C7730008755F /* SHDietViewController.h */,
-				3A306F0A1867C7730008755F /* SHDietViewController.m */,
 				3A306F0F1867CB160008755F /* SHShabbatViewController.h */,
 				3A306F101867CB160008755F /* SHShabbatViewController.m */,
 				3A306F151867CE520008755F /* SHWhatIWantInARoomateViewController.h */,
@@ -1461,8 +1481,6 @@
 				3AAB122A185E545B00F592DD /* SHOnboardingDelegate.h */,
 				3A29A4AA18E8BC7A0071873F /* SHEditProfileHeaderView.h */,
 				3A29A4AB18E8BC7A0071873F /* SHEditProfileHeaderView.m */,
-				3A94C4E41A34F2E70079A886 /* STOnboardingKosherView.h */,
-				3A94C4E51A34F2E70079A886 /* STOnboardingKosherView.m */,
 				3A94C4E71A34F9000079A886 /* STOnboardingWorkPlayView.h */,
 				3A94C4E81A34F9000079A886 /* STOnboardingWorkPlayView.m */,
 				3A94C4EA1A34FB440079A886 /* STOnboardingCleanMessyView.h */,
@@ -1519,8 +1537,6 @@
 				3A306EFE1867C2170008755F /* SHWorkPartyCell.m */,
 				3A306F031867C62C0008755F /* SHCleanMessyCell.h */,
 				3A306F041867C62C0008755F /* SHCleanMessyCell.m */,
-				3A306F061867C72D0008755F /* SHDietCell.h */,
-				3A306F071867C72D0008755F /* SHDietCell.m */,
 				3A306F0C1867CA010008755F /* SHShabatCell.h */,
 				3A306F0D1867CA010008755F /* SHShabatCell.m */,
 				3A306F121867CE1E0008755F /* SHRoomatePrefCell.h */,
@@ -1666,9 +1682,11 @@
 				3ADFA921179B551E00B66F78 /* navbar_bkg.png in Resources */,
 				3ADC70A71A412AE000189CFE /* sometimes_s@2x.png in Resources */,
 				3ADC708F1A41299B00189CFE /* organized_s@3x.png in Resources */,
+				3AFB7ED41C276CCE00DD4E7E /* ProfileDetailCell.xib in Resources */,
 				3ADC70931A41299B00189CFE /* sometimes_s@3x.png in Resources */,
 				3ADF2A69188392B000415A09 /* party_s@2x.png in Resources */,
 				3ADFA922179B551E00B66F78 /* navbar_bkg@2x.png in Resources */,
+				3A6E01691C31193C0062FCBF /* DeleteAccountCell.xib in Resources */,
 				3ADC70A91A412AE500189CFE /* sometimes_d@2x.png in Resources */,
 				3ADFA925179B5B2400B66F78 /* iphone_navbar_button_back.png in Resources */,
 				3ADFA926179B5B2400B66F78 /* iphone_navbar_button_back@2x.png in Resources */,
@@ -1712,7 +1730,9 @@
 				3A0ACD9F179A42D00083B80B /* Jastor.m in Sources */,
 				3A0ACDA0179A42D00083B80B /* JastorRuntimeHelper.m in Sources */,
 				3A0498B11C155E440083B4AF /* MultiSelectionCell.m in Sources */,
+				3AFB7EDA1C27758600DD4E7E /* UIView+Common.m in Sources */,
 				3A964890186FB7260026A559 /* SHAgeCell.m in Sources */,
+				3A6E01611C2F8EAF0062FCBF /* EditProfileViewController.m in Sources */,
 				3AAB1229185E448A00F592DD /* STOnboarding4View.m in Sources */,
 				3A0ACDA1179A42D00083B80B /* NSObject+SBJSON.m in Sources */,
 				3A0498A71C15297D0083B4AF /* GraduationYearViewController.m in Sources */,
@@ -1733,10 +1753,12 @@
 				3A96489B186FD4D70026A559 /* SHUserProfileTextCell.m in Sources */,
 				3AC4B5E018DE3727001E9CA0 /* TTTAttributedLabel.m in Sources */,
 				3A0ACDB5179A42D00083B80B /* NIInMemoryCache.m in Sources */,
+				3AFB7ED71C276E6F00DD4E7E /* ProfileDetailCellItem.m in Sources */,
 				3A0ACDB6179A42D00083B80B /* NIInvocationMethods.m in Sources */,
 				3AFB7EC61C267A4500DD4E7E /* UserCell.m in Sources */,
 				3A0ACDB7179A42D00083B80B /* NINavigationAppearance.m in Sources */,
 				3A306F021867C4C30008755F /* SHCleanMessyViewController.m in Sources */,
+				3AFB7ED31C276CCE00DD4E7E /* ProfileDetailCell.m in Sources */,
 				3A0ACDB8179A42D00083B80B /* NINetworkActivity.m in Sources */,
 				3A80E0CE1BDF117A00C65B41 /* STFacebookManager.m in Sources */,
 				3A0ACDB9179A42D00083B80B /* NINonEmptyCollectionTesting.m in Sources */,
@@ -1756,8 +1778,8 @@
 				3A0ACDC4179A42D00083B80B /* NINetworkImageView.m in Sources */,
 				3A04989E1C151CED0083B4AF /* CollegeViewController.m in Sources */,
 				3A0ACDC9179A42F50083B80B /* RuntimeHelper.m in Sources */,
+				3A6E01641C3118BA0062FCBF /* DeleteAccountCellItem.m in Sources */,
 				3A0ACDCA179A42F50083B80B /* NSString+CamelCase.m in Sources */,
-				3A306F0B1867C7730008755F /* SHDietViewController.m in Sources */,
 				3A0ACDEA179A465C0083B80B /* NSObject+SBJSON.m in Sources */,
 				3A0ACDEB179A465C0083B80B /* NSString+SBJSON.m in Sources */,
 				3A306EE71867AEC20008755F /* SHTextItemCell.m in Sources */,
@@ -1802,12 +1824,12 @@
 				3A1E16F91A537EEA002645CE /* MNMPullToRefreshManager.m in Sources */,
 				3A5C34A118676BA40092F08A /* STBaseDataModel.m in Sources */,
 				3A306ED7186793BA0008755F /* SHGraduationYearCell.m in Sources */,
+				3A6E01681C31193C0062FCBF /* DeleteAccountCell.m in Sources */,
 				3A964887186F9FE60026A559 /* MessageViewController.m in Sources */,
 				3A306EF01867B3570008755F /* SHTextEditViewController.m in Sources */,
 				3A94C4F21A34FEC10079A886 /* STOnboardingCampusView.m in Sources */,
 				3A306ED1186793480008755F /* SHEditProfileViewController.m in Sources */,
 				3A5C349818676ABA0092F08A /* LGURLJSONResponse.m in Sources */,
-				3A306F081867C72D0008755F /* SHDietCell.m in Sources */,
 				3A5C34A718676BC20092F08A /* SHMembersResultsModel.m in Sources */,
 				3A5C349A18676ABA0092F08A /* LGJSONRequestOperation.m in Sources */,
 				3A306EFF1867C2170008755F /* SHWorkPartyCell.m in Sources */,
@@ -1827,7 +1849,6 @@
 				3AFB7ECE1C268F0300DD4E7E /* UserCoverCell.m in Sources */,
 				3A94C4F51A3533330079A886 /* STOnboardingAboutMeView.m in Sources */,
 				3A0498A31C1520210083B4AF /* CollegeCell.m in Sources */,
-				3A94C4E61A34F2E70079A886 /* STOnboardingKosherView.m in Sources */,
 				3A0498C31C16C1100083B4AF /* FreeTextPresenter.m in Sources */,
 				3A0CCC4F179A53C40000AA8C /* NSURL+NXOAuth2.m in Sources */,
 				3A5C34B418676E540092F08A /* SHMemberResultsDataSource.m in Sources */,
@@ -1845,7 +1866,6 @@
 				3A5C349918676ABA0092F08A /* LGURLRequestModel.m in Sources */,
 				D02FD2FE179B278000D876D8 /* JLColors.m in Sources */,
 				3A306EDA186795460008755F /* SHPersonalInfoCell.m in Sources */,
-				3ADFA90B179B32EB00B66F78 /* ResultsViewController.m in Sources */,
 				3ADFA90E179B33DC00B66F78 /* SHOnboarding3View.m in Sources */,
 				3ADFA911179B36E500B66F78 /* UserResultCell.m in Sources */,
 				3ADC705D1A411CD600189CFE /* SHEditSchoolViewController.m in Sources */,

@@ -17,6 +17,7 @@
 #import "SHAccessToken.h"
 #import "College.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "MultiSelectionHelpers.h"
 
 @interface SHApi (Private)
 
@@ -210,14 +211,7 @@ static NSString *kCurrentUserPath = @"current_user";
 
 - (void)logout
 {
-    /*
-    [self logoutUser:^(void){
-        BD_LOG(@"logout Success");
-    }failure:^(NSError *error)
-     {
-         BD_LOG(@"failed to logout");
-     }];
-     */
+   [[FBSDKLoginManager new] logOut];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults removeObjectForKey:@"FBAccessTokenKey"];
@@ -248,53 +242,71 @@ static NSString *kCurrentUserPath = @"current_user";
 {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     
-    if(user.firstName != nil)
+    if(user.firstName) {
         [params setObject:user.firstName forKey:@"first_name"];
+    }
 
-    if(user.lastName != nil)
+    if(user.lastName) {
         [params setObject:user.lastName forKey:@"last_name"];
+    }
 
-    if(user.gender != nil)
-        [params setObject:user.gender forKey:@"gender"];
+    /*
+    if(user.gender) {
+        NSString *value = [MultiSelectionHelpers userValueForType:MultiSelectionTypeGender user:user];
+        [params setObject:value forKey:@"gender"];
+    }*/
 
-    if(user.age != nil && [user.age integerValue] != 0)
+    if(user.age) {
         [params setObject:[user.age stringValue] forKey:@"age"];
+    }
 
-    if(user.gradYear != nil)
+    if(user.gradYear) {
         [params setObject:[user.gradYear stringValue] forKey:@"grad_year"];
+    }
     
-    if(user.personalityText != nil)
+    if(user.personalityText) {
         [params setObject:user.personalityText forKey:@"personality_text"];
+    }
 
-    if(user.personality != nil)
+    if(user.personality) {
         [params setObject:[user.personality stringValue] forKey:@"personality"];
+    }
 
-    if(user.campus != nil)
-        [params setObject:user.campus forKey:@"campus"];
+    /*
+    if(user.campus) {
+        NSString *value = [MultiSelectionHelpers userValueForType:MultiSelectionTypeLivingArrangment user:user];
+        [params setObject:value forKey:@"campus"];
+    }*/
     
-    if(user.social != nil)
+    if(user.social) {
         [params setObject:[user.social stringValue] forKey:@"social"];
+    }
     
-    if(user.cleaning != nil)
-        [params setObject:user.cleaning forKey:@"cleaning"];
+    /*
+    if(user.cleaning) {
+        NSString *value = [MultiSelectionHelpers userValueForType:MultiSelectionTypeCleanMessy user:user];
+        [params setObject:value forKey:@"cleaning"];
+    }*/
 
-    if(user.diet != nil)
-        [params setObject:[user.diet stringValue] forKey:@"diet"];
+    if(user.kosher) {
+        [params setObject:user.kosher forKey:@"diet"];
+    }
 
-    if(user.dietText != nil)
-        [params setObject:user.dietText forKey:@"diet_text"];
-
-    if(user.religious != nil)
+    if(user.religious) {
         [params setObject:[user.religious stringValue] forKey:@"religious"];
+    }
 
-    if(user.religiousText != nil)
+    if(user.religiousText) {
         [params setObject:user.religiousText forKey:@"religious_text"];
+    }
 
-    if(user.aboutMe != nil)
+    if(user.aboutMe) {
         [params setObject:user.aboutMe forKey:@"about_me"];
+    }
 
-    if(user.fbToken != nil)
+    if(user.fbToken) {
         [params setObject:user.fbToken forKey:@"fb_token"];
+    }
 
     if(user.hsEngagement)
     {
@@ -304,42 +316,30 @@ static NSString *kCurrentUserPath = @"current_user";
         
     }
     
-    if(user.school)
-    {
-        if(user.college.collegeName)
-        {
+    if(user.school) {
+        if(user.college.collegeName) {
             [params setObject:user.college.collegeName forKey:@"college_name"];
    
-        }
-        else
-        {
+        } else {
             [params setObject:user.school forKey:@"school"];
-            
         }
-    }
-    else
-    {
-        if(user.college.collegeName)
-        {
+    } else {
+        if(user.college.collegeName) {
             [params setObject:user.college.collegeName forKey:@"college_name"];
-            
         }
-        else
-        {
+        else {
             [params setObject:@"" forKey:@"school"];
-            
         }
-        
     }
     
-    if(user.college)
-    {
-        if(user.college.dbId)
+    if(user.college) {
+        if(user.college.dbId) {
             [params setObject:user.college.dbId forKey:@"college_id"];
+        }
         
-        if(user.college.collegeName)
+        if(user.college.collegeName) {
             [params setObject:user.college.collegeName forKey:@"college_name"];
-        
+        }
     }
     
     if(user.fbUsername)
@@ -388,8 +388,9 @@ static NSString *kCurrentUserPath = @"current_user";
                                                        [SHUIHelpers handleApiError:[result objectForKey:@"error"]];
                                                    }
                                                    
-                                                   if(failure)
+                                                   if (failure) {
                                                        failure(nil);
+                                                   }
                                                }
                                                
                                            }
@@ -410,8 +411,17 @@ static NSString *kCurrentUserPath = @"current_user";
                                            success:^(id result) {
                                                if([result isKindOfClass:[NSDictionary class]])
                                                {
-                                                   User *user = [[User alloc] initWithDictionary:result];                                                   
-                                                   success(user);
+                                                   if (result[@"Message"]) {
+                                                       [SHUIHelpers handleApiError:result];
+                                                       if (failure) {
+                                                           failure(nil);
+                                                       }
+                                                   } else {
+                                                       User *user = [[User alloc] initWithDictionary:result];
+                                                       if (success) {
+                                                           success(user);
+                                                       }
+                                                   }
                                                    
                                                } else
                                                {
@@ -420,7 +430,9 @@ static NSString *kCurrentUserPath = @"current_user";
                                                        [SHUIHelpers handleApiError:[result objectForKey:@"error"]];
                                                    }
                                                    
-                                                   failure(nil);
+                                                   if (failure) {
+                                                       failure(nil);
+                                                   }
                                                }
                                                
                                            }
@@ -445,21 +457,23 @@ static NSString *kCurrentUserPath = @"current_user";
                                                    for(NSDictionary *dict in results)
                                                    {
                                                        User *user = [[User alloc] initWithDictionary:dict];
-                                                       success(user);
-                                                       
+                                                       if (success) {
+                                                           success(user);
+                                                       }
                                                    }
                                                    
-                                                   success(nil);
-
-                                                   
-                                                   
+                                                   if (success) {
+                                                       success(nil);
+                                                   }
                                                } else {
                                                    if([result objectForKey:@"error"])
                                                    {
                                                        //[UIHelpers handleApiError:[result objectForKey:@"error"]];
                                                    }
                                                    
-                                                   failure(nil);
+                                                   if (failure) {
+                                                       failure(nil);
+                                                   }
                                                }
                                                
                                            }
@@ -488,7 +502,9 @@ static NSString *kCurrentUserPath = @"current_user";
                                                        
                                                    }
                                                    
-                                                   success(colleges);
+                                                   if (success) {
+                                                       success(colleges);
+                                                   }
                                                    
                                                } else {
                                                    if([result objectForKey:@"error"])
@@ -496,7 +512,9 @@ static NSString *kCurrentUserPath = @"current_user";
                                                        //[UIHelpers handleApiError:[result objectForKey:@"error"]];
                                                    }
                                                    
-                                                   failure(nil);
+                                                   if (failure) {
+                                                       failure(nil);
+                                                   }
                                                }
                                                
                                            }
@@ -524,7 +542,9 @@ static NSString *kCurrentUserPath = @"current_user";
                                                        
                                                    }
                                                    
-                                                   success(colleges);
+                                                   if (success) {
+                                                       success(colleges);
+                                                   }
                                                    
                                                } else {
                                                    if([result objectForKey:@"error"])
@@ -532,7 +552,9 @@ static NSString *kCurrentUserPath = @"current_user";
                                                        //[UIHelpers handleApiError:[result objectForKey:@"error"]];
                                                    }
                                                    
-                                                   failure(nil);
+                                                   if (failure) {
+                                                       failure(nil);
+                                                   }
                                                }
                                                
                                            }
@@ -559,7 +581,9 @@ static NSString *kCurrentUserPath = @"current_user";
                                                        
                                                    }
                                                    
-                                                   success(colleges);
+                                                   if (success) {
+                                                       success(colleges);
+                                                   }
                                                    
                                                } else {
                                                    if([result objectForKey:@"error"])
@@ -567,7 +591,9 @@ static NSString *kCurrentUserPath = @"current_user";
                                                        //[UIHelpers handleApiError:[result objectForKey:@"error"]];
                                                    }
                                                    
-                                                   failure(nil);
+                                                   if (failure) {
+                                                       failure(nil);
+                                                   }
                                                }
                                                
                                            }
@@ -594,7 +620,9 @@ static NSString *kCurrentUserPath = @"current_user";
                                                        
                                                    }
                                                    
-                                                   success(users);
+                                                   if (success) {
+                                                       success(users);
+                                                   }
                                                    
                                                } else {
                                                    if([result objectForKey:@"error"])
@@ -602,7 +630,9 @@ static NSString *kCurrentUserPath = @"current_user";
                                                        //[UIHelpers handleApiError:[result objectForKey:@"error"]];
                                                    }
                                                    
-                                                   failure(nil);
+                                                   if (failure) {
+                                                       failure(nil);
+                                                   }
                                                }
                                                
                                            }
@@ -627,9 +657,13 @@ static NSString *kCurrentUserPath = @"current_user";
                                                if([result objectForKey:@"error"])
                                                {
                                                    [SHUIHelpers handleApiError:[result objectForKey:@"error"]];
-                                                   failure(nil);
+                                                   if (failure) {
+                                                       failure(nil);
+                                                   }
                                                }else{
-                                                   success();
+                                                   if (success) {
+                                                       success();
+                                                   }
                                                }
                                                
                                            }
@@ -682,7 +716,9 @@ static NSString *kCurrentUserPath = @"current_user";
                                                        
                                                    });
                                                    
-                                                   success();
+                                                   if (success) {
+                                                       success();
+                                                   }
                                                    
                                                }else{
                                                    if([result objectForKey:@"error"])
@@ -690,7 +726,9 @@ static NSString *kCurrentUserPath = @"current_user";
                                                        //[STUIHelpers handleApiError:[result objectForKey:@"error"]];
                                                    }
                                                    
-                                                   failure(nil);
+                                                   if (failure) {
+                                                       failure(nil);
+                                                   }
                                                }
                                                
                                            }
@@ -738,15 +776,18 @@ static NSString *kCurrentUserPath = @"current_user";
                                                        
                                                    });
                                                    
-                                                   success();
-                                                   
+                                                   if (success) {
+                                                       success();
+                                                   }
                                                }else{
                                                    if([result objectForKey:@"error"])
                                                    {
                                                        //[STUIHelpers handleApiError:[result objectForKey:@"error"]];
                                                    }
                                                    
-                                                   failure(nil);
+                                                   if (failure) {
+                                                       failure(nil);
+                                                   }
                                                }
                                                
                                            }
@@ -773,7 +814,9 @@ static NSString *kCurrentUserPath = @"current_user";
 {
     if(fbId.length == 0)
     {
-        failure(nil);
+        if (failure) {
+            failure(nil);
+        }
         return;
     }
     
@@ -861,24 +904,29 @@ static NSString *kCurrentUserPath = @"current_user";
              BD_LOG(@"standardRequestWithPath %@ error - %@ | ui: %@ error code = %d", path, error, [error userInfo],[error code]);
              BD_LOG(@"errors = %@",[[error userInfo] objectForKey:@"errors"]);
              
-             if (failure && ([requestOperation.error code] != NSURLErrorCancelled)) failure(error);
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 if (failure && ([requestOperation.error code] != NSURLErrorCancelled)) failure(error);
+             });
          }else{
              
              BD_LOG(@"response string = %@",requestOperation.responseString);
              BD_LOG(@"response data size = %db",[requestOperation.responseData length]);
 
-             if([requestOperation.responseData length] > 0)
-             {
-                 if (success)
-                     success([self jsonToDictionary:requestOperation.responseData]);
-
-             }
-             else
-             {
-                 if (success)
-                     success(nil);
-   
-             }
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 if([requestOperation.responseData length] > 0)
+                 {
+                     if (success)
+                         success([self jsonToDictionary:requestOperation.responseData]);
+                     
+                 }
+                 else
+                 {
+                     if (success)
+                         success(nil);
+                     
+                 }
+             });
+           
 
          }
                   

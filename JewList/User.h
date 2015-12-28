@@ -33,8 +33,6 @@
 @property (nonatomic, strong) NSString *earlyBird;
 @property (nonatomic, strong) NSString *cleaning;
 @property (nonatomic, strong) NSString *fun;
-@property (nonatomic, strong) NSNumber *diet;
-@property (nonatomic, strong) NSString *dietText;
 @property (nonatomic, strong) NSString *aboutMe;
 @property (nonatomic, strong) NSString *desiredMajor;
 @property (nonatomic, strong) NSString *firstName;

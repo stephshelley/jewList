@@ -15,5 +15,6 @@
 + (NSString *)questionTitleForType:(FreeTextType)type;
 + (NSString *)placeholderForType:(FreeTextType)type;
 + (void)setUserValue:(NSString *)value type:(FreeTextType)type user:(User *)user;
++ (NSString *)userValueForType:(FreeTextType)type user:(User *)user;
 
 @end

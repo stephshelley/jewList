@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MultiSelectionEnum.h"
+#import "User.h"
 
 @protocol MultiSelectionViewControllerDelegate;
 
@@ -15,6 +16,8 @@
 
 @property (nonatomic) MultiSelectionType type;
 @property (nonatomic) id<MultiSelectionViewControllerDelegate> delegate;
+@property (nonatomic) BOOL saveOnBackButton;
+@property (nonatomic) User *user;
 
 @end
 

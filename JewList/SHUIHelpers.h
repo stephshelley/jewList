@@ -10,6 +10,11 @@
 
 @interface SHUIHelpers : NSObject
 
++ (UIAlertController *)actionSheetAlertContorllerWithTitle:(NSString *)title buttonTitles:(NSArray *)buttonTitles completion:(void (^)(NSString *buttonTitle))completion;
++ (UIAlertController *)alertControllerWithTitle:(NSString *)title message:(NSString *)message completion:(void (^)(void))completion;
++ (UIAlertController *)errorAlertControllerWithMessage:(NSString *)message completion:(void (^)(void))completion;
++ (UIAlertController *)alertControllerWithTitle:(NSString *)title message:(NSString *)message buttonTitles:(NSArray *)buttonTitles completion:(void (^)(NSString *buttonTitle))completion;
+
 + (UIView*)getCustomBarButtonView:(CGRect)frame buttonImage:(NSString*)buttonImage selectedImage:(NSString*)selectedImage title:(NSString*)title andSelector:(SEL)selector sender:(id)sender titleColor:(UIColor*)color;
 + (void)alertWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle;
 + (void)alertErrorWithMessage:(NSString *)message;

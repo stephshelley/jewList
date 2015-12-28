@@ -56,7 +56,6 @@
     [super loadView];
     self.title = [NSString stringWithFormat:@"Message %@",_receipent.firstName];
     self.view.backgroundColor = DEFAULT_BACKGROUND_COLOR;
-    self.navigationController.navigationBarHidden = YES;
 
     UIView *statusBarView = nil;
     statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 20)];

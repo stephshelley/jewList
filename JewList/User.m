@@ -41,9 +41,8 @@
     newUser.fbImageUrl = [_fbImageUrl copyWithZone:zone];
     newUser.campus = [_campus copyWithZone:zone];
     newUser.cleaning = [_cleaning copyWithZone:zone];
-    newUser.diet = [_diet copyWithZone:zone];
-    newUser.dietText = [_dietText copyWithZone:zone];
     newUser.firstName = [_firstName copyWithZone:zone];
+    newUser.kosher = [_kosher copyWithZone:zone];
     newUser.lastName = [_lastName copyWithZone:zone];
     newUser.gender = [_gender copyWithZone:zone];
     newUser.gradYear = [_gradYear copyWithZone:zone];
@@ -76,7 +75,6 @@
 {
     if(nil == _fb) return nil;
     
-    NSInteger scale = [UIScreen mainScreen].scale;
     NSString *url = [NSString stringWithFormat:@"https://graph.facebook.com/%@?fields=cover", self.fb];
     return url;
     

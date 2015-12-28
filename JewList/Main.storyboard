@@ -72,7 +72,7 @@
                     <connections>
                         <outlet property="fbLoginButton" destination="DBg-rq-Yrl" id="BZ7-Mr-BJC"/>
                         <outlet property="logoImageView" destination="4v3-DG-77N" id="y8F-0c-AVt"/>
-                        <segue destination="7CY-Lh-SKV" kind="show" id="kJh-vU-flH"/>
+                        <segue destination="7CY-Lh-SKV" kind="show" identifier="beginOnboardingSegue" id="kJh-vU-flH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOk-5S-YD0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -345,6 +345,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nextButton" destination="hSR-vQ-iYC" id="nxy-Sa-kbt"/>
                         <outlet property="questionContainerView" destination="SDF-jm-wT7" id="9ge-8D-bAo"/>
                         <outlet property="questionTitleLabel" destination="OcH-sG-1pf" id="aLH-xp-wB8"/>
                         <outlet property="tableView" destination="qHA-jg-jeX" id="fLM-cs-Sex"/>
@@ -499,6 +500,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nextButton" destination="PT7-xe-Ot1" id="CFo-7Q-Yho"/>
                         <outlet property="questionTitleLabel" destination="XhA-SI-MUi" id="3CR-SO-0DH"/>
                         <outlet property="textView" destination="prj-4l-f9K" id="6xH-K8-w9w"/>
                         <segue destination="Ve8-8b-MNd" kind="show" id="2kV-ee-FKl"/>
@@ -511,7 +513,6 @@
         <!--Results-->
         <scene sceneID="Wau-xC-OQ9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vDZ-kk-Tfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="UserResultsViewController" title="Results" id="Ve8-8b-MNd" customClass="UserResultsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MUW-S8-SEW"/>
@@ -560,8 +561,10 @@
                         <outlet property="noResultsLabel" destination="r5Q-x8-GGY" id="XTG-kY-hpd"/>
                         <outlet property="tableView" destination="HoQ-nE-Gkv" id="pXm-8c-ItK"/>
                         <segue destination="KBV-dM-RTE" kind="show" id="520-0G-kt9"/>
+                        <segue destination="ms2-AZ-HqF" kind="presentation" identifier="showEditProfile" id="WEc-Yn-hvc"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vDZ-kk-Tfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2672" y="1228"/>
         </scene>
@@ -579,14 +582,15 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uan-GT-w9b">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="dataSource" destination="KBV-dM-RTE" id="0zs-Hz-bf1"/>
                                     <outlet property="delegate" destination="KBV-dM-RTE" id="aTG-rj-cRb"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94901960780000005" green="0.93725490199999995" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="uan-GT-w9b" firstAttribute="top" secondItem="hCL-cf-iM9" secondAttribute="bottom" id="JYL-TD-NIY"/>
                             <constraint firstItem="WDB-xl-jrH" firstAttribute="top" secondItem="uan-GT-w9b" secondAttribute="bottom" id="K7k-al-9HJ"/>
@@ -602,6 +606,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXu-aa-L9N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3357" y="1226"/>
+        </scene>
+        <!--Edit Profile-->
+        <scene sceneID="54z-gy-g7h">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bel-RR-BLt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController storyboardIdentifier="EditProfileViewController" title="Edit Profile" id="aZv-lJ-eiq" customClass="EditProfileViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="r16-vt-AcO">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.94901960780000005" green="0.93725490199999995" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <connections>
+                            <outlet property="dataSource" destination="aZv-lJ-eiq" id="U2f-fu-hIu"/>
+                            <outlet property="delegate" destination="aZv-lJ-eiq" id="aCW-On-I9B"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Edit Profile" id="IKl-Az-7ej">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bdR-Qp-M74">
+                            <connections>
+                                <action selector="onCancelButtonPressed:" destination="aZv-lJ-eiq" id="URB-fv-S2V"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="JAi-sa-6ux">
+                            <connections>
+                                <action selector="onLogoutButton:" destination="aZv-lJ-eiq" id="73A-gf-jkI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="3400" y="2092"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8im-sv-Wo2">
+            <objects>
+                <navigationController id="ms2-AZ-HqF" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="SzE-RC-BzB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="aZv-lJ-eiq" kind="relationship" relationship="rootViewController" id="aCV-W3-NL0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SCV-0X-QYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2672" y="2092"/>
         </scene>
         <!--Graduation Year-->
         <scene sceneID="6jR-re-Y2Z">
@@ -648,6 +699,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nextButton" destination="odm-4q-TD2" id="TEq-yH-BEg"/>
                         <outlet property="pickerView" destination="ElY-l1-yQX" id="VoO-od-Lvh"/>
                         <segue destination="R0W-vu-Ei8" kind="show" id="wXJ-XQ-cKG"/>
                     </connections>
@@ -701,6 +753,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nextButton" destination="s9C-qy-b7P" id="phV-fE-9Fd"/>
                         <outlet property="pickerView" destination="sVH-Bg-TDO" id="MEb-um-FXH"/>
                         <segue destination="gca-Tq-5hO" kind="show" id="6wu-u8-lt5"/>
                     </connections>

@@ -8,9 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
+#import "College.h"
+
+@protocol CollegeViewControllerDelegate;
 
 @interface CollegeViewController : UIViewController
 
 @property (nonatomic) User *user;
+@property (nonatomic) BOOL saveOnBackButton;
+@property (nonatomic) id<CollegeViewControllerDelegate> delegate;
+
+@end
+
+@protocol CollegeViewControllerDelegate <NSObject>
+
+- (void)collegeViewControllerDidSelectCollege:(College *)college;
 
 @end

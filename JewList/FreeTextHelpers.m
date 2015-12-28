@@ -60,4 +60,21 @@
 
 }
 
++ (NSString *)userValueForType:(FreeTextType)type user:(User *)user {
+    NSString *value = nil;
+    
+    switch (type) {
+        case FreeTextTypeAboutMe:
+            value = user.aboutMe;
+            break;
+        case FreeTextTypeDesiredMajor:
+            value = user.desiredMajor;
+            break;
+
+        default:
+            break;
+    }
+    return value;
+}
+
 @end

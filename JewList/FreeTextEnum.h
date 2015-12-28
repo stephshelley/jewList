@@ -8,6 +8,6 @@
 
 typedef NS_ENUM(NSUInteger, FreeTextType)
 {
-    FreeTextTypeAboutMe,
+    FreeTextTypeAboutMe = 1,
     FreeTextTypeDesiredMajor,
 };

@@ -16,7 +16,7 @@
     
     switch (type) {
         case MultiSelectionTypeGender:
-            options = @[@"Female", @"Male", @"Other", @"N/A"];
+            options = @[@"Male", @"Female", @"Other", @"N/A"];
             break;
         case MultiSelectionTypeHighSchoolConnections:
             options = @[@"BBYO", @"USY", @"NFTY", @"NCSY", @"Young Judea", @"Other"];
@@ -147,6 +147,74 @@
         default:
             break;
     }
+}
+
++ (NSString *)userValueForType:(MultiSelectionType)type user:(User *)user {
+    NSString *value = nil;
+    
+    switch (type) {
+        case MultiSelectionTypeGender:
+            if ([user.gender isKindOfClass:[NSNumber class]]) {
+                
+                NSArray *options = [[self class] optionsForType:type];
+                value = options[[(NSNumber *)user.gender integerValue]];
+
+            }else {
+                value = user.gender;
+            }
+            break;
+        case MultiSelectionTypeHighSchoolConnections:
+            value = user.hsEngagement;
+            break;
+        case MultiSelectionTypeLivingArrangment:
+            if ([user.campus isKindOfClass:[NSNumber class]]) {
+                
+                NSArray *options = [[self class] optionsForType:type];
+                value = options[[(NSNumber *)user.campus integerValue]];
+    
+            }else {
+                value = user.campus;
+            }
+            break;
+        case MultiSelectionTypeEarlyBird:
+            value = user.earlyBird;
+            break;
+        case MultiSelectionTypeCleanMessy:
+            if ([user.cleaning isKindOfClass:[NSNumber class]]) {
+                
+                NSArray *options = [[self class] optionsForType:type];
+                value = options[[(NSNumber *)user.cleaning integerValue]];
+                
+            }else {
+                value = user.cleaning;
+            }
+            break;
+        case MultiSelectionTypeFun:
+            value = user.fun;
+            break;
+        case MultiSelectionTypeKosher:
+            value = user.kosher;
+            break;
+        case MultiSelectionTypeShabbat:
+            value = user.shabat;
+            break;
+        case MultiSelectionTypeMusic:
+            value = user.music;
+            break;
+        case MultiSelectionTypeDuringTheDay:
+            value = user.duringTheDay;
+            break;
+        case MultiSelectionTypeActivities:
+            value = user.activities;
+            break;
+        case MultiSelectionTypeWantContactFromJewishOrganizations:
+            value = user.contactFromJewishOrgs;
+            break;
+            
+        default:
+            break;
+    }
+    return value;
 }
 
 + (BOOL)supportsMultiSelectionForType:(MultiSelectionType)type {

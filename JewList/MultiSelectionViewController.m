@@ -10,12 +10,14 @@
 #import "MultiSelectionCell.h"
 #import "MultiSelectionHelpers.h"
 #import "SHUIHelpers.h"
+#import "UIView+Common.h"
 
 @interface MultiSelectionViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *questionTitleLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *questionContainerHeightConstraint;
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
 @property (weak, nonatomic) IBOutlet UIView *questionContainerView;
 @property (nonatomic) NSString *selectedValue;
 @property (nonatomic) NSArray *selections;
@@ -37,7 +39,32 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(MultiSelectionCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(MultiSelectionCell.class)];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    if (self.saveOnBackButton) {
+        self.nextButton.constrainedHeight = @(0);
+        self.nextButton.hidden = YES;
+        NSString *valueString = [MultiSelectionHelpers userValueForType:self.type user:self.user];
+        NSArray *values = [valueString componentsSeparatedByString:@", "];
+        for (NSString *str in values) {
+            NSString *sanitizedString = [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            if (sanitizedString.length > 0) {
+                self.selectedKeys[sanitizedString] = @(YES);
+            }
+        }
+    }
     [self.tableView reloadData];
+}
+
+- (void)didMoveToParentViewController:(UIViewController *)parent {
+    if (!parent && self.saveOnBackButton) {
+        if (self.supportsMultiSelection) {
+            self.selectedValue = [self multiSelectionResultValue];
+        }
+        
+        if ([self.delegate respondsToSelector:@selector(mutliSelectionViewControllerDidSelect:value:)]) {
+            [self.delegate mutliSelectionViewControllerDidSelect:self value:self.selectedValue];
+        }
+    }
 }
 
 #pragma mark - UITableViewDelegate -

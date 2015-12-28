@@ -12,9 +12,9 @@
 #import "AppDelegate.h"
 #import "SHApi.h"
 #import "SHUIHelpers.h"
-#import "ResultsViewController.h"
+#import "UserResultsViewController.h"
 
-@interface FreeTextPresenter () <FreeTextViewControllerDeleage>
+@interface FreeTextPresenter () <FreeTextViewControllerDelegate>
 
 @property (nonatomic) UIViewController *currentViewController;
 @property (nonatomic) User *user;
@@ -44,12 +44,14 @@
     if (viewController.type == FreeTextTypeDesiredMajor) {
         [[SHApi sharedInstance] updateUser:self.user success:^(User *updatedUser){
             dispatch_async(dispatch_get_main_queue(), ^{
-                ResultsViewController *vc = [[ResultsViewController alloc] init];
+                UserResultsViewController *vc = [GetAppDelegate.storyboard instantiateViewControllerWithIdentifier:@"UserResultsViewController"];
                 [viewController.navigationController pushViewController:vc animated:NO];
             });
         }failure:^(NSError *error)
          {
              [SHUIHelpers alertErrorWithMessage:@"We're sorry, we counldnt finish the signup process, please try again."];
+             UserResultsViewController *vc = [GetAppDelegate.storyboard instantiateViewControllerWithIdentifier:@"UserResultsViewController"];
+             [viewController.navigationController pushViewController:vc animated:NO];
          }];
         
     } else {

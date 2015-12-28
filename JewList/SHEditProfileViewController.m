@@ -20,8 +20,6 @@
 #import "SHWorkPartyViewController.h"
 #import "SHCleanMessyViewController.h"
 #import "SHCleanMessyCell.h"
-#import "SHDietViewController.h"
-#import "SHDietCell.h"
 #import "SHShabatCell.h"
 #import "SHLogoutCellTableViewCell.h"
 #import "SHLogoutCellTableViewCell.h"
@@ -114,7 +112,6 @@
     [_tableView registerClass:[SHWorkPartyCell class] forCellReuseIdentifier:NSStringFromClass([SHWorkPartyCell class])];
     [_tableView registerClass:[SHCleanMessyCell class] forCellReuseIdentifier:NSStringFromClass([SHCleanMessyCell class])];
     [_tableView registerClass:[SHSchoolCell class] forCellReuseIdentifier:NSStringFromClass([SHSchoolCell class])];
-    [_tableView registerClass:[SHDietCell class] forCellReuseIdentifier:NSStringFromClass([SHDietCell class])];
     [_tableView registerClass:[SHShabatCell class] forCellReuseIdentifier:NSStringFromClass([SHShabatCell class])];
     [_tableView registerClass:[SHRoomatePrefCell class] forCellReuseIdentifier:NSStringFromClass([SHRoomatePrefCell class])];
     [_tableView registerClass:[SHLocationCell class] forCellReuseIdentifier:NSStringFromClass([SHLocationCell class])];
@@ -380,14 +377,7 @@
 
                 break;
             }
-            case 2:
-            {
 
-                cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHDietCell class])];
-                SHDietCell *gradCell = (SHDietCell *)cell;
-                gradCell.user = _currentUser;
-                break;
-            }
             case 3:
             {
                 cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SHShabatCell class])];
@@ -507,12 +497,7 @@
                 [self.navigationController  pushViewController:vc animated:YES];
                 break;
             }
-            case 2:
-            {
-                SHDietViewController *vc = [[SHDietViewController alloc] initWithUser:_currentUser];
-                [self.navigationController  pushViewController:vc animated:YES];
-                break;
-            }
+            
             case 3:
             {
                 SHShabbatViewController *vc = [[SHShabbatViewController alloc] initWithUser:_currentUser];

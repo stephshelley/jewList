@@ -8,9 +8,11 @@
 
 #import "AgeViewController.h"
 #import "MultiSelectionPresenter.h"
+#import "UIView+Common.h"
 
 @interface AgeViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 @property (nonatomic) NSMutableArray *yearsArray;
 
@@ -22,14 +24,35 @@
     [super viewDidLoad];
     
     self.yearsArray = [NSMutableArray array];
+    NSUInteger index = 0;
+
     for(NSInteger i = 16; i < 50; i++)
     {
         NSNumber *age = [NSNumber numberWithInteger:i];
         [self.yearsArray addObject:age];
+        if (self.user.age.integerValue == i) {
+            index = [self.yearsArray indexOfObject:age];
+        }
     }
     
     if([self.user.age intValue] == 0) {
-        self.user.age = @16;
+        self.user.age = [self.yearsArray firstObject];;
+    } else {
+        [self.pickerView selectRow:index inComponent:0 animated:YES];
+    }
+    
+    if (self.saveOnBackButton) {
+        self.nextButton.constrainedHeight = @(0);
+        
+    }
+}
+
+- (void)didMoveToParentViewController:(UIViewController *)parent {
+    if (!parent && self.saveOnBackButton) {
+        
+        if ([self.delegate respondsToSelector:@selector(graduationYearViewControllerDidSelectAge:)]) {
+            [self.delegate graduationYearViewControllerDidSelectAge:self.user.age];
+        }
     }
 }
 

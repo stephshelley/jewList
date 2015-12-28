@@ -8,7 +8,7 @@
 
 typedef NS_ENUM(NSUInteger, MultiSelectionType)
 {
-    MultiSelectionTypeGender,
+    MultiSelectionTypeGender = 1,
     MultiSelectionTypeHighSchoolConnections,
     MultiSelectionTypeLivingArrangment,
     MultiSelectionTypeEarlyBird,

@@ -9,8 +9,19 @@
 #import <UIKit/UIKit.h>
 #import "User.h"
 
+@protocol AgeViewControllerDelegate;
+
 @interface AgeViewController : UIViewController
 
 @property (nonatomic) User *user;
+@property (nonatomic) BOOL saveOnBackButton;
+@property (nonatomic) id<AgeViewControllerDelegate> delegate;
+
+@end
+
+@protocol AgeViewControllerDelegate <NSObject>
+
+@optional
+- (void)graduationYearViewControllerDidSelectAge:(NSNumber *)age;
 
 @end

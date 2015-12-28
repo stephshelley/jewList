@@ -15,6 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *questionTitleLabel;
 @property (weak, nonatomic) IBOutlet UIPlaceHolderTextView *textView;
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
 
 @end
 
@@ -24,7 +25,27 @@
     [super viewDidLoad];
     self.textView.placeholder = [FreeTextHelpers placeholderForType:self.type];
     self.textView.placeholderColor = [UIColor lightGrayColor];
+    if (self.preloadText) {
+        self.textView.text = self.preloadText;
+    }
+    
     self.questionTitleLabel.text = [FreeTextHelpers questionTitleForType:self.type];
+    
+    if (self.saveOnBackButton) {
+        self.nextButton.hidden = YES;
+    }
+    
+}
+
+- (void)didMoveToParentViewController:(UIViewController *)parent {
+    if (!parent) {
+        NSLog(@"back pressed");
+        if (self.saveOnBackButton) {
+            if ([self.delegate respondsToSelector:@selector(freeTextControllerDidChooseText:text:)]) {
+                [self.delegate freeTextControllerDidChooseText:self text:self.textView.text];
+            }
+        }
+    }
 }
 
 - (IBAction)onNextButton:(id)sender {
