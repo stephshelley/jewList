@@ -501,6 +501,7 @@
                     </view>
                     <connections>
                         <outlet property="nextButton" destination="PT7-xe-Ot1" id="CFo-7Q-Yho"/>
+                        <outlet property="nextButtonBottomConstraint" destination="pFb-0e-bvX" id="YGa-kK-xHu"/>
                         <outlet property="questionTitleLabel" destination="XhA-SI-MUi" id="3CR-SO-0DH"/>
                         <outlet property="textView" destination="prj-4l-f9K" id="6xH-K8-w9w"/>
                         <segue destination="Ve8-8b-MNd" kind="show" id="2kV-ee-FKl"/>
@@ -622,7 +623,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Edit Profile" id="IKl-Az-7ej">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bdR-Qp-M74">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="bdR-Qp-M74">
                             <connections>
                                 <action selector="onCancelButtonPressed:" destination="aZv-lJ-eiq" id="URB-fv-S2V"/>
                             </connections>
