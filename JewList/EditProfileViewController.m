@@ -164,6 +164,7 @@ NSString * const yesTitle = @"Yes";
     } else if (item.multiSelectionType > 0) {
         MultiSelectionViewController *multiSelectionVC = [GetAppDelegate.storyboard instantiateViewControllerWithIdentifier:@"MultiSelectionViewController"];
         multiSelectionVC.saveOnBackButton = YES;
+        multiSelectionVC.user = self.currentUser;
         multiSelectionVC.type = item.multiSelectionType;
         multiSelectionVC.delegate = self;
         vc = multiSelectionVC;

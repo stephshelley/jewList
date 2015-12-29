@@ -149,6 +149,58 @@
     }
 }
 
++ (NSUInteger)getIndexValueForValue:(NSString *)value type:(MultiSelectionType)type {
+    NSUInteger index = 0;
+    
+    NSArray *options = [[self class] optionsForType:type];
+    for (NSString *str in options) {
+        if ([str isEqualToString:value]) {
+            break;
+        }
+        index++;
+    }
+    return index;
+}
+
++ (NSNumber *)getNumberValueForType:(MultiSelectionType)type user:(User *)user {
+    NSNumber *value = nil;
+    
+    switch (type) {
+        case MultiSelectionTypeGender:
+            if ([user.gender isKindOfClass:[NSString class]]) {
+                value = @([self getIndexValueForValue:user.gender type:MultiSelectionTypeGender]);
+            }
+            
+            break;
+        case MultiSelectionTypeLivingArrangment:
+            if ([user.campus isKindOfClass:[NSString class]]) {
+                value = @([self getIndexValueForValue:user.campus type:MultiSelectionTypeLivingArrangment]);
+            }
+            
+            break;
+        case MultiSelectionTypeCleanMessy:
+            if ([user.cleaning isKindOfClass:[NSString class]]) {
+                value = @([self getIndexValueForValue:user.cleaning type:MultiSelectionTypeCleanMessy]);
+            }
+            
+            break;
+        
+        case MultiSelectionTypeFun:
+            if ([user.fun isKindOfClass:[NSString class]]) {
+                value = @([self getIndexValueForValue:user.fun type:MultiSelectionTypeFun]);
+            }
+            
+            break;
+            
+            
+        default:
+            break;
+    }
+    
+    return value;
+}
+
+
 + (NSString *)userValueForType:(MultiSelectionType)type user:(User *)user {
     NSString *value = nil;
     

@@ -16,6 +16,8 @@
 + (NSString *)questionTitleForType:(MultiSelectionType)type;
 + (void)setUserValue:(NSString *)value type:(MultiSelectionType)type user:(User *)user;
 + (NSString *)userValueForType:(MultiSelectionType)type user:(User *)user;
++ (NSNumber *)getNumberValueForType:(MultiSelectionType)type user:(User *)user;
 + (BOOL)supportsMultiSelectionForType:(MultiSelectionType)type;
++ (NSUInteger)getIndexValueForValue:(NSString *)value type:(MultiSelectionType)type;
 
 @end

@@ -250,11 +250,11 @@ static NSString *kCurrentUserPath = @"current_user";
         [params setObject:user.lastName forKey:@"last_name"];
     }
 
-    /*
+    
     if(user.gender) {
-        NSString *value = [MultiSelectionHelpers userValueForType:MultiSelectionTypeGender user:user];
-        [params setObject:value forKey:@"gender"];
-    }*/
+        NSNumber *value = [MultiSelectionHelpers getNumberValueForType:MultiSelectionTypeGender user:user];
+        [params setObject:[value stringValue] forKey:@"gender"];
+    }
 
     if(user.age) {
         [params setObject:[user.age stringValue] forKey:@"age"];
@@ -264,40 +264,45 @@ static NSString *kCurrentUserPath = @"current_user";
         [params setObject:[user.gradYear stringValue] forKey:@"grad_year"];
     }
     
-    if(user.personalityText) {
-        [params setObject:user.personalityText forKey:@"personality_text"];
+    if(user.fun) {
+        [params setObject:user.fun forKey:@"personality_text"];
     }
 
     if(user.personality) {
         [params setObject:[user.personality stringValue] forKey:@"personality"];
     }
 
-    /*
+    
     if(user.campus) {
-        NSString *value = [MultiSelectionHelpers userValueForType:MultiSelectionTypeLivingArrangment user:user];
-        [params setObject:value forKey:@"campus"];
-    }*/
+        NSNumber *value = [MultiSelectionHelpers getNumberValueForType:MultiSelectionTypeLivingArrangment user:user];
+        [params setObject:[value stringValue] forKey:@"campus"];
+    }
     
     if(user.social) {
         [params setObject:[user.social stringValue] forKey:@"social"];
     }
     
-    /*
+    
+    if(user.cleaning) {
+        NSNumber *value = [MultiSelectionHelpers getNumberValueForType:MultiSelectionTypeCleanMessy user:user];
+        [params setObject:[value stringValue] forKey:@"cleaning"];
+    }
+    
     if(user.cleaning) {
         NSString *value = [MultiSelectionHelpers userValueForType:MultiSelectionTypeCleanMessy user:user];
-        [params setObject:value forKey:@"cleaning"];
-    }*/
+        [params setObject:value forKey:@"cleaning_text"];
+    }
 
     if(user.kosher) {
-        [params setObject:user.kosher forKey:@"diet"];
+        [params setObject:user.kosher forKey:@"diet_text"];
     }
 
     if(user.religious) {
         [params setObject:[user.religious stringValue] forKey:@"religious"];
     }
 
-    if(user.religiousText) {
-        [params setObject:user.religiousText forKey:@"religious_text"];
+    if(user.shabat) {
+        [params setObject:user.shabat forKey:@"religious_text"];
     }
 
     if(user.aboutMe) {
@@ -912,24 +917,20 @@ static NSString *kCurrentUserPath = @"current_user";
              BD_LOG(@"response string = %@",requestOperation.responseString);
              BD_LOG(@"response data size = %db",[requestOperation.responseData length]);
 
-             dispatch_async(dispatch_get_main_queue(), ^{
-                 if([requestOperation.responseData length] > 0)
-                 {
-                     if (success)
-                         success([self jsonToDictionary:requestOperation.responseData]);
-                     
+             if(requestOperation.responseData) {
+                 if (success) {
+                     dispatch_async(dispatch_get_main_queue(), ^{
+                         success([self jsonToDictionary:[requestOperation.responseData copy]]);
+                     });
                  }
-                 else
-                 {
-                     if (success)
+             } else {
+                 if (success) {
+                     dispatch_async(dispatch_get_main_queue(), ^{
                          success(nil);
-                     
+                     });
                  }
-             });
-           
-
+             }
          }
-                  
      }];
     
     [requestOperation start];

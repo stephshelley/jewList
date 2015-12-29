@@ -40,17 +40,23 @@
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(MultiSelectionCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(MultiSelectionCell.class)];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    if (self.saveOnBackButton) {
-        self.nextButton.constrainedHeight = @(0);
-        self.nextButton.hidden = YES;
-        NSString *valueString = [MultiSelectionHelpers userValueForType:self.type user:self.user];
-        NSArray *values = [valueString componentsSeparatedByString:@", "];
+    NSString *valueString = [MultiSelectionHelpers userValueForType:self.type user:self.user];
+    NSArray *values = [valueString componentsSeparatedByString:@", "];
+    if (self.supportsMultiSelection) {
         for (NSString *str in values) {
             NSString *sanitizedString = [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
             if (sanitizedString.length > 0) {
                 self.selectedKeys[sanitizedString] = @(YES);
             }
         }
+    } else {
+        self.selectedValue = values.firstObject;
+    }
+    
+    
+    if (self.saveOnBackButton) {
+        self.nextButton.constrainedHeight = @(0);
+        self.nextButton.hidden = YES;
     }
     [self.tableView reloadData];
 }
