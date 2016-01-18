@@ -40,7 +40,7 @@
     newUser.fbToken = [_fbToken copyWithZone:zone];
     newUser.fbImageUrl = [_fbImageUrl copyWithZone:zone];
     newUser.campus = [_campus copyWithZone:zone];
-    newUser.cleaning = [_cleaning copyWithZone:zone];
+    newUser.cleanMessy = [_cleanMessy copyWithZone:zone];
     newUser.firstName = [_firstName copyWithZone:zone];
     newUser.kosher = [_kosher copyWithZone:zone];
     newUser.lastName = [_lastName copyWithZone:zone];

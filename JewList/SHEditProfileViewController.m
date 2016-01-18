@@ -11,7 +11,6 @@
 #import "SHGraduationYearCell.h"
 #import "SHApi.h"
 #import "SHGradYearViewController.h"
-#import "SHGenderViewController.h"
 #import "SHAboutMeCell.h"
 #import "SHHighSchoolInfoCell.h"
 #import "SHHSEngadmentViewController.h"
@@ -26,7 +25,6 @@
 #import "SHShabbatViewController.h"
 #import "SHWhatIWantInARoomateViewController.h"
 #import "SHRoomatePrefCell.h"
-#import "SHCampusViewController.h"
 #import "SHLocationCell.h"
 #import "SHAgeViewController.h"
 #import "SHAgeCell.h"
@@ -34,7 +32,6 @@
 #import "SHDeleteAccountCell.h"
 #import "SHEditProfileHeaderView.h"
 #import "SHSchoolCell.h"
-#import "SHEditSchoolViewController.h"
 
 @interface SHEditProfileViewController ()
 
@@ -415,9 +412,6 @@
         switch (row) {
             case 0:
             {
-                SHEditSchoolViewController *vc = [[SHEditSchoolViewController alloc] initWithUser:_currentUser];
-                [self.navigationController  pushViewController:vc animated:YES];
-                
                 break;
             }
             case 1:
@@ -435,8 +429,6 @@
             }
             case 3:
             {
-                SHGenderViewController *vc = [[SHGenderViewController alloc] initWithUser:_currentUser];
-                [self.navigationController  pushViewController:vc animated:YES];
                 break;
             }
                 /*
@@ -462,9 +454,6 @@
         switch (row) {
             case 0:
             {
-                SHCampusViewController *vc = [[SHCampusViewController alloc] initWithUser:_currentUser];
-                [self.navigationController  pushViewController:vc animated:YES];
-                
                 break;
             }
             

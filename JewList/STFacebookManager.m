@@ -288,6 +288,7 @@
     // We need to handle URLs by passing them to FBSession in order for SSO authentication
     // to work.
     //return [FBSession.activeSession handleOpenURL:url];
+    return YES;
 }
 
 

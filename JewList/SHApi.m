@@ -250,7 +250,6 @@ static NSString *kCurrentUserPath = @"current_user";
         [params setObject:user.lastName forKey:@"last_name"];
     }
 
-    
     if(user.gender) {
         NSNumber *value = [MultiSelectionHelpers getNumberValueForType:MultiSelectionTypeGender user:user];
         [params setObject:[value stringValue] forKey:@"gender"];
@@ -264,15 +263,18 @@ static NSString *kCurrentUserPath = @"current_user";
         [params setObject:[user.gradYear stringValue] forKey:@"grad_year"];
     }
     
-    if(user.fun) {
-        [params setObject:user.fun forKey:@"personality_text"];
+    if(user.funMeans) {
+        [params setObject:user.funMeans forKey:@"fun_means"];
+    }
+    
+    if(user.music) {
+        [params setObject:user.music forKey:@"music"];
     }
 
     if(user.personality) {
         [params setObject:[user.personality stringValue] forKey:@"personality"];
     }
 
-    
     if(user.campus) {
         NSNumber *value = [MultiSelectionHelpers getNumberValueForType:MultiSelectionTypeLivingArrangment user:user];
         [params setObject:[value stringValue] forKey:@"campus"];
@@ -282,15 +284,14 @@ static NSString *kCurrentUserPath = @"current_user";
         [params setObject:[user.social stringValue] forKey:@"social"];
     }
     
-    
-    if(user.cleaning) {
+    if(user.cleanMessy) {
         NSNumber *value = [MultiSelectionHelpers getNumberValueForType:MultiSelectionTypeCleanMessy user:user];
         [params setObject:[value stringValue] forKey:@"cleaning"];
     }
     
-    if(user.cleaning) {
+    if(user.cleanMessy) {
         NSString *value = [MultiSelectionHelpers userValueForType:MultiSelectionTypeCleanMessy user:user];
-        [params setObject:value forKey:@"cleaning_text"];
+        [params setObject:value forKey:@"clean_messy"];
     }
 
     if(user.kosher) {
@@ -301,8 +302,8 @@ static NSString *kCurrentUserPath = @"current_user";
         [params setObject:[user.religious stringValue] forKey:@"religious"];
     }
 
-    if(user.shabat) {
-        [params setObject:user.shabat forKey:@"religious_text"];
+    if(user.shabbatResponse) {
+        [params setObject:user.shabbatResponse forKey:@"shabbat_response"];
     }
 
     if(user.aboutMe) {
@@ -312,17 +313,23 @@ static NSString *kCurrentUserPath = @"current_user";
     if(user.fbToken) {
         [params setObject:user.fbToken forKey:@"fb_token"];
     }
-
-    if(user.hsEngagement)
-    {
-        [params setObject:user.hsEngagement forKey:@"hs_engagement"];
-    }else{
-        [params setObject:@"" forKey:@"hs_engagement"];
-        
+    
+    if(user.desiredMajor) {
+        [params setObject:user.fbToken forKey:@"desired_major"];
     }
     
-    if(user.school) {
-        if(user.college.collegeName) {
+    if(user.campusInvolvement) {
+        [params setObject:user.campusInvolvement forKey:@"campus_involvement"];
+    }
+
+    if(user.hsEngagement) {
+        [params setObject:user.hsEngagement forKey:@"hs_engagement"];
+    } else {
+        [params setObject:@"" forKey:@"hs_engagement"];
+    }
+    
+    if (user.school) {
+        if (user.college.collegeName) {
             [params setObject:user.college.collegeName forKey:@"college_name"];
    
         } else {
@@ -337,33 +344,26 @@ static NSString *kCurrentUserPath = @"current_user";
         }
     }
     
-    if(user.college) {
+    if (user.college) {
         if(user.college.dbId) {
             [params setObject:user.college.dbId forKey:@"college_id"];
         }
         
-        if(user.college.collegeName) {
+        if (user.college.collegeName) {
             [params setObject:user.college.collegeName forKey:@"college_name"];
         }
     }
     
-    if(user.fbUsername)
-    {
+    if (user.fbUsername) {
         [params setObject:user.fbUsername forKey:@"fb"];
-        
-    }else{
+    } else {
         [params setObject:@"" forKey:@"fb"];
-        
     }
     
-    if(user.didFinishSignup)
-    {
+    if(user.didFinishSignup) {
         [params setObject:@"1" forKey:@"did_finish_signup"];
-
     }
-    
     return params;
-    
 }
 
 - (void)deleteAccount

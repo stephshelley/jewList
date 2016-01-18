@@ -118,7 +118,6 @@
 		3A306EDA186795460008755F /* SHPersonalInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306ED9186795460008755F /* SHPersonalInfoCell.m */; };
 		3A306EDD186795E60008755F /* SHGenderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306EDC186795E60008755F /* SHGenderCell.m */; };
 		3A306EE018679C3C0008755F /* SHGradYearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306EDF18679C3C0008755F /* SHGradYearViewController.m */; };
-		3A306EE31867AC920008755F /* SHGenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306EE21867AC920008755F /* SHGenderViewController.m */; };
 		3A306EE71867AEC20008755F /* SHTextItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306EE61867AEC20008755F /* SHTextItemCell.m */; };
 		3A306EEA1867AFD70008755F /* SHHighSchoolInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306EE91867AFD70008755F /* SHHighSchoolInfoCell.m */; };
 		3A306EED1867B0410008755F /* SHAboutMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306EEC1867B0410008755F /* SHAboutMeCell.m */; };
@@ -135,7 +134,6 @@
 		3A306F141867CE1E0008755F /* SHRoomatePrefCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F131867CE1E0008755F /* SHRoomatePrefCell.m */; };
 		3A306F171867CE520008755F /* SHWhatIWantInARoomateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F161867CE520008755F /* SHWhatIWantInARoomateViewController.m */; };
 		3A306F1A1867D0380008755F /* SHLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F191867D0380008755F /* SHLocationCell.m */; };
-		3A306F1D1867D08E0008755F /* SHCampusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A306F1C1867D08E0008755F /* SHCampusViewController.m */; };
 		3A3C017D19CFB42D005E8996 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3C017C19CFB42D005E8996 /* Crashlytics.framework */; };
 		3A4A9802189774610092942B /* female_d@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4A9800189774610092942B /* female_d@2x.png */; };
 		3A4A9803189774610092942B /* female_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4A9801189774610092942B /* female_s@2x.png */; };
@@ -166,25 +164,21 @@
 		3A94C4E91A34F9000079A886 /* STOnboardingWorkPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94C4E81A34F9000079A886 /* STOnboardingWorkPlayView.m */; };
 		3A94C4EC1A34FB440079A886 /* STOnboardingCleanMessyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94C4EB1A34FB440079A886 /* STOnboardingCleanMessyView.m */; };
 		3A94C4EF1A34FCED0079A886 /* STOnboardingHowJewAreYouView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94C4EE1A34FCED0079A886 /* STOnboardingHowJewAreYouView.m */; };
-		3A94C4F21A34FEC10079A886 /* STOnboardingCampusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94C4F11A34FEC10079A886 /* STOnboardingCampusView.m */; };
 		3A94C4F51A3533330079A886 /* STOnboardingAboutMeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94C4F41A3533330079A886 /* STOnboardingAboutMeView.m */; };
 		3A94C4F81A3539320079A886 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94C4F71A3539320079A886 /* UIPlaceHolderTextView.m */; };
 		3A964887186F9FE60026A559 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A964886186F9FE60026A559 /* MessageViewController.m */; };
-		3A96488A186FB2DB0026A559 /* STOnboarding5View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A964889186FB2DB0026A559 /* STOnboarding5View.m */; };
 		3A96488D186FB5F90026A559 /* SHAgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A96488C186FB5F90026A559 /* SHAgeViewController.m */; };
 		3A964890186FB7260026A559 /* SHAgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A96488F186FB7260026A559 /* SHAgeCell.m */; };
 		3A964893186FCB270026A559 /* mosaic_empty_user.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A964891186FCB270026A559 /* mosaic_empty_user.png */; };
 		3A964894186FCB270026A559 /* mosaic_empty_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A964892186FCB270026A559 /* mosaic_empty_user@2x.png */; };
 		3A964897186FD4B60026A559 /* SHTextCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A964896186FD4B60026A559 /* SHTextCellItem.m */; };
 		3A96489B186FD4D70026A559 /* SHUserProfileTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A96489A186FD4D70026A559 /* SHUserProfileTextCell.m */; };
-		3AAB1229185E448A00F592DD /* STOnboarding4View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB1228185E448A00F592DD /* STOnboarding4View.m */; };
 		3AC4B5D718DE22DA001E9CA0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AC4B5D618DE22DA001E9CA0 /* Images.xcassets */; };
 		3AC4B5DA18DE326F001E9CA0 /* SHLogoutCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC4B5D918DE326F001E9CA0 /* SHLogoutCellTableViewCell.m */; };
 		3AC4B5E018DE3727001E9CA0 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC4B5DF18DE3727001E9CA0 /* TTTAttributedLabel.m */; };
 		3AC4B5E218DE3AA3001E9CA0 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC4B5E118DE3AA3001E9CA0 /* CoreText.framework */; };
 		3AC4B5E518DE4BA0001E9CA0 /* SHDeleteAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC4B5E418DE4BA0001E9CA0 /* SHDeleteAccountCell.m */; };
 		3ADC705A1A411B5500189CFE /* SHSchoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADC70591A411B5500189CFE /* SHSchoolCell.m */; };
-		3ADC705D1A411CD600189CFE /* SHEditSchoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADC705C1A411CD600189CFE /* SHEditSchoolViewController.m */; };
 		3ADC705F1A41236500189CFE /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ADC705E1A41236500189CFE /* Launch Screen.xib */; };
 		3ADC707C1A41299B00189CFE /* cleanfreak_d@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADC70601A41299B00189CFE /* cleanfreak_d@3x.png */; };
 		3ADC707D1A41299B00189CFE /* cleanfreak_s@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADC70611A41299B00189CFE /* cleanfreak_s@3x.png */; };
@@ -223,8 +217,6 @@
 		3ADC70A51A412A2100189CFE /* cleanfreak_d@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADC70A31A412A2100189CFE /* cleanfreak_d@2x.png */; };
 		3ADC70A71A412AE000189CFE /* sometimes_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADC70A61A412AE000189CFE /* sometimes_s@2x.png */; };
 		3ADC70A91A412AE500189CFE /* sometimes_d@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADC70A81A412AE500189CFE /* sometimes_d@2x.png */; };
-		3ADDF7E01A92FEC7003F1673 /* libAdIdAccess.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADDF7DE1A92FEC7003F1673 /* libAdIdAccess.a */; };
-		3ADDF7E11A92FEC7003F1673 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADDF7DF1A92FEC7003F1673 /* libGoogleAnalyticsServices.a */; };
 		3ADDF7E31A92FEE2003F1673 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADDF7E21A92FEE2003F1673 /* CoreData.framework */; };
 		3ADDF7E41A92FEF0003F1673 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0CCC2A179A508F0000AA8C /* libz.dylib */; };
 		3ADF2A60188392B000415A09 /* kosher_d@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADF2A52188392B000415A09 /* kosher_d@2x.png */; };
@@ -239,16 +231,13 @@
 		3ADF2A69188392B000415A09 /* party_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADF2A5B188392B000415A09 /* party_s@2x.png */; };
 		3ADF2A6A188392B000415A09 /* study_d@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADF2A5C188392B000415A09 /* study_d@2x.png */; };
 		3ADF2A6B188392B000415A09 /* study_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADF2A5D188392B000415A09 /* study_s@2x.png */; };
-		3ADFA8F1179A71DC00B66F78 /* SHOnboarding1View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA8F0179A71DC00B66F78 /* SHOnboarding1View.m */; };
 		3ADFA8F4179A727B00B66F78 /* SHTextFieldOnBoarding.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA8F3179A727B00B66F78 /* SHTextFieldOnBoarding.m */; };
 		3ADFA8F7179A74F700B66F78 /* SHLoginOnboardingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA8F6179A74F700B66F78 /* SHLoginOnboardingView.m */; };
-		3ADFA8FA179A8A4C00B66F78 /* SHOnboarding2View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA8F9179A8A4C00B66F78 /* SHOnboarding2View.m */; };
 		3ADFA8FE179A91B400B66F78 /* add_friends_input2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADFA8FC179A91B400B66F78 /* add_friends_input2.png */; };
 		3ADFA8FF179A91B400B66F78 /* add_friends_input2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADFA8FD179A91B400B66F78 /* add_friends_input2@2x.png */; };
 		3ADFA903179A91EE00B66F78 /* SHCollegeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA902179A91EE00B66F78 /* SHCollegeCell.m */; };
 		3ADFA906179A92EA00B66F78 /* College.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA905179A92EA00B66F78 /* College.m */; };
 		3ADFA908179A96EE00B66F78 /* empty_pixel.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADFA907179A96EE00B66F78 /* empty_pixel.png */; };
-		3ADFA90E179B33DC00B66F78 /* SHOnboarding3View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA90D179B33DC00B66F78 /* SHOnboarding3View.m */; };
 		3ADFA911179B36E500B66F78 /* UserResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA910179B36E500B66F78 /* UserResultCell.m */; };
 		3ADFA914179B3DD500B66F78 /* SHProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA913179B3DD500B66F78 /* SHProfileViewController.m */; };
 		3ADFA91A179B4DCB00B66F78 /* UIView+FindUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFA919179B4DCB00B66F78 /* UIView+FindUIViewController.m */; };
@@ -493,8 +482,6 @@
 		3A306EDC186795E60008755F /* SHGenderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHGenderCell.m; sourceTree = "<group>"; };
 		3A306EDE18679C3C0008755F /* SHGradYearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHGradYearViewController.h; sourceTree = "<group>"; };
 		3A306EDF18679C3C0008755F /* SHGradYearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHGradYearViewController.m; sourceTree = "<group>"; };
-		3A306EE11867AC920008755F /* SHGenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHGenderViewController.h; sourceTree = "<group>"; };
-		3A306EE21867AC920008755F /* SHGenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHGenderViewController.m; sourceTree = "<group>"; };
 		3A306EE51867AEC20008755F /* SHTextItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTextItemCell.h; sourceTree = "<group>"; };
 		3A306EE61867AEC20008755F /* SHTextItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTextItemCell.m; sourceTree = "<group>"; };
 		3A306EE81867AFD70008755F /* SHHighSchoolInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHHighSchoolInfoCell.h; sourceTree = "<group>"; };
@@ -527,8 +514,6 @@
 		3A306F161867CE520008755F /* SHWhatIWantInARoomateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHWhatIWantInARoomateViewController.m; sourceTree = "<group>"; };
 		3A306F181867D0380008755F /* SHLocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHLocationCell.h; sourceTree = "<group>"; };
 		3A306F191867D0380008755F /* SHLocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHLocationCell.m; sourceTree = "<group>"; };
-		3A306F1B1867D08E0008755F /* SHCampusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHCampusViewController.h; sourceTree = "<group>"; };
-		3A306F1C1867D08E0008755F /* SHCampusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHCampusViewController.m; sourceTree = "<group>"; };
 		3A3C017C19CFB42D005E8996 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		3A4A9800189774610092942B /* female_d@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "female_d@2x.png"; sourceTree = "<group>"; };
 		3A4A9801189774610092942B /* female_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "female_s@2x.png"; sourceTree = "<group>"; };
@@ -579,16 +564,12 @@
 		3A94C4EB1A34FB440079A886 /* STOnboardingCleanMessyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOnboardingCleanMessyView.m; sourceTree = "<group>"; };
 		3A94C4ED1A34FCED0079A886 /* STOnboardingHowJewAreYouView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboardingHowJewAreYouView.h; sourceTree = "<group>"; };
 		3A94C4EE1A34FCED0079A886 /* STOnboardingHowJewAreYouView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOnboardingHowJewAreYouView.m; sourceTree = "<group>"; };
-		3A94C4F01A34FEC10079A886 /* STOnboardingCampusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboardingCampusView.h; sourceTree = "<group>"; };
-		3A94C4F11A34FEC10079A886 /* STOnboardingCampusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOnboardingCampusView.m; sourceTree = "<group>"; };
 		3A94C4F31A3533330079A886 /* STOnboardingAboutMeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboardingAboutMeView.h; sourceTree = "<group>"; };
 		3A94C4F41A3533330079A886 /* STOnboardingAboutMeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOnboardingAboutMeView.m; sourceTree = "<group>"; };
 		3A94C4F61A3539320079A886 /* UIPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPlaceHolderTextView.h; sourceTree = "<group>"; };
 		3A94C4F71A3539320079A886 /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPlaceHolderTextView.m; sourceTree = "<group>"; };
 		3A964885186F9FE60026A559 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		3A964886186F9FE60026A559 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
-		3A964888186FB2DB0026A559 /* STOnboarding5View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboarding5View.h; sourceTree = "<group>"; };
-		3A964889186FB2DB0026A559 /* STOnboarding5View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOnboarding5View.m; sourceTree = "<group>"; };
 		3A96488B186FB5F90026A559 /* SHAgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAgeViewController.h; sourceTree = "<group>"; };
 		3A96488C186FB5F90026A559 /* SHAgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAgeViewController.m; sourceTree = "<group>"; };
 		3A96488E186FB7260026A559 /* SHAgeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAgeCell.h; sourceTree = "<group>"; };
@@ -599,8 +580,6 @@
 		3A964896186FD4B60026A559 /* SHTextCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTextCellItem.m; sourceTree = "<group>"; };
 		3A964899186FD4D70026A559 /* SHUserProfileTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHUserProfileTextCell.h; sourceTree = "<group>"; };
 		3A96489A186FD4D70026A559 /* SHUserProfileTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHUserProfileTextCell.m; sourceTree = "<group>"; };
-		3AAB1227185E448A00F592DD /* STOnboarding4View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOnboarding4View.h; sourceTree = "<group>"; };
-		3AAB1228185E448A00F592DD /* STOnboarding4View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOnboarding4View.m; sourceTree = "<group>"; };
 		3AAB122A185E545B00F592DD /* SHOnboardingDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHOnboardingDelegate.h; sourceTree = "<group>"; };
 		3AC4B5D618DE22DA001E9CA0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3AC4B5D818DE326F001E9CA0 /* SHLogoutCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHLogoutCellTableViewCell.h; sourceTree = "<group>"; };
@@ -612,8 +591,6 @@
 		3AC4B5E418DE4BA0001E9CA0 /* SHDeleteAccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDeleteAccountCell.m; sourceTree = "<group>"; };
 		3ADC70581A411B5500189CFE /* SHSchoolCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSchoolCell.h; sourceTree = "<group>"; };
 		3ADC70591A411B5500189CFE /* SHSchoolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSchoolCell.m; sourceTree = "<group>"; };
-		3ADC705B1A411CD600189CFE /* SHEditSchoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHEditSchoolViewController.h; sourceTree = "<group>"; };
-		3ADC705C1A411CD600189CFE /* SHEditSchoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHEditSchoolViewController.m; sourceTree = "<group>"; };
 		3ADC705E1A41236500189CFE /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		3ADC70601A41299B00189CFE /* cleanfreak_d@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cleanfreak_d@3x.png"; sourceTree = "<group>"; };
 		3ADC70611A41299B00189CFE /* cleanfreak_s@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cleanfreak_s@3x.png"; sourceTree = "<group>"; };
@@ -679,14 +656,10 @@
 		3ADF2A5D188392B000415A09 /* study_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "study_s@2x.png"; sourceTree = "<group>"; };
 		3ADFA8EB179A69E000B66F78 /* STFacebookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STFacebookManager.h; sourceTree = "<group>"; };
 		3ADFA8EC179A69E000B66F78 /* STFacebookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STFacebookManager.m; sourceTree = "<group>"; };
-		3ADFA8EF179A71DC00B66F78 /* SHOnboarding1View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHOnboarding1View.h; sourceTree = "<group>"; };
-		3ADFA8F0179A71DC00B66F78 /* SHOnboarding1View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHOnboarding1View.m; sourceTree = "<group>"; };
 		3ADFA8F2179A727B00B66F78 /* SHTextFieldOnBoarding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTextFieldOnBoarding.h; sourceTree = "<group>"; };
 		3ADFA8F3179A727B00B66F78 /* SHTextFieldOnBoarding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTextFieldOnBoarding.m; sourceTree = "<group>"; };
 		3ADFA8F5179A74F700B66F78 /* SHLoginOnboardingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHLoginOnboardingView.h; sourceTree = "<group>"; };
 		3ADFA8F6179A74F700B66F78 /* SHLoginOnboardingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHLoginOnboardingView.m; sourceTree = "<group>"; };
-		3ADFA8F8179A8A4C00B66F78 /* SHOnboarding2View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHOnboarding2View.h; sourceTree = "<group>"; };
-		3ADFA8F9179A8A4C00B66F78 /* SHOnboarding2View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHOnboarding2View.m; sourceTree = "<group>"; };
 		3ADFA8FC179A91B400B66F78 /* add_friends_input2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_friends_input2.png; sourceTree = "<group>"; };
 		3ADFA8FD179A91B400B66F78 /* add_friends_input2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_friends_input2@2x.png"; sourceTree = "<group>"; };
 		3ADFA901179A91EE00B66F78 /* SHCollegeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHCollegeCell.h; sourceTree = "<group>"; };
@@ -694,8 +667,6 @@
 		3ADFA904179A92EA00B66F78 /* College.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = College.h; sourceTree = "<group>"; };
 		3ADFA905179A92EA00B66F78 /* College.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = College.m; sourceTree = "<group>"; };
 		3ADFA907179A96EE00B66F78 /* empty_pixel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty_pixel.png; sourceTree = "<group>"; };
-		3ADFA90C179B33DC00B66F78 /* SHOnboarding3View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHOnboarding3View.h; sourceTree = "<group>"; };
-		3ADFA90D179B33DC00B66F78 /* SHOnboarding3View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHOnboarding3View.m; sourceTree = "<group>"; };
 		3ADFA90F179B36E500B66F78 /* UserResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserResultCell.h; sourceTree = "<group>"; };
 		3ADFA910179B36E500B66F78 /* UserResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserResultCell.m; sourceTree = "<group>"; };
 		3ADFA912179B3DD500B66F78 /* SHProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHProfileViewController.h; sourceTree = "<group>"; };
@@ -752,7 +723,6 @@
 				3A0CCC31179A50C00000AA8C /* AdSupport.framework in Frameworks */,
 				3ADDF7E41A92FEF0003F1673 /* libz.dylib in Frameworks */,
 				3ADDF7E31A92FEE2003F1673 /* CoreData.framework in Frameworks */,
-				3ADDF7E01A92FEC7003F1673 /* libAdIdAccess.a in Frameworks */,
 				3AC4B5E218DE3AA3001E9CA0 /* CoreText.framework in Frameworks */,
 				3A0CCC33179A50CD0000AA8C /* AddressBook.framework in Frameworks */,
 				3A0CCC2D179A50990000AA8C /* Security.framework in Frameworks */,
@@ -763,7 +733,6 @@
 				3A0CCC23179A50330000AA8C /* CoreLocation.framework in Frameworks */,
 				3A0CCC21179A50100000AA8C /* Accounts.framework in Frameworks */,
 				3A0CCC1F179A500C0000AA8C /* Social.framework in Frameworks */,
-				3ADDF7E11A92FEC7003F1673 /* libGoogleAnalyticsServices.a in Frameworks */,
 				3A3C017D19CFB42D005E8996 /* Crashlytics.framework in Frameworks */,
 				3A0CCC1D179A4FBA0000AA8C /* libsqlite3.dylib in Frameworks */,
 				3A80E0CB1BDF0E5400C65B41 /* FBSDKCoreKit.framework in Frameworks */,
@@ -1249,8 +1218,6 @@
 				3A306EDF18679C3C0008755F /* SHGradYearViewController.m */,
 				3A96488B186FB5F90026A559 /* SHAgeViewController.h */,
 				3A96488C186FB5F90026A559 /* SHAgeViewController.m */,
-				3A306EE11867AC920008755F /* SHGenderViewController.h */,
-				3A306EE21867AC920008755F /* SHGenderViewController.m */,
 				3A306EEE1867B3570008755F /* SHTextEditViewController.h */,
 				3A306EEF1867B3570008755F /* SHTextEditViewController.m */,
 				3A306EF11867B6030008755F /* SHHSEngadmentViewController.h */,
@@ -1265,10 +1232,6 @@
 				3A306F101867CB160008755F /* SHShabbatViewController.m */,
 				3A306F151867CE520008755F /* SHWhatIWantInARoomateViewController.h */,
 				3A306F161867CE520008755F /* SHWhatIWantInARoomateViewController.m */,
-				3A306F1B1867D08E0008755F /* SHCampusViewController.h */,
-				3A306F1C1867D08E0008755F /* SHCampusViewController.m */,
-				3ADC705B1A411CD600189CFE /* SHEditSchoolViewController.h */,
-				3ADC705C1A411CD600189CFE /* SHEditSchoolViewController.m */,
 			);
 			name = "Edit Profile";
 			sourceTree = "<group>";
@@ -1462,16 +1425,6 @@
 			children = (
 				3ADFA8F2179A727B00B66F78 /* SHTextFieldOnBoarding.h */,
 				3ADFA8F3179A727B00B66F78 /* SHTextFieldOnBoarding.m */,
-				3ADFA8EF179A71DC00B66F78 /* SHOnboarding1View.h */,
-				3ADFA8F0179A71DC00B66F78 /* SHOnboarding1View.m */,
-				3ADFA8F8179A8A4C00B66F78 /* SHOnboarding2View.h */,
-				3ADFA8F9179A8A4C00B66F78 /* SHOnboarding2View.m */,
-				3ADFA90C179B33DC00B66F78 /* SHOnboarding3View.h */,
-				3ADFA90D179B33DC00B66F78 /* SHOnboarding3View.m */,
-				3AAB1227185E448A00F592DD /* STOnboarding4View.h */,
-				3AAB1228185E448A00F592DD /* STOnboarding4View.m */,
-				3A964888186FB2DB0026A559 /* STOnboarding5View.h */,
-				3A964889186FB2DB0026A559 /* STOnboarding5View.m */,
 				3ADFA8F5179A74F700B66F78 /* SHLoginOnboardingView.h */,
 				3ADFA8F6179A74F700B66F78 /* SHLoginOnboardingView.m */,
 				F8F2F062179B37A10088BF2B /* SHToggleButton.h */,
@@ -1487,8 +1440,6 @@
 				3A94C4EB1A34FB440079A886 /* STOnboardingCleanMessyView.m */,
 				3A94C4ED1A34FCED0079A886 /* STOnboardingHowJewAreYouView.h */,
 				3A94C4EE1A34FCED0079A886 /* STOnboardingHowJewAreYouView.m */,
-				3A94C4F01A34FEC10079A886 /* STOnboardingCampusView.h */,
-				3A94C4F11A34FEC10079A886 /* STOnboardingCampusView.m */,
 				3A94C4F31A3533330079A886 /* STOnboardingAboutMeView.h */,
 				3A94C4F41A3533330079A886 /* STOnboardingAboutMeView.m */,
 			);
@@ -1733,7 +1684,6 @@
 				3AFB7EDA1C27758600DD4E7E /* UIView+Common.m in Sources */,
 				3A964890186FB7260026A559 /* SHAgeCell.m in Sources */,
 				3A6E01611C2F8EAF0062FCBF /* EditProfileViewController.m in Sources */,
-				3AAB1229185E448A00F592DD /* STOnboarding4View.m in Sources */,
 				3A0ACDA1179A42D00083B80B /* NSObject+SBJSON.m in Sources */,
 				3A0498A71C15297D0083B4AF /* GraduationYearViewController.m in Sources */,
 				3A29A4AC18E8BC7A0071873F /* SHEditProfileHeaderView.m in Sources */,
@@ -1784,7 +1734,6 @@
 				3A0ACDEB179A465C0083B80B /* NSString+SBJSON.m in Sources */,
 				3A306EE71867AEC20008755F /* SHTextItemCell.m in Sources */,
 				3A5C349E18676B430092F08A /* SHMemberResultsJsonResponse.m in Sources */,
-				3A96488A186FB2DB0026A559 /* STOnboarding5View.m in Sources */,
 				3A0ACDEC179A465C0083B80B /* JSONKit.m in Sources */,
 				3A306F051867C62C0008755F /* SHCleanMessyCell.m in Sources */,
 				3A0ACDED179A465C0083B80B /* SBJSON.m in Sources */,
@@ -1814,7 +1763,6 @@
 				3A94C4EF1A34FCED0079A886 /* STOnboardingHowJewAreYouView.m in Sources */,
 				3A306EFC1867C16E0008755F /* SHTextAndOptionCell.m in Sources */,
 				3A306F1A1867D0380008755F /* SHLocationCell.m in Sources */,
-				3A306F1D1867D08E0008755F /* SHCampusViewController.m in Sources */,
 				3A5C34B118676E3D0092F08A /* STBaseDataSource.m in Sources */,
 				3A306EED1867B0410008755F /* SHAboutMeCell.m in Sources */,
 				3A1E16F41A5378E9002645CE /* UIAlertView+Blocks.m in Sources */,
@@ -1827,7 +1775,6 @@
 				3A6E01681C31193C0062FCBF /* DeleteAccountCell.m in Sources */,
 				3A964887186F9FE60026A559 /* MessageViewController.m in Sources */,
 				3A306EF01867B3570008755F /* SHTextEditViewController.m in Sources */,
-				3A94C4F21A34FEC10079A886 /* STOnboardingCampusView.m in Sources */,
 				3A306ED1186793480008755F /* SHEditProfileViewController.m in Sources */,
 				3A5C349818676ABA0092F08A /* LGURLJSONResponse.m in Sources */,
 				3A5C34A718676BC20092F08A /* SHMembersResultsModel.m in Sources */,
@@ -1856,20 +1803,15 @@
 				3AFB7EC21C2679DD00DD4E7E /* UserResultsViewController.m in Sources */,
 				3A0CCC58179A632B0000AA8C /* UIViewAdditions.m in Sources */,
 				3A306EF61867B78E0008755F /* SHAboutMeViewController.m in Sources */,
-				3ADFA8F1179A71DC00B66F78 /* SHOnboarding1View.m in Sources */,
 				3ADFA8F4179A727B00B66F78 /* SHTextFieldOnBoarding.m in Sources */,
 				3ADFA8F7179A74F700B66F78 /* SHLoginOnboardingView.m in Sources */,
-				3ADFA8FA179A8A4C00B66F78 /* SHOnboarding2View.m in Sources */,
 				3A5C349718676ABA0092F08A /* NSDictionary+QueryString.m in Sources */,
 				3ADFA903179A91EE00B66F78 /* SHCollegeCell.m in Sources */,
 				3ADFA906179A92EA00B66F78 /* College.m in Sources */,
 				3A5C349918676ABA0092F08A /* LGURLRequestModel.m in Sources */,
 				D02FD2FE179B278000D876D8 /* JLColors.m in Sources */,
 				3A306EDA186795460008755F /* SHPersonalInfoCell.m in Sources */,
-				3ADFA90E179B33DC00B66F78 /* SHOnboarding3View.m in Sources */,
 				3ADFA911179B36E500B66F78 /* UserResultCell.m in Sources */,
-				3ADC705D1A411CD600189CFE /* SHEditSchoolViewController.m in Sources */,
-				3A306EE31867AC920008755F /* SHGenderViewController.m in Sources */,
 				3A0498BC1C16BEE20083B4AF /* FreeTextViewController.m in Sources */,
 				3ADFA914179B3DD500B66F78 /* SHProfileViewController.m in Sources */,
 				3A964897186FD4B60026A559 /* SHTextCellItem.m in Sources */,
@@ -1966,19 +1908,14 @@
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
 					/Users/orenzitoun/Documents/FacebookSDK,
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/JewList/Vendor/Google_Analytics",
-					Analytics,
 					"$(PROJECT_DIR)/JewList/Vendor",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JewList/JewList-Prefix.pch";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/JewList/Vendor/Google_Analytics";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "JewList/JewList-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/JewList/Vendor/Google_Analytics",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2003,19 +1940,14 @@
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
 					/Users/orenzitoun/Documents/FacebookSDK,
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/JewList/Vendor/Google_Analytics",
-					Analytics,
 					"$(PROJECT_DIR)/JewList/Vendor",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JewList/JewList-Prefix.pch";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/JewList/Vendor/Google_Analytics";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "JewList/JewList-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/JewList/Vendor/Google_Analytics",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

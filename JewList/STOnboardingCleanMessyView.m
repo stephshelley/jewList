@@ -99,7 +99,7 @@
     buttonsView.top = self.headerTopView.bottom + 10;
     self.textView.top = buttonsView.bottom + 10;
     
-    self.textView.text = self.user.cleaning;
+    self.textView.text = self.user.cleanMessy;
     self.textView.height = 100;
     self.textView.delegate = self;
     self.headerLabel.text = @"Are you more a clean or messy person?";
@@ -117,7 +117,7 @@
 
 - (void)textViewDidChange:(UITextView *)textView
 {
-    self.user.cleaning = textView.text;
+    self.user.cleanMessy = textView.text;
     
 }
 
@@ -142,7 +142,7 @@
     _cleanButton.offImage = @"organized_d";
     _cleanButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:14];
     _cleanButton.titleLabel.adjustsFontSizeToFitWidth = YES;
-    [_cleanButton toggle:[self.user.cleaning intValue] == 1];
+    [_cleanButton toggle:[self.user.cleanMessy intValue] == 1];
     [_cleanButton addTarget:self action:@selector(togglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [buttonsBackgroundView addSubview:_cleanButton];
     
@@ -160,7 +160,7 @@
     _cleanFreakButton.offImage = @"cleanfreak_d";
     _cleanFreakButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:14];
     _cleanFreakButton.titleLabel.adjustsFontSizeToFitWidth = YES;
-    [_cleanFreakButton toggle:[self.user.cleaning intValue] == 2];
+    [_cleanFreakButton toggle:[self.user.cleanMessy intValue] == 2];
     [_cleanFreakButton addTarget:self action:@selector(togglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [buttonsBackgroundView addSubview:_cleanFreakButton];
     
@@ -178,7 +178,7 @@
     _messyButton.titleLabel.adjustsFontSizeToFitWidth = YES;
     _messyButton.top = _cleanButton.top;
     _messyButton.left = _cleanButton.right + 20;
-    [_messyButton toggle:[self.user.cleaning intValue] == 0];
+    [_messyButton toggle:[self.user.cleanMessy intValue] == 0];
     [_messyButton addTarget:self action:@selector(togglePressed:) forControlEvents:UIControlEventTouchUpInside];
     [buttonsBackgroundView addSubview:_messyButton];
     

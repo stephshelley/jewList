@@ -16,7 +16,7 @@
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *avatarUrl;
 @property (nonatomic, strong) NSString *kosher;
-@property (nonatomic, strong) NSString *shabat;
+@property (nonatomic, strong) NSString *shabbatResponse;
 
 @property (nonatomic, strong) NSString *fb;
 @property (nonatomic, strong) NSString *fbId;
@@ -30,9 +30,9 @@
 
 @property (nonatomic, strong) NSNumber *age;
 @property (nonatomic, strong) NSString *campus;
-@property (nonatomic, strong) NSString *earlyBird;
-@property (nonatomic, strong) NSString *cleaning;
-@property (nonatomic, strong) NSString *fun;
+@property (nonatomic, strong) NSString *earlyLate;
+@property (nonatomic, strong) NSString *cleanMessy;
+@property (nonatomic, strong) NSString *funMeans;
 @property (nonatomic, strong) NSString *aboutMe;
 @property (nonatomic, strong) NSString *desiredMajor;
 @property (nonatomic, strong) NSString *firstName;
@@ -40,7 +40,7 @@
 @property (nonatomic, strong) NSString *gender;
 @property (nonatomic, strong) NSString *music;
 @property (nonatomic, strong) NSString *duringTheDay;
-@property (nonatomic, strong) NSString *activities;
+@property (nonatomic, strong) NSString *campusInvolvement;
 @property (nonatomic, strong) NSString *contactFromJewishOrgs;
 @property (nonatomic, strong) NSNumber *gradYear;
 @property (nonatomic, strong) NSString *hsEngagement;

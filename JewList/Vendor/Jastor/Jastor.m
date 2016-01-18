@@ -56,9 +56,14 @@ Class nsArrayClass;
         }
         
         // handle array
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+
         else if ([value isKindOfClass:nsArrayClass]) {
             Class arrayItemType = [[self class] performSelector:NSSelectorFromString([NSString stringWithFormat:@"%@_class", key])];
             
+#pragma clang diagnostic pop
+
             NSMutableArray *childObjects = [NSMutableArray arrayWithCapacity:[(NSArray*)value count]];
             
             for (id child in value) {

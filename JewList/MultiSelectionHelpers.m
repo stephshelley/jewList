@@ -117,19 +117,19 @@
             user.campus = value;
             break;
         case MultiSelectionTypeEarlyBird:
-            user.earlyBird = value;
+            user.earlyLate = value;
             break;
         case MultiSelectionTypeCleanMessy:
-            user.cleaning = value;
+            user.cleanMessy = value;
             break;
         case MultiSelectionTypeFun:
-            user.fun = value;
+            user.funMeans = value;
             break;
         case MultiSelectionTypeKosher:
             user.kosher = value;
             break;
         case MultiSelectionTypeShabbat:
-            user.shabat = value;
+            user.shabbatResponse = value;
             break;
         case MultiSelectionTypeMusic:
             user.music = value;
@@ -138,7 +138,7 @@
             user.duringTheDay = value;
             break;
         case MultiSelectionTypeActivities:
-            user.activities = value;
+            user.campusInvolvement = value;
             break;
         case MultiSelectionTypeWantContactFromJewishOrganizations:
             user.contactFromJewishOrgs = value;
@@ -179,15 +179,15 @@
             
             break;
         case MultiSelectionTypeCleanMessy:
-            if ([user.cleaning isKindOfClass:[NSString class]]) {
-                value = @([self getIndexValueForValue:user.cleaning type:MultiSelectionTypeCleanMessy]);
+            if ([user.cleanMessy isKindOfClass:[NSString class]]) {
+                value = @([self getIndexValueForValue:user.cleanMessy type:MultiSelectionTypeCleanMessy]);
             }
             
             break;
         
         case MultiSelectionTypeFun:
-            if ([user.fun isKindOfClass:[NSString class]]) {
-                value = @([self getIndexValueForValue:user.fun type:MultiSelectionTypeFun]);
+            if ([user.funMeans isKindOfClass:[NSString class]]) {
+                value = @([self getIndexValueForValue:user.funMeans type:MultiSelectionTypeFun]);
             }
             
             break;
@@ -229,26 +229,26 @@
             }
             break;
         case MultiSelectionTypeEarlyBird:
-            value = user.earlyBird;
+            value = user.earlyLate;
             break;
         case MultiSelectionTypeCleanMessy:
-            if ([user.cleaning isKindOfClass:[NSNumber class]]) {
+            if ([user.cleanMessy isKindOfClass:[NSNumber class]]) {
                 
                 NSArray *options = [[self class] optionsForType:type];
-                value = options[[(NSNumber *)user.cleaning integerValue]];
+                value = options[[(NSNumber *)user.cleanMessy integerValue]];
                 
             }else {
-                value = user.cleaning;
+                value = user.cleanMessy;
             }
             break;
         case MultiSelectionTypeFun:
-            value = user.fun;
+            value = user.funMeans;
             break;
         case MultiSelectionTypeKosher:
             value = user.kosher;
             break;
         case MultiSelectionTypeShabbat:
-            value = user.shabat;
+            value = user.shabbatResponse;
             break;
         case MultiSelectionTypeMusic:
             value = user.music;
@@ -257,7 +257,7 @@
             value = user.duringTheDay;
             break;
         case MultiSelectionTypeActivities:
-            value = user.activities;
+            value = user.campusInvolvement;
             break;
         case MultiSelectionTypeWantContactFromJewishOrganizations:
             value = user.contactFromJewishOrgs;

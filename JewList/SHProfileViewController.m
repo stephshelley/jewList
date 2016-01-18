@@ -212,12 +212,12 @@
         
     }
     
-    if(_user.cleaning != nil && _user.cleaning.length > 0)
+    if(_user.cleanMessy != nil && _user.cleanMessy.length > 0)
     {
         SHTextCellItem *item = [[SHTextCellItem alloc] init];
         item.title = @"Are You clean or messy?";
-        item.text = _user.cleaning;
-        item.type = [_user.cleaning intValue]  == 0 ? @"Clean" : @"Messy";
+        item.text = _user.cleanMessy;
+        item.type = [_user.cleanMessy intValue]  == 0 ? @"Clean" : @"Messy";
 
         [_items addObject:item];
         
@@ -380,7 +380,7 @@
         [mailer addAttachmentData:imageData mimeType:@"image/png" fileName:@"mobiletutsImage"];
         NSString *emailBody = [NSString stringWithFormat:@"Hi %@,\n%@ noticed that you're about to go to %@.\n\n He's looking for a roomate and wanted to contact you",_user.firstName,currentUser.firstName,_user.fbCollegeName];
         [mailer setMessageBody:emailBody isHTML:NO];
-        [self.navigationController presentModalViewController:mailer animated:YES];
+        [self.navigationController presentViewController:mailer animated:YES completion:nil];
         
     }
     else
@@ -415,7 +415,7 @@
             break;
     }
     // Remove the mail view
-    [self.navigationController dismissModalViewControllerAnimated:YES];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)facebookButtonPressed
@@ -510,7 +510,7 @@
     _shabatLabel.adjustsFontSizeToFitWidth = YES;
     _shabatLabel.backgroundColor = [UIColor clearColor];
     _shabatLabel.textAlignment = NSTextAlignmentCenter;
-    _shabatLabel.text = _user.shabat;
+    _shabatLabel.text = _user.shabbatResponse;
     [detailsBackgroundView addSubview:_shabatLabel];
     
     self.facebookStaticLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,100,17)];

@@ -27,8 +27,8 @@
     [super setUser:user];
     
     self.titleLabel.text = @"Are You clean or messy?";
-    self.textView.text = self.user.cleaning;
-    self.accesoryLabel.text = self.user.cleaning;
+    self.textView.text = self.user.cleanMessy;
+    self.accesoryLabel.text = self.user.cleanMessy;
 }
 
 

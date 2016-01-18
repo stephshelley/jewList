@@ -21,9 +21,6 @@
 #define TT_DEFAULT_CACHE_EXPIRATION_AGE   (60*60*24*7)  // 1 week
 #define TT_CACHE_EXPIRATION_AGE_NEVER     (1.0 / 0.0)   // inf
 
-
-static const  CGFloat   kLargeImageSize = 2400.0f * 1600.0f;
-
 static        NSString* kDefaultCacheName       = @"Three20";
 static        NSString* kEtagCacheDirectoryName = @"etag";
 

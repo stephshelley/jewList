@@ -11,7 +11,6 @@
 #import "LoginViewController.h"
 #import "UserResultsViewController.h"
 #import <Crashlytics/Crashlytics.h>
-#import "GAI.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
@@ -26,13 +25,13 @@
     // [GAI sharedInstance].trackUncaughtExceptions = YES;
     
     // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
-    [GAI sharedInstance].dispatchInterval = 20;
+    //[GAI sharedInstance].dispatchInterval = 20;
     
     // Optional: set Logger to VERBOSE for debug information.
     // [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelInfo];
     
     // Initialize tracker. Replace with your tracking ID.
-    [[GAI sharedInstance] trackerWithTrackingId:@"UA-59561571-1"];
+    //[[GAI sharedInstance] trackerWithTrackingId:@"UA-59561571-1"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

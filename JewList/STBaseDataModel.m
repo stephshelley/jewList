@@ -135,6 +135,9 @@
     [self performSelectorForArray:_delegates withSelector:@selector(modelDidChange:) withObject:self];
 }
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+
 - (void)performSelectorForArray:(NSArray*)array withSelector:(SEL)selector withObject:(id)p1
 {
     NSEnumerator* e = [array objectEnumerator];
@@ -154,6 +157,8 @@
         }
     }
 }
+
+#pragma clang diagnostic pop
 
 - (void)performSelectorForArray:(NSArray*)array withSelector:(SEL)selector withObject:(id)p1 withObject:(id)p2 withObject:(id)p3
 {

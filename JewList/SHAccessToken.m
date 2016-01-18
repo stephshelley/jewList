@@ -116,7 +116,7 @@
 	}
     
     NSDictionary *result = (__bridge NSDictionary*)cfresult;
-    status = nil;
+    //status = nil;
     cfresult = nil;
     query = nil;
 	return [NSKeyedUnarchiver unarchiveObjectWithData:[result objectForKey:(__bridge NSString *)kSecAttrGeneric]];

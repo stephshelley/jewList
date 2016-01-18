@@ -49,8 +49,8 @@
     }
 }
 
-- (void)toggle:(BOOL)isOn {
-    [self setIsOn:!isOn];
+- (void)toggle:(BOOL)isToggleOn {
+    [self setIsOn:!isToggleOn];
     [self toggle];
 }
 

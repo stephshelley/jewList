@@ -154,7 +154,7 @@ static NSMutableArray* sAppearanceStack = nil;
       _navBarDefaultImage = [navigationController.navigationBar 
                              backgroundImageForBarMetrics:UIBarMetricsDefault];
       _navBarLandscapePhoneImage = [navigationController.navigationBar
-                                    backgroundImageForBarMetrics:UIBarMetricsLandscapePhone];
+                                    backgroundImageForBarMetrics:UIBarMetricsCompact];
     }
   }
 
@@ -173,7 +173,7 @@ static NSMutableArray* sAppearanceStack = nil;
     [navigationController.navigationBar setBackgroundImage:self.navBarDefaultImage
                                              forBarMetrics:UIBarMetricsDefault];
     [navigationController.navigationBar setBackgroundImage:self.navBarLandscapePhoneImage 
-                                             forBarMetrics:UIBarMetricsLandscapePhone];
+                                             forBarMetrics:UIBarMetricsCompact];
   }
 }
 
