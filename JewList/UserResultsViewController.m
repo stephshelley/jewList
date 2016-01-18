@@ -12,7 +12,6 @@
 #import "SHApi.h"
 #import "ProfileViewController.h"
 #import "AppDelegate.h"
-#import "SHEditProfileViewController.h"
 
 @interface UserResultsViewController () <STBaseDataSource, UITableViewDataSource, UITableViewDelegate>
 

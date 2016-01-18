@@ -39,16 +39,12 @@
 @property (nonatomic, strong) NSString *lastName;
 @property (nonatomic, strong) NSString *gender;
 @property (nonatomic, strong) NSString *music;
-@property (nonatomic, strong) NSString *duringTheDay;
+@property (nonatomic, strong) NSString *hobbies;
 @property (nonatomic, strong) NSString *campusInvolvement;
 @property (nonatomic, strong) NSString *contactFromJewishOrgs;
 @property (nonatomic, strong) NSNumber *gradYear;
 @property (nonatomic, strong) NSString *hsEngagement;
-@property (nonatomic, strong) NSNumber *personality;
-@property (nonatomic, strong) NSString *personalityText;
 @property (nonatomic, strong) NSNumber *primaryId;
-@property (nonatomic, strong) NSNumber *religious;
-@property (nonatomic, strong) NSString *religiousText;
 @property (nonatomic, strong) NSString *school;
 @property (nonatomic, strong) NSNumber *social;
 @property (nonatomic, assign) BOOL didFinishSignup;

@@ -10,7 +10,6 @@
 #import "SHApi.h"
 #import "User.h"
 #import "STFacebookManager.h"
-#import "SHProfileViewController.h"
 #import "UserResultsViewController.h"
 #import "AppDelegate.h"
 #import "WelcomeViewController.h"

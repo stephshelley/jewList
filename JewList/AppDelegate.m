@@ -91,6 +91,12 @@
 
 - (void)initLogedIn
 {
+    /*
+    UINavigationController *nav = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcomeViewController"];
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
+    return;*/
+    
     UserResultsViewController *resultsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"UserResultsViewController"];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:resultsVC];
     self.window.rootViewController = navController;

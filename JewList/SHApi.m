@@ -271,10 +271,6 @@ static NSString *kCurrentUserPath = @"current_user";
         [params setObject:user.music forKey:@"music"];
     }
 
-    if(user.personality) {
-        [params setObject:[user.personality stringValue] forKey:@"personality"];
-    }
-
     if(user.campus) {
         NSNumber *value = [MultiSelectionHelpers getNumberValueForType:MultiSelectionTypeLivingArrangment user:user];
         [params setObject:[value stringValue] forKey:@"campus"];
@@ -285,21 +281,16 @@ static NSString *kCurrentUserPath = @"current_user";
     }
     
     if(user.cleanMessy) {
-        NSNumber *value = [MultiSelectionHelpers getNumberValueForType:MultiSelectionTypeCleanMessy user:user];
-        [params setObject:[value stringValue] forKey:@"cleaning"];
-    }
-    
-    if(user.cleanMessy) {
         NSString *value = [MultiSelectionHelpers userValueForType:MultiSelectionTypeCleanMessy user:user];
         [params setObject:value forKey:@"clean_messy"];
     }
 
+    if(user.hobbies) {
+        [params setObject:user.hobbies forKey:@"hobbies"];
+    }
+    
     if(user.kosher) {
         [params setObject:user.kosher forKey:@"diet_text"];
-    }
-
-    if(user.religious) {
-        [params setObject:[user.religious stringValue] forKey:@"religious"];
     }
 
     if(user.shabbatResponse) {
@@ -315,11 +306,15 @@ static NSString *kCurrentUserPath = @"current_user";
     }
     
     if(user.desiredMajor) {
-        [params setObject:user.fbToken forKey:@"desired_major"];
+        [params setObject:user.desiredMajor forKey:@"desired_major"];
     }
     
     if(user.campusInvolvement) {
         [params setObject:user.campusInvolvement forKey:@"campus_involvement"];
+    }
+    
+    if (user.contactFromJewishOrgs) {
+        [params setObject:user.contactFromJewishOrgs forKey:@"contact_from_jewish_orgs"];
     }
 
     if(user.hsEngagement) {
@@ -328,30 +323,8 @@ static NSString *kCurrentUserPath = @"current_user";
         [params setObject:@"" forKey:@"hs_engagement"];
     }
     
-    if (user.school) {
-        if (user.college.collegeName) {
-            [params setObject:user.college.collegeName forKey:@"college_name"];
-   
-        } else {
-            [params setObject:user.school forKey:@"school"];
-        }
-    } else {
-        if(user.college.collegeName) {
-            [params setObject:user.college.collegeName forKey:@"college_name"];
-        }
-        else {
-            [params setObject:@"" forKey:@"school"];
-        }
-    }
-    
-    if (user.college) {
-        if(user.college.dbId) {
-            [params setObject:user.college.dbId forKey:@"college_id"];
-        }
-        
-        if (user.college.collegeName) {
-            [params setObject:user.college.collegeName forKey:@"college_name"];
-        }
+    if(user.college.dbId) {
+        [params setObject:user.college.dbId forKey:@"college_id"];
     }
     
     if (user.fbUsername) {

@@ -135,7 +135,7 @@
             user.music = value;
             break;
         case MultiSelectionTypeDuringTheDay:
-            user.duringTheDay = value;
+            user.hobbies = value;
             break;
         case MultiSelectionTypeActivities:
             user.campusInvolvement = value;
@@ -254,7 +254,7 @@
             value = user.music;
             break;
         case MultiSelectionTypeDuringTheDay:
-            value = user.duringTheDay;
+            value = user.hobbies;
             break;
         case MultiSelectionTypeActivities:
             value = user.campusInvolvement;

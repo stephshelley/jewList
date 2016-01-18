@@ -47,10 +47,6 @@
     newUser.gender = [_gender copyWithZone:zone];
     newUser.gradYear = [_gradYear copyWithZone:zone];
     newUser.hsEngagement = [_hsEngagement copyWithZone:zone];
-    newUser.personality = [_personality copyWithZone:zone];
-    newUser.personalityText = [_personalityText copyWithZone:zone];
-    newUser.religious = [_religious copyWithZone:zone];
-    newUser.religiousText = [_religiousText copyWithZone:zone];
     newUser.school = [_school copyWithZone:zone];
     newUser.fb = [_fb copyWithZone:zone];
     newUser.aboutMe = [_aboutMe copyWithZone:zone];
