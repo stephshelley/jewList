@@ -34,7 +34,9 @@
 {
 	if ([content isKindOfClass:[NSString class]]) {
 		return [self initWithName:name stringContent:content];
-	} else if ([content isKindOfClass:[NSURL class]] && [content isFileURL]) {
+    } else if ([content isKindOfClass:[NSNumber class]]) {
+        return [self initWithName:name stringContent:[(NSNumber *)content stringValue]];
+    }   else if ([content isKindOfClass:[NSURL class]] && [content isFileURL]) {
 		return [self initWithName:name fileContent:[content path]];
 	} else if ([content isKindOfClass:[NSData class]]) {
 		return [self initWithName:name dataContent:content];

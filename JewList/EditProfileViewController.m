@@ -60,12 +60,12 @@ NSString * const yesTitle = @"Yes";
     
     ProfileDetailCellItem *graduationItem = [ProfileDetailCellItem new];
     graduationItem.title = graduationTitle;
-    graduationItem.detail = [self.currentUser.gradYear stringValue];
+    graduationItem.detail = self.currentUser.gradYear;
     [self.items addObject:graduationItem];
 
     ProfileDetailCellItem *ageItem = [ProfileDetailCellItem new];
     ageItem.title = ageTitle;
-    ageItem.detail = [self.currentUser.age stringValue];
+    ageItem.detail = (NSString *)self.currentUser.age;
     [self.items addObject:ageItem];
 
     ProfileDetailCellItem *aboutMeItem = [ProfileDetailCellItem new];
@@ -205,13 +205,13 @@ NSString * const yesTitle = @"Yes";
 #pragma mark - GraduationYearViewControllerDelegate
 
 - (void)graduationYearViewControllerDidSelectYear:(NSNumber *)year {
-    self.currentUser.gradYear = year;
+    self.currentUser.gradYear = [year stringValue];
     [self saveUserAndUpdate];
 }
 
 #pragma mark - AgeViewControllerDelegate
 
-- (void)graduationYearViewControllerDidSelectAge:(NSNumber *)age {
+- (void)graduationYearViewControllerDidSelectAge:(NSString *)age {
     self.currentUser.age = age;
     [self saveUserAndUpdate];
 }

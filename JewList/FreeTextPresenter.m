@@ -13,6 +13,7 @@
 #import "SHApi.h"
 #import "SHUIHelpers.h"
 #import "UserResultsViewController.h"
+#import "User.h"
 
 @interface FreeTextPresenter () <FreeTextViewControllerDelegate>
 
@@ -42,24 +43,30 @@
 - (void)freeTextControllerDidChooseText:(FreeTextViewController *)viewController text:(NSString *)text {
     [FreeTextHelpers setUserValue:text type:viewController.type user:self.user];
     if (viewController.type == FreeTextTypeDesiredMajor) {
-        [[SHApi sharedInstance] updateUser:self.user success:^(User *updatedUser){
-            dispatch_async(dispatch_get_main_queue(), ^{
-                UserResultsViewController *vc = [GetAppDelegate.storyboard instantiateViewControllerWithIdentifier:@"UserResultsViewController"];
-                [viewController.navigationController pushViewController:vc animated:NO];
-            });
-        }failure:^(NSError *error)
-         {
-             [SHUIHelpers alertErrorWithMessage:@"We're sorry, we counldnt finish the signup process, please try again."];
-             UserResultsViewController *vc = [GetAppDelegate.storyboard instantiateViewControllerWithIdentifier:@"UserResultsViewController"];
-             [viewController.navigationController pushViewController:vc animated:NO];
-         }];
-        
+        [self finalizeSignup:viewController];
     } else {
         FreeTextViewController *multiVC = [GetAppDelegate.storyboard instantiateViewControllerWithIdentifier:@"FreeTextViewController"];
         multiVC.type = viewController.type + 1;
         multiVC.delegate = self;
         [self.currentViewController.navigationController pushViewController:multiVC animated:YES];
     }
+}
+
+- (void)finalizeSignup:(UIViewController *)viewController
+{
+    self.user.didFinishSignup = YES;
+    [[SHApi sharedInstance] updateUser:self.user success:^(User *updatedUser){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UserResultsViewController *vc = [GetAppDelegate.storyboard instantiateViewControllerWithIdentifier:@"UserResultsViewController"];
+            [viewController.navigationController pushViewController:vc animated:NO];
+        });
+    }failure:^(NSError *error)
+     {
+         [SHUIHelpers alertErrorWithMessage:@"We're sorry, we counldnt finish the signup process, please try again."];
+         UserResultsViewController *vc = [GetAppDelegate.storyboard instantiateViewControllerWithIdentifier:@"UserResultsViewController"];
+         [viewController.navigationController pushViewController:vc animated:NO];
+     }];
+    
 }
 
 @end

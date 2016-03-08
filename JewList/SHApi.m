@@ -213,12 +213,21 @@ static NSString *kCurrentUserPath = @"current_user";
 {
    [[FBSDKLoginManager new] logOut];
     
+    [self logout:^{
+        [self finalizeLogout];
+    } failure:^(NSError *error) {
+        [self finalizeLogout];
+    }];
+}
+
+- (void)finalizeLogout
+{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults removeObjectForKey:@"FBAccessTokenKey"];
     [defaults removeObjectForKey:@"FBExpirationDateKey"];
     [defaults synchronize];
     //[FBSession.activeSession closeAndClearTokenInformation];
-
+    
     [_shAccessToken removeFromDefaultKeychainWithServiceProviderName:kSCHMOOZ_HOST];
     [_shLoginPassword removeFromDefaultKeychainWithServiceProviderName:kSCHMOOZ_HOST];
     
@@ -234,8 +243,6 @@ static NSString *kCurrentUserPath = @"current_user";
         
         [[NSNotificationCenter defaultCenter] postNotificationName:kUserLogedOutNotification object:nil];
     });
-
-        
 }
 
 - (NSDictionary *)generateUserParams:(User *)user
@@ -251,16 +258,19 @@ static NSString *kCurrentUserPath = @"current_user";
     }
 
     if(user.gender) {
-        NSNumber *value = [MultiSelectionHelpers getNumberValueForType:MultiSelectionTypeGender user:user];
-        [params setObject:[value stringValue] forKey:@"gender"];
+        [params setObject:user.gender forKey:@"gender"];
     }
 
     if(user.age) {
-        [params setObject:[user.age stringValue] forKey:@"age"];
+        if ([user.age isKindOfClass:[NSNumber class]]) {
+            [params setObject:[(NSNumber *)user.age stringValue] forKey:@"age"];
+        } else {
+            [params setObject:user.age forKey:@"age"];
+        }
     }
 
     if(user.gradYear) {
-        [params setObject:[user.gradYear stringValue] forKey:@"grad_year"];
+        [params setObject:user.gradYear forKey:@"grad_year"];
     }
     
     if(user.funMeans) {
@@ -271,9 +281,12 @@ static NSString *kCurrentUserPath = @"current_user";
         [params setObject:user.music forKey:@"music"];
     }
 
+    if (user.earlyLate) {
+        [params setObject:user.earlyLate forKey:@"early_late"];
+    }
+    
     if(user.campus) {
-        NSNumber *value = [MultiSelectionHelpers getNumberValueForType:MultiSelectionTypeLivingArrangment user:user];
-        [params setObject:[value stringValue] forKey:@"campus"];
+        [params setObject:user.campus forKey:@"campus"];
     }
     
     if(user.social) {
@@ -281,8 +294,7 @@ static NSString *kCurrentUserPath = @"current_user";
     }
     
     if(user.cleanMessy) {
-        NSString *value = [MultiSelectionHelpers userValueForType:MultiSelectionTypeCleanMessy user:user];
-        [params setObject:value forKey:@"clean_messy"];
+        [params setObject:user.cleanMessy forKey:@"clean_messy"];
     }
 
     if(user.hobbies) {
@@ -346,10 +358,37 @@ static NSString *kCurrentUserPath = @"current_user";
     
 }
 
+- (id)logout:(void (^)(void))success
+     failure:(void (^)(NSError * error))failure
+{
+    return [self standardDictionaryRequestWithPath:@"logout"
+                                            params:nil
+                                            method:@"POST"
+                                      noAuthNeeded:NO
+                                           success:^(id result) {
+                                               if([result isKindOfClass:[NSDictionary class]]) {
+                                                   if(success)
+                                                       success();
+                                                   
+                                               } else
+                                               {
+                                                   if([result objectForKey:@"error"]) {
+                                                       [SHUIHelpers handleApiError:[result objectForKey:@"error"]];
+                                                   }
+                                                   
+                                                   if (failure) {
+                                                       failure(nil);
+                                                   }
+                                               }
+                                               
+                                           }
+                                           failure:failure];
+}
+
 - (id)deleteUser:(void (^)(void))success
          failure:(void (^)(NSError * error))failure
 {
-    return [self standardDictionaryRequestWithPath:@"member"
+    return [self standardDictionaryRequestWithPath:@"members"
                                             params:nil
                                             method:@"DELETE"
                                       noAuthNeeded:NO
@@ -380,7 +419,7 @@ static NSString *kCurrentUserPath = @"current_user";
          failure:(void (^)(NSError * error))failure
 {
     NSDictionary *userParams = [self generateUserParams:user];
-    NSString *endpoint = [NSString stringWithFormat:@"member/%@",user.dbId];
+    NSString *endpoint = [NSString stringWithFormat:@"members/%@",user.dbId];
     
     return [self standardDictionaryRequestWithPath:endpoint
                                             params:userParams
@@ -395,7 +434,7 @@ static NSString *kCurrentUserPath = @"current_user";
                                                            failure(nil);
                                                        }
                                                    } else {
-                                                       User *user = [[User alloc] initWithDictionary:result];
+                                                       User *user = [[SHApi sharedInstance] parseUserWithDictionary:result];
                                                        if (success) {
                                                            success(user);
                                                        }
@@ -434,7 +473,7 @@ static NSString *kCurrentUserPath = @"current_user";
                                                    
                                                    for(NSDictionary *dict in results)
                                                    {
-                                                       User *user = [[User alloc] initWithDictionary:dict];
+                                                       User *user = [self parseUserWithDictionary:dict];
                                                        if (success) {
                                                            success(user);
                                                        }
@@ -462,7 +501,7 @@ static NSString *kCurrentUserPath = @"current_user";
                       success:(void (^)(NSArray *colleges))success
                       failure:(void (^)(NSError * error))failure
 {
-    NSString *path = [NSString stringWithFormat:@"school?name=%@",term];
+    NSString *path = [NSString stringWithFormat:@"colleges?name=%@",term];
     return [self standardDictionaryRequestWithPath:path
                                             params:nil
                                             method:@"GET"
@@ -593,7 +632,7 @@ static NSString *kCurrentUserPath = @"current_user";
                                                    NSMutableArray *users = [NSMutableArray array];
                                                    for(NSDictionary *dict in result)
                                                    {
-                                                       User *user = [[User alloc] initWithDictionary:dict];
+                                                       User *user = [[SHApi sharedInstance] parseUserWithDictionary:dict];
                                                        [users addObject:user];
                                                        
                                                    }
@@ -624,11 +663,13 @@ static NSString *kCurrentUserPath = @"current_user";
           success:(void (^)(void))success
           failure:(void (^)(NSError * error))failure
 {
-    NSDictionary *params = @{@"sender" : sender.dbId,@"recipient" : recipient.dbId, @"msg" : message};
-
-    return [self standardDictionaryRequestWithPath:@"message"
+    NSString *messageId = [self randomIdentifier];
+    NSDictionary *params = @{@"sender" : sender.dbId,@"recipient" : recipient.dbId, @"msg" : message,@"id" : messageId};
+    
+    NSString *path = [NSString stringWithFormat:@"messages/%@",messageId];
+    return [self standardDictionaryRequestWithPath:path
                                             params:params
-                                            method:@"POST"
+                                            method:@"PUT"
                                       noAuthNeeded:NO
                                            success:^(id result) {
                                                
@@ -655,6 +696,15 @@ static NSString *kCurrentUserPath = @"current_user";
     
 }
 
+- (NSString *)randomIdentifier
+{
+    CFUUIDRef uuid = CFUUIDCreate(NULL);
+    CFStringRef uuidString = CFUUIDCreateString(NULL, uuid);
+    NSString *newUUID = (NSString *)CFBridgingRelease(uuidString);
+    CFRelease(uuid);
+    return newUUID;
+}
+
 - (id)loginWithFBToken:(NSString *)token
                   fbId:(NSString *)fbId
                success:(void (^)(void))success
@@ -663,7 +713,7 @@ static NSString *kCurrentUserPath = @"current_user";
     NSDictionary *params = @{@"token" : token,@"fb_id" : fbId};
     
     //NSString *endpoint = [NSString stringWithFormat:@"member?token=%@",token];
-    return [self standardDictionaryRequestWithPath:@"login"
+    return [self standardDictionaryRequestWithPath:@"logins"
                                             params:params
                                             method:@"POST"
                                       noAuthNeeded:YES
@@ -680,7 +730,7 @@ static NSString *kCurrentUserPath = @"current_user";
                                                    User *user = [[SHApi sharedInstance] currentUser];
                                                    if([result objectForKey:@"member"])
                                                    {
-                                                       user = [[User alloc] initWithDictionary:[result objectForKey:@"member"]];
+                                                       user = [self parseUserWithDictionary:[result objectForKey:@"member"]];
                                                    }else{
                                                        user = [[User alloc] init];
                                                        user.email = [result objectForKey:@"email"];
@@ -713,6 +763,45 @@ static NSString *kCurrentUserPath = @"current_user";
                                            failure:failure];
 }
 
+- (User *)parseUserWithDictionary:(NSDictionary *)dictionary
+{
+    if (dictionary.allKeys.count == 0) {
+        return nil;
+    }
+    User *user = [User new];
+    user.aboutMe = dictionary[@"about_me"];
+    user.age = dictionary[@"age"];
+    user.campus = dictionary[@"campus"];
+    user.campusInvolvement = dictionary[@"campus_involvement"];
+    user.cleanMessy = dictionary[@"clean_messy"];
+    user.email = dictionary[@"email"];
+    if (dictionary[@"college"]) {
+        NSDictionary *collegeDict = dictionary[@"college"];
+        if ([collegeDict isKindOfClass:[NSDictionary class]]) {
+            College *college = [[College alloc] initWithDictionary:collegeDict];
+            user.college = college;
+        }
+    }
+    user.didFinishSignup = [dictionary[@"did_finish_signup"] boolValue];
+    user.kosher = dictionary[@"diet_text"];
+    if (dictionary[@"fb"]) {
+        user.fb = dictionary[@"fb"];
+    }
+    user.firstName = dictionary[@"first_name"];
+    user.lastName = dictionary[@"last_name"];
+    user.gender = dictionary[@"gender"];
+    user.gradYear = dictionary[@"grad_year"];
+    user.hsEngagement = dictionary[@"hs_engagement"];
+    user.dbId = dictionary[@"id"];
+    user.funMeans = dictionary[@"fun_means"];
+    user.shabbatResponse = dictionary[@"shabbat_response"];
+    user.earlyLate = dictionary[@"early_late"];
+    user.hobbies = dictionary[@"hobbies"];
+    user.music = dictionary[@"music"];
+    user.desiredMajor = dictionary[@"desired_major"];
+    return user;
+}
+
 
 /* Login with credintials */
 - (id)loginInWithEmail:(NSString *)email
@@ -737,7 +826,7 @@ static NSString *kCurrentUserPath = @"current_user";
                                                    User *user = nil;
                                                    if([result objectForKey:@"user"])
                                                    {
-                                                       user = [[User alloc] initWithDictionary:[result objectForKey:@"user"]];
+                                                       user = [[SHApi sharedInstance] parseUserWithDictionary:[result objectForKey:@"user"]];
                                                    }else{
                                                        user = [[User alloc] init];
                                                        user.email = [result objectForKey:@"email"];
@@ -890,10 +979,11 @@ static NSString *kCurrentUserPath = @"current_user";
              BD_LOG(@"response string = %@",requestOperation.responseString);
              BD_LOG(@"response data size = %db",[requestOperation.responseData length]);
 
-             if(requestOperation.responseData) {
+             NSData *responseData = [requestOperation.responseData copy];
+             if(responseData) {
                  if (success) {
                      dispatch_async(dispatch_get_main_queue(), ^{
-                         success([self jsonToDictionary:[requestOperation.responseData copy]]);
+                         success([self jsonToDictionary:responseData]);
                      });
                  }
              } else {
@@ -1079,9 +1169,16 @@ static NSString *kCurrentUserPath = @"current_user";
     if (data == nil || data == NULL) {
         return nil;
     }
-	JSONDecoder *jsonKitDecoder = [JSONDecoder decoder];
-	NSDictionary *jsonData = [jsonKitDecoder objectWithData: data];
-	return jsonData;
+    
+    NSError* error;
+    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data
+                                                         options:kNilOptions
+                                                           error:&error];
+    if (error) {
+        NSLog(@"Failed parsing response = %@",error);
+        return nil;
+    }
+	return json;
 }
 
 - (NSArray *)readErrors:(id)data {
@@ -1101,24 +1198,14 @@ static NSString *kCurrentUserPath = @"current_user";
 		&& [httpMethod caseInsensitiveCompare:@"PUT"] != NSOrderedSame) {
 		aRequest.URL = [aRequest.URL nxoauth2_URLByAddingParameters:parameters];
 	} else {
+        
 		NSInputStream *postBodyStream = [[NXOAuth2PostBodyStream alloc] initWithParameters:parameters];
-		
 		NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", [(NXOAuth2PostBodyStream *)postBodyStream boundary]];
 		NSString *contentLength = [NSString stringWithFormat:@"%lld", [(NXOAuth2PostBodyStream *)postBodyStream length]];
 		[aRequest setValue:contentType forHTTPHeaderField:@"Content-Type"];
 		[aRequest setValue:contentLength forHTTPHeaderField:@"Content-Length"];
-        
-        /*
-         NSString *contentType = [NSString stringWithFormat:@"application/json; boundary=%@", [(NXOAuth2PostBodyStream *)postBodyStream boundary]];
-         NSString *contentLength = [NSString stringWithFormat:@"%lld", [(NXOAuth2PostBodyStream *)postBodyStream length]];
-         [aRequest setValue:contentType forHTTPHeaderField:@"Content-Type"];
-         [aRequest setValue:contentLength forHTTPHeaderField:@"Content-Length"];
-         [aRequest setValue:@"Fiddler" forHTTPHeaderField:@"User-Agent"];
-         [aRequest setValue:@"bbyo.cloudapp.net" forHTTPHeaderField:@"Host"];
-
-         */
-		
 		[aRequest setHTTPBodyStream:postBodyStream];
+         
 	}
 }
 

@@ -9,6 +9,7 @@
 #import "SHMemberResultsJsonResponse.h"
 #import "User.h"
 #import "AFHTTPRequestOperation.h"
+#import "SHApi.h"
 
 @implementation SHMemberResultsJsonResponse
 
@@ -30,7 +31,7 @@
         NSMutableArray *currItems = [NSMutableArray arrayWithCapacity:[entries count]];
         
         for (NSDictionary *entry in entries) {
-            User* item = [[User alloc] initWithDictionary:entry];
+            User* item = [[SHApi sharedInstance] parseUserWithDictionary:entry];
             
             [currItems addObject:item];
         }

@@ -28,7 +28,7 @@
 @property (nonatomic, strong) NSString *fbLocationName;
 @property (nonatomic, strong) NSString *fbCollegeName;
 
-@property (nonatomic, strong) NSNumber *age;
+@property (nonatomic, strong) NSString *age;
 @property (nonatomic, strong) NSString *campus;
 @property (nonatomic, strong) NSString *earlyLate;
 @property (nonatomic, strong) NSString *cleanMessy;
@@ -42,7 +42,7 @@
 @property (nonatomic, strong) NSString *hobbies;
 @property (nonatomic, strong) NSString *campusInvolvement;
 @property (nonatomic, strong) NSString *contactFromJewishOrgs;
-@property (nonatomic, strong) NSNumber *gradYear;
+@property (nonatomic, strong) NSString *gradYear;
 @property (nonatomic, strong) NSString *hsEngagement;
 @property (nonatomic, strong) NSNumber *primaryId;
 @property (nonatomic, strong) NSString *school;

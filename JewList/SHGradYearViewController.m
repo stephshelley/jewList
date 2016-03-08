@@ -141,7 +141,7 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     NSNumber *number = [_yearsArray objectAtIndex:row];
-    _currentUser.gradYear = number;
+    _currentUser.gradYear = [number stringValue];
     
 }
 

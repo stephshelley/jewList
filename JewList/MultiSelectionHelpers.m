@@ -169,18 +169,24 @@
         case MultiSelectionTypeGender:
             if ([user.gender isKindOfClass:[NSString class]]) {
                 value = @([self getIndexValueForValue:user.gender type:MultiSelectionTypeGender]);
+            } else if ([user.gender isKindOfClass:[NSNumber class]]) {
+                value = (NSNumber *)user.gender;
             }
             
             break;
         case MultiSelectionTypeLivingArrangment:
             if ([user.campus isKindOfClass:[NSString class]]) {
                 value = @([self getIndexValueForValue:user.campus type:MultiSelectionTypeLivingArrangment]);
+            } else if ([user.campus isKindOfClass:[NSNumber class]]) {
+                value = (NSNumber *)user.campus;
             }
             
             break;
         case MultiSelectionTypeCleanMessy:
             if ([user.cleanMessy isKindOfClass:[NSString class]]) {
                 value = @([self getIndexValueForValue:user.cleanMessy type:MultiSelectionTypeCleanMessy]);
+            } else if ([user.cleanMessy isKindOfClass:[NSNumber class]]) {
+                value = (NSNumber *)user.cleanMessy;
             }
             
             break;

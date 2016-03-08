@@ -22,6 +22,6 @@
 @protocol AgeViewControllerDelegate <NSObject>
 
 @optional
-- (void)graduationYearViewControllerDidSelectAge:(NSNumber *)age;
+- (void)graduationYearViewControllerDidSelectAge:(NSString *)age;
 
 @end

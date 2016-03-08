@@ -137,7 +137,7 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
                   }
                   
                   if(!currentUser.gender)  {
-                      currentUser.gender = [fbUser objectForKey:@"gender"];
+                      currentUser.gender = [[fbUser objectForKey:@"gender"] stringValue];
                   }
                   
                   if(currentUser.email.length == 0) {
@@ -152,8 +152,10 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
                   
                   dispatch_async(dispatch_get_main_queue(), ^{
                       _didBeginToLogin = NO;
-                      if (NO && currentUser.didFinishSignup) {
-                          [self finishOnboarding];                          
+                      if (currentUser.didFinishSignup) {
+                          dispatch_async(dispatch_get_main_queue(), ^{
+                              [self showResultsScreen];
+                          });
                       } else {
                           [self initializeOnboarding];
                       }

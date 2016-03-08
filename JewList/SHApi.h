@@ -34,6 +34,7 @@
 
 - (void)enrichNSMutableURLRequestWithAuth:(NSMutableURLRequest *)request;
 - (void)enrichNSMutableURLRequestWithAuthLikeGet:(NSMutableURLRequest *)request;
+- (User *)parseUserWithDictionary:(NSDictionary *)dictionary;
 
 // Handle Login/Passwor
 - (void)saveUserLogin:(NSString *)login andPassword:(NSString *)password;

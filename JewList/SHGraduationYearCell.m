@@ -31,7 +31,7 @@
     [super setUser:user];
 
     self.titleLabel.text = @"Graduation Year";
-    self.accesoryLabel.text = [self.user.gradYear stringValue];
+    self.accesoryLabel.text = self.user.gradYear;
     
 }
 

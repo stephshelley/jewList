@@ -61,7 +61,14 @@
 - (NSArray *)partsForParameters:(NSDictionary *)parameters;
 {
 	NSMutableArray *parts = [NSMutableArray array];
-	for (NSString *key in parameters) {
+	for (NSString *tmpKey in parameters) {
+        NSString *key = nil;
+        if ([tmpKey isKindOfClass:[NSNumber class]]) {
+            key = [(NSNumber *)tmpKey stringValue];
+        } else {
+            key = tmpKey;
+        }
+        
 		id value = [parameters valueForKey:key];
 		if ([value isKindOfClass:[NSArray class]]) {
 			NSArray *contentArray = (NSArray *)value;

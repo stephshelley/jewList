@@ -20,7 +20,8 @@
 
 #endif
 
-#define kSCHMOOZ_HOST @"joomie.azurewebsites.net" // => RELEASE API
+#define kSCHMOOZ_HOST @"joomiedev.azurewebsites.net" // => RELEASE API
+//#define kSCHMOOZ_HOST @"joomie.azurewebsites.net" // => RELEASE API
 #define kSCHMOOZ_URL [NSString stringWithFormat:@"http://%@/", kSCHMOOZ_HOST]
 #define kSCHMOOZ_API_ACTION_BASE_URL [NSString stringWithFormat:@"%@%@", kSCHMOOZ_URL, @"api/%@"]
 
