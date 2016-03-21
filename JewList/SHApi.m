@@ -418,26 +418,20 @@ static NSString *kCurrentUserPath = @"current_user";
          success:(void (^)(User *user))success
          failure:(void (^)(NSError * error))failure
 {
+    [self setCurrentUser:user];
     NSDictionary *userParams = [self generateUserParams:user];
     NSString *endpoint = [NSString stringWithFormat:@"members/%@",user.dbId];
     
     return [self standardDictionaryRequestWithPath:endpoint
                                             params:userParams
-                                            method:@"PUT"
+                                            method:@"POST"
                                       noAuthNeeded:NO
                                            success:^(id result) {
                                                if([result isKindOfClass:[NSDictionary class]])
                                                {
-                                                   if (result[@"Message"]) {
-                                                       [SHUIHelpers handleApiError:result];
-                                                       if (failure) {
-                                                           failure(nil);
-                                                       }
-                                                   } else {
-                                                       User *user = [[SHApi sharedInstance] parseUserWithDictionary:result];
-                                                       if (success) {
-                                                           success(user);
-                                                       }
+                                                   User *user = [[SHApi sharedInstance] parseUserWithDictionary:result];
+                                                   if (success) {
+                                                       success(user);
                                                    }
                                                    
                                                } else
@@ -621,9 +615,10 @@ static NSString *kCurrentUserPath = @"current_user";
                  success: (void (^)(NSArray *colleges))success
                  failure:(void (^)(NSError * error))failure
 {
-    NSString *endpoint = [NSString stringWithFormat:@"member?school=%@",college.dbId];
-    return [self standardDictionaryRequestWithPath:endpoint
-                                            params:nil
+    NSDictionary *params = @{@"school" : college.dbId};
+    //NSString *endpoint = [NSString stringWithFormat:@"members?school=%@",college.dbId];
+    return [self standardDictionaryRequestWithPath:@"members"
+                                            params:params
                                             method:@"GET"
                                       noAuthNeeded:YES
                                            success:^(id result) {

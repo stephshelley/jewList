@@ -163,7 +163,8 @@
         }
         
         currentUser.school = item.collegeName;
-        [[SHApi sharedInstance] cacheCurrentUserDetails];
+        currentUser.college = item;
+        [[SHApi sharedInstance] setCurrentUser:currentUser];
         GraduationYearViewController *gradViewContorller = [GetAppDelegate.storyboard instantiateViewControllerWithIdentifier:@"GraduationYearViewController"];
         gradViewContorller.user = [[SHApi sharedInstance] currentUser];
         self.navigationController.navigationBar.topItem.title = @"";

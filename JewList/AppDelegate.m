@@ -40,6 +40,7 @@
     User *currentUser = [[SHApi sharedInstance] currentUser];
     if(currentUser != nil)
     {
+//        [self initLogedOut];
         [self initLogedIn];
     }
     else

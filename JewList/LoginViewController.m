@@ -154,7 +154,8 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
                       _didBeginToLogin = NO;
                       if (currentUser.didFinishSignup) {
                           dispatch_async(dispatch_get_main_queue(), ^{
-                              [self showResultsScreen];
+                              [self initializeOnboarding];
+//                              [self showResultsScreen];
                           });
                       } else {
                           [self initializeOnboarding];
