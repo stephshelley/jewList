@@ -25,22 +25,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JewList/SHApi.m"
-            timestampString = "480215448.159598"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "672"
-            endingLineNumber = "672"
-            landmarkName = "-sendMessage:recipient:message:success:failure:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "JewList/User.m"
             timestampString = "477275587.575437"
             startingColumnNumber = "9223372036854775807"
@@ -106,7 +90,7 @@
                   moduleName = "JewList"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/orenzitoun/Documents/Github/Joomie%20App/jewList/JewList/LoginViewController.m"
-                  timestampString = "480215608.27925"
+                  timestampString = "480215752.842123"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "44"
@@ -121,7 +105,7 @@
                   moduleName = "JewList"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/orenzitoun/Documents/Github/Joomie%20App/jewList/JewList/LoginViewController.m"
-                  timestampString = "480215608.27935"
+                  timestampString = "480215752.842269"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "44"
@@ -136,7 +120,7 @@
                   moduleName = "JewList"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/orenzitoun/Documents/Github/Joomie%20App/jewList/JewList/LoginViewController.m"
-                  timestampString = "480215608.279443"
+                  timestampString = "480215752.842388"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "44"
