@@ -153,12 +153,11 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
                   
                   dispatch_async(dispatch_get_main_queue(), ^{
                       _didBeginToLogin = NO;
+                      self.loadingView.hidden = YES;
+                      [self.loadingIndicatorView stopAnimating];
                       if (currentUser.didFinishSignup) {
                           dispatch_async(dispatch_get_main_queue(), ^{
-                              self.loadingView.hidden = YES;
-                              [self.loadingIndicatorView stopAnimating];
-                              [self initializeOnboarding];
-//                              [self showResultsScreen];
+                             [self showResultsScreen];
                           });
                       } else {
                           [self initializeOnboarding];
@@ -167,6 +166,9 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
               }failure:^(NSError *error)
               {
                   dispatch_async(dispatch_get_main_queue(), ^{
+                      self.loadingView.hidden = YES;
+                      [self.loadingIndicatorView stopAnimating];
+
                       [SHUIHelpers alertErrorWithMessage:@"An error occurred"];
                       _didBeginToLogin = NO;
                   });

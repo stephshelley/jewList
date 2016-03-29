@@ -1493,7 +1493,7 @@
 				ORGANIZATIONNAME = "Oren Zitoun";
 				TargetAttributes = {
 					3A0ACC33179A3F3C0083B80B = {
-						DevelopmentTeam = XW37JN8FNK;
+						DevelopmentTeam = FCM57S2U26;
 					};
 				};
 			};
@@ -1851,7 +1851,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Oren Zitoun (674H2H6V52)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Oren Zitoun (674H2H6V52)";
 				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
 				ENABLE_BITCODE = NO;
@@ -1883,7 +1883,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: B'NAI B'RITH YOUTH ORGANIZATION, INC. (XW37JN8FNK)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: B'NAI B'RITH YOUTH ORGANIZATION, INC. (XW37JN8FNK)";
 				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
 				ENABLE_BITCODE = NO;
