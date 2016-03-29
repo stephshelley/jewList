@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -30,7 +30,7 @@
                         </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDP-PC-T87" userLabel="Detail Label">
-                        <rect key="frame" x="14" y="29" width="292" height="22.5"/>
+                        <rect key="frame" x="14" y="25" width="292" height="26.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" red="0.22352941179999999" green="0.66274509800000003" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -39,12 +39,13 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="kDP-PC-T87" secondAttribute="bottom" id="9si-gj-8lg"/>
                     <constraint firstAttribute="trailingMargin" secondItem="30z-94-Rf9" secondAttribute="trailing" id="FRb-WE-qjb"/>
                     <constraint firstAttribute="trailingMargin" secondItem="kDP-PC-T87" secondAttribute="trailing" id="Qqq-Bs-4Qo"/>
                     <constraint firstAttribute="topMargin" secondItem="30z-94-Rf9" secondAttribute="top" id="VQa-dK-2Gy"/>
                     <constraint firstAttribute="trailing" secondItem="kDP-PC-T87" secondAttribute="trailing" constant="14" id="YVh-uM-Kq5"/>
                     <constraint firstAttribute="bottom" secondItem="kDP-PC-T87" secondAttribute="bottom" constant="8" id="dY3-Wh-bvO"/>
-                    <constraint firstItem="kDP-PC-T87" firstAttribute="top" secondItem="30z-94-Rf9" secondAttribute="bottom" constant="4" id="pCX-Zh-bI1"/>
+                    <constraint firstItem="kDP-PC-T87" firstAttribute="top" secondItem="30z-94-Rf9" secondAttribute="bottom" id="pCX-Zh-bI1"/>
                     <constraint firstItem="kDP-PC-T87" firstAttribute="leading" secondItem="30z-94-Rf9" secondAttribute="leading" id="pLk-14-IfK"/>
                     <constraint firstAttribute="trailing" secondItem="30z-94-Rf9" secondAttribute="trailing" constant="14" id="wJi-yl-c6V"/>
                     <constraint firstItem="30z-94-Rf9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="wNh-DV-zts"/>
@@ -54,6 +55,7 @@
                     <mask key="constraints">
                         <exclude reference="FRb-WE-qjb"/>
                         <exclude reference="Qqq-Bs-4Qo"/>
+                        <exclude reference="dY3-Wh-bvO"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>

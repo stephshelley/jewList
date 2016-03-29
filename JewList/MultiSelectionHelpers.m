@@ -31,7 +31,7 @@
             options = @[@"Organized", @"Clean Freak", @"Messy"];
             break;
         case MultiSelectionTypeFun:
-            options = @[@"Shabbat dinner with friends", @"A night out with friends", @"Getting work done ahead of time", @"Reading a book", @"Netflix Night", @"Being Outdoors"];
+            options = @[@"Shabbat dinner with friends", @"A night out with friends", @"Getting work done ahead of time", @"Reading a book", @"Netflix night", @"Being outdoors"];
             break;
         case MultiSelectionTypeKosher:
             options = @[@"Yes - I am Shomer Kashrut", @"Yes", @"No"];
@@ -43,7 +43,7 @@
             options = @[@"Alternative", @"Blues", @"Classical Music", @"Country Music", @"Electronic Music", @"Hip Hop / Rap", @"Indie Pop", @"Jazz", @"New Age", @"Pop (Popular music)", @"R&B / Soul", @"Reggae", @"Rock"];
             break;
         case MultiSelectionTypeDuringTheDay:
-            options = @[@"Taking a hike", @"Spending the day in a library", @"Reading a book", @"Cooking", @"Study", @"Workout", @"Watching Netflix", @"Hanging out with Friends", @"Shopping", @"Playing Sports", @"Other"];
+            options = @[@"Taking a hike", @"Spending the day in a library", @"Reading a book", @"Cooking", @"Study", @"Workout", @"Watching Netflix", @"Hanging out with friends", @"Shopping", @"Playing sports", @"Other"];
             break;
         case MultiSelectionTypeActivities:
             options = @[@"Greek Life", @"Jewish Life on Campus", @"Political Groups", @"Social Advocacy Groups", @"Athletics"];

@@ -7,5 +7,7 @@
 //
 
 @interface LoginViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIView *loadingView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicatorView;
 
 @end

@@ -17,12 +17,10 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
-@interface LoginViewController() <FBSDKLoginButtonDelegate>
-{
+@interface LoginViewController() <FBSDKLoginButtonDelegate> {
     __weak IBOutlet UIImageView *logoImageView;
     __weak IBOutlet FBSDKLoginButton *fbLoginButton;
     BOOL _didBeginToLogin;
-    
 }
 
 @end
@@ -73,6 +71,9 @@
 didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
               error:(NSError *)error
 {
+    self.loadingView.hidden = NO;
+    [self.loadingIndicatorView startAnimating];
+    
     NSString *accessToken = result.token.tokenString;
     [[STFacebookManager sharedInstance] setFacebookToken:result.token completion:^(NSDictionary *fbUser) {
          NSDictionary *response = @{@"id" : [fbUser objectForKey:@"id"] , @"token" : accessToken};
@@ -154,6 +155,8 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
                       _didBeginToLogin = NO;
                       if (currentUser.didFinishSignup) {
                           dispatch_async(dispatch_get_main_queue(), ^{
+                              self.loadingView.hidden = YES;
+                              [self.loadingIndicatorView stopAnimating];
                               [self initializeOnboarding];
 //                              [self showResultsScreen];
                           });

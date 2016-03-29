@@ -11,7 +11,7 @@
 #import "SHApi.h"
 #import "SHUIHelpers.h"
 
-@interface MessageViewController ()
+@interface MessageViewController () <UIAlertViewDelegate>
 
 @end
 
@@ -60,10 +60,12 @@
     UIView *statusBarView = nil;
     statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 20)];
     statusBarView.backgroundColor = DEFAULT_BLUE_COLOR;
+    statusBarView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [self.view addSubview:statusBarView];
     
     UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, self.view.width, 44)];
     topView.backgroundColor = DEFAULT_BLUE_COLOR;
+    topView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [self.view addSubview:topView];
 
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 160, 24)];
@@ -75,51 +77,24 @@
     titleLabel.adjustsFontSizeToFitWidth = YES;
     titleLabel.centerX = floorf(topView.width/2);
     titleLabel.centerY = floorf(topView.height/2);
+    titleLabel.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     [topView addSubview:titleLabel];
     
     UIButton *profileButton = [SHUIHelpers getNavBarButton:CGRectMake(0, 0, 60, 24) title:@"Send" selector:@selector(sendMessage) sender:self];
-    //IButton *profileButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
-    /*
-    [profileButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [profileButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-    [profileButton setTitle:@"Send" forState:UIControlStateNormal];
-    [profileButton setTitle:@"Send" forState:UIControlStateHighlighted];
-    profileButton.titleLabel.textAlignment = NSTextAlignmentRight;
-    profileButton.titleLabel.backgroundColor = [UIColor clearColor];
-    profileButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
-    profileButton.backgroundColor = [UIColor clearColor];
-    [profileButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 50, 0, 0)];
-     [profileButton addTarget:self action:@selector(sendMessage) forControlEvents:UIControlEventTouchUpInside];
-     */
     profileButton.centerY = titleLabel.centerY;
+    profileButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
     profileButton.right = topView.width - 10;
     [topView addSubview:profileButton];
     
-    //UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 40)];
     UIButton *cancelButton = [SHUIHelpers getNavBarButton:CGRectMake(0, 0, 60, 24) title:@"Cancel" selector:@selector(closeVC) sender:self];
-
-    /*
-    [cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-    [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
-    [cancelButton setTitle:@"Cancel" forState:UIControlStateHighlighted];
-    cancelButton.titleLabel.textAlignment = NSTextAlignmentLeft;
-    cancelButton.titleLabel.backgroundColor = [UIColor clearColor];
-    cancelButton.titleLabel.font = [UIFont fontWithName:DEFAULT_FONT size:18];
-    cancelButton.backgroundColor = [UIColor clearColor];
-    [cancelButton setTitleEdgeInsets:UIEdgeInsetsMake(0,0, 0, 0)];
-    [cancelButton addTarget:self action:@selector(closeVC) forControlEvents:UIControlEventTouchUpInside];
-     */
-    
     cancelButton.centerY = titleLabel.centerY;
     cancelButton.left = 10;
     [topView addSubview:cancelButton];
-    
-    //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStylePlain target:self action:@selector(sendMessage)];
-    //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(closeVC)];
 
-    self.textView = [[UITextView alloc] initWithFrame:CGRectMake(0, topView.bottom + 20, 300, 200)];
+    self.textView = [[UIPlaceHolderTextView alloc] initWithFrame:CGRectMake(10, topView.bottom + 20, self.view.width - 20, 200)];
     _textView.contentInset = UIEdgeInsetsMake(-8,0,0,0);
+    _textView.placeholder = @"Enter your message here";
+    _textView.placeholderColor = [UIColor lightGrayColor];
     _textView.textAlignment = NSTextAlignmentLeft;
     _textView.backgroundColor = [UIColor clearColor];
     _textView.userInteractionEnabled = YES;
@@ -128,6 +103,7 @@
     _textView.font = [UIFont fontWithName:DEFAULT_FONT size:16];
     _textView.centerX = floorf(self.view.width/2);
     _textView.clipsToBounds = YES;
+    _textView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     _textView.text = _initialMessage;
     [self.view addSubview:_textView];
     
@@ -142,17 +118,21 @@
     }
     
     User *currentUser = [[SHApi sharedInstance] currentUser];
-    __weak __typeof(&*self)weakSelf = self;
-
-    [[SHApi sharedInstance] sendMessage:currentUser recipient:_receipent message:_textView.text success:^(void)
-     {
+    [[SHApi sharedInstance] sendMessage:currentUser recipient:_receipent message:_textView.text success:^(void) {
          dispatch_async(dispatch_get_main_queue(), ^{
-             [weakSelf closeVCAfterMessageSent];
+             NSString *alertMessage = [NSString stringWithFormat:@"Your message has successfully sent. Keep an eye out on your email inbox for a response from %@ %@. You’re one step closer to finding your Joomie!”",_receipent.firstName,_receipent.lastName];
+             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Success!"
+                                                                 message:alertMessage
+                                                                delegate:self
+                                                       cancelButtonTitle:@"OK"
+                                                       otherButtonTitles:nil];
+             
+             [alertView show];
              
          });
      }failure:^(NSError *error)
      {
-
+         [SHUIHelpers alertErrorWithMessage:[NSString stringWithFormat:@"%@",error.localizedDescription]];
      }];
     
 }
@@ -170,4 +150,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self closeVCAfterMessageSent];
+}
 @end

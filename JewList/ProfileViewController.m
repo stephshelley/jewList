@@ -29,6 +29,8 @@
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(UserCoverCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(UserCoverCell.class)];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(ProfileDetailCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(ProfileDetailCell.class)];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 50.0;
     [self loadItems];
     [self.tableView reloadData];
     
@@ -66,11 +68,6 @@
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Table view data source
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -80,6 +77,8 @@
         return [UserCoverCell cellHeight];
     }
     else if ([object isKindOfClass:[ProfileDetailCellItem class]]) {
+        return UITableViewAutomaticDimension;
+
         ProfileDetailCellItem *item = (ProfileDetailCellItem *)object;
         return [ProfileDetailCell cellHeightForItem:item];
     }

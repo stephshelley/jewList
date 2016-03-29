@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1z4-Kl-feR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1z4-Kl-feR">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -52,17 +52,49 @@
                                     <outlet property="delegate" destination="feo-HB-UQO" id="tfp-O2-xP8"/>
                                 </connections>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KSC-ev-bH4" userLabel="Loading View">
+                                <rect key="frame" x="160" y="228" width="280" height="80"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="mP8-zP-sbi">
+                                        <rect key="frame" x="130" y="0.0" width="20" height="20"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait while we authenticate your Joomie account with Facebook." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tbm-w9-5J7">
+                                        <rect key="frame" x="10" y="30" width="260" height="50.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.93725490199999995" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Tbm-w9-5J7" firstAttribute="leading" secondItem="KSC-ev-bH4" secondAttribute="leading" constant="10" id="2Vw-xa-2k7"/>
+                                    <constraint firstAttribute="width" constant="280" id="3EP-He-kzJ"/>
+                                    <constraint firstAttribute="height" constant="80" id="DrO-EX-SSJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Tbm-w9-5J7" secondAttribute="bottom" id="EN2-tI-JGI"/>
+                                    <constraint firstItem="mP8-zP-sbi" firstAttribute="centerX" secondItem="KSC-ev-bH4" secondAttribute="centerX" id="Pd3-x8-5WE"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tbm-w9-5J7" secondAttribute="trailing" constant="10" id="SZr-Xm-NVn"/>
+                                    <constraint firstItem="mP8-zP-sbi" firstAttribute="top" secondItem="KSC-ev-bH4" secondAttribute="top" id="SnI-Ud-dPU"/>
+                                    <constraint firstItem="Tbm-w9-5J7" firstAttribute="top" secondItem="mP8-zP-sbi" secondAttribute="bottom" constant="10" id="bXD-mB-MD2"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.93725490196078431" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="KSC-ev-bH4" firstAttribute="centerX" secondItem="yWj-Ua-pid" secondAttribute="centerX" id="76O-fC-s8P"/>
                             <constraint firstItem="DBg-rq-Yrl" firstAttribute="centerX" secondItem="yWj-Ua-pid" secondAttribute="centerX" id="Atk-UY-FdK"/>
+                            <constraint firstItem="KSC-ev-bH4" firstAttribute="leading" secondItem="yWj-Ua-pid" secondAttribute="leadingMargin" constant="160" id="Lgo-Tz-lKh"/>
+                            <constraint firstItem="KSC-ev-bH4" firstAttribute="centerY" secondItem="yWj-Ua-pid" secondAttribute="centerY" id="NpT-kR-WA6"/>
                             <constraint firstItem="DBg-rq-Yrl" firstAttribute="top" secondItem="4v3-DG-77N" secondAttribute="bottom" constant="44" id="TY1-fg-Dov"/>
                             <constraint firstItem="4v3-DG-77N" firstAttribute="centerX" secondItem="yWj-Ua-pid" secondAttribute="centerX" id="Vj4-cj-Pwk"/>
                             <constraint firstItem="DBg-rq-Yrl" firstAttribute="centerY" secondItem="yWj-Ua-pid" secondAttribute="centerY" id="aaE-2D-CJs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KSC-ev-bH4" secondAttribute="trailing" constant="160" id="lRc-Pu-G50"/>
                             <constraint firstItem="4v3-DG-77N" firstAttribute="top" secondItem="KDv-K2-PMe" secondAttribute="bottom" constant="40" id="qCY-iZ-MZx"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Lgo-Tz-lKh"/>
+                                <exclude reference="lRc-Pu-G50"/>
                                 <exclude reference="TY1-fg-Dov"/>
                             </mask>
                         </variation>
@@ -71,6 +103,8 @@
                     <navigationItem key="navigationItem" id="gx5-dp-t99"/>
                     <connections>
                         <outlet property="fbLoginButton" destination="DBg-rq-Yrl" id="BZ7-Mr-BJC"/>
+                        <outlet property="loadingIndicatorView" destination="mP8-zP-sbi" id="jWg-CG-CXD"/>
+                        <outlet property="loadingView" destination="KSC-ev-bH4" id="2bI-bN-ho3"/>
                         <outlet property="logoImageView" destination="4v3-DG-77N" id="y8F-0c-AVt"/>
                         <segue destination="7CY-Lh-SKV" kind="show" identifier="beginOnboardingSegue" id="kJh-vU-flH"/>
                     </connections>

@@ -658,13 +658,11 @@ static NSString *kCurrentUserPath = @"current_user";
           success:(void (^)(void))success
           failure:(void (^)(NSError * error))failure
 {
-    NSString *messageId = [self randomIdentifier];
-    NSDictionary *params = @{@"sender" : sender.dbId,@"recipient" : recipient.dbId, @"msg" : message,@"id" : messageId};
+    NSDictionary *params = @{@"sender" : sender.dbId,@"recipient" : recipient.dbId, @"msg" : message};
     
-    NSString *path = [NSString stringWithFormat:@"messages/%@",messageId];
-    return [self standardDictionaryRequestWithPath:path
+    return [self standardDictionaryRequestWithPath:@"messages"
                                             params:params
-                                            method:@"PUT"
+                                            method:@"POST"
                                       noAuthNeeded:NO
                                            success:^(id result) {
                                                

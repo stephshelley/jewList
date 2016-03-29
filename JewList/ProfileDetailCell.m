@@ -11,8 +11,7 @@
 
 const NSUInteger titleLabelTopMargin = 5.0;
 const NSUInteger detailLabelTopMargin = 4.0;
-const NSUInteger detailLabelBottomMargin = 8.0;
-const NSUInteger titleLabelHeight = 21.0;
+const NSUInteger detailLabelBottomMargin = 0.0;
 
 #define kTitleFont [UIFont systemFontOfSize:14]
 #define kDetailFont [UIFont systemFontOfSize:16]
@@ -29,7 +28,8 @@ const NSUInteger titleLabelHeight = 21.0;
 
 + (CGFloat)cellHeightForItem:(ProfileDetailCellItem *)item {
     CGSize detailSize = [[self class] detailLabelSize:item.detail];
-    return titleLabelTopMargin + detailLabelTopMargin + detailSize.height + detailLabelBottomMargin + titleLabelHeight;
+    CGSize titleSize = [[self class] titleLabelSize:item.title];
+    return titleLabelTopMargin + detailLabelTopMargin + detailSize.height + titleSize.height + detailLabelBottomMargin;
 }
 
 + (CGSize)titleLabelSize:(NSString *)title {
@@ -46,6 +46,13 @@ const NSUInteger titleLabelHeight = 21.0;
     _item = item;
     self.titleLabel.text = _item.title;
     self.detailLabel.text = _item.detail;
+}
+
+- (void)prepareForReuse
+{
+    [super prepareForReuse];
+    self.titleLabel.text = @"";
+    self.detailLabel.text = @"";
 }
 
 + (CGSize)textSize:(NSString *)text font:(UIFont *)font maxWidth:(CGFloat)maxWidth {

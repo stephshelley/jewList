@@ -48,9 +48,6 @@
 
 - (void)onProfileButton:(id)sender {
     [self performSegueWithIdentifier:@"showEditProfile" sender:self];
-    
-    //SHEditProfileViewController *editVC = [[SHEditProfileViewController alloc] initWithUser:[[SHApi sharedInstance] currentUser]];
-    //[self presentViewController:editVC animated:YES completion:nil];
 }
 
 - (SHMemberResultsDataSource *)dataSource {
@@ -105,26 +102,5 @@
     profileViewController.user = user;
     [self.navigationController pushViewController:profileViewController animated:YES];
 }
-
-/*
- #pragma mark -
- #pragma mark MNMBottomPullToRefreshManagerClient
- 
- - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
- 
- [_pullToRefreshManager tableViewScrolled];
- }
- 
- - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
- 
- [_pullToRefreshManager tableViewReleased];
- }
- 
- - (void)pullToRefreshTriggered:(MNMPullToRefreshManager *)manager {
- 
- [self refreshScreen];
- 
- }
- */
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "User.h"
+#import "UIPlaceHolderTextView.h"
 
 @protocol MessageViewControllerDelegate <NSObject>
 
@@ -16,7 +17,7 @@
 
 @interface MessageViewController : UIViewController
 
-@property (nonatomic, strong) UITextView *textView;
+@property (nonatomic, strong) UIPlaceHolderTextView *textView;
 @property (nonatomic, strong) NSString *initialMessage;
 @property (nonatomic, strong) User *receipent;
 @property (nonatomic, assign) id<MessageViewControllerDelegate> delegate;
