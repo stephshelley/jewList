@@ -73,7 +73,7 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
 {
     self.loadingView.hidden = NO;
     [self.loadingIndicatorView startAnimating];
-    
+    fbLoginButton.hidden = YES;
     NSString *accessToken = result.token.tokenString;
     [[STFacebookManager sharedInstance] setFacebookToken:result.token completion:^(NSDictionary *fbUser) {
          NSDictionary *response = @{@"id" : [fbUser objectForKey:@"id"] , @"token" : accessToken};
@@ -153,14 +153,16 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
                   
                   dispatch_async(dispatch_get_main_queue(), ^{
                       _didBeginToLogin = NO;
-                      self.loadingView.hidden = YES;
-                      [self.loadingIndicatorView stopAnimating];
                       if (currentUser.didFinishSignup) {
                           dispatch_async(dispatch_get_main_queue(), ^{
                              [self showResultsScreen];
+                              self.loadingView.hidden = YES;
+                              [self.loadingIndicatorView stopAnimating];
                           });
                       } else {
                           [self initializeOnboarding];
+                          self.loadingView.hidden = YES;
+                          [self.loadingIndicatorView stopAnimating];
                       }
                   });
               }failure:^(NSError *error)
@@ -168,6 +170,7 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
                   dispatch_async(dispatch_get_main_queue(), ^{
                       self.loadingView.hidden = YES;
                       [self.loadingIndicatorView stopAnimating];
+                      fbLoginButton.hidden = NO;
 
                       [SHUIHelpers alertErrorWithMessage:@"An error occurred"];
                       _didBeginToLogin = NO;
