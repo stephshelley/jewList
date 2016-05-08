@@ -26,3 +26,4 @@
 + (float)rowHeight;
 
 @end
+ 

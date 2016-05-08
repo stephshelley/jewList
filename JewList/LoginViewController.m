@@ -153,7 +153,7 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
                   
                   dispatch_async(dispatch_get_main_queue(), ^{
                       _didBeginToLogin = NO;
-                      if (currentUser.didFinishSignup) {
+                      if (NO && currentUser.didFinishSignup) {
                           dispatch_async(dispatch_get_main_queue(), ^{
                              [self showResultsScreen];
                               self.loadingView.hidden = YES;

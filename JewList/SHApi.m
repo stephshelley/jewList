@@ -260,6 +260,10 @@ static NSString *kCurrentUserPath = @"current_user";
     if(user.gender) {
         [params setObject:user.gender forKey:@"gender"];
     }
+    
+    if(user.whenLookingForARoomate) {
+        [params setObject:user.whenLookingForARoomate forKey:@"school_start_semester"];
+    }
 
     if(user.age) {
         if ([user.age isKindOfClass:[NSNumber class]]) {

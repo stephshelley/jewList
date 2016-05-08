@@ -32,6 +32,7 @@
 @property (nonatomic, strong) NSString *campus;
 @property (nonatomic, strong) NSString *earlyLate;
 @property (nonatomic, strong) NSString *cleanMessy;
+@property (nonatomic, strong) NSString *whenLookingForARoomate;
 @property (nonatomic, strong) NSString *funMeans;
 @property (nonatomic, strong) NSString *aboutMe;
 @property (nonatomic, strong) NSString *desiredMajor;

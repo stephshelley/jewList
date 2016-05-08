@@ -14,6 +14,7 @@ typedef NS_ENUM(NSUInteger, MultiSelectionType)
     MultiSelectionTypeEarlyBird,
     MultiSelectionTypeCleanMessy,
     MultiSelectionTypeFun,
+    MultiSelectionTypeWhenLookingInARoomate,
     MultiSelectionTypeKosher,
     MultiSelectionTypeShabbat,
     MultiSelectionTypeMusic,

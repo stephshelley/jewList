@@ -19,7 +19,7 @@
             options = @[@"Male", @"Female", @"Other", @"N/A"];
             break;
         case MultiSelectionTypeHighSchoolConnections:
-            options = @[@"BBYO", @"USY", @"NFTY", @"NCSY", @"Young Judea", @"Other"];
+            options = @[@"BBYO", @"USY", @"NFTY", @"NCSY", @"Young Judea",@"Jewish Camps", @"Other"];
             break;
         case MultiSelectionTypeLivingArrangment:
             options = @[@"On Campus", @"Off Campus"];
@@ -30,20 +30,24 @@
         case MultiSelectionTypeCleanMessy:
             options = @[@"Organized", @"Clean Freak", @"Messy"];
             break;
+        case MultiSelectionTypeWhenLookingInARoomate:
+            options = @[@"Fall Semester 2016", @"Spring Semester 2017", @"Fall Semester 2018", @"Spring Semester 2019",
+                        @"Fall Semester 2019", @"Spring Semester 2020", @"Fall Semester 2020", @"Spring Semester 2021"];
+            break;
         case MultiSelectionTypeFun:
-            options = @[@"Shabbat dinner with friends", @"A night out with friends", @"Getting work done ahead of time", @"Reading a book", @"Netflix night", @"Being outdoors"];
+            options = @[@"Shabbat dinner with friends", @"A night out with friends", @"Getting work done ahead of time", @"Reading a book", @"Netflix night", @"Being outdoors", @"Joining a club"];
             break;
         case MultiSelectionTypeKosher:
-            options = @[@"Yes - I am Shomer Kashrut", @"Yes", @"No"];
+            options = @[@"Yes - I am Shomer Kashrut", @"Yes / I do it my way", @"No"];
             break;
         case MultiSelectionTypeShabbat:
-            options = @[@"Yes - I am Shomer Shabbat", @"Yes", @"No"];
+            options = @[@"Yes - I am Shomer Shabbat", @"Yes / I do it my way", @"No"];
             break;
         case MultiSelectionTypeMusic:
             options = @[@"Alternative", @"Blues", @"Classical Music", @"Country Music", @"Electronic Music", @"Hip Hop / Rap", @"Indie Pop", @"Jazz", @"New Age", @"Pop (Popular music)", @"R&B / Soul", @"Reggae", @"Rock"];
             break;
         case MultiSelectionTypeDuringTheDay:
-            options = @[@"Taking a hike", @"Spending the day in a library", @"Reading a book", @"Cooking", @"Study", @"Workout", @"Watching Netflix", @"Hanging out with friends", @"Shopping", @"Playing sports", @"Other"];
+            options = @[@"Taking a hike", @"Spending the day in a library", @"Reading a book", @"Cooking", @"Studying", @"Working out", @"Watching Netflix", @"Hanging out with friends", @"Shopping", @"Playing sports", @"Other"];
             break;
         case MultiSelectionTypeActivities:
             options = @[@"Greek Life", @"Jewish Life on Campus", @"Political Groups", @"Social Advocacy Groups", @"Athletics"];
@@ -63,7 +67,7 @@
     
     switch (type) {
         case MultiSelectionTypeGender:
-            title = @"Gender";
+            title = @"My gender identity is...";
             break;
         case MultiSelectionTypeHighSchoolConnections:
             title = @"High School Jewish Connections";
@@ -76,6 +80,9 @@
             break;
         case MultiSelectionTypeCleanMessy:
             title = @"Are you a clean or messy person?";
+            break;
+        case MultiSelectionTypeWhenLookingInARoomate:
+            title = @"When are you looking for a roommate?";
             break;
         case MultiSelectionTypeFun:
             title = @"What does fun mean to you?";
@@ -127,6 +134,9 @@
             break;
         case MultiSelectionTypeKosher:
             user.kosher = value;
+            break;
+        case MultiSelectionTypeWhenLookingInARoomate:
+            user.whenLookingForARoomate = value;
             break;
         case MultiSelectionTypeShabbat:
             user.shabbatResponse = value;
@@ -255,6 +265,9 @@
             break;
         case MultiSelectionTypeShabbat:
             value = user.shabbatResponse;
+            break;
+        case MultiSelectionTypeWhenLookingInARoomate:
+            value = user.whenLookingForARoomate;
             break;
         case MultiSelectionTypeMusic:
             value = user.music;
