@@ -65,6 +65,11 @@
     [self.navigationController pushViewController:vc animated:NO];
 }
 
+- (IBAction)privacyButtonPresed
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://joomiedev.azurewebsites.net/Home/Privacy"]];
+}
+
 #pragma mark FBLoginViewDelegate
 
 - (void)loginButton:(FBSDKLoginButton *)loginButton
