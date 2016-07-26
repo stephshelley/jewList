@@ -1903,8 +1903,8 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e073bcd5-f12a-4f4e-bd03-89cb5cdac789";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "e073bcd5-f12a-4f4e-bd03-89cb5cdac789";
+				PROVISIONING_PROFILE = "4ad7dc81-d266-4d9c-95c1-c50f376f0d8d";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4ad7dc81-d266-4d9c-95c1-c50f376f0d8d";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = NO;
 				VALID_ARCHS = "armv7 armv7s";
