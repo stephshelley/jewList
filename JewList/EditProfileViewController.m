@@ -23,7 +23,7 @@
 #import "DeleteAccountCellItem.h"
 #import "DeleteAccountCell.h"
 
-NSString * const graduationTitle = @"Graduation Year";
+NSString * const graduationTitle = @"College Graduation Year";
 NSString * const schoolTitle = @"School";
 NSString * const ageTitle = @"Age";
 NSString * const yesTitle = @"Yes";

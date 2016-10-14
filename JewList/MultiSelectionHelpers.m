@@ -31,7 +31,7 @@
             options = @[@"Organized", @"Clean Freak", @"Messy"];
             break;
         case MultiSelectionTypeWhenLookingInARoomate:
-            options = @[@"Fall Semester 2016", @"Spring Semester 2017", @"Fall Semester 2018", @"Spring Semester 2019",
+            options = @[@"Fall Semester 2016", @"Spring Semester 2017", @"Fall Semester 2017", @"Fall Semester 2018", @"Spring Semester 2018", @"Spring Semester 2019",
                         @"Fall Semester 2019", @"Spring Semester 2020", @"Fall Semester 2020", @"Spring Semester 2021"];
             break;
         case MultiSelectionTypeFun:
@@ -88,10 +88,10 @@
             title = @"What does fun mean to you?";
             break;
         case MultiSelectionTypeKosher:
-            title = @"Would you say to someone that you keep kosher?";
+            title = @"Do you keep kosher?";
             break;
         case MultiSelectionTypeShabbat:
-            title = @"Would you say to someone that you keep Shabbat?";
+            title = @"Do you keep Shabbat?";
             break;
         case MultiSelectionTypeMusic:
             title = @"What music do you like to listen to?";

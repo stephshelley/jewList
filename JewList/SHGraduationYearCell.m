@@ -30,7 +30,7 @@
 {
     [super setUser:user];
 
-    self.titleLabel.text = @"Graduation Year";
+    self.titleLabel.text = @"College Graduation Year";
     self.accesoryLabel.text = self.user.gradYear;
     
 }
